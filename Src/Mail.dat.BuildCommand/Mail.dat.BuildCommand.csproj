@@ -27,7 +27,7 @@
 		<PackageReference Include="Diamond.Core.Extensions.DependencyInjection.Abstractions" Version="9.1.0" />
 		<PackageReference Include="Diamond.Core.Extensions.Hosting.Abstractions" Version="9.1.0" />
 		<PackageReference Include="Diamond.Core.System.TemporaryFolder" Version="9.1.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.8" />
 	</ItemGroup>
 
 	<ItemGroup>

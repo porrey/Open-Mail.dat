@@ -24,7 +24,7 @@
 		<RepositoryType>git</RepositoryType>
 		<NeutralLanguage>en</NeutralLanguage>
 		<PackageTags>efcore,mail.dat</PackageTags>
-		<Copyright>Copyright (c) 2025 Open Mail.dat. All rights reserved.</Copyright>
+		<Copyright>Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>

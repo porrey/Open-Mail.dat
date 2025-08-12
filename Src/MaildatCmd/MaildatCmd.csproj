@@ -34,8 +34,8 @@
 		<PackageReference Include="Diamond.Core.Extensions.DependencyInjection.Abstractions" Version="9.1.0" />
 		<PackageReference Include="Diamond.Core.Extensions.Hosting" Version="9.1.0" />
 		<PackageReference Include="Diamond.Core.Extensions.Hosting.Abstractions" Version="9.1.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.7" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.8" />
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
 		<PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />

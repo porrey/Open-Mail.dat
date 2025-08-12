@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "Import": {
+      "commandName": "Project",
+      "commandLineArgs": "import --source-file-path \"%HOMEPATH%/Documents/Open Mail.dat/Imports/5850001A.zip\" --target-file-path \"%HOMEPATH%/Documents/Open Mail.dat/Database/MD0000000002.db\" --skip-pbc false --favor-memory-over-performance false --max-records-in-memory 10000",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "Export": {
+      "commandName": "Project",
+      "commandLineArgs": "export --source-file-path \"%HOMEPATH%/Documents/Open Mail.dat/Database/MD0000000002.db\" --target-file-path \"%HOMEPATH%/Documents/Open Mail.dat/Exports/52850001.zip\"",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "Build": {
+      "commandName": "Project",
+      "commandLineArgs": "build --specification-files \"./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"../../../../Mail.dat.Models\" --hosting-directory \"../../../../Mail.dat.Hosting\"",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

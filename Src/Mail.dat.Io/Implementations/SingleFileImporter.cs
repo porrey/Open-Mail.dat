@@ -23,6 +23,8 @@
 // Author: Daniel M porrey
 //
 using System.IO.MemoryMappedFiles;
+using System.Text;
+using System.Text.RegularExpressions;
 using EFCore.BulkExtensions;
 using Mail.dat.Io.Models;
 
@@ -41,6 +43,7 @@ namespace Mail.dat.Io
 		/// Gets or sets the delegate to handle asynchronous progress updates.
 		/// </summary>
 		public ProgressAsyncDelegate ProgressUpdateAsync { get; set; }
+		internal static readonly char[] first = new char[] { '#' };
 
 		/// <summary>
 		/// Imports data from a specified source file into the provided database context asynchronously.
@@ -65,9 +68,9 @@ namespace Mail.dat.Io
 			//
 			// Get the MaildatFileAttribute attribute.
 			//
-			MaildatFileAttribute classAttribute = typeof(T).GetAttribute<MaildatFileAttribute>();
+			MaildatFileAttribute classAttribute = typeof(T).GetMaildatFiledAttribute(version);
 
-			if (classAttribute != null && !(classAttribute.Extension == "pbc" && options.SkipPbc))
+			if (classAttribute != null && !options.ExcludeExtensions.Contains(classAttribute.Extension, StringComparer.OrdinalIgnoreCase))
 			{
 				//
 				// Get the header file
@@ -89,7 +92,7 @@ namespace Mail.dat.Io
 					int lineCount = (int)(new FileInfo(filePath)).Length / lineLength;
 
 					//
-					// Create  list for the modesl, they will
+					// Create list for the modesl, they will
 					// all be bulk inserted at the end.
 					//
 					List<T> modelBuffer = new(lineCount);
@@ -142,6 +145,18 @@ namespace Mail.dat.Io
 								// Read the line from the file.
 								//
 								accessor.ReadArray(0, buffer, 0, lineLength);
+
+								//
+								// Check if the buffer ends with the expected line ending characters.
+								// This is done to ensure that the line is read correctly and ends with the expected characters.
+								//
+								char[] c = [.. (first).Union(lineEndingCharacters.ToCharArray())];
+								if (!buffer.Verify(c))
+								{
+									string s = Encoding.UTF8.GetString(buffer).ToPrintable();
+									string actualEndCharacters = Encoding.UTF8.GetString(buffer, buffer.Length - c.Length, c.Length);
+									throw new Exception($"File format error or file misread error encountered.The line {lineNumber + 1} in file {Path.GetFileName(filePath)} does not end with the expected line ending characters. Expected: '{lineEndingCharacters.ToPrintable()}', Actual: '{actualEndCharacters.ToPrintable()}'");
+								}
 
 								//
 								// Increment the line counter for each line read.
@@ -264,7 +279,7 @@ namespace Mail.dat.Io
 		/// <summary>
 		/// Triggers the <see cref="ProgressUpdateAsync"/> event with the specified progress message.
 		/// </summary>
-		/// <remarks>This method invokes the <see cref="ProgressUpdateAsync"/> event if it has been subscribed to. 
+		/// <remarks>This method invokes the <see cref="ProgressUpdateAsync"/> event if it has been subscribed to.
 		/// Callers should ensure that <paramref name="message"/> is not <see langword="null"/> before invoking this
 		/// method.</remarks>
 		/// <param name="message">The progress message to be passed to the event handler. Cannot be <see langword="null"/>.</param>

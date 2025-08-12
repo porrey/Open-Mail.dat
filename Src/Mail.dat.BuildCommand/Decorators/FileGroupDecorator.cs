@@ -323,7 +323,7 @@ namespace Mail.dat.BuildCommand
 		/// Creates a "MaildatVersions" attribute for the specified file group,  containing a list of the major version
 		/// numbers of its items.
 		/// </summary>
-		/// <remarks>The generated attribute includes the major version numbers of all items in the file group, 
+		/// <remarks>The generated attribute includes the major version numbers of all items in the file group,
 		/// formatted as a comma-separated string enclosed in double quotes.</remarks>
 		/// <param name="fileGroup">The file group whose items' major versions will be included in the attribute.</param>
 		/// <returns>An <see cref="AttributeBuilder"/> instance representing the "MaildatVersions" attribute,  with a parameter
@@ -356,6 +356,18 @@ namespace Mail.dat.BuildCommand
 
 			string parameter = string.Join(", ", versions.Select(t => $"\"{t}\""));
 			return AttributeBuilder.Create("MaildatVersions").AddParameter("", parameter, false);
+		}
+
+		public static string[] MaildatVersions(this FileGroup fileGroup, RecordDefinition recordDefinition)
+		{
+			string[] versions = fileGroup.Items.SelectMany(t => t.FileDefinition.RecordDefinitions.Select(s => new { t.Version, RecordDefinition = s }))
+										 .Where(t => t.RecordDefinition.ToPropertyName() == recordDefinition.ToPropertyName())
+										 .Select(t => t.Version)
+										 .GroupBy(g => g.Major)
+										 .Select(g => g.Key)
+										 .ToArray();
+
+			return versions;
 		}
 	}
 }

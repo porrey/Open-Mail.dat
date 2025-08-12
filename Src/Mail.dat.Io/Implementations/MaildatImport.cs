@@ -158,12 +158,12 @@ namespace Mail.dat.Io
 				//
 				// Get all of the model entities.
 				//
-				IEnumerable<IEntityType> entities = context.Model.GetEntityTypes()
+				IEnumerable<IEntityType> entities = (context.Model.GetEntityTypes()
 													.Where(t => t.ClrType.GetAttribute<MaildatImportAttribute>() != null)
-													.Select(t => new { EntityType = t, Atrribute = t.ClrType.GetCustomAttribute<MaildatExportAttribute>() })
-													.Where(t => t.Atrribute.Version == version)
-													.Select(t => t.EntityType)
-													.OrderBy(t => t.ClrType.GetAttribute<MaildatImportAttribute>().Order);
+													.Select(t => new { EntityType = t, Atrribute = t.ClrType.GetCustomAttributes<MaildatImportAttribute>().Where(t => t.Version == version).FirstOrDefault() })
+													.Where(t => t.Atrribute != null)
+													.OrderBy(t => t.Atrribute.Order)
+													.Select(t => t.EntityType)).ToArray();
 
 				//
 				// Forward the progress events.

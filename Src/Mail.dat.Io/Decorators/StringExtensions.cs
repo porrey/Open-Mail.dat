@@ -1,6 +1,6 @@
-//
+﻿//
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,42 +20,67 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
-// Code Generator Author: Daniel M porrey
+// Author: Daniel M porrey
 //
-using Diamond.Core.Repository;
-using Diamond.Core.Repository.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+using System.Text;
 
-namespace Mail.dat
+namespace Mail.dat.Io
 {
 	/// <summary>
-	/// Repository for the <see cref="Pdr"/> entity.
+	/// 
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class PdrRepository : EntityFrameworkRepository<IPdr, Pdr, MaildatContext> 
+	public static class StringExtensions
 	{
 		/// <summary>
-		/// Creates and instance of the <see cref="PdrRepository"/> class with the specified context and entity
-		/// factory.
+		/// Converts non-printable characters to printable form.
+		/// Common control characters are shown as escaped literals (\n, \r, \t).
+		/// Others are shown as \xNN.
 		/// </summary>
-		public PdrRepository(IEntityFactory<IPdr> entityFactory)
-			 : base(entityFactory)
+		public static string ToPrintable(this string input)
 		{
+			if (input == null)
+			{
+				return string.Empty;
+			}
+
+			StringBuilder sb = new(input.Length);
+
+			foreach (char c in input)
+			{
+				switch (c)
+				{
+					case '\n':
+						sb.Append("\\n");
+						break;
+					case '\r':
+						sb.Append("\\r");
+						break;
+					case '\t':
+						sb.Append("\\t");
+						break;
+					default:
+						if (char.IsControl(c) || !IsPrintableAscii(c))
+						{
+							sb.Append("\\x");
+							sb.Append(((int)c).ToString("X2"));
+						}
+						else
+						{
+							sb.Append(c);
+						}
+						break;
+				}
+			}
+
+			return sb.ToString();
 		}
 
 		/// <summary>
-		/// Creates and instance of the <see cref="PdrRepository"/> class with the specified context and entity
-		/// factory.
+		/// Checks if the character is printable in standard ASCII.
 		/// </summary>
-		public PdrRepository(MaildatContext context, IEntityFactory<IPdr> entityFactory)
-			 : base(context, entityFactory)
+		private static bool IsPrintableAscii(char c)
 		{
+			return c >= 0x20 && c <= 0x7E;
 		}
-
-		/// <summary>
-		/// Returns the DbSet for the <see cref="Pdr"/> entity.
-		/// </summary>
-		protected override DbSet<Pdr> MyDbSet(MaildatContext context) => context.Pdr;
 	}
 }

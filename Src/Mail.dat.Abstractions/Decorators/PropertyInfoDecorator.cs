@@ -123,6 +123,27 @@ namespace Mail.dat
 		}
 
 		/// <summary>
+		/// Retrieves the <see cref="MaildatFileAttribute"/> associated with the specified property for the given version.
+		/// </summary>
+		/// <param name="propertyInfo">The property for which to retrieve the attribute.</param>
+		/// <param name="version">The version of the attribute to match.</param>
+		/// <returns>The <see cref="MaildatFileAttribute"/> that matches the specified version, or <see langword="null"/> if no
+		/// matching attribute is found.</returns>
+		public static MaildatFileAttribute GetMaildatFiledAttribute(this Type type, string version)
+		{
+			MaildatFileAttribute returnValue = null;
+
+			//
+			//
+			//
+			returnValue = type.GetCustomAttributes(typeof(MaildatFileAttribute), inherit: true)
+									.Where(t => ((MaildatFileAttribute)t).Version == version)
+									.Select(t => (MaildatFileAttribute)t).FirstOrDefault();
+
+			return returnValue;
+		}
+
+		/// <summary>
 		/// Parses a line of data and converts a specified property value using the provided type converter.
 		/// </summary>
 		/// <remarks>This method uses metadata attributes defined on the property to determine how to extract and
@@ -136,7 +157,7 @@ namespace Mail.dat
 		/// access expression (e.g., <c>x => x.PropertyName</c>).</param>
 		/// <param name="errors">A collection to which any errors encountered during parsing or conversion will be added.  This collection is
 		/// updated in a thread-safe manner.</param>
-		/// <returns>The parsed and converted value of the specified property, or the default value of <typeparamref name="TValue"/> 
+		/// <returns>The parsed and converted value of the specified property, or the default value of <typeparamref name="TValue"/>
 		/// if parsing or conversion fails.</returns>
 		public static TValue ParseForImport<TModel, TValue>(this ReadOnlySpan<byte> line, string version, Expression<Func<TModel, TValue>> propertyExpression, IList<ILoadError> errors)
 		{
@@ -162,7 +183,7 @@ namespace Mail.dat
 					//
 					// Convert the string value to the property type using the type converter.
 					//
-					string value = Encoding.ASCII.GetString(line.Slice(attribute.Start - 1, attribute.Length)).Trim();
+					string value = Encoding.UTF8.GetString(line.Slice(attribute.Start - 1, attribute.Length)).Trim();
 
 					try
 					{

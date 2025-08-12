@@ -52,9 +52,9 @@ namespace Mail.dat.Io
 		string TargetFile { get; set; }
 
 		/// <summary>
-		/// Gets or sets a value indicating whether the PBC (Piece barcode details) step should be skipped.
+		/// Gets or sets a value indicating which files (by extension) should be excluded in the import.
 		/// </summary>
-		bool SkipPbc { get; set; }
+		string[] ExcludeExtensions { get; set; }
 
 		/// <summary>
 		/// Gets or sets the logger used to record messages and events related to import options.

@@ -194,7 +194,7 @@ namespace Mail.dat.ImportCommand
 							TemporaryDirectory = temporaryFolder.FullPath,
 							TargetFile = options.TargetFilePath.FullName,
 							CancellationToken = cancellationTokenSource.Token,
-							SkipPbc = options.SkipPbc,
+							ExcludeExtensions = options.SkipPbc ? ["pbc"] : [],
 							FavorMemoryOverPerformance = options.FavorMemoryOverPerformance,
 							MaxRecordsInMemory = options.MaxRecordsInMemory
 						};
@@ -241,7 +241,7 @@ namespace Mail.dat.ImportCommand
 								AnsiConsole.MarkupLine($"MPA count: Expected: {current.MailerPostageAccountRecordCount:#,###}, Actual {context.Mpa.Count():#,###}.");
 								AnsiConsole.MarkupLine($"PQT count: Expected: {current.PackageQuantityRecordCount:#,###}, Actual {context.Pqt.Count():#,###}.");
 								AnsiConsole.MarkupLine($"CSM count: Expected: {current.ContainerSummaryRecordCount:#,###}, Actual {context.Csm.Count():#,###}.");
-								AnsiConsole.MarkupLine($"CQT count: Expected: {current.ContainerQuantityRecordCount:#,###}, Actual {context.Cqt.Count():#,###}.");			
+								AnsiConsole.MarkupLine($"CQT count: Expected: {current.ContainerQuantityRecordCount:#,###}, Actual {context.Cqt.Count():#,###}.");
 								AnsiConsole.MarkupLine($"PBC count: Expected: {current.PieceBarcodeRecordCount:#,###}, Actual {context.Pbc.Count():#,###}.");
 								AnsiConsole.MarkupLine($"OCI count: Expected: {current.OriginalContainerIdentificationRecordCount:#,###}, Actual {context.Oci.Count():#,###}.");
 							}

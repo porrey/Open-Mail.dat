@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.
+// Copyright (c) 2025 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on July 9th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -1001,7 +1001,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1197", FieldName = "Transportation Summary Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation summary records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("TransportationSummaryRecordCount", Order = 63, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-1197")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
@@ -1013,7 +1012,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1198", FieldName = "Transportation Summary Record Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
 		[Column("TransportationSummaryRecordStatus", Order = 64, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-1198")]
@@ -1028,7 +1026,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1199", FieldName = "Transportation Geo-Data Record Count", Start = 443, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("TransportationGeoDataRecordCount", Order = 65, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-1199")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
@@ -1039,7 +1036,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2001", FieldName = "Transportation Geo-Data Record Status", Start = 449, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("TransportationGeoDataRecordStatus", Order = 66, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2001")]
@@ -1054,7 +1050,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2002", FieldName = "Transportation Detail Record Count", Start = 450, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("TransportationDetailRecordCount", Order = 67, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-2002")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
@@ -1066,7 +1061,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2003", FieldName = "Transportation Detail Record Status", Start = 456, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
 		[Column("TransportationDetailRecordStatus", Order = 68, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2003")]
@@ -1081,7 +1075,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2004", FieldName = "Transportation Container Record Count", Start = 457, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation container records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("TransportationContainerRecordCount", Order = 69, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-2004")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
@@ -1093,7 +1086,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2005", FieldName = "Transportation Container Record Status", Start = 463, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
 		[Column("TransportationContainerRecordStatus", Order = 70, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2005")]
@@ -1108,7 +1100,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2006", FieldName = "Transportation Container Status Record Count", Start = 464, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation container records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("TransportationContainerStatusRecordCount", Order = 71, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-2006")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
@@ -1120,7 +1111,6 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2007", FieldName = "Transportation Container Status Record Status", Start = 470, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
 		[Column("TransportationContainerStatusRecordStatus", Order = 72, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2007")]
@@ -1360,7 +1350,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1201", FieldName = "Certificate of Mailing Header Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of Certificate of Mailing Header records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1201", FieldName = "Certificate of Mailing Header Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of Certificate of Mailing Header records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("CertificateOfMailingHeaderRecordCount", Order = 88, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-1201")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("24-1", "25-1")]
@@ -1372,7 +1361,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1202", FieldName = "Certificate of Mailing Header Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1202", FieldName = "Certificate of Mailing Header Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("CertificateOfMailingHeaderStatus", Order = 89, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-1202")]
@@ -1388,7 +1376,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1203", FieldName = "Certificate of Mailing Detail Record Count", Start = 443, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1203", FieldName = "Certificate of Mailing Detail Record Count", Start = 443, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("CertificateOfMailingDetailRecordCount", Order = 90, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-1203")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("24-1", "25-1")]
@@ -1400,7 +1387,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1204", FieldName = "Certificate of Mailing Detail Status", Start = 453, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1204", FieldName = "Certificate of Mailing Detail Status", Start = 453, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("CertificateOfMailingDetailStatus", Order = 91, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-1204")]
@@ -1416,7 +1402,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1205", FieldName = "Certificate of Mailing Bulk Record Count", Start = 454, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing bulk records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1205", FieldName = "Certificate of Mailing Bulk Record Count", Start = 454, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing bulk records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("CertificateOfMailingBulkRecordCount", Order = 92, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-1205")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("24-1", "25-1")]
@@ -1428,7 +1413,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1206", FieldName = "Certificate of Mailing Bulk Status", Start = 464, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1206", FieldName = "Certificate of Mailing Bulk Status", Start = 464, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("CertificateOfMailingBulkStatus", Order = 93, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-1206")]
@@ -1444,7 +1428,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1207", FieldName = "Certificate of Mailing Services Record Count", Start = 465, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing services records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1207", FieldName = "Certificate of Mailing Services Record Count", Start = 465, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing services records in this Mail.dat.", Type = "integer", Format = "zfill")]
 		[Column("CertificateOfMailingServicesRecordCount", Order = 94, TypeName = "INTEGER")]
-		[Required]
 		[Comment("HDR-1207")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("24-1", "25-1")]
@@ -1456,7 +1439,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1208", FieldName = "Certificate of Mailing Services Status", Start = 475, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1208", FieldName = "Certificate of Mailing Services Status", Start = 475, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("CertificateOfMailingServicesStatus", Order = 95, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-1208")]

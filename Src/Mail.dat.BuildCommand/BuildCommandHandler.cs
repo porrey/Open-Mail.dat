@@ -90,25 +90,25 @@ namespace Mail.dat.BuildCommand
 			{
 				index++;
 
-				//	//
-				//	// Get the newest version.
-				//	//
+				//
+				// Get the newest version.
+				//
 				string maxVersion = fileGroup.Items.Max(t => t.Version.Major);
 
-				//	//
-				//	// Display the extension and and name to show progress.
-				//	//
+				//
+				// Display the extension and and name to show progress.
+				//
 				Panel panel = new Panel($"[white]{fileGroup.FileExtension}[/] - [yellow]{fileGroup.Name(maxVersion)}[/] ({index} of {merged.Count()})").RoundedBorder().Expand();
 				AnsiConsole.Write(panel);
 
-				//	//
-				//	// Mark the starting column order for specifying the filed order in the database.
-				//	//
+				//
+				// Mark the starting column order for specifying the filed order in the database.
+				//
 				int columnOrder = 2;
 
-				//	//
-				//	// Create a class for this file.
-				//	//
+				//
+				// Create a class for this file.
+				//
 				AnsiConsole.MarkupLine("\tBuilding [yellow]class[/] file.");
 				classes.Add(ClassBuilder.Create(fileGroup.FileExtension.ToClassName())
 					.SetFileHeaderComments()
@@ -187,7 +187,7 @@ namespace Mail.dat.BuildCommand
 									// Add a Required attribute if this field is required.
 									//
 									AttributeBuilder.CreateConditional(
-										tbl.Required,
+										tbl.Required && fileGroup.Items.Count() == fileGroup.MaildatVersions(tbl).Count(),
 										"Required"),
 									//
 									// Add a Key attribute if this field is a key.
@@ -347,9 +347,9 @@ namespace Mail.dat.BuildCommand
 					)
 					.Build($"{modelDirectory.FullName}/{fileGroup.FileExtension.ToClassFileName()}", 1));
 
-				//	//
-				//	// Create an interface for this file.
-				//	//
+				//
+				// Create an interface for this file.
+				//
 				AnsiConsole.MarkupLine("\tBuilding [yellow]interface[/] file.");
 				interfaces.Add(ClassBuilder.Create($"{fileGroup.FileExtension.ToInterfaceName()}")
 					.SetFileHeaderComments()

@@ -80,7 +80,7 @@ namespace Mail.dat
 					//
 					// hh:mm
 					//
-					returnValue = TimeOnly.ParseExact(s.ToString(), "hh:mm", culture);
+					returnValue = TimeOnly.ParseExact(s.ToString(), "HH:mm", culture);
 				}
 			}
 

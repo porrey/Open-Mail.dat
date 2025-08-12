@@ -79,7 +79,7 @@ namespace Mail.dat.Io
 		/// empty string if the end of the stream is reached without reading any characters.</returns>
 		private static string ReadRawLine(StreamReader reader, out string lineEnding)
 		{
-			StringBuilder result = new StringBuilder();
+			StringBuilder result = new();
 			lineEnding = "";
 
 			while (reader.Peek() >= 0)

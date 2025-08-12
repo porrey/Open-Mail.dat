@@ -65,10 +65,10 @@ namespace Mail.dat.Io
 		public ILogger<IImportOptions> Logger { get; set; } = new NullLogger<IImportOptions>();
 
 		/// <summary>
-		/// Gets or sets a value indicating whether the PBC (Piece barcode details) process should be skipped.
+		/// Gets or sets a value indicating which files (by extension) should be excluded in the import.
 		/// </summary>
-		public bool SkipPbc { get; set; } = false;
-		
+		public string[] ExcludeExtensions { get; set; } = [];
+
 		/// <summary>
 		/// Gets or sets a value indicating whether the system should prioritize memory usage over performance.
 		/// </summary>

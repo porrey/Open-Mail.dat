@@ -32,7 +32,7 @@ namespace Mail.dat
 	/// <summary>
 	/// Entity Framework Core database context for Mail.dat entities.
 	/// </summary>
-	public partial class MaildatContext : RepositoryContext<MaildatContext> 
+	public partial class MaildatContext : RepositoryContext<MaildatContext>
 	{
 		public MaildatContext()
 			 : base()
@@ -166,7 +166,7 @@ namespace Mail.dat
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			this.Logger.LogDebug("OnModelCreating() called in {context}", nameof(MaildatContext));
-			
+
 			//
 			// Specify the Key properties
 			//
@@ -199,7 +199,7 @@ namespace Mail.dat
 			modelBuilder.Entity<Tsr>().HasKey(t => t.Id);
 			modelBuilder.Entity<Upa>().HasKey(t => t.Id);
 			modelBuilder.Entity<Wsr>().HasKey(t => t.Id);
-			
+
 			//
 			// Add indices for the Key properties.
 			//

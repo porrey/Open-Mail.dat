@@ -40,175 +40,175 @@ namespace Mail.dat
 			//
 			services.AddTransient<IEntityFactory<IHdr>, EntityFactory<IHdr, Hdr>>();
 			services.AddTransient<IRepository<IHdr>, HdrRepository>();
-			
+
 			//
 			// Seg
 			//
 			services.AddTransient<IEntityFactory<ISeg>, EntityFactory<ISeg, Seg>>();
 			services.AddTransient<IRepository<ISeg>, SegRepository>();
-			
+
 			//
 			// Mpu
 			//
 			services.AddTransient<IEntityFactory<IMpu>, EntityFactory<IMpu, Mpu>>();
 			services.AddTransient<IRepository<IMpu>, MpuRepository>();
-			
+
 			//
 			// Mcr
 			//
 			services.AddTransient<IEntityFactory<IMcr>, EntityFactory<IMcr, Mcr>>();
 			services.AddTransient<IRepository<IMcr>, McrRepository>();
-			
+
 			//
 			// Mpa
 			//
 			services.AddTransient<IEntityFactory<IMpa>, EntityFactory<IMpa, Mpa>>();
 			services.AddTransient<IRepository<IMpa>, MpaRepository>();
-			
+
 			//
 			// Cpt
 			//
 			services.AddTransient<IEntityFactory<ICpt>, EntityFactory<ICpt, Cpt>>();
 			services.AddTransient<IRepository<ICpt>, CptRepository>();
-			
+
 			//
 			// Ccr
 			//
 			services.AddTransient<IEntityFactory<ICcr>, EntityFactory<ICcr, Ccr>>();
 			services.AddTransient<IRepository<ICcr>, CcrRepository>();
-			
+
 			//
 			// Csm
 			//
 			services.AddTransient<IEntityFactory<ICsm>, EntityFactory<ICsm, Csm>>();
 			services.AddTransient<IRepository<ICsm>, CsmRepository>();
-			
+
 			//
 			// Cqt
 			//
 			services.AddTransient<IEntityFactory<ICqt>, EntityFactory<ICqt, Cqt>>();
 			services.AddTransient<IRepository<ICqt>, CqtRepository>();
-			
+
 			//
 			// Pqt
 			//
 			services.AddTransient<IEntityFactory<IPqt>, EntityFactory<IPqt, Pqt>>();
 			services.AddTransient<IRepository<IPqt>, PqtRepository>();
-			
+
 			//
 			// Wsr
 			//
 			services.AddTransient<IEntityFactory<IWsr>, EntityFactory<IWsr, Wsr>>();
 			services.AddTransient<IRepository<IWsr>, WsrRepository>();
-			
+
 			//
 			// Snr
 			//
 			services.AddTransient<IEntityFactory<ISnr>, EntityFactory<ISnr, Snr>>();
 			services.AddTransient<IRepository<ISnr>, SnrRepository>();
-			
+
 			//
 			// Icr
 			//
 			services.AddTransient<IEntityFactory<IIcr>, EntityFactory<IIcr, Icr>>();
 			services.AddTransient<IRepository<IIcr>, IcrRepository>();
-			
+
 			//
 			// Pdr
 			//
 			services.AddTransient<IEntityFactory<IPdr>, EntityFactory<IPdr, Pdr>>();
 			services.AddTransient<IRepository<IPdr>, PdrRepository>();
-			
+
 			//
 			// Pbc
 			//
 			services.AddTransient<IEntityFactory<IPbc>, EntityFactory<IPbc, Pbc>>();
 			services.AddTransient<IRepository<IPbc>, PbcRepository>();
-			
+
 			//
 			// Sfr
 			//
 			services.AddTransient<IEntityFactory<ISfr>, EntityFactory<ISfr, Sfr>>();
 			services.AddTransient<IRepository<ISfr>, SfrRepository>();
-			
+
 			//
 			// Sfb
 			//
 			services.AddTransient<IEntityFactory<ISfb>, EntityFactory<ISfb, Sfb>>();
 			services.AddTransient<IRepository<ISfb>, SfbRepository>();
-			
+
 			//
 			// Par
 			//
 			services.AddTransient<IEntityFactory<IPar>, EntityFactory<IPar, Par>>();
 			services.AddTransient<IRepository<IPar>, ParRepository>();
-			
+
 			//
 			// Oci
 			//
 			services.AddTransient<IEntityFactory<IOci>, EntityFactory<IOci, Oci>>();
 			services.AddTransient<IRepository<IOci>, OciRepository>();
-			
+
 			//
 			// Upa
 			//
 			services.AddTransient<IEntityFactory<IUpa>, EntityFactory<IUpa, Upa>>();
 			services.AddTransient<IRepository<IUpa>, UpaRepository>();
-			
+
 			//
 			// Epd
 			//
 			services.AddTransient<IEntityFactory<IEpd>, EntityFactory<IEpd, Epd>>();
 			services.AddTransient<IRepository<IEpd>, EpdRepository>();
-			
+
 			//
 			// Rmr
 			//
 			services.AddTransient<IEntityFactory<IRmr>, EntityFactory<IRmr, Rmr>>();
 			services.AddTransient<IRepository<IRmr>, RmrRepository>();
-			
+
 			//
 			// Rmb
 			//
 			services.AddTransient<IEntityFactory<IRmb>, EntityFactory<IRmb, Rmb>>();
 			services.AddTransient<IRepository<IRmb>, RmbRepository>();
-			
+
 			//
 			// Rms
 			//
 			services.AddTransient<IEntityFactory<IRms>, EntityFactory<IRms, Rms>>();
 			services.AddTransient<IRepository<IRms>, RmsRepository>();
-			
+
 			//
 			// Chr
 			//
 			services.AddTransient<IEntityFactory<IChr>, EntityFactory<IChr, Chr>>();
 			services.AddTransient<IRepository<IChr>, ChrRepository>();
-			
+
 			//
 			// Cbr
 			//
 			services.AddTransient<IEntityFactory<ICbr>, EntityFactory<ICbr, Cbr>>();
 			services.AddTransient<IRepository<ICbr>, CbrRepository>();
-			
+
 			//
 			// Cdr
 			//
 			services.AddTransient<IEntityFactory<ICdr>, EntityFactory<ICdr, Cdr>>();
 			services.AddTransient<IRepository<ICdr>, CdrRepository>();
-			
+
 			//
 			// Cfr
 			//
 			services.AddTransient<IEntityFactory<ICfr>, EntityFactory<ICfr, Cfr>>();
 			services.AddTransient<IRepository<ICfr>, CfrRepository>();
-			
+
 			//
 			// Tsr
 			//
 			services.AddTransient<IEntityFactory<ITsr>, EntityFactory<ITsr, Tsr>>();
 			services.AddTransient<IRepository<ITsr>, TsrRepository>();
-			
+
 			return services;
 		}
 	}

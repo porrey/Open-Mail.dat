@@ -24,9 +24,12 @@
 //
 using System.Reflection;
 using Mail.dat.Io.Models;
+using Mail.dat.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Mail.dat.Io
@@ -38,7 +41,7 @@ namespace Mail.dat.Io
 	/// files, creating a database context, and processing entities in parallel. Progress updates can be reported using the
 	/// <see cref="ProgressUpdate"/> delegate. Use the <see cref="Create()"/> or <see
 	/// cref="Create(ProgressAsyncDelegate)"/> methods to instantiate this class.</remarks>
-	public class MaildatImport : IMaildatImport
+	public class MaildatImport<TDatabaseContext> : IMaildatImport<TDatabaseContext> where TDatabaseContext : MaildatContext
 	{
 		/// <summary>
 		/// Gets or sets the delegate to report progress updates during an asynchronous operation.
@@ -53,17 +56,19 @@ namespace Mail.dat.Io
 		/// <remarks>This private constructor is used to restrict the creation of instances of the <see
 		/// cref="MaildatImport"/> class, enforcing a specific design pattern, such as a static utility class or
 		/// singleton.</remarks>
-		private MaildatImport()
+		private MaildatImport(IMaildatDbContextFactory<TDatabaseContext> factory)
 		{
+			this.DbContextFactory = factory;
 		}
 
 		/// <summary>
 		/// Creates a new instance of an object that implements the <see cref="IMaildatImport"/> interface.
 		/// </summary>
 		/// <returns>An instance of a class that implements the <see cref="IMaildatImport"/> interface.</returns>
-		public static IMaildatImport Create()
+		public static IMaildatImport<TDatabaseContext> Create(IMaildatDbContextFactory<TDatabaseContext> factory)
 		{
-			return new MaildatImport();
+
+			return new MaildatImport<TDatabaseContext>(factory);
 		}
 
 		/// <summary>
@@ -71,9 +76,9 @@ namespace Mail.dat.Io
 		/// </summary>
 		/// <param name="progressAction">A delegate that is invoked to report progress updates during the import process.</param>
 		/// <returns>An instance of a class that implements the <see cref="IMaildatImport"/> interface.</returns>
-		public static IMaildatImport Create(ProgressAsyncDelegate progressAction)
+		public static IMaildatImport<TDatabaseContext> Create(IMaildatDbContextFactory<TDatabaseContext> factory, ProgressAsyncDelegate progressAction)
 		{
-			return new MaildatImport()
+			return new MaildatImport<TDatabaseContext>(factory)
 			{
 				ProgressUpdate = progressAction
 			};
@@ -93,9 +98,9 @@ namespace Mail.dat.Io
 		/// <returns>A tuple containing a boolean indicating whether the import was successful and a <see cref="MaildatContext"/>
 		/// representing the database context for the imported data.</returns>
 		/// <exception cref="Exception">Thrown if the source file cannot be unzipped or if other errors occur during the import process.</exception>
-		public async Task<(bool, MaildatContext)> ImportAsync(IImportOptions options)
+		public async Task<(bool, TDatabaseContext)> ImportAsync(IImportOptions options)
 		{
-			(bool returnValue, MaildatContext context) = (true, null);
+			(bool returnValue, TDatabaseContext context) = (true, null);
 
 			await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Import", ItemAction = ProgressMessageType.Start, Message = "Import" });
 
@@ -128,16 +133,9 @@ namespace Mail.dat.Io
 				string connectionString = $"Data Source={options.TargetFile}";
 
 				//
-				// Create the DB Context options.
-				//
-				DbContextOptions<MaildatContext> contextOption = new DbContextOptionsBuilder<MaildatContext>()
-					.UseSqlite(connectionString)
-					.Options;
-
-				//
 				// Create the DB Context.
 				//
-				context = new MaildatContext(new NullLogger<MaildatContext>(), contextOption);
+				context = this.DbContextFactory.CreateDbContext(new NullLogger<TDatabaseContext>(), connectionString);
 
 				//
 				// Help to improve performace.
@@ -243,5 +241,10 @@ namespace Mail.dat.Io
 			this.ProgressUpdate.Invoke(message);
 			return Task.CompletedTask;
 		}
+
+		/// <summary>
+		/// Gets or sets the factory used to create instances of the database context.
+		/// </summary>
+		protected IMaildatDbContextFactory<TDatabaseContext> DbContextFactory { get; set; }
 	}
 }

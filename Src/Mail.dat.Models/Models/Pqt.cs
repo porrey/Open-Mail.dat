@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Pqt", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Pqt : MaildatEntity, IPqt 
+	public partial class Pqt : MaildatEntity, IPqt
 	{
 		/// <summary>
 		/// Job ID (PQT-1001)
@@ -269,7 +269,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Pqt, string>(version, p => p.JobId, returnValue);
 			this.CqtDatabaseId = line.ParseForImport<Pqt, int>(version, p => p.CqtDatabaseId, returnValue);
 			this.PackageId = line.ParseForImport<Pqt, string>(version, p => p.PackageId, returnValue);
@@ -285,7 +285,7 @@ namespace Mail.dat
 			this.ClosingCharacter = line.ParseForImport<Pqt, string>(version, p => p.ClosingCharacter, returnValue);
 			this.PackagePreparationType = line.ParseForImport<Pqt, string>(version, p => p.PackagePreparationType, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
@@ -295,7 +295,7 @@ namespace Mail.dat
 		protected override Task<string> OnExportDataAsync(string version)
 		{
 			StringBuilder sb = new();
-			
+
 			sb.Append(this.JobId.FormatForExport<Pqt, string>(version, p => p.JobId));
 			sb.Append(this.CqtDatabaseId.FormatForExport<Pqt, int>(version, p => p.CqtDatabaseId));
 			sb.Append(this.PackageId.FormatForExport<Pqt, string>(version, p => p.PackageId));
@@ -310,7 +310,7 @@ namespace Mail.dat
 			sb.Append(this.ReservePqt1105.FormatForExport<Pqt, string>(version, p => p.ReservePqt1105));
 			sb.Append(this.ClosingCharacter.FormatForExport<Pqt, string>(version, p => p.ClosingCharacter));
 			sb.Append(this.PackagePreparationType.FormatForExport<Pqt, string>(version, p => p.PackagePreparationType));
-			
+
 			return Task.FromResult(sb.ToString());
 		}
 	}

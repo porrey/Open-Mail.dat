@@ -4,11 +4,11 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>0.0.2</Version>
-		<AssemblyVersion>0.0.2</AssemblyVersion>
-		<FileVersion>0.0.2</FileVersion>
+		<Version>0.0.3</Version>
+		<AssemblyVersion>0.0.3</AssemblyVersion>
+		<FileVersion>0.0.3</FileVersion>
 	</PropertyGroup>
-	
+
 	<PropertyGroup>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Open Mail.dat Models</Title>
@@ -25,11 +25,11 @@
 		<PackageTags>efcore,mail.dat</PackageTags>
 		<Copyright>Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
-	  <Content Include="Services\Mail.dat.Models.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
+		<Content Include="Services\Mail.dat.Models.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -38,10 +38,8 @@
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
-	
+
 	<ItemGroup>
-		<Folder Include="Interfaces\" />
-		<Folder Include="Context\" />
 		<Folder Include="Repositories\" />
 	</ItemGroup>
 
@@ -56,12 +54,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository.abstractions\9.1.0\contentFiles\any\net9.0\Services\Diamond.Core.Repository.Abstractions.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository\9.1.0\contentFiles\any\net9.0\Services\Diamond.Core.Repository.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
+		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository.abstractions\9.1.0\contentFiles\any\net9.0\Services\Diamond.Core.Repository.Abstractions.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository\9.1.0\contentFiles\any\net9.0\Services\Diamond.Core.Repository.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 </Project>

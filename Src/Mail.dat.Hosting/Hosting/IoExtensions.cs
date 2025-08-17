@@ -33,9 +33,10 @@ namespace Mail.dat
 		/// <summary>
 		/// Adds the Open Mail.dat services to the specified service collection.
 		/// </summary>
-		public static IServiceCollection AddOpenMaildatIo(this IServiceCollection services)
+		public static IServiceCollection AddOpenMaildatIo<TDatabaseContext>(this IServiceCollection services)
+			where TDatabaseContext : MaildatContext
 		{
-			services.AddTransient<IMaildatImport, MaildatImport>();
+			services.AddTransient<IMaildatImport<TDatabaseContext>, MaildatImport<TDatabaseContext>>();
 			services.AddTransient<IMaildatExport, MaildatExport>();
 			return services;
 		}

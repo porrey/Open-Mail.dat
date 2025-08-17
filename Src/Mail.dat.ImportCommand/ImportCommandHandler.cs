@@ -28,6 +28,7 @@ using Diamond.Core.System.TemporaryFolder;
 using Humanizer;
 using Humanizer.Localisation;
 using Mail.dat.Io;
+using Mail.dat.Models;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using Spectre.Console.Rendering;
@@ -108,9 +109,14 @@ namespace Mail.dat.ImportCommand
 						using ITemporaryFolder temporaryFolder = new TemporaryFolder();
 
 						//
+						//
+						//
+						DefaultDbContextFactory contextFactory = new ();
+
+						//
 						// Create a new import instance. This is used to import the Mail.dat files.
 						//
-						IMaildatImport import = MaildatImport.Create(
+						IMaildatImport<MaildatContext> import = MaildatImport<MaildatContext>.Create(contextFactory,
 						(item) =>
 						{
 							lock (tasks)

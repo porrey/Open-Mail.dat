@@ -32,10 +32,11 @@ namespace Mail.dat.Hosting
 		/// <summary>
 		/// Adds the Open Mail.dat services to the specified service collection.
 		/// </summary>
-		public static IServiceCollection AddOpenMaildat(this IServiceCollection services)
+		public static IServiceCollection AddOpenMaildat<TDatabaseContext>(this IServiceCollection services)
+			where TDatabaseContext : MaildatContext
 		{
 			return services.AddOpenMaildatModels()
-						   .AddOpenMaildatIo();
+						   .AddOpenMaildatIo<TDatabaseContext>();
 		}
 	}
 }

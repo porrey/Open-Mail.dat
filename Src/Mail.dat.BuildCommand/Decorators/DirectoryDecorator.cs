@@ -24,6 +24,12 @@
 //
 namespace Mail.dat.BuildCommand
 {
+	/// <summary>
+	/// Provides extension methods for working with directories.
+	/// </summary>
+	/// <remarks>This class contains utility methods that extend the functionality of the <see
+	/// cref="DirectoryInfo"/> class, enabling additional operations such as deleting files based on a specified
+	/// pattern.</remarks>
 	public static class DirectoryDecorator
 	{
 		//

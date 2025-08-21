@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -45,7 +45,7 @@ namespace Mail.dat
 	[Table("Rmb", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Rmb : MaildatEntity, IRmb 
+	public partial class Rmb : MaildatEntity, IRmb
 	{
 		/// <summary>
 		/// Job ID (RMB-1001)
@@ -212,7 +212,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Rmb, string>(version, p => p.JobId, returnValue);
 			this.RmsId = line.ParseForImport<Rmb, string>(version, p => p.RmsId, returnValue);
 			this.Barcode = line.ParseForImport<Rmb, string>(version, p => p.Barcode, returnValue);
@@ -224,29 +224,27 @@ namespace Mail.dat
 			this.RmbRecordStatus = line.ParseForImport<Rmb, string>(version, p => p.RmbRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Rmb, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Rmb, string>(version, p => p.JobId, buffer, encoding);
+			this.RmsId.FormatForExport<Rmb, string>(version, p => p.RmsId, buffer, encoding);
+			this.Barcode.FormatForExport<Rmb, string>(version, p => p.Barcode, buffer, encoding);
+			this.RmbContentType.FormatForExport<Rmb, string>(version, p => p.RmbContentType, buffer, encoding);
+			this.OriginalJobId.FormatForExport<Rmb, string>(version, p => p.OriginalJobId, buffer, encoding);
+			this.OriginalUserLicenseCode.FormatForExport<Rmb, string>(version, p => p.OriginalUserLicenseCode, buffer, encoding);
+			this.RmbValue.FormatForExport<Rmb, string>(version, p => p.RmbValue, buffer, encoding);
+			this.RmbTemplateCode.FormatForExport<Rmb, string>(version, p => p.RmbTemplateCode, buffer, encoding);
+			this.RmbRecordStatus.FormatForExport<Rmb, string>(version, p => p.RmbRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Rmb, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Rmb, string>(version, p => p.JobId));
-			sb.Append(this.RmsId.FormatForExport<Rmb, string>(version, p => p.RmsId));
-			sb.Append(this.Barcode.FormatForExport<Rmb, string>(version, p => p.Barcode));
-			sb.Append(this.RmbContentType.FormatForExport<Rmb, string>(version, p => p.RmbContentType));
-			sb.Append(this.OriginalJobId.FormatForExport<Rmb, string>(version, p => p.OriginalJobId));
-			sb.Append(this.OriginalUserLicenseCode.FormatForExport<Rmb, string>(version, p => p.OriginalUserLicenseCode));
-			sb.Append(this.RmbValue.FormatForExport<Rmb, string>(version, p => p.RmbValue));
-			sb.Append(this.RmbTemplateCode.FormatForExport<Rmb, string>(version, p => p.RmbTemplateCode));
-			sb.Append(this.RmbRecordStatus.FormatForExport<Rmb, string>(version, p => p.RmbRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Rmb, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

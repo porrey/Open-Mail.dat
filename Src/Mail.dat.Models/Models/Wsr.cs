@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Wsr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Wsr : MaildatEntity, IWsr 
+	public partial class Wsr : MaildatEntity, IWsr
 	{
 		/// <summary>
 		/// Job ID (WSR-1001)
@@ -249,7 +249,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Wsr, string>(version, p => p.JobId, returnValue);
 			this.SegmentId = line.ParseForImport<Wsr, string>(version, p => p.SegmentId, returnValue);
 			this.PackageZipCode = line.ParseForImport<Wsr, string>(version, p => p.PackageZipCode, returnValue);
@@ -263,31 +263,29 @@ namespace Mail.dat
 			this.ReserveWsr1105 = line.ParseForImport<Wsr, string>(version, p => p.ReserveWsr1105, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Wsr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Wsr, string>(version, p => p.JobId, buffer, encoding);
+			this.SegmentId.FormatForExport<Wsr, string>(version, p => p.SegmentId, buffer, encoding);
+			this.PackageZipCode.FormatForExport<Wsr, string>(version, p => p.PackageZipCode, buffer, encoding);
+			this.PackageCRNumber.FormatForExport<Wsr, string>(version, p => p.PackageCRNumber, buffer, encoding);
+			this.CoPalletizationCode.FormatForExport<Wsr, string>(version, p => p.CoPalletizationCode, buffer, encoding);
+			this.WalkSequenceType.FormatForExport<Wsr, string>(version, p => p.WalkSequenceType, buffer, encoding);
+			this.WalkSequenceStops.FormatForExport<Wsr, int>(version, p => p.WalkSequenceStops, buffer, encoding);
+			this.WalkSequenceDenominator.FormatForExport<Wsr, int>(version, p => p.WalkSequenceDenominator, buffer, encoding);
+			this.WalkSequenceDatabaseDate.FormatForExport<Wsr, DateOnly>(version, p => p.WalkSequenceDatabaseDate, buffer, encoding);
+			this.WsrRecordStatus.FormatForExport<Wsr, string>(version, p => p.WsrRecordStatus, buffer, encoding);
+			this.ReserveWsr1105.FormatForExport<Wsr, string>(version, p => p.ReserveWsr1105, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Wsr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Wsr, string>(version, p => p.JobId));
-			sb.Append(this.SegmentId.FormatForExport<Wsr, string>(version, p => p.SegmentId));
-			sb.Append(this.PackageZipCode.FormatForExport<Wsr, string>(version, p => p.PackageZipCode));
-			sb.Append(this.PackageCRNumber.FormatForExport<Wsr, string>(version, p => p.PackageCRNumber));
-			sb.Append(this.CoPalletizationCode.FormatForExport<Wsr, string>(version, p => p.CoPalletizationCode));
-			sb.Append(this.WalkSequenceType.FormatForExport<Wsr, string>(version, p => p.WalkSequenceType));
-			sb.Append(this.WalkSequenceStops.FormatForExport<Wsr, int>(version, p => p.WalkSequenceStops));
-			sb.Append(this.WalkSequenceDenominator.FormatForExport<Wsr, int>(version, p => p.WalkSequenceDenominator));
-			sb.Append(this.WalkSequenceDatabaseDate.FormatForExport<Wsr, DateOnly>(version, p => p.WalkSequenceDatabaseDate));
-			sb.Append(this.WsrRecordStatus.FormatForExport<Wsr, string>(version, p => p.WsrRecordStatus));
-			sb.Append(this.ReserveWsr1105.FormatForExport<Wsr, string>(version, p => p.ReserveWsr1105));
-			sb.Append(this.ClosingCharacter.FormatForExport<Wsr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

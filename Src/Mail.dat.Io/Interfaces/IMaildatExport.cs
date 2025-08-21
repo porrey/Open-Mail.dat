@@ -38,6 +38,6 @@ namespace Mail.dat.Io
 		/// langword="null"/>.</param>
 		/// <returns>A task that represents the asynchronous export operation. The task result is <see langword="true"/> if the export
 		/// completes successfully; otherwise, <see langword="false"/>.</returns>
-		Task<bool> ExportAsync(IExportOptions options);
+		Task<bool> ExportAsync(IMaildatFile file, IExportOptions options);
 	}
 }

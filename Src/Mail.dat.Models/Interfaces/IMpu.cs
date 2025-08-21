@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -28,7 +28,7 @@ namespace Mail.dat
 	/// <summary>
 	/// A common code for set of components in a mail piece.
 	/// </summary>
-	public interface IMpu : IMaildatEntity 
+	public interface IMpu : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (MPU-1001)

@@ -129,7 +129,7 @@ namespace Mail.dat
 		/// <param name="version">The version of the attribute to match.</param>
 		/// <returns>The <see cref="MaildatFileAttribute"/> that matches the specified version, or <see langword="null"/> if no
 		/// matching attribute is found.</returns>
-		public static MaildatFileAttribute GetMaildatFiledAttribute(this Type type, string version)
+		public static MaildatFileAttribute GetMaildatFieldAttribute(this Type type, string version)
 		{
 			MaildatFileAttribute returnValue = null;
 
@@ -231,22 +231,23 @@ namespace Mail.dat
 		}
 
 		/// <summary>
-		/// Formats the specified value for export based on the provided version and property expression.
+		/// Formats the specified value for export based on the provided property expression, version, and encoding.
 		/// </summary>
-		/// <remarks>This method uses metadata from the property specified in the <paramref
-		/// name="propertyExpression"/> to determine the appropriate formatting rules, including any custom type converters
-		/// defined for the property. If no metadata or type converter is found, the method returns <see
-		/// langword="null"/>.</remarks>
-		/// <typeparam name="TModel">The type of the model containing the property.</typeparam>
+		/// <remarks>This method uses metadata from the <see cref="MaildatFieldAttribute"/> applied to the property
+		/// specified in <paramref name="propertyExpression"/> to determine the formatting rules, including the start position
+		/// and length within the buffer. The value is converted to a string using a type converter and then encoded into the
+		/// buffer using the specified encoding.</remarks>
+		/// <typeparam name="TModel">The type of the model containing the property to be formatted.</typeparam>
 		/// <typeparam name="TValue">The type of the value to be formatted.</typeparam>
 		/// <param name="value">The value to be formatted for export.</param>
 		/// <param name="version">The version identifier used to determine the formatting rules.</param>
-		/// <param name="propertyExpression">An expression that identifies the property of the model to which the value corresponds.</param>
-		/// <returns>A string representation of the formatted value, or <see langword="null"/> if the value cannot be formatted.</returns>
-		public static string FormatForExport<TModel, TValue>(this TValue value, string version, Expression<Func<TModel, TValue>> propertyExpression)
+		/// <param name="propertyExpression">An expression that specifies the property of the model to which the value corresponds. The property must be
+		/// decorated with a <see cref="MaildatFieldAttribute"/>.</param>
+		/// <param name="buffer">A span of bytes that will be populated with the formatted value. The method writes the formatted value to the
+		/// portion of the buffer specified by the <see cref="MaildatFieldAttribute"/>.</param>
+		/// <param name="encoding">The encoding used to convert the formatted value to bytes.</param>
+		public static void FormatForExport<TModel, TValue>(this TValue value, string version, Expression<Func<TModel, TValue>> propertyExpression, Span<byte> buffer, Encoding encoding)
 		{
-			string returnValue = null;
-
 			//
 			// Get PropertyInfo from the expression.
 			//
@@ -254,7 +255,7 @@ namespace Mail.dat
 			{
 				MaildatFieldAttribute attribute = propInfo.GetMaildatFieldAttribute(version);
 
-				if (attribute != null)
+				if (attribute != null && attribute.Version == version)
 				{
 					//
 					// Get the type converter defined in the property attribute.
@@ -266,7 +267,9 @@ namespace Mail.dat
 						//
 						// Try to convert.
 						//
-						returnValue = typeConverter.ConvertToString(new ConverterContext(value, attribute), value);
+						Span<byte> slice = buffer.Slice(attribute.Start - 1, attribute.Length);
+						string exportValue = typeConverter.ConvertToString(new ConverterContext(value, attribute), value);
+						encoding.GetBytes(exportValue).CopyTo(slice);
 					}
 					catch
 					{
@@ -274,8 +277,6 @@ namespace Mail.dat
 					}
 				}
 			}
-
-			return returnValue;
 		}
 	}
 }

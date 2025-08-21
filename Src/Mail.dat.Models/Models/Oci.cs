@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Oci", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Oci : MaildatEntity, IOci 
+	public partial class Oci : MaildatEntity, IOci
 	{
 		/// <summary>
 		/// Job ID (OCI-1001)
@@ -259,7 +259,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Oci, string>(version, p => p.JobId, returnValue);
 			this.ContainerId = line.ParseForImport<Oci, int>(version, p => p.ContainerId, returnValue);
 			this.OriginalJobId = line.ParseForImport<Oci, string>(version, p => p.OriginalJobId, returnValue);
@@ -275,33 +275,31 @@ namespace Mail.dat
 			this.ReserveOci1110 = line.ParseForImport<Oci, string>(version, p => p.ReserveOci1110, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Oci, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Oci, string>(version, p => p.JobId, buffer, encoding);
+			this.ContainerId.FormatForExport<Oci, int>(version, p => p.ContainerId, buffer, encoding);
+			this.OriginalJobId.FormatForExport<Oci, string>(version, p => p.OriginalJobId, buffer, encoding);
+			this.OriginalUserLicenseCode.FormatForExport<Oci, string>(version, p => p.OriginalUserLicenseCode, buffer, encoding);
+			this.OriginalSegmentId.FormatForExport<Oci, string>(version, p => p.OriginalSegmentId, buffer, encoding);
+			this.OriginalContainerId.FormatForExport<Oci, int>(version, p => p.OriginalContainerId, buffer, encoding);
+			this.OriginalDisplayContainerId.FormatForExport<Oci, string>(version, p => p.OriginalDisplayContainerId, buffer, encoding);
+			this.OriginalLabelImContainerOrImTrayBarcode.FormatForExport<Oci, string>(version, p => p.OriginalLabelImContainerOrImTrayBarcode, buffer, encoding);
+			this.OriginalMailXmlCustomerGroupId.FormatForExport<Oci, string>(version, p => p.OriginalMailXmlCustomerGroupId, buffer, encoding);
+			this.OriginalMailXmlMailingGroupId.FormatForExport<Oci, string>(version, p => p.OriginalMailXmlMailingGroupId, buffer, encoding);
+			this.OriginalMailXmlContainerId.FormatForExport<Oci, int?>(version, p => p.OriginalMailXmlContainerId, buffer, encoding);
+			this.OciRecordStatus.FormatForExport<Oci, string>(version, p => p.OciRecordStatus, buffer, encoding);
+			this.ReserveOci1110.FormatForExport<Oci, string>(version, p => p.ReserveOci1110, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Oci, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Oci, string>(version, p => p.JobId));
-			sb.Append(this.ContainerId.FormatForExport<Oci, int>(version, p => p.ContainerId));
-			sb.Append(this.OriginalJobId.FormatForExport<Oci, string>(version, p => p.OriginalJobId));
-			sb.Append(this.OriginalUserLicenseCode.FormatForExport<Oci, string>(version, p => p.OriginalUserLicenseCode));
-			sb.Append(this.OriginalSegmentId.FormatForExport<Oci, string>(version, p => p.OriginalSegmentId));
-			sb.Append(this.OriginalContainerId.FormatForExport<Oci, int>(version, p => p.OriginalContainerId));
-			sb.Append(this.OriginalDisplayContainerId.FormatForExport<Oci, string>(version, p => p.OriginalDisplayContainerId));
-			sb.Append(this.OriginalLabelImContainerOrImTrayBarcode.FormatForExport<Oci, string>(version, p => p.OriginalLabelImContainerOrImTrayBarcode));
-			sb.Append(this.OriginalMailXmlCustomerGroupId.FormatForExport<Oci, string>(version, p => p.OriginalMailXmlCustomerGroupId));
-			sb.Append(this.OriginalMailXmlMailingGroupId.FormatForExport<Oci, string>(version, p => p.OriginalMailXmlMailingGroupId));
-			sb.Append(this.OriginalMailXmlContainerId.FormatForExport<Oci, int?>(version, p => p.OriginalMailXmlContainerId));
-			sb.Append(this.OciRecordStatus.FormatForExport<Oci, string>(version, p => p.OciRecordStatus));
-			sb.Append(this.ReserveOci1110.FormatForExport<Oci, string>(version, p => p.ReserveOci1110));
-			sb.Append(this.ClosingCharacter.FormatForExport<Oci, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

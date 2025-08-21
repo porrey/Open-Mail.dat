@@ -26,10 +26,8 @@ using System.Reflection;
 using Mail.dat.Io.Models;
 using Mail.dat.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Mail.dat.Io
@@ -111,7 +109,7 @@ namespace Mail.dat.Io
 				//
 				if (options.SourceFile.IsZipped)
 				{
-					if (!await options.SourceFile.Unzip(options.TemporaryDirectory))
+					if (!await options.SourceFile.UnzipAsync(options.TemporaryDirectory))
 					{
 						throw new Exception($"The file '{options.SourceFile.FilePath}' could not be unzipped.");
 					}
@@ -187,10 +185,22 @@ namespace Mail.dat.Io
 				try
 				{
 					//
+					// Set up parallel options for the import operation.
+					//
+					ParallelOptions parallelOptions = new()
+					{
+						CancellationToken = options.CancellationToken,
+#if DEBUG
+						MaxDegreeOfParallelism = Environment.ProcessorCount
+#else
+						MaxDegreeOfParallelism = Environment.ProcessorCount
+#endif
+					};
+
+					//
 					// Use Parallel.ForEach to import each entity type.
 					//
-					// new ParallelOptions() { MaxDegreeOfParallelism = 1 },
-					Parallel.ForEach(entities, (entityType) =>
+					Parallel.ForEach(entities, parallelOptions, (entityType) =>
 					{
 						//
 						// Check if the cancellation token has been requested.

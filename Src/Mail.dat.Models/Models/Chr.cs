@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,14 +35,14 @@ namespace Mail.dat
 	/// Is used to capture the header information that is present on the Certificate of Mailing Form.
 	/// Provides the header information that is present on the Certificate of Mailing Forms.
 	/// </summary>
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "chr", File = "Certificate of Mailing Header record", Summary = "Is used to capture the header information that is present on the Certificate of Mailing Form.", Description = "Is used to capture the header information that is present on the Certificate of Mailing Form. Provides the header information that is present on the Certificate of Mailing Forms.", LineLength = 347, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "chr", File = "Certificate of Mailing Header record", Summary = "Is used to capture the header information that is present on the Certificate of Mailing Form.", Description = "Is used to capture the header information that is present on the Certificate of Mailing Form. Provides the header information that is present on the Certificate of Mailing Forms.", LineLength = 386, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "chr", File = "Certificate of Mailing Header Record", Summary = "Is used to capture the header information that is present on the Certificate of Mailing Form.", Description = "Is used to capture the header information that is present on the Certificate of Mailing Form. Provides the header information that is present on the Certificate of Mailing Forms.", LineLength = 347, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "chr", File = "Certificate of Mailing Header Record", Summary = "Is used to capture the header information that is present on the Certificate of Mailing Form.", Description = "Is used to capture the header information that is present on the Certificate of Mailing Form. Provides the header information that is present on the Certificate of Mailing Forms.", LineLength = 386, ClosingCharacter = "#")]
 	[MaildatImport(Order = 25, Version = "24-1")]
 	[MaildatImport(Order = 25, Version = "25-1")]
 	[Table("Chr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("24-1", "25-1")]
-	public partial class Chr : MaildatEntity, IChr 
+	public partial class Chr : MaildatEntity, IChr
 	{
 		/// <summary>
 		/// Job ID (CHR-1001)
@@ -292,12 +292,37 @@ namespace Mail.dat
 		public string MpaId { get; set; }
 
 		/// <summary>
+		/// Verification Facility Name (CHR-1121)
+		/// Name of Mailing Facility where verification occurs.
+		/// </summary>
+		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1121", FieldName = "Verification Facility Name", Start = 320, Length = 30, Required = false, Key = false, DataType = "A/N", Description = "Name of Mailing Facility where verification occurs.", Type = "string", Format = "leftjustify")]
+		[Column("VerificationFacilityName", Order = 20, TypeName = "TEXT")]
+		[MaxLength(30)]
+		[Comment("CHR-1121")]
+		[TypeConverter(typeof(MaildatStringConverter))]
+		[MaildatVersions("25-1")]
+		public string VerificationFacilityName { get; set; }
+
+		/// <summary>
+		/// Verification Facility ZIP Code (CHR-1122)
+		/// ZIP Code of Post Office where postage statement will be finalized (the associated BMEU, not the
+		/// DMU).
+		/// </summary>
+		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1122", FieldName = "Verification Facility ZIP Code", Start = 350, Length = 9, Required = false, Key = false, DataType = "A/N", Description = "ZIP Code of Post Office where postage statement will be finalized (the associated BMEU, not the DMU).", Type = "string", Format = "leftjustify")]
+		[Column("VerificationFacilityZipCode", Order = 21, TypeName = "TEXT")]
+		[MaxLength(9)]
+		[Comment("CHR-1122")]
+		[TypeConverter(typeof(MaildatStringConverter))]
+		[MaildatVersions("25-1")]
+		public string VerificationFacilityZipCode { get; set; }
+
+		/// <summary>
 		/// Flex Option A (CHR-1117)
 		/// Reserve Option.
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "chr", FieldCode = "CHR-1117", FieldName = "Flex Option A", Start = 320, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1117", FieldName = "Flex Option A", Start = 359, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
-		[Column("FlexOptionA", Order = 20, TypeName = "TEXT")]
+		[Column("FlexOptionA", Order = 22, TypeName = "TEXT")]
 		[MaxLength(2)]
 		[Comment("CHR-1117")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -310,7 +335,7 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "chr", FieldCode = "CHR-1118", FieldName = "Flex Option B", Start = 322, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1118", FieldName = "Flex Option B", Start = 361, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
-		[Column("FlexOptionB", Order = 21, TypeName = "TEXT")]
+		[Column("FlexOptionB", Order = 23, TypeName = "TEXT")]
 		[MaxLength(2)]
 		[Comment("CHR-1118")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -323,7 +348,7 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "chr", FieldCode = "CHR-1119", FieldName = "Flex Option C", Start = 324, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1119", FieldName = "Flex Option C", Start = 363, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
-		[Column("FlexOptionC", Order = 22, TypeName = "TEXT")]
+		[Column("FlexOptionC", Order = 24, TypeName = "TEXT")]
 		[MaxLength(2)]
 		[Comment("CHR-1119")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -336,7 +361,7 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "chr", FieldCode = "CHR-1120", FieldName = "Reserve", Start = 326, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1120", FieldName = "Reserve", Start = 365, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
-		[Column("ReserveChr1120", Order = 23, TypeName = "TEXT")]
+		[Column("ReserveChr1120", Order = 25, TypeName = "TEXT")]
 		[MaxLength(20)]
 		[Comment("CHR-1120")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -349,7 +374,7 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "chr", FieldCode = "CHR-2000", FieldName = "CHR Record Status", Start = 346, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-2000", FieldName = "CHR Record Status", Start = 385, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
-		[Column("ChrRecordStatus", Order = 24, TypeName = "TEXT")]
+		[Column("ChrRecordStatus", Order = 26, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("D", "I", "O", "U")]
@@ -365,7 +390,7 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "chr", FieldCode = "CHR-9999", FieldName = "Closing Character", Start = 347, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-9999", FieldName = "Closing Character", Start = 386, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
-		[Column("ClosingCharacter", Order = 25, TypeName = "TEXT")]
+		[Column("ClosingCharacter", Order = 27, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
@@ -375,37 +400,12 @@ namespace Mail.dat
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>
-		/// Verification Facility Name (CHR-1121)
-		/// Name of Mailing Facility where verification occurs.
-		/// </summary>
-		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1121", FieldName = "Verification Facility Name", Start = 320, Length = 30, Required = false, Key = false, DataType = "A/N", Description = "Name of Mailing Facility where verification occurs.", Type = "string", Format = "leftjustify")]
-		[Column("VerificationFacilityName", Order = 26, TypeName = "TEXT")]
-		[MaxLength(30)]
-		[Comment("CHR-1121")]
-		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("25-1")]
-		public string VerificationFacilityName { get; set; }
-
-		/// <summary>
-		/// Verification Facility ZIP Code (CHR-1122)
-		/// ZIP Code of Post Office where postage statement will be finalized (the associated BMEU, not the
-		/// DMU).
-		/// </summary>
-		[MaildatField(Version = "25-1", Extension = "chr", FieldCode = "CHR-1122", FieldName = "Verification Facility ZIP Code", Start = 350, Length = 9, Required = false, Key = false, DataType = "A/N", Description = "ZIP Code of Post Office where postage statement will be finalized (the associated BMEU, not the DMU).", Type = "string", Format = "leftjustify")]
-		[Column("VerificationFacilityZipCode", Order = 27, TypeName = "TEXT")]
-		[MaxLength(9)]
-		[Comment("CHR-1122")]
-		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("25-1")]
-		public string VerificationFacilityZipCode { get; set; }
-
-		/// <summary>
 		/// Sets property values from one line of an import file.
 		/// </summary>
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Chr, string>(version, p => p.JobId, returnValue);
 			this.CertificateOfMailingHeaderId = line.ParseForImport<Chr, string>(version, p => p.CertificateOfMailingHeaderId, returnValue);
 			this.FormType = line.ParseForImport<Chr, string>(version, p => p.FormType, returnValue);
@@ -424,54 +424,52 @@ namespace Mail.dat
 			this.MailingDate = line.ParseForImport<Chr, DateOnly?>(version, p => p.MailingDate, returnValue);
 			this.CertificateStatus = line.ParseForImport<Chr, string>(version, p => p.CertificateStatus, returnValue);
 			this.MpaId = line.ParseForImport<Chr, string>(version, p => p.MpaId, returnValue);
+			this.VerificationFacilityName = line.ParseForImport<Chr, string>(version, p => p.VerificationFacilityName, returnValue);
+			this.VerificationFacilityZipCode = line.ParseForImport<Chr, string>(version, p => p.VerificationFacilityZipCode, returnValue);
 			this.FlexOptionA = line.ParseForImport<Chr, string>(version, p => p.FlexOptionA, returnValue);
 			this.FlexOptionB = line.ParseForImport<Chr, string>(version, p => p.FlexOptionB, returnValue);
 			this.FlexOptionC = line.ParseForImport<Chr, string>(version, p => p.FlexOptionC, returnValue);
 			this.ReserveChr1120 = line.ParseForImport<Chr, string>(version, p => p.ReserveChr1120, returnValue);
 			this.ChrRecordStatus = line.ParseForImport<Chr, string>(version, p => p.ChrRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Chr, string>(version, p => p.ClosingCharacter, returnValue);
-			this.VerificationFacilityName = line.ParseForImport<Chr, string>(version, p => p.VerificationFacilityName, returnValue);
-			this.VerificationFacilityZipCode = line.ParseForImport<Chr, string>(version, p => p.VerificationFacilityZipCode, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Chr, string>(version, p => p.JobId, buffer, encoding);
+			this.CertificateOfMailingHeaderId.FormatForExport<Chr, string>(version, p => p.CertificateOfMailingHeaderId, buffer, encoding);
+			this.FormType.FormatForExport<Chr, string>(version, p => p.FormType, buffer, encoding);
+			this.SenderTrackingId.FormatForExport<Chr, string>(version, p => p.SenderTrackingId, buffer, encoding);
+			this.PresortMailingJobId.FormatForExport<Chr, string>(version, p => p.PresortMailingJobId, buffer, encoding);
+			this.PresortMailingUserLicenseCode.FormatForExport<Chr, string>(version, p => p.PresortMailingUserLicenseCode, buffer, encoding);
+			this.MailOwnerContactName.FormatForExport<Chr, string>(version, p => p.MailOwnerContactName, buffer, encoding);
+			this.MailOwnerCompanyName.FormatForExport<Chr, string>(version, p => p.MailOwnerCompanyName, buffer, encoding);
+			this.MailOwnerSecondaryAddress.FormatForExport<Chr, string>(version, p => p.MailOwnerSecondaryAddress, buffer, encoding);
+			this.MailOwnerPrimaryAddress.FormatForExport<Chr, string>(version, p => p.MailOwnerPrimaryAddress, buffer, encoding);
+			this.MailOwnerCity.FormatForExport<Chr, string>(version, p => p.MailOwnerCity, buffer, encoding);
+			this.MailOwnerState.FormatForExport<Chr, string>(version, p => p.MailOwnerState, buffer, encoding);
+			this.MailOwnerPostalCode.FormatForExport<Chr, string>(version, p => p.MailOwnerPostalCode, buffer, encoding);
+			this.MailOwnerProvinceOrStateInternational.FormatForExport<Chr, string>(version, p => p.MailOwnerProvinceOrStateInternational, buffer, encoding);
+			this.MailOwnerCountryCode.FormatForExport<Chr, string>(version, p => p.MailOwnerCountryCode, buffer, encoding);
+			this.MailingDate.FormatForExport<Chr, DateOnly?>(version, p => p.MailingDate, buffer, encoding);
+			this.CertificateStatus.FormatForExport<Chr, string>(version, p => p.CertificateStatus, buffer, encoding);
+			this.MpaId.FormatForExport<Chr, string>(version, p => p.MpaId, buffer, encoding);
+			this.VerificationFacilityName.FormatForExport<Chr, string>(version, p => p.VerificationFacilityName, buffer, encoding);
+			this.VerificationFacilityZipCode.FormatForExport<Chr, string>(version, p => p.VerificationFacilityZipCode, buffer, encoding);
+			this.FlexOptionA.FormatForExport<Chr, string>(version, p => p.FlexOptionA, buffer, encoding);
+			this.FlexOptionB.FormatForExport<Chr, string>(version, p => p.FlexOptionB, buffer, encoding);
+			this.FlexOptionC.FormatForExport<Chr, string>(version, p => p.FlexOptionC, buffer, encoding);
+			this.ReserveChr1120.FormatForExport<Chr, string>(version, p => p.ReserveChr1120, buffer, encoding);
+			this.ChrRecordStatus.FormatForExport<Chr, string>(version, p => p.ChrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Chr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Chr, string>(version, p => p.JobId));
-			sb.Append(this.CertificateOfMailingHeaderId.FormatForExport<Chr, string>(version, p => p.CertificateOfMailingHeaderId));
-			sb.Append(this.FormType.FormatForExport<Chr, string>(version, p => p.FormType));
-			sb.Append(this.SenderTrackingId.FormatForExport<Chr, string>(version, p => p.SenderTrackingId));
-			sb.Append(this.PresortMailingJobId.FormatForExport<Chr, string>(version, p => p.PresortMailingJobId));
-			sb.Append(this.PresortMailingUserLicenseCode.FormatForExport<Chr, string>(version, p => p.PresortMailingUserLicenseCode));
-			sb.Append(this.MailOwnerContactName.FormatForExport<Chr, string>(version, p => p.MailOwnerContactName));
-			sb.Append(this.MailOwnerCompanyName.FormatForExport<Chr, string>(version, p => p.MailOwnerCompanyName));
-			sb.Append(this.MailOwnerSecondaryAddress.FormatForExport<Chr, string>(version, p => p.MailOwnerSecondaryAddress));
-			sb.Append(this.MailOwnerPrimaryAddress.FormatForExport<Chr, string>(version, p => p.MailOwnerPrimaryAddress));
-			sb.Append(this.MailOwnerCity.FormatForExport<Chr, string>(version, p => p.MailOwnerCity));
-			sb.Append(this.MailOwnerState.FormatForExport<Chr, string>(version, p => p.MailOwnerState));
-			sb.Append(this.MailOwnerPostalCode.FormatForExport<Chr, string>(version, p => p.MailOwnerPostalCode));
-			sb.Append(this.MailOwnerProvinceOrStateInternational.FormatForExport<Chr, string>(version, p => p.MailOwnerProvinceOrStateInternational));
-			sb.Append(this.MailOwnerCountryCode.FormatForExport<Chr, string>(version, p => p.MailOwnerCountryCode));
-			sb.Append(this.MailingDate.FormatForExport<Chr, DateOnly?>(version, p => p.MailingDate));
-			sb.Append(this.CertificateStatus.FormatForExport<Chr, string>(version, p => p.CertificateStatus));
-			sb.Append(this.MpaId.FormatForExport<Chr, string>(version, p => p.MpaId));
-			sb.Append(this.FlexOptionA.FormatForExport<Chr, string>(version, p => p.FlexOptionA));
-			sb.Append(this.FlexOptionB.FormatForExport<Chr, string>(version, p => p.FlexOptionB));
-			sb.Append(this.FlexOptionC.FormatForExport<Chr, string>(version, p => p.FlexOptionC));
-			sb.Append(this.ReserveChr1120.FormatForExport<Chr, string>(version, p => p.ReserveChr1120));
-			sb.Append(this.ChrRecordStatus.FormatForExport<Chr, string>(version, p => p.ChrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Chr, string>(version, p => p.ClosingCharacter));
-			sb.Append(this.VerificationFacilityName.FormatForExport<Chr, string>(version, p => p.VerificationFacilityName));
-			sb.Append(this.VerificationFacilityZipCode.FormatForExport<Chr, string>(version, p => p.VerificationFacilityZipCode));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

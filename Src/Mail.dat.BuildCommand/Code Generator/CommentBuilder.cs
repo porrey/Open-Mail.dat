@@ -29,7 +29,7 @@ namespace Mail.dat.BuildCommand
 		//
 		// Stores the lines of comments to be written.
 		//
-		public List<string> Lines { get; internal set; } = new();
+		public List<string> Lines { get; internal set; } = [];
 
 		//
 		// Specifies the maximum length for each comment line.

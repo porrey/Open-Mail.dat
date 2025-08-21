@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for
 	/// the un-coded parcels. (Links with .pdr ONLY).
 	/// </summary>
-	public interface IUpa : IMaildatEntity 
+	public interface IUpa : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (UPA-1001)

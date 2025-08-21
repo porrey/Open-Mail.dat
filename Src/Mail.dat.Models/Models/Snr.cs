@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Snr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Snr : MaildatEntity, ISnr 
+	public partial class Snr : MaildatEntity, ISnr
 	{
 		/// <summary>
 		/// Job ID (SNR-1001)
@@ -286,7 +286,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Snr, string>(version, p => p.JobId, returnValue);
 			this.ContainerId = line.ParseForImport<Snr, int>(version, p => p.ContainerId, returnValue);
 			this.PackageId = line.ParseForImport<Snr, string>(version, p => p.PackageId, returnValue);
@@ -303,34 +303,32 @@ namespace Mail.dat
 			this.ReserveSnr1103 = line.ParseForImport<Snr, string>(version, p => p.ReserveSnr1103, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Snr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Snr, string>(version, p => p.JobId, buffer, encoding);
+			this.ContainerId.FormatForExport<Snr, int>(version, p => p.ContainerId, buffer, encoding);
+			this.PackageId.FormatForExport<Snr, string>(version, p => p.PackageId, buffer, encoding);
+			this.MailPieceUnitId.FormatForExport<Snr, string>(version, p => p.MailPieceUnitId, buffer, encoding);
+			this.SeedNameId.FormatForExport<Snr, string>(version, p => p.SeedNameId, buffer, encoding);
+			this.VersionKeyCode.FormatForExport<Snr, string>(version, p => p.VersionKeyCode, buffer, encoding);
+			this.SeedNameReceivedDate.FormatForExport<Snr, DateOnly?>(version, p => p.SeedNameReceivedDate, buffer, encoding);
+			this.SeedType.FormatForExport<Snr, string>(version, p => p.SeedType, buffer, encoding);
+			this.PieceBarcode.FormatForExport<Snr, string>(version, p => p.PieceBarcode, buffer, encoding);
+			this.ReportedSeedCondition.FormatForExport<Snr, string>(version, p => p.ReportedSeedCondition, buffer, encoding);
+			this.ImBarcode.FormatForExport<Snr, string>(version, p => p.ImBarcode, buffer, encoding);
+			this.UserOptionField.FormatForExport<Snr, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.SnrRecordStatus.FormatForExport<Snr, string>(version, p => p.SnrRecordStatus, buffer, encoding);
+			this.ReserveSnr1103.FormatForExport<Snr, string>(version, p => p.ReserveSnr1103, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Snr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Snr, string>(version, p => p.JobId));
-			sb.Append(this.ContainerId.FormatForExport<Snr, int>(version, p => p.ContainerId));
-			sb.Append(this.PackageId.FormatForExport<Snr, string>(version, p => p.PackageId));
-			sb.Append(this.MailPieceUnitId.FormatForExport<Snr, string>(version, p => p.MailPieceUnitId));
-			sb.Append(this.SeedNameId.FormatForExport<Snr, string>(version, p => p.SeedNameId));
-			sb.Append(this.VersionKeyCode.FormatForExport<Snr, string>(version, p => p.VersionKeyCode));
-			sb.Append(this.SeedNameReceivedDate.FormatForExport<Snr, DateOnly?>(version, p => p.SeedNameReceivedDate));
-			sb.Append(this.SeedType.FormatForExport<Snr, string>(version, p => p.SeedType));
-			sb.Append(this.PieceBarcode.FormatForExport<Snr, string>(version, p => p.PieceBarcode));
-			sb.Append(this.ReportedSeedCondition.FormatForExport<Snr, string>(version, p => p.ReportedSeedCondition));
-			sb.Append(this.ImBarcode.FormatForExport<Snr, string>(version, p => p.ImBarcode));
-			sb.Append(this.UserOptionField.FormatForExport<Snr, string>(version, p => p.UserOptionField));
-			sb.Append(this.SnrRecordStatus.FormatForExport<Snr, string>(version, p => p.SnrRecordStatus));
-			sb.Append(this.ReserveSnr1103.FormatForExport<Snr, string>(version, p => p.ReserveSnr1103));
-			sb.Append(this.ClosingCharacter.FormatForExport<Snr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

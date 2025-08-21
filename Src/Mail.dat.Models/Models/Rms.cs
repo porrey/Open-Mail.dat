@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,16 +35,16 @@ namespace Mail.dat
 	/// Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that
 	/// can be tied to barcode records.
 	/// </summary>
-	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "rms", File = "REFERENCEABLE MAIL SUMMARY RECORD", Summary = "Referenceable Mail Summary to provide digital Content.", Description = "Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that can be tied to barcode records.", LineLength = 235, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "rms", File = "REFERENCEABLE MAIL SUMMARY RECORD", Summary = "Referenceable Mail Summary to provide digital Content.", Description = "Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that can be tied to barcode records.", LineLength = 235, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "rms", File = "REFERENCEABLE MAIL SUMMARY RECORD", Summary = "Referenceable Mail Summary to provide digital Content.", Description = "Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that can be tied to barcode records.", LineLength = 235, ClosingCharacter = "#")]
+	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "rms", File = "Referenceable Mail Summary Record", Summary = "Referenceable Mail Summary to provide digital Content.", Description = "Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that can be tied to barcode records.", LineLength = 235, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "rms", File = "Referenceable Mail Summary Record", Summary = "Referenceable Mail Summary to provide digital Content.", Description = "Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that can be tied to barcode records.", LineLength = 235, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "rms", File = "Referenceable Mail Summary Record", Summary = "Referenceable Mail Summary to provide digital Content.", Description = "Referenceable Mail Summary to provide digital Content. Records identify a summary of campaigns that can be tied to barcode records.", LineLength = 235, ClosingCharacter = "#")]
 	[MaildatImport(Order = 24, Version = "23-1")]
 	[MaildatImport(Order = 24, Version = "24-1")]
 	[MaildatImport(Order = 24, Version = "25-1")]
 	[Table("Rms", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Rms : MaildatEntity, IRms 
+	public partial class Rms : MaildatEntity, IRms
 	{
 		/// <summary>
 		/// Job ID (RMS-1001)
@@ -409,7 +409,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Rms, string>(version, p => p.JobId, returnValue);
 			this.RmsId = line.ParseForImport<Rms, string>(version, p => p.RmsId, returnValue);
 			this.ReserveRms1009 = line.ParseForImport<Rms, string>(version, p => p.ReserveRms1009, returnValue);
@@ -433,41 +433,39 @@ namespace Mail.dat
 			this.RmsRecordStatus = line.ParseForImport<Rms, string>(version, p => p.RmsRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Rms, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Rms, string>(version, p => p.JobId, buffer, encoding);
+			this.RmsId.FormatForExport<Rms, string>(version, p => p.RmsId, buffer, encoding);
+			this.ReserveRms1009.FormatForExport<Rms, string>(version, p => p.ReserveRms1009, buffer, encoding);
+			this.CampaignTitle.FormatForExport<Rms, string>(version, p => p.CampaignTitle, buffer, encoding);
+			this.CampaignCode.FormatForExport<Rms, string>(version, p => p.CampaignCode, buffer, encoding);
+			this.CampaignSerialGrouping.FormatForExport<Rms, string>(version, p => p.CampaignSerialGrouping, buffer, encoding);
+			this.DisplayName.FormatForExport<Rms, string>(version, p => p.DisplayName, buffer, encoding);
+			this.DateStart.FormatForExport<Rms, DateOnly?>(version, p => p.DateStart, buffer, encoding);
+			this.DateEnd.FormatForExport<Rms, DateOnly?>(version, p => p.DateEnd, buffer, encoding);
+			this.CampaignSharingIndicator.FormatForExport<Rms, string>(version, p => p.CampaignSharingIndicator, buffer, encoding);
+			this.CampaignTargetUrlParametersIndicator.FormatForExport<Rms, string>(version, p => p.CampaignTargetUrlParametersIndicator, buffer, encoding);
+			this.CampaignMailOwnerCrid.FormatForExport<Rms, string>(version, p => p.CampaignMailOwnerCrid, buffer, encoding);
+			this.CampaignMailPreparerCrid.FormatForExport<Rms, string>(version, p => p.CampaignMailPreparerCrid, buffer, encoding);
+			this.CampaignProcessingCategory.FormatForExport<Rms, string>(version, p => p.CampaignProcessingCategory, buffer, encoding);
+			this.FlexOptionA.FormatForExport<Rms, string>(version, p => p.FlexOptionA, buffer, encoding);
+			this.FlexOptionB.FormatForExport<Rms, string>(version, p => p.FlexOptionB, buffer, encoding);
+			this.FlexOptionC.FormatForExport<Rms, string>(version, p => p.FlexOptionC, buffer, encoding);
+			this.FlexOptionD.FormatForExport<Rms, string>(version, p => p.FlexOptionD, buffer, encoding);
+			this.FlexOptionE.FormatForExport<Rms, string>(version, p => p.FlexOptionE, buffer, encoding);
+			this.ReserveRms1020.FormatForExport<Rms, string>(version, p => p.ReserveRms1020, buffer, encoding);
+			this.RmsRecordStatus.FormatForExport<Rms, string>(version, p => p.RmsRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Rms, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Rms, string>(version, p => p.JobId));
-			sb.Append(this.RmsId.FormatForExport<Rms, string>(version, p => p.RmsId));
-			sb.Append(this.ReserveRms1009.FormatForExport<Rms, string>(version, p => p.ReserveRms1009));
-			sb.Append(this.CampaignTitle.FormatForExport<Rms, string>(version, p => p.CampaignTitle));
-			sb.Append(this.CampaignCode.FormatForExport<Rms, string>(version, p => p.CampaignCode));
-			sb.Append(this.CampaignSerialGrouping.FormatForExport<Rms, string>(version, p => p.CampaignSerialGrouping));
-			sb.Append(this.DisplayName.FormatForExport<Rms, string>(version, p => p.DisplayName));
-			sb.Append(this.DateStart.FormatForExport<Rms, DateOnly?>(version, p => p.DateStart));
-			sb.Append(this.DateEnd.FormatForExport<Rms, DateOnly?>(version, p => p.DateEnd));
-			sb.Append(this.CampaignSharingIndicator.FormatForExport<Rms, string>(version, p => p.CampaignSharingIndicator));
-			sb.Append(this.CampaignTargetUrlParametersIndicator.FormatForExport<Rms, string>(version, p => p.CampaignTargetUrlParametersIndicator));
-			sb.Append(this.CampaignMailOwnerCrid.FormatForExport<Rms, string>(version, p => p.CampaignMailOwnerCrid));
-			sb.Append(this.CampaignMailPreparerCrid.FormatForExport<Rms, string>(version, p => p.CampaignMailPreparerCrid));
-			sb.Append(this.CampaignProcessingCategory.FormatForExport<Rms, string>(version, p => p.CampaignProcessingCategory));
-			sb.Append(this.FlexOptionA.FormatForExport<Rms, string>(version, p => p.FlexOptionA));
-			sb.Append(this.FlexOptionB.FormatForExport<Rms, string>(version, p => p.FlexOptionB));
-			sb.Append(this.FlexOptionC.FormatForExport<Rms, string>(version, p => p.FlexOptionC));
-			sb.Append(this.FlexOptionD.FormatForExport<Rms, string>(version, p => p.FlexOptionD));
-			sb.Append(this.FlexOptionE.FormatForExport<Rms, string>(version, p => p.FlexOptionE));
-			sb.Append(this.ReserveRms1020.FormatForExport<Rms, string>(version, p => p.ReserveRms1020));
-			sb.Append(this.RmsRecordStatus.FormatForExport<Rms, string>(version, p => p.RmsRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Rms, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Mpu", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Mpu : MaildatEntity, IMpu 
+	public partial class Mpu : MaildatEntity, IMpu
 	{
 		/// <summary>
 		/// Job ID (MPU-1001)
@@ -550,7 +550,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Mpu, string>(version, p => p.JobId, returnValue);
 			this.SegmentId = line.ParseForImport<Mpu, string>(version, p => p.SegmentId, returnValue);
 			this.MailPieceUnitId = line.ParseForImport<Mpu, string>(version, p => p.MailPieceUnitId, returnValue);
@@ -582,49 +582,47 @@ namespace Mail.dat
 			this.ReserveMpu1121 = line.ParseForImport<Mpu, string>(version, p => p.ReserveMpu1121, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Mpu, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Mpu, string>(version, p => p.JobId, buffer, encoding);
+			this.SegmentId.FormatForExport<Mpu, string>(version, p => p.SegmentId, buffer, encoding);
+			this.MailPieceUnitId.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitId, buffer, encoding);
+			this.MailPieceUnitName.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitName, buffer, encoding);
+			this.MailPieceUnitDescription.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitDescription, buffer, encoding);
+			this.MailPieceUnitWeight.FormatForExport<Mpu, decimal>(version, p => p.MailPieceUnitWeight, buffer, encoding);
+			this.MpuWeightSource.FormatForExport<Mpu, string>(version, p => p.MpuWeightSource, buffer, encoding);
+			this.MpuWeightStatus.FormatForExport<Mpu, string>(version, p => p.MpuWeightStatus, buffer, encoding);
+			this.MailPieceUnitLength.FormatForExport<Mpu, decimal?>(version, p => p.MailPieceUnitLength, buffer, encoding);
+			this.MailPieceUnitWidth.FormatForExport<Mpu, decimal?>(version, p => p.MailPieceUnitWidth, buffer, encoding);
+			this.MailPieceUnitThickness.FormatForExport<Mpu, decimal?>(version, p => p.MailPieceUnitThickness, buffer, encoding);
+			this.MailPieceUnitClass.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitClass, buffer, encoding);
+			this.MailPieceUnitRateType.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitRateType, buffer, encoding);
+			this.RateSchedule.FormatForExport<Mpu, string>(version, p => p.RateSchedule, buffer, encoding);
+			this.MailPieceUnitProcessingCategory.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitProcessingCategory, buffer, encoding);
+			this.MpuSurcharge.FormatForExport<Mpu, string>(version, p => p.MpuSurcharge, buffer, encoding);
+			this.CoPalletizationCode.FormatForExport<Mpu, string>(version, p => p.CoPalletizationCode, buffer, encoding);
+			this.MachinabilityIndicator.FormatForExport<Mpu, string>(version, p => p.MachinabilityIndicator, buffer, encoding);
+			this.PreDenominatedAmount.FormatForExport<Mpu, decimal?>(version, p => p.PreDenominatedAmount, buffer, encoding);
+			this.PostageAffixedType.FormatForExport<Mpu, string>(version, p => p.PostageAffixedType, buffer, encoding);
+			this.StandardParcelType.FormatForExport<Mpu, string>(version, p => p.StandardParcelType, buffer, encoding);
+			this.UserOptionField.FormatForExport<Mpu, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.MoveUpdateSupplierCrid.FormatForExport<Mpu, string>(version, p => p.MoveUpdateSupplierCrid, buffer, encoding);
+			this.PieceUniquenessManagerCrid.FormatForExport<Mpu, string>(version, p => p.PieceUniquenessManagerCrid, buffer, encoding);
+			this.MpuRecordStatus.FormatForExport<Mpu, string>(version, p => p.MpuRecordStatus, buffer, encoding);
+			this.GroupedExtraServiceType.FormatForExport<Mpu, string>(version, p => p.GroupedExtraServiceType, buffer, encoding);
+			this.GroupedExtraServiceBarcode.FormatForExport<Mpu, string>(version, p => p.GroupedExtraServiceBarcode, buffer, encoding);
+			this.ImpbBarcodeConstructCode.FormatForExport<Mpu, string>(version, p => p.ImpbBarcodeConstructCode, buffer, encoding);
+			this.ReserveMpu1121.FormatForExport<Mpu, string>(version, p => p.ReserveMpu1121, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Mpu, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Mpu, string>(version, p => p.JobId));
-			sb.Append(this.SegmentId.FormatForExport<Mpu, string>(version, p => p.SegmentId));
-			sb.Append(this.MailPieceUnitId.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitId));
-			sb.Append(this.MailPieceUnitName.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitName));
-			sb.Append(this.MailPieceUnitDescription.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitDescription));
-			sb.Append(this.MailPieceUnitWeight.FormatForExport<Mpu, decimal>(version, p => p.MailPieceUnitWeight));
-			sb.Append(this.MpuWeightSource.FormatForExport<Mpu, string>(version, p => p.MpuWeightSource));
-			sb.Append(this.MpuWeightStatus.FormatForExport<Mpu, string>(version, p => p.MpuWeightStatus));
-			sb.Append(this.MailPieceUnitLength.FormatForExport<Mpu, decimal?>(version, p => p.MailPieceUnitLength));
-			sb.Append(this.MailPieceUnitWidth.FormatForExport<Mpu, decimal?>(version, p => p.MailPieceUnitWidth));
-			sb.Append(this.MailPieceUnitThickness.FormatForExport<Mpu, decimal?>(version, p => p.MailPieceUnitThickness));
-			sb.Append(this.MailPieceUnitClass.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitClass));
-			sb.Append(this.MailPieceUnitRateType.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitRateType));
-			sb.Append(this.RateSchedule.FormatForExport<Mpu, string>(version, p => p.RateSchedule));
-			sb.Append(this.MailPieceUnitProcessingCategory.FormatForExport<Mpu, string>(version, p => p.MailPieceUnitProcessingCategory));
-			sb.Append(this.MpuSurcharge.FormatForExport<Mpu, string>(version, p => p.MpuSurcharge));
-			sb.Append(this.CoPalletizationCode.FormatForExport<Mpu, string>(version, p => p.CoPalletizationCode));
-			sb.Append(this.MachinabilityIndicator.FormatForExport<Mpu, string>(version, p => p.MachinabilityIndicator));
-			sb.Append(this.PreDenominatedAmount.FormatForExport<Mpu, decimal?>(version, p => p.PreDenominatedAmount));
-			sb.Append(this.PostageAffixedType.FormatForExport<Mpu, string>(version, p => p.PostageAffixedType));
-			sb.Append(this.StandardParcelType.FormatForExport<Mpu, string>(version, p => p.StandardParcelType));
-			sb.Append(this.UserOptionField.FormatForExport<Mpu, string>(version, p => p.UserOptionField));
-			sb.Append(this.MoveUpdateSupplierCrid.FormatForExport<Mpu, string>(version, p => p.MoveUpdateSupplierCrid));
-			sb.Append(this.PieceUniquenessManagerCrid.FormatForExport<Mpu, string>(version, p => p.PieceUniquenessManagerCrid));
-			sb.Append(this.MpuRecordStatus.FormatForExport<Mpu, string>(version, p => p.MpuRecordStatus));
-			sb.Append(this.GroupedExtraServiceType.FormatForExport<Mpu, string>(version, p => p.GroupedExtraServiceType));
-			sb.Append(this.GroupedExtraServiceBarcode.FormatForExport<Mpu, string>(version, p => p.GroupedExtraServiceBarcode));
-			sb.Append(this.ImpbBarcodeConstructCode.FormatForExport<Mpu, string>(version, p => p.ImpbBarcodeConstructCode));
-			sb.Append(this.ReserveMpu1121.FormatForExport<Mpu, string>(version, p => p.ReserveMpu1121));
-			sb.Append(this.ClosingCharacter.FormatForExport<Mpu, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

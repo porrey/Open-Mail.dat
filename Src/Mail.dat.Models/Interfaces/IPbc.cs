@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Piece barcode details. Provides piece level detail required of full service mailings; when used
 	/// instead of the Piece Detail file, acts as an extension of the PQT file.
 	/// </summary>
-	public interface IPbc : IMaildatEntity 
+	public interface IPbc : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (PBC-1001)

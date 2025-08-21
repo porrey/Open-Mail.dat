@@ -129,7 +129,7 @@ namespace Mail.dat.BuildCommand
 		{
 			string attributeString = $"[{this.Name}";
 
-			if (this.Parameters.Any())
+			if (this.Parameters.Count != 0)
 			{
 				attributeString += "(";
 			}
@@ -140,7 +140,6 @@ namespace Mail.dat.BuildCommand
 			{
 				if (parameter.Value != null)
 				{
-					TypeConverter converter = TypeDescriptor.GetConverter(parameter.Value.GetType());
 					string stringValue = Convert.ToString(parameter.Value);
 
 					//

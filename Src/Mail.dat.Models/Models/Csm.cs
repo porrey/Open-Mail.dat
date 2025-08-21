@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Csm", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Csm : MaildatEntity, ICsm 
+	public partial class Csm : MaildatEntity, ICsm
 	{
 		/// <summary>
 		/// Job ID (CSM-1001)
@@ -1288,7 +1288,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Csm, string>(version, p => p.JobId, returnValue);
 			this.SegmentId = line.ParseForImport<Csm, string>(version, p => p.SegmentId, returnValue);
 			this.ContainerType = line.ParseForImport<Csm, string>(version, p => p.ContainerType, returnValue);
@@ -1369,98 +1369,96 @@ namespace Mail.dat
 			this.ReserveCsm1134 = line.ParseForImport<Csm, string>(version, p => p.ReserveCsm1134, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Csm, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Csm, string>(version, p => p.JobId, buffer, encoding);
+			this.SegmentId.FormatForExport<Csm, string>(version, p => p.SegmentId, buffer, encoding);
+			this.ContainerType.FormatForExport<Csm, string>(version, p => p.ContainerType, buffer, encoding);
+			this.ContainerId.FormatForExport<Csm, int>(version, p => p.ContainerId, buffer, encoding);
+			this.DisplayContainerId.FormatForExport<Csm, string>(version, p => p.DisplayContainerId, buffer, encoding);
+			this.ContainerGroupingDescription.FormatForExport<Csm, string>(version, p => p.ContainerGroupingDescription, buffer, encoding);
+			this.ContainerDestinationZip.FormatForExport<Csm, string>(version, p => p.ContainerDestinationZip, buffer, encoding);
+			this.ContainerLevel.FormatForExport<Csm, string>(version, p => p.ContainerLevel, buffer, encoding);
+			this.EntryPointForEntryDiscountPostalCode.FormatForExport<Csm, string>(version, p => p.EntryPointForEntryDiscountPostalCode, buffer, encoding);
+			this.EntryPointForEntryDiscountFacilityType.FormatForExport<Csm, string>(version, p => p.EntryPointForEntryDiscountFacilityType, buffer, encoding);
+			this.EntryPointActualDeliveryLocaleKey.FormatForExport<Csm, string>(version, p => p.EntryPointActualDeliveryLocaleKey, buffer, encoding);
+			this.EntryPointActualDeliveryPostalCode.FormatForExport<Csm, string>(version, p => p.EntryPointActualDeliveryPostalCode, buffer, encoding);
+			this.ParentContainerReferenceId.FormatForExport<Csm, int?>(version, p => p.ParentContainerReferenceId, buffer, encoding);
+			this.TruckOrDispatchNumber.FormatForExport<Csm, string>(version, p => p.TruckOrDispatchNumber, buffer, encoding);
+			this.StopDesignator.FormatForExport<Csm, string>(version, p => p.StopDesignator, buffer, encoding);
+			this.ReservationNumber.FormatForExport<Csm, string>(version, p => p.ReservationNumber, buffer, encoding);
+			this.ActualContainerShipDate.FormatForExport<Csm, DateOnly?>(version, p => p.ActualContainerShipDate, buffer, encoding);
+			this.ActualContainerShipTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ActualContainerShipTime, buffer, encoding);
+			this.ScheduledPickUpDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledPickUpDate, buffer, encoding);
+			this.ScheduledPickUpTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledPickUpTime, buffer, encoding);
+			this.ScheduledInHomeDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledInHomeDate, buffer, encoding);
+			this.AdditionalInHomeRange.FormatForExport<Csm, int?>(version, p => p.AdditionalInHomeRange, buffer, encoding);
+			this.ScheduledInductionStartDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledInductionStartDate, buffer, encoding);
+			this.ScheduledInductionStartTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledInductionStartTime, buffer, encoding);
+			this.ScheduledInductionEndDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledInductionEndDate, buffer, encoding);
+			this.ScheduledInductionEndTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledInductionEndTime, buffer, encoding);
+			this.ActualInductionDate.FormatForExport<Csm, DateOnly?>(version, p => p.ActualInductionDate, buffer, encoding);
+			this.ActualInductionTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ActualInductionTime, buffer, encoding);
+			this.PostageStatementMailingDate.FormatForExport<Csm, DateOnly?>(version, p => p.PostageStatementMailingDate, buffer, encoding);
+			this.PostageStatementMailingTime.FormatForExport<Csm, TimeOnly?>(version, p => p.PostageStatementMailingTime, buffer, encoding);
+			this.NumberOfCopies.FormatForExport<Csm, int>(version, p => p.NumberOfCopies, buffer, encoding);
+			this.NumberOfPieces.FormatForExport<Csm, int>(version, p => p.NumberOfPieces, buffer, encoding);
+			this.TotalWeightProductOnly.FormatForExport<Csm, decimal>(version, p => p.TotalWeightProductOnly, buffer, encoding);
+			this.UserContainerId.FormatForExport<Csm, string>(version, p => p.UserContainerId, buffer, encoding);
+			this.ContainerStatus.FormatForExport<Csm, string>(version, p => p.ContainerStatus, buffer, encoding);
+			this.IncludedInOtherDocumentation.FormatForExport<Csm, string>(version, p => p.IncludedInOtherDocumentation, buffer, encoding);
+			this.TrayPreparationType.FormatForExport<Csm, string>(version, p => p.TrayPreparationType, buffer, encoding);
+			this.TransShipBillOfLadingNumber.FormatForExport<Csm, string>(version, p => p.TransShipBillOfLadingNumber, buffer, encoding);
+			this.SiblingContainerIndicator.FormatForExport<Csm, string>(version, p => p.SiblingContainerIndicator, buffer, encoding);
+			this.SiblingContainerReferenceId.FormatForExport<Csm, int?>(version, p => p.SiblingContainerReferenceId, buffer, encoding);
+			this.PostageGroupingId.FormatForExport<Csm, string>(version, p => p.PostageGroupingId, buffer, encoding);
+			this.ContainerGrossWeight.FormatForExport<Csm, decimal?>(version, p => p.ContainerGrossWeight, buffer, encoding);
+			this.ContainerHeight.FormatForExport<Csm, int?>(version, p => p.ContainerHeight, buffer, encoding);
+			this.Emd8125AsnBarcode.FormatForExport<Csm, string>(version, p => p.Emd8125AsnBarcode, buffer, encoding);
+			this.TransportationCarrierId.FormatForExport<Csm, string>(version, p => p.TransportationCarrierId, buffer, encoding);
+			this.FastContentId.FormatForExport<Csm, string>(version, p => p.FastContentId, buffer, encoding);
+			this.FastSchedulerId.FormatForExport<Csm, int?>(version, p => p.FastSchedulerId, buffer, encoding);
+			this.USPSPickUp.FormatForExport<Csm, string>(version, p => p.USPSPickUp, buffer, encoding);
+			this.CsaSeparationId.FormatForExport<Csm, int?>(version, p => p.CsaSeparationId, buffer, encoding);
+			this.ScheduledShipDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledShipDate, buffer, encoding);
+			this.ScheduledShipTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledShipTime, buffer, encoding);
+			this.DmmSectionDefiningContainerPreparation.FormatForExport<Csm, string>(version, p => p.DmmSectionDefiningContainerPreparation, buffer, encoding);
+			this.LabelImContainerOrImTrayBarcodeFinal.FormatForExport<Csm, string>(version, p => p.LabelImContainerOrImTrayBarcodeFinal, buffer, encoding);
+			this.LabelImContainerOrImTrayBarcodeOriginal.FormatForExport<Csm, string>(version, p => p.LabelImContainerOrImTrayBarcodeOriginal, buffer, encoding);
+			this.LabelDestinationLine1.FormatForExport<Csm, string>(version, p => p.LabelDestinationLine1, buffer, encoding);
+			this.LabelDestinationLine2.FormatForExport<Csm, string>(version, p => p.LabelDestinationLine2, buffer, encoding);
+			this.LabelContentsLine1.FormatForExport<Csm, string>(version, p => p.LabelContentsLine1, buffer, encoding);
+			this.LabelContentsLine2.FormatForExport<Csm, string>(version, p => p.LabelContentsLine2, buffer, encoding);
+			this.LabelEntryOriginPointLine.FormatForExport<Csm, string>(version, p => p.LabelEntryOriginPointLine, buffer, encoding);
+			this.LabelUserInformationLine1.FormatForExport<Csm, string>(version, p => p.LabelUserInformationLine1, buffer, encoding);
+			this.LabelUserInformationLine2.FormatForExport<Csm, string>(version, p => p.LabelUserInformationLine2, buffer, encoding);
+			this.LabelContainerLabelCinCode.FormatForExport<Csm, string>(version, p => p.LabelContainerLabelCinCode, buffer, encoding);
+			this.UserOptionField.FormatForExport<Csm, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.EInductionIndicator.FormatForExport<Csm, string>(version, p => p.EInductionIndicator, buffer, encoding);
+			this.CsaAgreementId.FormatForExport<Csm, string>(version, p => p.CsaAgreementId, buffer, encoding);
+			this.PresortLabelingListEffectiveDate.FormatForExport<Csm, DateOnly>(version, p => p.PresortLabelingListEffectiveDate, buffer, encoding);
+			this.LastUsedLabelingListEffectiveDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedLabelingListEffectiveDate, buffer, encoding);
+			this.PresortCityStatePublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.PresortCityStatePublicationDate, buffer, encoding);
+			this.LastUsedCityStatePublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedCityStatePublicationDate, buffer, encoding);
+			this.PresortZoneChartMatrixPublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.PresortZoneChartMatrixPublicationDate, buffer, encoding);
+			this.LastUsedZoneChartMatrixPublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedZoneChartMatrixPublicationDate, buffer, encoding);
+			this.LastUsedMailDirectionPublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedMailDirectionPublicationDate, buffer, encoding);
+			this.SupplementalPhysicalContainerId.FormatForExport<Csm, int?>(version, p => p.SupplementalPhysicalContainerId, buffer, encoding);
+			this.AcceptMisshipped.FormatForExport<Csm, string>(version, p => p.AcceptMisshipped, buffer, encoding);
+			this.ReferenceableMailStartDate.FormatForExport<Csm, DateOnly?>(version, p => p.ReferenceableMailStartDate, buffer, encoding);
+			this.ReferenceableMailEndDate.FormatForExport<Csm, DateOnly?>(version, p => p.ReferenceableMailEndDate, buffer, encoding);
+			this.CsmRecordStatus.FormatForExport<Csm, string>(version, p => p.CsmRecordStatus, buffer, encoding);
+			this.ReserveCsm1134.FormatForExport<Csm, string>(version, p => p.ReserveCsm1134, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Csm, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Csm, string>(version, p => p.JobId));
-			sb.Append(this.SegmentId.FormatForExport<Csm, string>(version, p => p.SegmentId));
-			sb.Append(this.ContainerType.FormatForExport<Csm, string>(version, p => p.ContainerType));
-			sb.Append(this.ContainerId.FormatForExport<Csm, int>(version, p => p.ContainerId));
-			sb.Append(this.DisplayContainerId.FormatForExport<Csm, string>(version, p => p.DisplayContainerId));
-			sb.Append(this.ContainerGroupingDescription.FormatForExport<Csm, string>(version, p => p.ContainerGroupingDescription));
-			sb.Append(this.ContainerDestinationZip.FormatForExport<Csm, string>(version, p => p.ContainerDestinationZip));
-			sb.Append(this.ContainerLevel.FormatForExport<Csm, string>(version, p => p.ContainerLevel));
-			sb.Append(this.EntryPointForEntryDiscountPostalCode.FormatForExport<Csm, string>(version, p => p.EntryPointForEntryDiscountPostalCode));
-			sb.Append(this.EntryPointForEntryDiscountFacilityType.FormatForExport<Csm, string>(version, p => p.EntryPointForEntryDiscountFacilityType));
-			sb.Append(this.EntryPointActualDeliveryLocaleKey.FormatForExport<Csm, string>(version, p => p.EntryPointActualDeliveryLocaleKey));
-			sb.Append(this.EntryPointActualDeliveryPostalCode.FormatForExport<Csm, string>(version, p => p.EntryPointActualDeliveryPostalCode));
-			sb.Append(this.ParentContainerReferenceId.FormatForExport<Csm, int?>(version, p => p.ParentContainerReferenceId));
-			sb.Append(this.TruckOrDispatchNumber.FormatForExport<Csm, string>(version, p => p.TruckOrDispatchNumber));
-			sb.Append(this.StopDesignator.FormatForExport<Csm, string>(version, p => p.StopDesignator));
-			sb.Append(this.ReservationNumber.FormatForExport<Csm, string>(version, p => p.ReservationNumber));
-			sb.Append(this.ActualContainerShipDate.FormatForExport<Csm, DateOnly?>(version, p => p.ActualContainerShipDate));
-			sb.Append(this.ActualContainerShipTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ActualContainerShipTime));
-			sb.Append(this.ScheduledPickUpDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledPickUpDate));
-			sb.Append(this.ScheduledPickUpTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledPickUpTime));
-			sb.Append(this.ScheduledInHomeDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledInHomeDate));
-			sb.Append(this.AdditionalInHomeRange.FormatForExport<Csm, int?>(version, p => p.AdditionalInHomeRange));
-			sb.Append(this.ScheduledInductionStartDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledInductionStartDate));
-			sb.Append(this.ScheduledInductionStartTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledInductionStartTime));
-			sb.Append(this.ScheduledInductionEndDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledInductionEndDate));
-			sb.Append(this.ScheduledInductionEndTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledInductionEndTime));
-			sb.Append(this.ActualInductionDate.FormatForExport<Csm, DateOnly?>(version, p => p.ActualInductionDate));
-			sb.Append(this.ActualInductionTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ActualInductionTime));
-			sb.Append(this.PostageStatementMailingDate.FormatForExport<Csm, DateOnly?>(version, p => p.PostageStatementMailingDate));
-			sb.Append(this.PostageStatementMailingTime.FormatForExport<Csm, TimeOnly?>(version, p => p.PostageStatementMailingTime));
-			sb.Append(this.NumberOfCopies.FormatForExport<Csm, int>(version, p => p.NumberOfCopies));
-			sb.Append(this.NumberOfPieces.FormatForExport<Csm, int>(version, p => p.NumberOfPieces));
-			sb.Append(this.TotalWeightProductOnly.FormatForExport<Csm, decimal>(version, p => p.TotalWeightProductOnly));
-			sb.Append(this.UserContainerId.FormatForExport<Csm, string>(version, p => p.UserContainerId));
-			sb.Append(this.ContainerStatus.FormatForExport<Csm, string>(version, p => p.ContainerStatus));
-			sb.Append(this.IncludedInOtherDocumentation.FormatForExport<Csm, string>(version, p => p.IncludedInOtherDocumentation));
-			sb.Append(this.TrayPreparationType.FormatForExport<Csm, string>(version, p => p.TrayPreparationType));
-			sb.Append(this.TransShipBillOfLadingNumber.FormatForExport<Csm, string>(version, p => p.TransShipBillOfLadingNumber));
-			sb.Append(this.SiblingContainerIndicator.FormatForExport<Csm, string>(version, p => p.SiblingContainerIndicator));
-			sb.Append(this.SiblingContainerReferenceId.FormatForExport<Csm, int?>(version, p => p.SiblingContainerReferenceId));
-			sb.Append(this.PostageGroupingId.FormatForExport<Csm, string>(version, p => p.PostageGroupingId));
-			sb.Append(this.ContainerGrossWeight.FormatForExport<Csm, decimal?>(version, p => p.ContainerGrossWeight));
-			sb.Append(this.ContainerHeight.FormatForExport<Csm, int?>(version, p => p.ContainerHeight));
-			sb.Append(this.Emd8125AsnBarcode.FormatForExport<Csm, string>(version, p => p.Emd8125AsnBarcode));
-			sb.Append(this.TransportationCarrierId.FormatForExport<Csm, string>(version, p => p.TransportationCarrierId));
-			sb.Append(this.FastContentId.FormatForExport<Csm, string>(version, p => p.FastContentId));
-			sb.Append(this.FastSchedulerId.FormatForExport<Csm, int?>(version, p => p.FastSchedulerId));
-			sb.Append(this.USPSPickUp.FormatForExport<Csm, string>(version, p => p.USPSPickUp));
-			sb.Append(this.CsaSeparationId.FormatForExport<Csm, int?>(version, p => p.CsaSeparationId));
-			sb.Append(this.ScheduledShipDate.FormatForExport<Csm, DateOnly?>(version, p => p.ScheduledShipDate));
-			sb.Append(this.ScheduledShipTime.FormatForExport<Csm, TimeOnly?>(version, p => p.ScheduledShipTime));
-			sb.Append(this.DmmSectionDefiningContainerPreparation.FormatForExport<Csm, string>(version, p => p.DmmSectionDefiningContainerPreparation));
-			sb.Append(this.LabelImContainerOrImTrayBarcodeFinal.FormatForExport<Csm, string>(version, p => p.LabelImContainerOrImTrayBarcodeFinal));
-			sb.Append(this.LabelImContainerOrImTrayBarcodeOriginal.FormatForExport<Csm, string>(version, p => p.LabelImContainerOrImTrayBarcodeOriginal));
-			sb.Append(this.LabelDestinationLine1.FormatForExport<Csm, string>(version, p => p.LabelDestinationLine1));
-			sb.Append(this.LabelDestinationLine2.FormatForExport<Csm, string>(version, p => p.LabelDestinationLine2));
-			sb.Append(this.LabelContentsLine1.FormatForExport<Csm, string>(version, p => p.LabelContentsLine1));
-			sb.Append(this.LabelContentsLine2.FormatForExport<Csm, string>(version, p => p.LabelContentsLine2));
-			sb.Append(this.LabelEntryOriginPointLine.FormatForExport<Csm, string>(version, p => p.LabelEntryOriginPointLine));
-			sb.Append(this.LabelUserInformationLine1.FormatForExport<Csm, string>(version, p => p.LabelUserInformationLine1));
-			sb.Append(this.LabelUserInformationLine2.FormatForExport<Csm, string>(version, p => p.LabelUserInformationLine2));
-			sb.Append(this.LabelContainerLabelCinCode.FormatForExport<Csm, string>(version, p => p.LabelContainerLabelCinCode));
-			sb.Append(this.UserOptionField.FormatForExport<Csm, string>(version, p => p.UserOptionField));
-			sb.Append(this.EInductionIndicator.FormatForExport<Csm, string>(version, p => p.EInductionIndicator));
-			sb.Append(this.CsaAgreementId.FormatForExport<Csm, string>(version, p => p.CsaAgreementId));
-			sb.Append(this.PresortLabelingListEffectiveDate.FormatForExport<Csm, DateOnly>(version, p => p.PresortLabelingListEffectiveDate));
-			sb.Append(this.LastUsedLabelingListEffectiveDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedLabelingListEffectiveDate));
-			sb.Append(this.PresortCityStatePublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.PresortCityStatePublicationDate));
-			sb.Append(this.LastUsedCityStatePublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedCityStatePublicationDate));
-			sb.Append(this.PresortZoneChartMatrixPublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.PresortZoneChartMatrixPublicationDate));
-			sb.Append(this.LastUsedZoneChartMatrixPublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedZoneChartMatrixPublicationDate));
-			sb.Append(this.LastUsedMailDirectionPublicationDate.FormatForExport<Csm, DateOnly>(version, p => p.LastUsedMailDirectionPublicationDate));
-			sb.Append(this.SupplementalPhysicalContainerId.FormatForExport<Csm, int?>(version, p => p.SupplementalPhysicalContainerId));
-			sb.Append(this.AcceptMisshipped.FormatForExport<Csm, string>(version, p => p.AcceptMisshipped));
-			sb.Append(this.ReferenceableMailStartDate.FormatForExport<Csm, DateOnly?>(version, p => p.ReferenceableMailStartDate));
-			sb.Append(this.ReferenceableMailEndDate.FormatForExport<Csm, DateOnly?>(version, p => p.ReferenceableMailEndDate));
-			sb.Append(this.CsmRecordStatus.FormatForExport<Csm, string>(version, p => p.CsmRecordStatus));
-			sb.Append(this.ReserveCsm1134.FormatForExport<Csm, string>(version, p => p.ReserveCsm1134));
-			sb.Append(this.ClosingCharacter.FormatForExport<Csm, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

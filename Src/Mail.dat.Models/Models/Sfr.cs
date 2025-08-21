@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Sfr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Sfr : MaildatEntity, ISfr 
+	public partial class Sfr : MaildatEntity, ISfr
 	{
 		/// <summary>
 		/// Job ID (SFR-1001)
@@ -240,7 +240,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Sfr, string>(version, p => p.JobId, returnValue);
 			this.CqtDatabaseId = line.ParseForImport<Sfr, int>(version, p => p.CqtDatabaseId, returnValue);
 			this.PieceId = line.ParseForImport<Sfr, string>(version, p => p.PieceId, returnValue);
@@ -254,31 +254,29 @@ namespace Mail.dat
 			this.ReserveSfr1104 = line.ParseForImport<Sfr, string>(version, p => p.ReserveSfr1104, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Sfr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Sfr, string>(version, p => p.JobId, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Sfr, int>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.PieceId.FormatForExport<Sfr, string>(version, p => p.PieceId, buffer, encoding);
+			this.ServiceType.FormatForExport<Sfr, string>(version, p => p.ServiceType, buffer, encoding);
+			this.ServiceAdditionalType.FormatForExport<Sfr, string>(version, p => p.ServiceAdditionalType, buffer, encoding);
+			this.ServiceStatedValue.FormatForExport<Sfr, decimal?>(version, p => p.ServiceStatedValue, buffer, encoding);
+			this.ServiceFee.FormatForExport<Sfr, decimal>(version, p => p.ServiceFee, buffer, encoding);
+			this.SpecialFeesChargesServicesId.FormatForExport<Sfr, string>(version, p => p.SpecialFeesChargesServicesId, buffer, encoding);
+			this.AmountDue.FormatForExport<Sfr, decimal?>(version, p => p.AmountDue, buffer, encoding);
+			this.SfrRecordStatus.FormatForExport<Sfr, string>(version, p => p.SfrRecordStatus, buffer, encoding);
+			this.ReserveSfr1104.FormatForExport<Sfr, string>(version, p => p.ReserveSfr1104, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Sfr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Sfr, string>(version, p => p.JobId));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Sfr, int>(version, p => p.CqtDatabaseId));
-			sb.Append(this.PieceId.FormatForExport<Sfr, string>(version, p => p.PieceId));
-			sb.Append(this.ServiceType.FormatForExport<Sfr, string>(version, p => p.ServiceType));
-			sb.Append(this.ServiceAdditionalType.FormatForExport<Sfr, string>(version, p => p.ServiceAdditionalType));
-			sb.Append(this.ServiceStatedValue.FormatForExport<Sfr, decimal?>(version, p => p.ServiceStatedValue));
-			sb.Append(this.ServiceFee.FormatForExport<Sfr, decimal>(version, p => p.ServiceFee));
-			sb.Append(this.SpecialFeesChargesServicesId.FormatForExport<Sfr, string>(version, p => p.SpecialFeesChargesServicesId));
-			sb.Append(this.AmountDue.FormatForExport<Sfr, decimal?>(version, p => p.AmountDue));
-			sb.Append(this.SfrRecordStatus.FormatForExport<Sfr, string>(version, p => p.SfrRecordStatus));
-			sb.Append(this.ReserveSfr1104.FormatForExport<Sfr, string>(version, p => p.ReserveSfr1104));
-			sb.Append(this.ClosingCharacter.FormatForExport<Sfr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

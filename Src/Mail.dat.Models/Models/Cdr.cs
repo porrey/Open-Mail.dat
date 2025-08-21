@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -42,7 +42,7 @@ namespace Mail.dat
 	[Table("Cdr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("24-1", "25-1")]
-	public partial class Cdr : MaildatEntity, ICdr 
+	public partial class Cdr : MaildatEntity, ICdr
 	{
 		/// <summary>
 		/// Job ID (CDR-1001)
@@ -386,7 +386,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Cdr, string>(version, p => p.JobId, returnValue);
 			this.CertificateOfMailingHeaderId = line.ParseForImport<Cdr, string>(version, p => p.CertificateOfMailingHeaderId, returnValue);
 			this.ComPieceId = line.ParseForImport<Cdr, string>(version, p => p.ComPieceId, returnValue);
@@ -412,43 +412,41 @@ namespace Mail.dat
 			this.CdrRecordStatus = line.ParseForImport<Cdr, string>(version, p => p.CdrRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Cdr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Cdr, string>(version, p => p.JobId, buffer, encoding);
+			this.CertificateOfMailingHeaderId.FormatForExport<Cdr, string>(version, p => p.CertificateOfMailingHeaderId, buffer, encoding);
+			this.ComPieceId.FormatForExport<Cdr, string>(version, p => p.ComPieceId, buffer, encoding);
+			this.FirmSpecificId.FormatForExport<Cdr, string>(version, p => p.FirmSpecificId, buffer, encoding);
+			this.USPSTrackingNumber.FormatForExport<Cdr, string>(version, p => p.USPSTrackingNumber, buffer, encoding);
+			this.RecipientName.FormatForExport<Cdr, string>(version, p => p.RecipientName, buffer, encoding);
+			this.SecondaryAddress.FormatForExport<Cdr, string>(version, p => p.SecondaryAddress, buffer, encoding);
+			this.PrimaryAddress.FormatForExport<Cdr, string>(version, p => p.PrimaryAddress, buffer, encoding);
+			this.City.FormatForExport<Cdr, string>(version, p => p.City, buffer, encoding);
+			this.State.FormatForExport<Cdr, string>(version, p => p.State, buffer, encoding);
+			this.PostalCode.FormatForExport<Cdr, string>(version, p => p.PostalCode, buffer, encoding);
+			this.ProvinceOrStateInternational.FormatForExport<Cdr, string>(version, p => p.ProvinceOrStateInternational, buffer, encoding);
+			this.CountryCode.FormatForExport<Cdr, string>(version, p => p.CountryCode, buffer, encoding);
+			this.Postage.FormatForExport<Cdr, decimal>(version, p => p.Postage, buffer, encoding);
+			this.Fee.FormatForExport<Cdr, decimal?>(version, p => p.Fee, buffer, encoding);
+			this.PALFeeIndicator.FormatForExport<Cdr, string>(version, p => p.PALFeeIndicator, buffer, encoding);
+			this.PALFeeAmount.FormatForExport<Cdr, decimal?>(version, p => p.PALFeeAmount, buffer, encoding);
+			this.PieceId.FormatForExport<Cdr, string>(version, p => p.PieceId, buffer, encoding);
+			this.FlexOptionA.FormatForExport<Cdr, string>(version, p => p.FlexOptionA, buffer, encoding);
+			this.FlexOptionB.FormatForExport<Cdr, string>(version, p => p.FlexOptionB, buffer, encoding);
+			this.FlexOptionC.FormatForExport<Cdr, string>(version, p => p.FlexOptionC, buffer, encoding);
+			this.ReserveCdr1119.FormatForExport<Cdr, string>(version, p => p.ReserveCdr1119, buffer, encoding);
+			this.CdrRecordStatus.FormatForExport<Cdr, string>(version, p => p.CdrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Cdr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Cdr, string>(version, p => p.JobId));
-			sb.Append(this.CertificateOfMailingHeaderId.FormatForExport<Cdr, string>(version, p => p.CertificateOfMailingHeaderId));
-			sb.Append(this.ComPieceId.FormatForExport<Cdr, string>(version, p => p.ComPieceId));
-			sb.Append(this.FirmSpecificId.FormatForExport<Cdr, string>(version, p => p.FirmSpecificId));
-			sb.Append(this.USPSTrackingNumber.FormatForExport<Cdr, string>(version, p => p.USPSTrackingNumber));
-			sb.Append(this.RecipientName.FormatForExport<Cdr, string>(version, p => p.RecipientName));
-			sb.Append(this.SecondaryAddress.FormatForExport<Cdr, string>(version, p => p.SecondaryAddress));
-			sb.Append(this.PrimaryAddress.FormatForExport<Cdr, string>(version, p => p.PrimaryAddress));
-			sb.Append(this.City.FormatForExport<Cdr, string>(version, p => p.City));
-			sb.Append(this.State.FormatForExport<Cdr, string>(version, p => p.State));
-			sb.Append(this.PostalCode.FormatForExport<Cdr, string>(version, p => p.PostalCode));
-			sb.Append(this.ProvinceOrStateInternational.FormatForExport<Cdr, string>(version, p => p.ProvinceOrStateInternational));
-			sb.Append(this.CountryCode.FormatForExport<Cdr, string>(version, p => p.CountryCode));
-			sb.Append(this.Postage.FormatForExport<Cdr, decimal>(version, p => p.Postage));
-			sb.Append(this.Fee.FormatForExport<Cdr, decimal?>(version, p => p.Fee));
-			sb.Append(this.PALFeeIndicator.FormatForExport<Cdr, string>(version, p => p.PALFeeIndicator));
-			sb.Append(this.PALFeeAmount.FormatForExport<Cdr, decimal?>(version, p => p.PALFeeAmount));
-			sb.Append(this.PieceId.FormatForExport<Cdr, string>(version, p => p.PieceId));
-			sb.Append(this.FlexOptionA.FormatForExport<Cdr, string>(version, p => p.FlexOptionA));
-			sb.Append(this.FlexOptionB.FormatForExport<Cdr, string>(version, p => p.FlexOptionB));
-			sb.Append(this.FlexOptionC.FormatForExport<Cdr, string>(version, p => p.FlexOptionC));
-			sb.Append(this.ReserveCdr1119.FormatForExport<Cdr, string>(version, p => p.ReserveCdr1119));
-			sb.Append(this.CdrRecordStatus.FormatForExport<Cdr, string>(version, p => p.CdrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Cdr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

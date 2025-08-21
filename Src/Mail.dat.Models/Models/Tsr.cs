@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -39,7 +39,7 @@ namespace Mail.dat
 	[Table("Tsr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1")]
-	public partial class Tsr : MaildatEntity, ITsr 
+	public partial class Tsr : MaildatEntity, ITsr
 	{
 		/// <summary>
 		/// Job ID (TSR-1001)
@@ -152,7 +152,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Tsr, string>(version, p => p.JobId, returnValue);
 			this.TransportationId = line.ParseForImport<Tsr, string>(version, p => p.TransportationId, returnValue);
 			this.LoadTruckDispatchNumber = line.ParseForImport<Tsr, string>(version, p => p.LoadTruckDispatchNumber, returnValue);
@@ -161,26 +161,24 @@ namespace Mail.dat
 			this.Reserved = line.ParseForImport<Tsr, string>(version, p => p.Reserved, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Tsr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Tsr, string>(version, p => p.JobId, buffer, encoding);
+			this.TransportationId.FormatForExport<Tsr, string>(version, p => p.TransportationId, buffer, encoding);
+			this.LoadTruckDispatchNumber.FormatForExport<Tsr, string>(version, p => p.LoadTruckDispatchNumber, buffer, encoding);
+			this.TargetShipDateTime.FormatForExport<Tsr, string>(version, p => p.TargetShipDateTime, buffer, encoding);
+			this.TSRRecordStatus.FormatForExport<Tsr, string>(version, p => p.TSRRecordStatus, buffer, encoding);
+			this.Reserved.FormatForExport<Tsr, string>(version, p => p.Reserved, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Tsr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Tsr, string>(version, p => p.JobId));
-			sb.Append(this.TransportationId.FormatForExport<Tsr, string>(version, p => p.TransportationId));
-			sb.Append(this.LoadTruckDispatchNumber.FormatForExport<Tsr, string>(version, p => p.LoadTruckDispatchNumber));
-			sb.Append(this.TargetShipDateTime.FormatForExport<Tsr, string>(version, p => p.TargetShipDateTime));
-			sb.Append(this.TSRRecordStatus.FormatForExport<Tsr, string>(version, p => p.TSRRecordStatus));
-			sb.Append(this.Reserved.FormatForExport<Tsr, string>(version, p => p.Reserved));
-			sb.Append(this.ClosingCharacter.FormatForExport<Tsr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

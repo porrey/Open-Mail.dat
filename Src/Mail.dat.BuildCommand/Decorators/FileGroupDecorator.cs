@@ -156,7 +156,7 @@ namespace Mail.dat.BuildCommand
 								.AddParameter("Version", item.Version.Major)
 								.AddParameter("Revision", item.Version.Revision)
 								.AddParameter("Extension", item.FileDefinition.FileExtension)
-								.AddParameter("File", item.FileDefinition.FileName)
+								.AddParameter("File", item.FileDefinition.FileName.ToLower().Transform(To.TitleCase))
 								.AddParameter("Summary", fileGroup.Summary(item.Version.Major))
 								.AddParameter("Description", fileGroup.Description(item.Version.Major))
 								.AddParameter("LineLength", item.FileDefinition.RecordDefinitions.TotalLineLength())
@@ -264,6 +264,7 @@ namespace Mail.dat.BuildCommand
 								.Select(g => g
 									.OrderByDescending(x => x.Version, new VersionInfoComparer())
 									.First().RecordDefinition)
+								.OrderBy(t => t.Start)
 								.ToList();
 
 			return returnValue;

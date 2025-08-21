@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Pbc", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Pbc : MaildatEntity, IPbc 
+	public partial class Pbc : MaildatEntity, IPbc
 	{
 		/// <summary>
 		/// Job ID (PBC-1001)
@@ -206,7 +206,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Pbc, string>(version, p => p.JobId, returnValue);
 			this.PbcUniqueId = line.ParseForImport<Pbc, int>(version, p => p.PbcUniqueId, returnValue);
 			this.CqtDatabaseId = line.ParseForImport<Pbc, int>(version, p => p.CqtDatabaseId, returnValue);
@@ -218,29 +218,27 @@ namespace Mail.dat
 			this.PbcRecordStatus = line.ParseForImport<Pbc, string>(version, p => p.PbcRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Pbc, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Pbc, string>(version, p => p.JobId, buffer, encoding);
+			this.PbcUniqueId.FormatForExport<Pbc, int>(version, p => p.PbcUniqueId, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Pbc, int>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.PackageId.FormatForExport<Pbc, string>(version, p => p.PackageId, buffer, encoding);
+			this.Barcode.FormatForExport<Pbc, string>(version, p => p.Barcode, buffer, encoding);
+			this.WastedOrShortagePieceIndicator.FormatForExport<Pbc, string>(version, p => p.WastedOrShortagePieceIndicator, buffer, encoding);
+			this.ImpbBarcodeConstructCode.FormatForExport<Pbc, string>(version, p => p.ImpbBarcodeConstructCode, buffer, encoding);
+			this.MidInImbIsMoveUpdateSupplier.FormatForExport<Pbc, string>(version, p => p.MidInImbIsMoveUpdateSupplier, buffer, encoding);
+			this.PbcRecordStatus.FormatForExport<Pbc, string>(version, p => p.PbcRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Pbc, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Pbc, string>(version, p => p.JobId));
-			sb.Append(this.PbcUniqueId.FormatForExport<Pbc, int>(version, p => p.PbcUniqueId));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Pbc, int>(version, p => p.CqtDatabaseId));
-			sb.Append(this.PackageId.FormatForExport<Pbc, string>(version, p => p.PackageId));
-			sb.Append(this.Barcode.FormatForExport<Pbc, string>(version, p => p.Barcode));
-			sb.Append(this.WastedOrShortagePieceIndicator.FormatForExport<Pbc, string>(version, p => p.WastedOrShortagePieceIndicator));
-			sb.Append(this.ImpbBarcodeConstructCode.FormatForExport<Pbc, string>(version, p => p.ImpbBarcodeConstructCode));
-			sb.Append(this.MidInImbIsMoveUpdateSupplier.FormatForExport<Pbc, string>(version, p => p.MidInImbIsMoveUpdateSupplier));
-			sb.Append(this.PbcRecordStatus.FormatForExport<Pbc, string>(version, p => p.PbcRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Pbc, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

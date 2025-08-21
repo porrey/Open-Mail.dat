@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -42,7 +42,7 @@ namespace Mail.dat
 	[Table("Cbr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("24-1", "25-1")]
-	public partial class Cbr : MaildatEntity, ICbr 
+	public partial class Cbr : MaildatEntity, ICbr
 	{
 		/// <summary>
 		/// Job ID (CBR-1001)
@@ -262,7 +262,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Cbr, string>(version, p => p.JobId, returnValue);
 			this.CertificateOfMailingHeaderId = line.ParseForImport<Cbr, string>(version, p => p.CertificateOfMailingHeaderId, returnValue);
 			this.BulkRecordId = line.ParseForImport<Cbr, string>(version, p => p.BulkRecordId, returnValue);
@@ -279,34 +279,30 @@ namespace Mail.dat
 			this.CbrRecordStatus = line.ParseForImport<Cbr, string>(version, p => p.CbrRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Cbr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
-			
-			sb.Append(this.JobId.FormatForExport<Cbr, string>(version, p => p.JobId));
-			sb.Append(this.CertificateOfMailingHeaderId.FormatForExport<Cbr, string>(version, p => p.CertificateOfMailingHeaderId));
-			sb.Append(this.BulkRecordId.FormatForExport<Cbr, string>(version, p => p.BulkRecordId));
-			sb.Append(this.NumberOfIdenticalPieces.FormatForExport<Cbr, int>(version, p => p.NumberOfIdenticalPieces));
-			sb.Append(this.ClassOfMail.FormatForExport<Cbr, string>(version, p => p.ClassOfMail));
-			sb.Append(this.NumberOfPiecesToThePound.FormatForExport<Cbr, decimal>(version, p => p.NumberOfPiecesToThePound));
-			sb.Append(this.TotalNumberOfPounds.FormatForExport<Cbr, decimal>(version, p => p.TotalNumberOfPounds));
-			sb.Append(this.FeePaid.FormatForExport<Cbr, decimal?>(version, p => p.FeePaid));
-			sb.Append(this.TotalPostagePaidForMailpieces.FormatForExport<Cbr, decimal>(version, p => p.TotalPostagePaidForMailpieces));
-			sb.Append(this.FlexOptionA.FormatForExport<Cbr, string>(version, p => p.FlexOptionA));
-			sb.Append(this.FlexOptionB.FormatForExport<Cbr, string>(version, p => p.FlexOptionB));
-			sb.Append(this.FlexOptionC.FormatForExport<Cbr, string>(version, p => p.FlexOptionC));
-			sb.Append(this.ReserveCbr1110.FormatForExport<Cbr, string>(version, p => p.ReserveCbr1110));
-			sb.Append(this.CbrRecordStatus.FormatForExport<Cbr, string>(version, p => p.CbrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Cbr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
+			this.JobId.FormatForExport<Cbr, string>(version, p => p.JobId, buffer, encoding);
+			this.CertificateOfMailingHeaderId.FormatForExport<Cbr, string>(version, p => p.CertificateOfMailingHeaderId, buffer, encoding);
+			this.BulkRecordId.FormatForExport<Cbr, string>(version, p => p.BulkRecordId, buffer, encoding);
+			this.NumberOfIdenticalPieces.FormatForExport<Cbr, int>(version, p => p.NumberOfIdenticalPieces, buffer, encoding);
+			this.ClassOfMail.FormatForExport<Cbr, string>(version, p => p.ClassOfMail, buffer, encoding);
+			this.NumberOfPiecesToThePound.FormatForExport<Cbr, decimal>(version, p => p.NumberOfPiecesToThePound, buffer, encoding);
+			this.TotalNumberOfPounds.FormatForExport<Cbr, decimal>(version, p => p.TotalNumberOfPounds, buffer, encoding);
+			this.FeePaid.FormatForExport<Cbr, decimal?>(version, p => p.FeePaid, buffer, encoding);
+			this.TotalPostagePaidForMailpieces.FormatForExport<Cbr, decimal>(version, p => p.TotalPostagePaidForMailpieces, buffer, encoding);
+			this.FlexOptionA.FormatForExport<Cbr, string>(version, p => p.FlexOptionA, buffer, encoding);
+			this.FlexOptionB.FormatForExport<Cbr, string>(version, p => p.FlexOptionB, buffer, encoding);
+			this.FlexOptionC.FormatForExport<Cbr, string>(version, p => p.FlexOptionC, buffer, encoding);
+			this.ReserveCbr1110.FormatForExport<Cbr, string>(version, p => p.ReserveCbr1110, buffer, encoding);
+			this.CbrRecordStatus.FormatForExport<Cbr, string>(version, p => p.CbrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Cbr, string>(version, p => p.ClosingCharacter, buffer, encoding);
 		}
 	}
 }

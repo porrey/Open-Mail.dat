@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -28,7 +28,7 @@ namespace Mail.dat
 	/// <summary>
 	/// Relates containers to associated ink jet output tapes/files.
 	/// </summary>
-	public interface IIcr : IMaildatEntity 
+	public interface IIcr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (ICR-1001)

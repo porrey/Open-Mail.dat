@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Par", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Par : MaildatEntity, IPar 
+	public partial class Par : MaildatEntity, IPar
 	{
 		/// <summary>
 		/// Job ID (PAR-1001)
@@ -308,7 +308,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Par, string>(version, p => p.JobId, returnValue);
 			this.SegmentId = line.ParseForImport<Par, string>(version, p => p.SegmentId, returnValue);
 			this.MailPieceUnitId = line.ParseForImport<Par, string>(version, p => p.MailPieceUnitId, returnValue);
@@ -327,36 +327,34 @@ namespace Mail.dat
 			this.ReservePar1107 = line.ParseForImport<Par, string>(version, p => p.ReservePar1107, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Par, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Par, string>(version, p => p.JobId, buffer, encoding);
+			this.SegmentId.FormatForExport<Par, string>(version, p => p.SegmentId, buffer, encoding);
+			this.MailPieceUnitId.FormatForExport<Par, string>(version, p => p.MailPieceUnitId, buffer, encoding);
+			this.ComponentId.FormatForExport<Par, string>(version, p => p.ComponentId, buffer, encoding);
+			this.SequenceNumber.FormatForExport<Par, int>(version, p => p.SequenceNumber, buffer, encoding);
+			this.Date.FormatForExport<Par, DateOnly>(version, p => p.Date, buffer, encoding);
+			this.AdjustmentType.FormatForExport<Par, string>(version, p => p.AdjustmentType, buffer, encoding);
+			this.AdjustmentAmount.FormatForExport<Par, decimal>(version, p => p.AdjustmentAmount, buffer, encoding);
+			this.CreditDebitIndicator.FormatForExport<Par, string>(version, p => p.CreditDebitIndicator, buffer, encoding);
+			this.TotalPiecesAffected.FormatForExport<Par, int?>(version, p => p.TotalPiecesAffected, buffer, encoding);
+			this.UserComments.FormatForExport<Par, string>(version, p => p.UserComments, buffer, encoding);
+			this.AdjustmentStatus.FormatForExport<Par, string>(version, p => p.AdjustmentStatus, buffer, encoding);
+			this.MpaUniqueSequenceGroupingId.FormatForExport<Par, string>(version, p => p.MpaUniqueSequenceGroupingId, buffer, encoding);
+			this.UserOptionField.FormatForExport<Par, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.ParRecordStatus.FormatForExport<Par, string>(version, p => p.ParRecordStatus, buffer, encoding);
+			this.ReservePar1107.FormatForExport<Par, string>(version, p => p.ReservePar1107, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Par, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Par, string>(version, p => p.JobId));
-			sb.Append(this.SegmentId.FormatForExport<Par, string>(version, p => p.SegmentId));
-			sb.Append(this.MailPieceUnitId.FormatForExport<Par, string>(version, p => p.MailPieceUnitId));
-			sb.Append(this.ComponentId.FormatForExport<Par, string>(version, p => p.ComponentId));
-			sb.Append(this.SequenceNumber.FormatForExport<Par, int>(version, p => p.SequenceNumber));
-			sb.Append(this.Date.FormatForExport<Par, DateOnly>(version, p => p.Date));
-			sb.Append(this.AdjustmentType.FormatForExport<Par, string>(version, p => p.AdjustmentType));
-			sb.Append(this.AdjustmentAmount.FormatForExport<Par, decimal>(version, p => p.AdjustmentAmount));
-			sb.Append(this.CreditDebitIndicator.FormatForExport<Par, string>(version, p => p.CreditDebitIndicator));
-			sb.Append(this.TotalPiecesAffected.FormatForExport<Par, int?>(version, p => p.TotalPiecesAffected));
-			sb.Append(this.UserComments.FormatForExport<Par, string>(version, p => p.UserComments));
-			sb.Append(this.AdjustmentStatus.FormatForExport<Par, string>(version, p => p.AdjustmentStatus));
-			sb.Append(this.MpaUniqueSequenceGroupingId.FormatForExport<Par, string>(version, p => p.MpaUniqueSequenceGroupingId));
-			sb.Append(this.UserOptionField.FormatForExport<Par, string>(version, p => p.UserOptionField));
-			sb.Append(this.ParRecordStatus.FormatForExport<Par, string>(version, p => p.ParRecordStatus));
-			sb.Append(this.ReservePar1107.FormatForExport<Par, string>(version, p => p.ReservePar1107));
-			sb.Append(this.ClosingCharacter.FormatForExport<Par, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Characteristics of a component. Allows mailers to identify surcharges, incentive and specific
 	/// contents that are part of the mail piece.
 	/// </summary>
-	public interface ICcr : IMaildatEntity 
+	public interface ICcr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (CCR-1001)
@@ -54,18 +54,6 @@ namespace Mail.dat
 		string Characteristic { get; set; }
 
 		/// <summary>
-		/// CCR Record Status (CCR-2000)
-		/// O, D, I, U.
-		/// </summary>
-		string CcrRecordStatus { get; set; }
-
-		/// <summary>
-		/// Closing Character (CCR-9999)
-		/// Must be the # sign.
-		/// </summary>
-		string ClosingCharacter { get; }
-
-		/// <summary>
 		/// Pre-Denominated Maximum Credit Amount (CCR-1101)
 		/// Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the
 		/// postage amount. The postage amount representing the pieces associated with the component record.
@@ -82,5 +70,17 @@ namespace Mail.dat
 		/// Reserved for future use.
 		/// </summary>
 		string ReserveCcr1102 { get; set; }
+
+		/// <summary>
+		/// CCR Record Status (CCR-2000)
+		/// O, D, I, U.
+		/// </summary>
+		string CcrRecordStatus { get; set; }
+
+		/// <summary>
+		/// Closing Character (CCR-9999)
+		/// Must be the # sign.
+		/// </summary>
+		string ClosingCharacter { get; }
 	}
 }

@@ -90,7 +90,7 @@ namespace Mail.dat.Io
 		/// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the export
 		/// operation completes successfully.</returns>
 		/// <exception cref="FileNotFoundException">Thrown if the source file specified in <paramref name="options"/> does not exist.</exception>
-		public async Task<bool> ExportAsync(IExportOptions options)
+		public async Task<bool> ExportAsync(IMaildatFile file, IExportOptions options)
 		{
 			bool returnValue = true;
 
@@ -148,18 +148,29 @@ namespace Mail.dat.Io
 					//
 					// Get all of the properties of the context that suport the Mail.dat version being exported.
 					//
-					PropertyInfo[] properties = localContext.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
+					PropertyInfo[] properties = [.. localContext.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
 												.Where(t => t.GetCustomAttribute<MaildatExportAttribute>() != null)
-												.Select(t => new { Property = t, Atrribute = t.GetCustomAttribute<MaildatExportAttribute>() })
-												.Where(t => t.Atrribute.Version == version)
-												.Select(t => t.Property)
-												.ToArray();
+												.Select(t => new { Property = t, Atrribute = t.GetCustomAttribute<MaildatVersionsAttribute>() })
+												.Where(t => t.Atrribute.SupportedVersions.Contains(version))
+												.Select(t => t.Property)];
+
+					//
+					// Set up parallel options for the export operation.
+					//
+					ParallelOptions parallelOptions = new()
+					{
+						CancellationToken = options.CancellationToken,
+#if DEBUG
+						MaxDegreeOfParallelism = Environment.ProcessorCount
+#else
+						MaxDegreeOfParallelism = Environment.ProcessorCount
+#endif
+					};
 
 					//
 					// Iterate through each property in the context.
 					//
-					// new ParallelOptions() { MaxDegreeOfParallelism = 1 },
-					Parallel.ForEach(properties, (property) =>
+					Parallel.ForEach(properties, parallelOptions , (property) =>
 					{
 						//
 						// Get the property type.
@@ -209,17 +220,22 @@ namespace Mail.dat.Io
 					//
 					// Check if the output should be zipped.
 					//
-					if (Path.GetExtension(options.TargetFile.FilePath).ToLower() == ".zip")
+					if (Path.GetExtension(options.TargetFile.FilePath).Equals(".zip", StringComparison.CurrentCultureIgnoreCase))
 					{
+						await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Zip", ItemAction = ProgressMessageType.Start, Message = "Zipping File" });
+
 						//
 						// Zip the Mail.dat.
 						//
+						string zipFilePath = Path.ChangeExtension(options.TargetFile.FilePath, ".zip");
+						await file.ZipAsync(zipFilePath, options.RemoveSourceFiles);
 
+						await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Zip", ItemAction = ProgressMessageType.Completed, Message = "Zipping File" });
 					}
 				}
 				finally
 				{
-					await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Export", ItemAction = ProgressMessageType.Completed, Message = "Export" });
+					await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Zip", ItemAction = ProgressMessageType.Completed, Message = "Export" });
 				}
 			}
 			else

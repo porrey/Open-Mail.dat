@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -28,7 +28,7 @@ namespace Mail.dat
 	/// <summary>
 	/// Quantity and destination per package.
 	/// </summary>
-	public interface IPqt : IMaildatEntity 
+	public interface IPqt : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (PQT-1001)
@@ -77,6 +77,12 @@ namespace Mail.dat
 		int NumberOfCopies { get; set; }
 
 		/// <summary>
+		/// Package Preparation Type (PQT-1115)
+		/// Populate in the scenario when CSM Tray Preparation Type is set to M = Mixed).
+		/// </summary>
+		string PackagePreparationType { get; set; }
+
+		/// <summary>
 		/// Number of Pieces (PQT-1104)
 		/// Number of pieces within this specific package. Note: First record within Firm Package or Multi-Piece
 		/// Parcel has Piece Count = 1 subsequent records within same Package the piece count = 0 (see Scenarios
@@ -115,11 +121,5 @@ namespace Mail.dat
 		/// Must be the # sign.
 		/// </summary>
 		string ClosingCharacter { get; }
-
-		/// <summary>
-		/// Package Preparation Type (PQT-1115)
-		/// Populate in the scenario when CSM Tray Preparation Type is set to M = Mixed).
-		/// </summary>
-		string PackagePreparationType { get; set; }
 	}
 }

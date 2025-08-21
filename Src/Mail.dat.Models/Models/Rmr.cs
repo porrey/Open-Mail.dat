@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Rmr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Rmr : MaildatEntity, IRmr 
+	public partial class Rmr : MaildatEntity, IRmr
 	{
 		/// <summary>
 		/// Job ID (RMR-1001)
@@ -231,7 +231,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Rmr, string>(version, p => p.JobId, returnValue);
 			this.RmrId = line.ParseForImport<Rmr, string>(version, p => p.RmrId, returnValue);
 			this.RmrIdType = line.ParseForImport<Rmr, string>(version, p => p.RmrIdType, returnValue);
@@ -244,30 +244,28 @@ namespace Mail.dat
 			this.RmrRecordStatus = line.ParseForImport<Rmr, string>(version, p => p.RmrRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Rmr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Rmr, string>(version, p => p.JobId, buffer, encoding);
+			this.RmrId.FormatForExport<Rmr, string>(version, p => p.RmrId, buffer, encoding);
+			this.RmrIdType.FormatForExport<Rmr, string>(version, p => p.RmrIdType, buffer, encoding);
+			this.RmsId.FormatForExport<Rmr, string>(version, p => p.RmsId, buffer, encoding);
+			this.RmrContentType.FormatForExport<Rmr, string>(version, p => p.RmrContentType, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Rmr, int?>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.RmrValue.FormatForExport<Rmr, string>(version, p => p.RmrValue, buffer, encoding);
+			this.RmrTemplateCode.FormatForExport<Rmr, string>(version, p => p.RmrTemplateCode, buffer, encoding);
+			this.ReserveRmr1011.FormatForExport<Rmr, string>(version, p => p.ReserveRmr1011, buffer, encoding);
+			this.RmrRecordStatus.FormatForExport<Rmr, string>(version, p => p.RmrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Rmr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Rmr, string>(version, p => p.JobId));
-			sb.Append(this.RmrId.FormatForExport<Rmr, string>(version, p => p.RmrId));
-			sb.Append(this.RmrIdType.FormatForExport<Rmr, string>(version, p => p.RmrIdType));
-			sb.Append(this.RmsId.FormatForExport<Rmr, string>(version, p => p.RmsId));
-			sb.Append(this.RmrContentType.FormatForExport<Rmr, string>(version, p => p.RmrContentType));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Rmr, int?>(version, p => p.CqtDatabaseId));
-			sb.Append(this.RmrValue.FormatForExport<Rmr, string>(version, p => p.RmrValue));
-			sb.Append(this.RmrTemplateCode.FormatForExport<Rmr, string>(version, p => p.RmrTemplateCode));
-			sb.Append(this.ReserveRmr1011.FormatForExport<Rmr, string>(version, p => p.ReserveRmr1011));
-			sb.Append(this.RmrRecordStatus.FormatForExport<Rmr, string>(version, p => p.RmrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Rmr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

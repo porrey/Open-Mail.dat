@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Epd", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Epd : MaildatEntity, IEpd 
+	public partial class Epd : MaildatEntity, IEpd
 	{
 		/// <summary>
 		/// Job ID (EPD-1001)
@@ -151,7 +151,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Epd, string>(version, p => p.JobId, returnValue);
 			this.PieceId = line.ParseForImport<Epd, string>(version, p => p.PieceId, returnValue);
 			this.CridType = line.ParseForImport<Epd, string>(version, p => p.CridType, returnValue);
@@ -159,25 +159,23 @@ namespace Mail.dat
 			this.EpdRecordStatus = line.ParseForImport<Epd, string>(version, p => p.EpdRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Epd, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Epd, string>(version, p => p.JobId, buffer, encoding);
+			this.PieceId.FormatForExport<Epd, string>(version, p => p.PieceId, buffer, encoding);
+			this.CridType.FormatForExport<Epd, string>(version, p => p.CridType, buffer, encoding);
+			this.Crid.FormatForExport<Epd, string>(version, p => p.Crid, buffer, encoding);
+			this.EpdRecordStatus.FormatForExport<Epd, string>(version, p => p.EpdRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Epd, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Epd, string>(version, p => p.JobId));
-			sb.Append(this.PieceId.FormatForExport<Epd, string>(version, p => p.PieceId));
-			sb.Append(this.CridType.FormatForExport<Epd, string>(version, p => p.CridType));
-			sb.Append(this.Crid.FormatForExport<Epd, string>(version, p => p.Crid));
-			sb.Append(this.EpdRecordStatus.FormatForExport<Epd, string>(version, p => p.EpdRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Epd, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

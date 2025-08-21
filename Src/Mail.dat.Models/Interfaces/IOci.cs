@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Links new container with an original container. Allows customers to tie or link container
 	/// information between Jobs from Mail.dat and Mail.XML.
 	/// </summary>
-	public interface IOci : IMaildatEntity 
+	public interface IOci : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (OCI-1001)

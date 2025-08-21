@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Special fees and charges (linked to .PDR). Records specific ancillary fees (linked to the .PDR or
 	/// .PBC). To be only used for extra services.
 	/// </summary>
-	public interface ISfr : IMaildatEntity 
+	public interface ISfr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (SFR-1001)

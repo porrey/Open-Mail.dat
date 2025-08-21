@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.
 	/// Provides the bulk form information that is present on the Certificate of Mailing Forms.
 	/// </summary>
-	public interface ICbr : IMaildatEntity 
+	public interface ICbr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (CBR-1001)

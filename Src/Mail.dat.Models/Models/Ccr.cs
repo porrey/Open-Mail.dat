@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -44,7 +44,7 @@ namespace Mail.dat
 	[Table("Ccr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Ccr : MaildatEntity, ICcr 
+	public partial class Ccr : MaildatEntity, ICcr
 	{
 		/// <summary>
 		/// Job ID (CCR-1001)
@@ -113,13 +113,43 @@ namespace Mail.dat
 		public string Characteristic { get; set; }
 
 		/// <summary>
+		/// Pre-Denominated Maximum Credit Amount (CCR-1101)
+		/// Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the
+		/// postage amount. The postage amount representing the pieces associated with the component record.
+		/// Should be used in conjunction with the CCR for Credit Redemption. If the field is blank or zero
+		/// filled, do not apply any limit to the credit amount used. Note: multiple components may be tied to
+		/// one/same Permit in MPA record Note: if the need is to entirely remove the Credit Redemption, remove
+		/// the CCR record claiming the Credit Redemption or populate the field with the minimum value
+		/// (00000000001), as a zero filled will not limit the credit amount used.
+		/// </summary>
+		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1101", FieldName = "Pre-Denominated Maximum Credit Amount", Start = 20, Length = 11, Required = false, Key = false, DataType = "N", Description = "Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the postage amount. The postage amount representing the pieces associated with the component record. Should be used in conjunction with the CCR for Credit Redemption. If the field is blank or zero filled, do not apply any limit to the credit amount used. Note: multiple components may be tied to one/same Permit in MPA record Note: if the need is to entirely remove the Credit Redemption, remove the CCR record claiming the Credit Redemption or populate the field with the minimum value (00000000001), as a zero filled will not limit the credit amount used.", Type = "decimal", Format = "zfill", Precision = 3)]
+		[Column("PreDenominatedMaximumCreditAmount", Order = 6, TypeName = "NUMERIC")]
+		[Precision(3)]
+		[Comment("CCR-1101")]
+		[TypeConverter(typeof(MaildatDecimalConverter))]
+		[MaildatVersions("25-1")]
+		public decimal? PreDenominatedMaximumCreditAmount { get; set; }
+
+		/// <summary>
+		/// Reserve (CCR-1102)
+		/// Reserved for future use.
+		/// </summary>
+		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1102", FieldName = "Reserve", Start = 31, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
+		[Column("ReserveCcr1102", Order = 7, TypeName = "TEXT")]
+		[MaxLength(20)]
+		[Comment("CCR-1102")]
+		[TypeConverter(typeof(MaildatStringConverter))]
+		[MaildatVersions("25-1")]
+		public string ReserveCcr1102 { get; set; }
+
+		/// <summary>
 		/// CCR Record Status (CCR-2000)
 		/// O, D, I, U.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 20, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 20, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 51, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
-		[Column("CcrRecordStatus", Order = 6, TypeName = "TEXT")]
+		[Column("CcrRecordStatus", Order = 8, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("D", "I", "O", "U")]
@@ -136,7 +166,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 21, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 21, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 52, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
-		[Column("ClosingCharacter", Order = 7, TypeName = "TEXT")]
+		[Column("ClosingCharacter", Order = 9, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
@@ -146,72 +176,40 @@ namespace Mail.dat
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>
-		/// Pre-Denominated Maximum Credit Amount (CCR-1101)
-		/// Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the
-		/// postage amount. The postage amount representing the pieces associated with the component record.
-		/// Should be used in conjunction with the CCR for Credit Redemption. If the field is blank or zero
-		/// filled, do not apply any limit to the credit amount used. Note: multiple components may be tied to
-		/// one/same Permit in MPA record Note: if the need is to entirely remove the Credit Redemption, remove
-		/// the CCR record claiming the Credit Redemption or populate the field with the minimum value
-		/// (00000000001), as a zero filled will not limit the credit amount used.
-		/// </summary>
-		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1101", FieldName = "Pre-Denominated Maximum Credit Amount", Start = 20, Length = 11, Required = false, Key = false, DataType = "N", Description = "Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the postage amount. The postage amount representing the pieces associated with the component record. Should be used in conjunction with the CCR for Credit Redemption. If the field is blank or zero filled, do not apply any limit to the credit amount used. Note: multiple components may be tied to one/same Permit in MPA record Note: if the need is to entirely remove the Credit Redemption, remove the CCR record claiming the Credit Redemption or populate the field with the minimum value (00000000001), as a zero filled will not limit the credit amount used.", Type = "decimal", Format = "zfill", Precision = 3)]
-		[Column("PreDenominatedMaximumCreditAmount", Order = 8, TypeName = "NUMERIC")]
-		[Precision(3)]
-		[Comment("CCR-1101")]
-		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("25-1")]
-		public decimal? PreDenominatedMaximumCreditAmount { get; set; }
-
-		/// <summary>
-		/// Reserve (CCR-1102)
-		/// Reserved for future use.
-		/// </summary>
-		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1102", FieldName = "Reserve", Start = 31, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
-		[Column("ReserveCcr1102", Order = 9, TypeName = "TEXT")]
-		[MaxLength(20)]
-		[Comment("CCR-1102")]
-		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("25-1")]
-		public string ReserveCcr1102 { get; set; }
-
-		/// <summary>
 		/// Sets property values from one line of an import file.
 		/// </summary>
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Ccr, string>(version, p => p.JobId, returnValue);
 			this.ComponentId = line.ParseForImport<Ccr, string>(version, p => p.ComponentId, returnValue);
 			this.CharacteristicType = line.ParseForImport<Ccr, string>(version, p => p.CharacteristicType, returnValue);
 			this.Characteristic = line.ParseForImport<Ccr, string>(version, p => p.Characteristic, returnValue);
-			this.CcrRecordStatus = line.ParseForImport<Ccr, string>(version, p => p.CcrRecordStatus, returnValue);
-			this.ClosingCharacter = line.ParseForImport<Ccr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.PreDenominatedMaximumCreditAmount = line.ParseForImport<Ccr, decimal?>(version, p => p.PreDenominatedMaximumCreditAmount, returnValue);
 			this.ReserveCcr1102 = line.ParseForImport<Ccr, string>(version, p => p.ReserveCcr1102, returnValue);
+			this.CcrRecordStatus = line.ParseForImport<Ccr, string>(version, p => p.CcrRecordStatus, returnValue);
+			this.ClosingCharacter = line.ParseForImport<Ccr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Ccr, string>(version, p => p.JobId, buffer, encoding);
+			this.ComponentId.FormatForExport<Ccr, string>(version, p => p.ComponentId, buffer, encoding);
+			this.CharacteristicType.FormatForExport<Ccr, string>(version, p => p.CharacteristicType, buffer, encoding);
+			this.Characteristic.FormatForExport<Ccr, string>(version, p => p.Characteristic, buffer, encoding);
+			this.PreDenominatedMaximumCreditAmount.FormatForExport<Ccr, decimal?>(version, p => p.PreDenominatedMaximumCreditAmount, buffer, encoding);
+			this.ReserveCcr1102.FormatForExport<Ccr, string>(version, p => p.ReserveCcr1102, buffer, encoding);
+			this.CcrRecordStatus.FormatForExport<Ccr, string>(version, p => p.CcrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Ccr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Ccr, string>(version, p => p.JobId));
-			sb.Append(this.ComponentId.FormatForExport<Ccr, string>(version, p => p.ComponentId));
-			sb.Append(this.CharacteristicType.FormatForExport<Ccr, string>(version, p => p.CharacteristicType));
-			sb.Append(this.Characteristic.FormatForExport<Ccr, string>(version, p => p.Characteristic));
-			sb.Append(this.CcrRecordStatus.FormatForExport<Ccr, string>(version, p => p.CcrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Ccr, string>(version, p => p.ClosingCharacter));
-			sb.Append(this.PreDenominatedMaximumCreditAmount.FormatForExport<Ccr, decimal?>(version, p => p.PreDenominatedMaximumCreditAmount));
-			sb.Append(this.ReserveCcr1102.FormatForExport<Ccr, string>(version, p => p.ReserveCcr1102));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,16 +34,16 @@ namespace Mail.dat
 	/// <summary>
 	/// Relates containers to associated ink jet output tapes/files.
 	/// </summary>
-	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "icr", File = "IJ/C RELATIONSHIP RECORD", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "icr", File = "IJ/C RELATIONSHIP RECORD", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "icr", File = "IJ/C RELATIONSHIP RECORD", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
+	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
 	[MaildatImport(Order = 13, Version = "23-1")]
 	[MaildatImport(Order = 13, Version = "24-1")]
 	[MaildatImport(Order = 13, Version = "25-1")]
 	[Table("Icr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Icr : MaildatEntity, IIcr 
+	public partial class Icr : MaildatEntity, IIcr
 	{
 		/// <summary>
 		/// Job ID (ICR-1001)
@@ -189,7 +189,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Icr, string>(version, p => p.JobId, returnValue);
 			this.FileName = line.ParseForImport<Icr, string>(version, p => p.FileName, returnValue);
 			this.TapeId = line.ParseForImport<Icr, string>(version, p => p.TapeId, returnValue);
@@ -200,28 +200,26 @@ namespace Mail.dat
 			this.ReserveIcr1105 = line.ParseForImport<Icr, string>(version, p => p.ReserveIcr1105, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Icr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Icr, string>(version, p => p.JobId, buffer, encoding);
+			this.FileName.FormatForExport<Icr, string>(version, p => p.FileName, buffer, encoding);
+			this.TapeId.FormatForExport<Icr, string>(version, p => p.TapeId, buffer, encoding);
+			this.ContainerId.FormatForExport<Icr, int>(version, p => p.ContainerId, buffer, encoding);
+			this.BeginningRecord.FormatForExport<Icr, int?>(version, p => p.BeginningRecord, buffer, encoding);
+			this.EndingRecord.FormatForExport<Icr, int?>(version, p => p.EndingRecord, buffer, encoding);
+			this.IcrRecordStatus.FormatForExport<Icr, string>(version, p => p.IcrRecordStatus, buffer, encoding);
+			this.ReserveIcr1105.FormatForExport<Icr, string>(version, p => p.ReserveIcr1105, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Icr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Icr, string>(version, p => p.JobId));
-			sb.Append(this.FileName.FormatForExport<Icr, string>(version, p => p.FileName));
-			sb.Append(this.TapeId.FormatForExport<Icr, string>(version, p => p.TapeId));
-			sb.Append(this.ContainerId.FormatForExport<Icr, int>(version, p => p.ContainerId));
-			sb.Append(this.BeginningRecord.FormatForExport<Icr, int?>(version, p => p.BeginningRecord));
-			sb.Append(this.EndingRecord.FormatForExport<Icr, int?>(version, p => p.EndingRecord));
-			sb.Append(this.IcrRecordStatus.FormatForExport<Icr, string>(version, p => p.IcrRecordStatus));
-			sb.Append(this.ReserveIcr1105.FormatForExport<Icr, string>(version, p => p.ReserveIcr1105));
-			sb.Append(this.ClosingCharacter.FormatForExport<Icr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

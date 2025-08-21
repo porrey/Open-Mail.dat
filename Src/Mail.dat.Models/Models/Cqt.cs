@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Cqt", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Cqt : MaildatEntity, ICqt 
+	public partial class Cqt : MaildatEntity, ICqt
 	{
 		/// <summary>
 		/// Job ID (CQT-1001)
@@ -390,7 +390,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Cqt, string>(version, p => p.JobId, returnValue);
 			this.CqtDatabaseId = line.ParseForImport<Cqt, int>(version, p => p.CqtDatabaseId, returnValue);
 			this.ContainerId = line.ParseForImport<Cqt, int>(version, p => p.ContainerId, returnValue);
@@ -412,39 +412,37 @@ namespace Mail.dat
 			this.ReserveCqt1106 = line.ParseForImport<Cqt, string>(version, p => p.ReserveCqt1106, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Cqt, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Cqt, string>(version, p => p.JobId, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Cqt, int>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.ContainerId.FormatForExport<Cqt, int>(version, p => p.ContainerId, buffer, encoding);
+			this.ThreeDigit5DigitContainerDivision.FormatForExport<Cqt, string>(version, p => p.ThreeDigit5DigitContainerDivision, buffer, encoding);
+			this.MailPieceUnitId.FormatForExport<Cqt, string>(version, p => p.MailPieceUnitId, buffer, encoding);
+			this.Zone.FormatForExport<Cqt, string>(version, p => p.Zone, buffer, encoding);
+			this.DestinationEntry.FormatForExport<Cqt, string>(version, p => p.DestinationEntry, buffer, encoding);
+			this.RateCategory.FormatForExport<Cqt, string>(version, p => p.RateCategory, buffer, encoding);
+			this.BarcodeDiscountOrSurchargeIndicator.FormatForExport<Cqt, string>(version, p => p.BarcodeDiscountOrSurchargeIndicator, buffer, encoding);
+			this.PeriodicalsSubNonSubRequesterIndicator.FormatForExport<Cqt, string>(version, p => p.PeriodicalsSubNonSubRequesterIndicator, buffer, encoding);
+			this.PeriodicalsNotCountyInCounty.FormatForExport<Cqt, string>(version, p => p.PeriodicalsNotCountyInCounty, buffer, encoding);
+			this.NumberOfCopies.FormatForExport<Cqt, int>(version, p => p.NumberOfCopies, buffer, encoding);
+			this.NumberOfPieces.FormatForExport<Cqt, int>(version, p => p.NumberOfPieces, buffer, encoding);
+			this.PeriodicalsCoPalletizationDiscountIndicator.FormatForExport<Cqt, string>(version, p => p.PeriodicalsCoPalletizationDiscountIndicator, buffer, encoding);
+			this.ContainerChargeAllocation.FormatForExport<Cqt, decimal?>(version, p => p.ContainerChargeAllocation, buffer, encoding);
+			this.ServiceLevelIndicator.FormatForExport<Cqt, string>(version, p => p.ServiceLevelIndicator, buffer, encoding);
+			this.SimplifiedAddressIndicator.FormatForExport<Cqt, string>(version, p => p.SimplifiedAddressIndicator, buffer, encoding);
+			this.CqtRecordStatus.FormatForExport<Cqt, string>(version, p => p.CqtRecordStatus, buffer, encoding);
+			this.ReserveCqt1106.FormatForExport<Cqt, string>(version, p => p.ReserveCqt1106, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Cqt, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Cqt, string>(version, p => p.JobId));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Cqt, int>(version, p => p.CqtDatabaseId));
-			sb.Append(this.ContainerId.FormatForExport<Cqt, int>(version, p => p.ContainerId));
-			sb.Append(this.ThreeDigit5DigitContainerDivision.FormatForExport<Cqt, string>(version, p => p.ThreeDigit5DigitContainerDivision));
-			sb.Append(this.MailPieceUnitId.FormatForExport<Cqt, string>(version, p => p.MailPieceUnitId));
-			sb.Append(this.Zone.FormatForExport<Cqt, string>(version, p => p.Zone));
-			sb.Append(this.DestinationEntry.FormatForExport<Cqt, string>(version, p => p.DestinationEntry));
-			sb.Append(this.RateCategory.FormatForExport<Cqt, string>(version, p => p.RateCategory));
-			sb.Append(this.BarcodeDiscountOrSurchargeIndicator.FormatForExport<Cqt, string>(version, p => p.BarcodeDiscountOrSurchargeIndicator));
-			sb.Append(this.PeriodicalsSubNonSubRequesterIndicator.FormatForExport<Cqt, string>(version, p => p.PeriodicalsSubNonSubRequesterIndicator));
-			sb.Append(this.PeriodicalsNotCountyInCounty.FormatForExport<Cqt, string>(version, p => p.PeriodicalsNotCountyInCounty));
-			sb.Append(this.NumberOfCopies.FormatForExport<Cqt, int>(version, p => p.NumberOfCopies));
-			sb.Append(this.NumberOfPieces.FormatForExport<Cqt, int>(version, p => p.NumberOfPieces));
-			sb.Append(this.PeriodicalsCoPalletizationDiscountIndicator.FormatForExport<Cqt, string>(version, p => p.PeriodicalsCoPalletizationDiscountIndicator));
-			sb.Append(this.ContainerChargeAllocation.FormatForExport<Cqt, decimal?>(version, p => p.ContainerChargeAllocation));
-			sb.Append(this.ServiceLevelIndicator.FormatForExport<Cqt, string>(version, p => p.ServiceLevelIndicator));
-			sb.Append(this.SimplifiedAddressIndicator.FormatForExport<Cqt, string>(version, p => p.SimplifiedAddressIndicator));
-			sb.Append(this.CqtRecordStatus.FormatForExport<Cqt, string>(version, p => p.CqtRecordStatus));
-			sb.Append(this.ReserveCqt1106.FormatForExport<Cqt, string>(version, p => p.ReserveCqt1106));
-			sb.Append(this.ClosingCharacter.FormatForExport<Cqt, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

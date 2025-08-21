@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Cpt", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Cpt : MaildatEntity, ICpt 
+	public partial class Cpt : MaildatEntity, ICpt
 	{
 		/// <summary>
 		/// Job ID (CPT-1001)
@@ -579,7 +579,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Cpt, string>(version, p => p.JobId, returnValue);
 			this.ComponentId = line.ParseForImport<Cpt, string>(version, p => p.ComponentId, returnValue);
 			this.ComponentDescription = line.ParseForImport<Cpt, string>(version, p => p.ComponentDescription, returnValue);
@@ -616,54 +616,52 @@ namespace Mail.dat
 			this.ReserveCpt1130 = line.ParseForImport<Cpt, string>(version, p => p.ReserveCpt1130, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Cpt, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Cpt, string>(version, p => p.JobId, buffer, encoding);
+			this.ComponentId.FormatForExport<Cpt, string>(version, p => p.ComponentId, buffer, encoding);
+			this.ComponentDescription.FormatForExport<Cpt, string>(version, p => p.ComponentDescription, buffer, encoding);
+			this.ComponentWeight.FormatForExport<Cpt, decimal>(version, p => p.ComponentWeight, buffer, encoding);
+			this.ComponentWeightSource.FormatForExport<Cpt, string>(version, p => p.ComponentWeightSource, buffer, encoding);
+			this.ComponentWeightStatus.FormatForExport<Cpt, string>(version, p => p.ComponentWeightStatus, buffer, encoding);
+			this.ComponentLength.FormatForExport<Cpt, decimal?>(version, p => p.ComponentLength, buffer, encoding);
+			this.ComponentWidth.FormatForExport<Cpt, decimal?>(version, p => p.ComponentWidth, buffer, encoding);
+			this.ComponentThickness.FormatForExport<Cpt, decimal?>(version, p => p.ComponentThickness, buffer, encoding);
+			this.ComponentPeriodicalAdPercentage.FormatForExport<Cpt, decimal?>(version, p => p.ComponentPeriodicalAdPercentage, buffer, encoding);
+			this.ComponentPeriodicalAdPercentageStatus.FormatForExport<Cpt, string>(version, p => p.ComponentPeriodicalAdPercentageStatus, buffer, encoding);
+			this.ComponentClass.FormatForExport<Cpt, string>(version, p => p.ComponentClass, buffer, encoding);
+			this.ComponentRateType.FormatForExport<Cpt, string>(version, p => p.ComponentRateType, buffer, encoding);
+			this.ComponentProcessingCategory.FormatForExport<Cpt, string>(version, p => p.ComponentProcessingCategory, buffer, encoding);
+			this.MailerIdOfMailOwner.FormatForExport<Cpt, string>(version, p => p.MailerIdOfMailOwner, buffer, encoding);
+			this.CridOfMailOwner.FormatForExport<Cpt, string>(version, p => p.CridOfMailOwner, buffer, encoding);
+			this.PeriodicalAdTreatment.FormatForExport<Cpt, string>(version, p => p.PeriodicalAdTreatment, buffer, encoding);
+			this.PeriodicalVolumeNumber.FormatForExport<Cpt, string>(version, p => p.PeriodicalVolumeNumber, buffer, encoding);
+			this.PeriodicalIssueNumber.FormatForExport<Cpt, string>(version, p => p.PeriodicalIssueNumber, buffer, encoding);
+			this.PeriodicalIssueDate.FormatForExport<Cpt, DateOnly?>(version, p => p.PeriodicalIssueDate, buffer, encoding);
+			this.PeriodicalFrequency.FormatForExport<Cpt, int?>(version, p => p.PeriodicalFrequency, buffer, encoding);
+			this.EquivalentUserLicenseCode.FormatForExport<Cpt, string>(version, p => p.EquivalentUserLicenseCode, buffer, encoding);
+			this.EquivalentMailDatJobId.FormatForExport<Cpt, string>(version, p => p.EquivalentMailDatJobId, buffer, encoding);
+			this.EquivalentComponentId.FormatForExport<Cpt, string>(version, p => p.EquivalentComponentId, buffer, encoding);
+			this.EquivalentComponentType.FormatForExport<Cpt, string>(version, p => p.EquivalentComponentType, buffer, encoding);
+			this.AdBasis.FormatForExport<Cpt, decimal?>(version, p => p.AdBasis, buffer, encoding);
+			this.ComponentTitle.FormatForExport<Cpt, string>(version, p => p.ComponentTitle, buffer, encoding);
+			this.StandardParcelType.FormatForExport<Cpt, string>(version, p => p.StandardParcelType, buffer, encoding);
+			this.ApprovedPieceDesignType.FormatForExport<Cpt, string>(version, p => p.ApprovedPieceDesignType, buffer, encoding);
+			this.ApprovedPieceDesign.FormatForExport<Cpt, int?>(version, p => p.ApprovedPieceDesign, buffer, encoding);
+			this.UserOptionField.FormatForExport<Cpt, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.CptRecordStatus.FormatForExport<Cpt, string>(version, p => p.CptRecordStatus, buffer, encoding);
+			this.EMailpieceSampleGroupId.FormatForExport<Cpt, string>(version, p => p.EMailpieceSampleGroupId, buffer, encoding);
+			this.ReserveCpt1130.FormatForExport<Cpt, string>(version, p => p.ReserveCpt1130, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Cpt, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Cpt, string>(version, p => p.JobId));
-			sb.Append(this.ComponentId.FormatForExport<Cpt, string>(version, p => p.ComponentId));
-			sb.Append(this.ComponentDescription.FormatForExport<Cpt, string>(version, p => p.ComponentDescription));
-			sb.Append(this.ComponentWeight.FormatForExport<Cpt, decimal>(version, p => p.ComponentWeight));
-			sb.Append(this.ComponentWeightSource.FormatForExport<Cpt, string>(version, p => p.ComponentWeightSource));
-			sb.Append(this.ComponentWeightStatus.FormatForExport<Cpt, string>(version, p => p.ComponentWeightStatus));
-			sb.Append(this.ComponentLength.FormatForExport<Cpt, decimal?>(version, p => p.ComponentLength));
-			sb.Append(this.ComponentWidth.FormatForExport<Cpt, decimal?>(version, p => p.ComponentWidth));
-			sb.Append(this.ComponentThickness.FormatForExport<Cpt, decimal?>(version, p => p.ComponentThickness));
-			sb.Append(this.ComponentPeriodicalAdPercentage.FormatForExport<Cpt, decimal?>(version, p => p.ComponentPeriodicalAdPercentage));
-			sb.Append(this.ComponentPeriodicalAdPercentageStatus.FormatForExport<Cpt, string>(version, p => p.ComponentPeriodicalAdPercentageStatus));
-			sb.Append(this.ComponentClass.FormatForExport<Cpt, string>(version, p => p.ComponentClass));
-			sb.Append(this.ComponentRateType.FormatForExport<Cpt, string>(version, p => p.ComponentRateType));
-			sb.Append(this.ComponentProcessingCategory.FormatForExport<Cpt, string>(version, p => p.ComponentProcessingCategory));
-			sb.Append(this.MailerIdOfMailOwner.FormatForExport<Cpt, string>(version, p => p.MailerIdOfMailOwner));
-			sb.Append(this.CridOfMailOwner.FormatForExport<Cpt, string>(version, p => p.CridOfMailOwner));
-			sb.Append(this.PeriodicalAdTreatment.FormatForExport<Cpt, string>(version, p => p.PeriodicalAdTreatment));
-			sb.Append(this.PeriodicalVolumeNumber.FormatForExport<Cpt, string>(version, p => p.PeriodicalVolumeNumber));
-			sb.Append(this.PeriodicalIssueNumber.FormatForExport<Cpt, string>(version, p => p.PeriodicalIssueNumber));
-			sb.Append(this.PeriodicalIssueDate.FormatForExport<Cpt, DateOnly?>(version, p => p.PeriodicalIssueDate));
-			sb.Append(this.PeriodicalFrequency.FormatForExport<Cpt, int?>(version, p => p.PeriodicalFrequency));
-			sb.Append(this.EquivalentUserLicenseCode.FormatForExport<Cpt, string>(version, p => p.EquivalentUserLicenseCode));
-			sb.Append(this.EquivalentMailDatJobId.FormatForExport<Cpt, string>(version, p => p.EquivalentMailDatJobId));
-			sb.Append(this.EquivalentComponentId.FormatForExport<Cpt, string>(version, p => p.EquivalentComponentId));
-			sb.Append(this.EquivalentComponentType.FormatForExport<Cpt, string>(version, p => p.EquivalentComponentType));
-			sb.Append(this.AdBasis.FormatForExport<Cpt, decimal?>(version, p => p.AdBasis));
-			sb.Append(this.ComponentTitle.FormatForExport<Cpt, string>(version, p => p.ComponentTitle));
-			sb.Append(this.StandardParcelType.FormatForExport<Cpt, string>(version, p => p.StandardParcelType));
-			sb.Append(this.ApprovedPieceDesignType.FormatForExport<Cpt, string>(version, p => p.ApprovedPieceDesignType));
-			sb.Append(this.ApprovedPieceDesign.FormatForExport<Cpt, int?>(version, p => p.ApprovedPieceDesign));
-			sb.Append(this.UserOptionField.FormatForExport<Cpt, string>(version, p => p.UserOptionField));
-			sb.Append(this.CptRecordStatus.FormatForExport<Cpt, string>(version, p => p.CptRecordStatus));
-			sb.Append(this.EMailpieceSampleGroupId.FormatForExport<Cpt, string>(version, p => p.EMailpieceSampleGroupId));
-			sb.Append(this.ReserveCpt1130.FormatForExport<Cpt, string>(version, p => p.ReserveCpt1130));
-			sb.Append(this.ClosingCharacter.FormatForExport<Cpt, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

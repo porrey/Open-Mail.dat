@@ -23,6 +23,7 @@
 // Author: Daniel M porrey
 //
 using System.IO.Compression;
+using ICSharpCode.SharpZipLib.Zip;
 
 namespace Mail.dat.Io
 {
@@ -150,7 +151,7 @@ namespace Mail.dat.Io
 		/// it does not already exist.</param>
 		/// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/>  if the extraction
 		/// was successful; otherwise, <see langword="false"/>.</returns>
-		public Task<bool> Unzip(string targetDirectory)
+		public Task<bool> UnzipAsync(string targetDirectory)
 		{
 			bool returnValue = false;
 
@@ -163,7 +164,7 @@ namespace Mail.dat.Io
 			{
 				DirectoryInfo dir = new(this.UnzippedDirectory);
 				dir.Create();
-				ZipFile.ExtractToDirectory(this.FilePath, targetDirectory, true);
+				System.IO.Compression.ZipFile.ExtractToDirectory(this.FilePath, targetDirectory, true);
 				returnValue = true;
 			}
 
@@ -178,10 +179,65 @@ namespace Mail.dat.Io
 		/// <param name="targetFilePath">The full path, including the file name, where the compressed archive will be created. Must not be null or empty.</param>
 		/// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the operation
 		/// succeeds; otherwise, <see langword="false"/>.</returns>
-		public Task<bool> Zip(string targetFilePath)
+		public Task<bool> ZipAsync(string targetFilePath, bool deleteSource)
 		{
 			bool returnValue = false;
 
+			//
+			// Get the base file name for the exported Mail.dat files.
+			//
+			string baseFileName = Path.GetFileNameWithoutExtension(this.FilePath);
+
+			//
+			// Get the Mail.dat files.
+			//
+			string[] sourceFiles = [.. Directory.EnumerateFiles(Path.GetDirectoryName(this.FilePath), $"{baseFileName}.*").Where(t => !t.Contains(".zip"))];
+
+			using (ZipOutputStream zipFile = new(File.Create(this.FilePath)))
+			{
+				zipFile.SetLevel(9);
+				byte[] buffer = new byte[4096];
+
+				foreach (string sourceFile in sourceFiles)
+				{
+					//
+					// Create an entry from the source file.
+					//
+					ZipEntry entry = new(Path.GetFileName(sourceFile))
+					{
+						DateTime = File.GetCreationTime(sourceFile)
+					};
+
+					//
+					// Add the entry to the zip file.
+					//
+					zipFile.PutNextEntry(entry);
+
+					//
+					// Read the file data.
+					//
+					byte[] bytes = File.ReadAllBytes(sourceFile);
+
+					//
+					// Write the date to the zip file.
+					//
+					zipFile.Write(bytes, 0, bytes.Length);
+
+					if (deleteSource)
+					{
+						//
+						// Delete the file.
+						//
+						File.Delete(sourceFile);
+					}
+				}
+
+				//
+				// Complete the file.
+				//
+				zipFile.Finish();
+				zipFile.Close();
+			}
 
 			return Task.FromResult(returnValue);
 		}

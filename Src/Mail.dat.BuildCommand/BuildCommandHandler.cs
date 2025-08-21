@@ -71,16 +71,45 @@ namespace Mail.dat.BuildCommand
 			DirectoryInfo contextDirectory = new($"{options.ModelsDirectory}/Context");
 			DirectoryInfo valuesDirectory = new($"{options.ModelsDirectory}/Values");
 			DirectoryInfo repositoriesDirectory = new($"{options.ModelsDirectory}/Repositories");
+			DirectoryInfo modelServicesDirectory = new($"{options.ModelsDirectory}/Services");
+			DirectoryInfo modelBinDirectory = new($"{options.ModelsDirectory}/bin");
+			DirectoryInfo modelObjDirectory = new($"{options.ModelsDirectory}/obj");
+
 			DirectoryInfo hostingDirectory = new($"{options.HostingDirectory}/Hosting");
+			DirectoryInfo hostingServicesDirectory = new($"{options.HostingDirectory}/Services");
+			DirectoryInfo hostingBinDirectory = new($"{options.HostingDirectory}/bin");
+			DirectoryInfo hostingObjDirectory = new($"{options.HostingDirectory}/obj");
 
 			//
 			// Remove all targets files now so that we do not get an error mid-way through the process.
 			//
-			modelDirectory.DeleteAllFiles("*.cs");
-			interfaceDirectory.DeleteAllFiles("*.cs");
-			contextDirectory.DeleteAllFiles("*.cs");
-			valuesDirectory.DeleteAllFiles("*.cs");
-			repositoriesDirectory.DeleteAllFiles("*.cs");
+			modelDirectory.DeleteFiles("*.cs");
+			interfaceDirectory.DeleteFiles("*.cs");
+			contextDirectory.DeleteFiles("MaildatContext.cs");
+			valuesDirectory.DeleteFiles("*.cs");
+			repositoriesDirectory.DeleteFiles("*.cs");
+			modelServicesDirectory.DeleteFiles("*.json");
+			hostingServicesDirectory.DeleteFiles("*.json");
+
+			if (modelBinDirectory.Exists)
+			{
+				modelBinDirectory.Delete(true);
+			}
+
+			if (modelObjDirectory.Exists)
+			{
+				modelObjDirectory.Delete(true);
+			}
+
+			if (hostingBinDirectory.Exists)
+			{
+				hostingBinDirectory.Delete(true);
+			}
+
+			if (hostingObjDirectory.Exists)
+			{
+				hostingObjDirectory.Delete(true);
+			}
 
 			//
 			// Iterate through each file and build the classes.
@@ -105,6 +134,8 @@ namespace Mail.dat.BuildCommand
 				// Mark the starting column order for specifying the filed order in the database.
 				//
 				int columnOrder = 2;
+
+				IEnumerable<RecordDefinition> items = fileGroup.RecordDefinitions();
 
 				//
 				// Create a class for this file.
@@ -329,21 +360,19 @@ namespace Mail.dat.BuildCommand
 						.AddCode("")
 						.AddCode("return Task.FromResult(returnValue.ToArray());")
 					)
-					.AddMethod(MethodBuilder.Create("OnExportDataAsync")
+					.AddMethod(MethodBuilder.Create("OnExportData")
 						.SetScope("protected override")
-						.SetReturnType("Task<string>")
-						.SetSummary("Formats all property values into a single line suitable for export.")
+						.SetReturnType("void")
+						.SetSummary("Formats all property values into a Span<byte> suitable for export.")
 						.AddParameter("string", "version")
-						.AddCode("StringBuilder sb = new();")
-						.AddCode("")
+						.AddParameter("Span<byte>", "buffer")
+						.AddParameter("int", "width")
+						.AddParameter("Encoding", "encoding")
 						.AddCode(
 							[.. from tbl in fileGroup.RecordDefinitions()
 									let propertyName = tbl.ToPropertyName()
-									select $"sb.Append(this.{propertyName}.FormatForExport<{fileGroup.FileExtension.ToClassName()}, {fileGroup.ReturnType(tbl)}>(version, p => p.{propertyName}));"
-							]
-						)
-						.AddCode("")
-						.AddCode("return Task.FromResult(sb.ToString());")
+									select $"this.{propertyName}.FormatForExport<{fileGroup.FileExtension.ToClassName()}, {fileGroup.ReturnType(tbl)}>(version, p => p.{propertyName}, buffer, encoding);"
+							])
 					)
 					.Build($"{modelDirectory.FullName}/{fileGroup.FileExtension.ToClassFileName()}", 1));
 
@@ -571,7 +600,6 @@ namespace Mail.dat.BuildCommand
 							  }
 							).SelectMany(t => t).ToList())
 				.Build($"{options.ModelsDirectory}/Services/Mail.dat.Models.json", 0);
-
 
 			//
 			// Display the summary.

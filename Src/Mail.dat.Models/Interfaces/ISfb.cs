@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -28,7 +28,7 @@ namespace Mail.dat
 	/// <summary>
 	/// Barcode for special services. Provides barcode for special fees.
 	/// </summary>
-	public interface ISfb : IMaildatEntity 
+	public interface ISfb : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (SFB-1001)

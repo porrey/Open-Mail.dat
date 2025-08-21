@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using Mail.dat.Abstractions;
@@ -33,7 +33,7 @@ namespace Mail.dat
 	/// </summary>
 	[MaildatVersions("23-1", "24-1", "25-1")]
 	[MaildatFieldLink(File = "cqt", FieldCode = "CQT-1107")]
-	public class PeriodicalsCoPalletizationDiscountIndicators : MaildatValues 
+	public class PeriodicalsCoPalletizationDiscountIndicators : MaildatValues
 	{
 		/// <summary>
 		/// Returns the Mail.dat file this set of values is lined to.

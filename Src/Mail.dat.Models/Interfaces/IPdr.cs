@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// of full service mailings; has additional capabilities beyond the Piece Barcode file; when used
 	/// instead of the Piece Barcode file, acts as an extension of the PQT file.
 	/// </summary>
-	public interface IPdr : IMaildatEntity 
+	public interface IPdr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (PDR-1001)

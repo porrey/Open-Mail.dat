@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -45,7 +45,7 @@ namespace Mail.dat
 	[Table("Pdr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Pdr : MaildatEntity, IPdr 
+	public partial class Pdr : MaildatEntity, IPdr
 	{
 		/// <summary>
 		/// Job ID (PDR-1001)
@@ -343,7 +343,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Pdr, string>(version, p => p.JobId, returnValue);
 			this.CqtDatabaseId = line.ParseForImport<Pdr, int>(version, p => p.CqtDatabaseId, returnValue);
 			this.PackageId = line.ParseForImport<Pdr, string>(version, p => p.PackageId, returnValue);
@@ -364,38 +364,36 @@ namespace Mail.dat
 			this.PdrRecordStatus = line.ParseForImport<Pdr, string>(version, p => p.PdrRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Pdr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Pdr, string>(version, p => p.JobId, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Pdr, int>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.PackageId.FormatForExport<Pdr, string>(version, p => p.PackageId, buffer, encoding);
+			this.PieceId.FormatForExport<Pdr, string>(version, p => p.PieceId, buffer, encoding);
+			this.PieceBarcode.FormatForExport<Pdr, string>(version, p => p.PieceBarcode, buffer, encoding);
+			this.LineOfTravelSequenceNumber.FormatForExport<Pdr, int?>(version, p => p.LineOfTravelSequenceNumber, buffer, encoding);
+			this.LineOfTravelSeqDirectionCode.FormatForExport<Pdr, string>(version, p => p.LineOfTravelSeqDirectionCode, buffer, encoding);
+			this.WalkSequenceNumber.FormatForExport<Pdr, int?>(version, p => p.WalkSequenceNumber, buffer, encoding);
+			this.WastedOrShortagePieceIndicator.FormatForExport<Pdr, string>(version, p => p.WastedOrShortagePieceIndicator, buffer, encoding);
+			this.ImBarcode.FormatForExport<Pdr, string>(version, p => p.ImBarcode, buffer, encoding);
+			this.MachineId.FormatForExport<Pdr, string>(version, p => p.MachineId, buffer, encoding);
+			this.MailerIdOfBarcodeApplicator.FormatForExport<Pdr, string>(version, p => p.MailerIdOfBarcodeApplicator, buffer, encoding);
+			this.MoveUpdateMethod.FormatForExport<Pdr, string>(version, p => p.MoveUpdateMethod, buffer, encoding);
+			this.ACSKeyLineData.FormatForExport<Pdr, string>(version, p => p.ACSKeyLineData, buffer, encoding);
+			this.CarrierRoute.FormatForExport<Pdr, string>(version, p => p.CarrierRoute, buffer, encoding);
+			this.ImpbBarcodeConstructCode.FormatForExport<Pdr, string>(version, p => p.ImpbBarcodeConstructCode, buffer, encoding);
+			this.MidInImbIsMoveUpdateSupplier.FormatForExport<Pdr, string>(version, p => p.MidInImbIsMoveUpdateSupplier, buffer, encoding);
+			this.PdrRecordStatus.FormatForExport<Pdr, string>(version, p => p.PdrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Pdr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Pdr, string>(version, p => p.JobId));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Pdr, int>(version, p => p.CqtDatabaseId));
-			sb.Append(this.PackageId.FormatForExport<Pdr, string>(version, p => p.PackageId));
-			sb.Append(this.PieceId.FormatForExport<Pdr, string>(version, p => p.PieceId));
-			sb.Append(this.PieceBarcode.FormatForExport<Pdr, string>(version, p => p.PieceBarcode));
-			sb.Append(this.LineOfTravelSequenceNumber.FormatForExport<Pdr, int?>(version, p => p.LineOfTravelSequenceNumber));
-			sb.Append(this.LineOfTravelSeqDirectionCode.FormatForExport<Pdr, string>(version, p => p.LineOfTravelSeqDirectionCode));
-			sb.Append(this.WalkSequenceNumber.FormatForExport<Pdr, int?>(version, p => p.WalkSequenceNumber));
-			sb.Append(this.WastedOrShortagePieceIndicator.FormatForExport<Pdr, string>(version, p => p.WastedOrShortagePieceIndicator));
-			sb.Append(this.ImBarcode.FormatForExport<Pdr, string>(version, p => p.ImBarcode));
-			sb.Append(this.MachineId.FormatForExport<Pdr, string>(version, p => p.MachineId));
-			sb.Append(this.MailerIdOfBarcodeApplicator.FormatForExport<Pdr, string>(version, p => p.MailerIdOfBarcodeApplicator));
-			sb.Append(this.MoveUpdateMethod.FormatForExport<Pdr, string>(version, p => p.MoveUpdateMethod));
-			sb.Append(this.ACSKeyLineData.FormatForExport<Pdr, string>(version, p => p.ACSKeyLineData));
-			sb.Append(this.CarrierRoute.FormatForExport<Pdr, string>(version, p => p.CarrierRoute));
-			sb.Append(this.ImpbBarcodeConstructCode.FormatForExport<Pdr, string>(version, p => p.ImpbBarcodeConstructCode));
-			sb.Append(this.MidInImbIsMoveUpdateSupplier.FormatForExport<Pdr, string>(version, p => p.MidInImbIsMoveUpdateSupplier));
-			sb.Append(this.PdrRecordStatus.FormatForExport<Pdr, string>(version, p => p.PdrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Pdr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

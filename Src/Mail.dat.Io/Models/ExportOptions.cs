@@ -76,5 +76,10 @@ namespace Mail.dat.Io
 		/// <remarks>Assigning a new <see cref="CancellationToken"/> allows the caller to control the cancellation
 		/// behavior of the associated operation.</remarks>
 		public CancellationToken CancellationToken { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether source files should be removed after being zipped.
+		/// </summary>
+		public bool RemoveSourceFiles { get; set; }
 	}
 }

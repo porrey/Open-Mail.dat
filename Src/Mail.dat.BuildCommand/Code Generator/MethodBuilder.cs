@@ -171,7 +171,14 @@ namespace Mail.dat.BuildCommand
 
 				foreach (string line in this.Code)
 				{
-					File.AppendAllLines(filePath, [$"{Tabs.Create(indentLevel + 1)}{line}"]);
+					if (!string.IsNullOrWhiteSpace(line))
+					{
+						File.AppendAllLines(filePath, [$"{Tabs.Create(indentLevel + 1)}{line}"]);
+					}
+					else
+					{
+						File.AppendAllLines(filePath, [""]);
+					}
 				}
 
 				File.AppendAllLines(filePath, [$"{Tabs.Create(indentLevel)}}}"]);

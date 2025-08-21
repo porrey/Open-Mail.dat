@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -28,7 +28,7 @@ namespace Mail.dat
 	/// <summary>
 	/// Descriptions of the mailer's permit and account information.
 	/// </summary>
-	public interface IMpa : IMaildatEntity 
+	public interface IMpa : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (MPA-1001)
@@ -78,6 +78,15 @@ namespace Mail.dat
 		/// environment. Should Not be zero padded.
 		/// </summary>
 		string MailOwnerSLclPermitRefNum { get; set; }
+
+		/// <summary>
+		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num (MPA-1107)
+		/// Number used by local USPS for client identification. This field can be used to let the Postal
+		/// Service know what permit numbers are included in the mailing that the Mail.dat® file represents.
+		/// This field is used for identifying what permits are being used for the entire job in an MLOCR
+		/// environment. Should not be zero padded.
+		/// </summary>
+		string MailOwnerSLclPermitRefNumIntLBillNum { get; set; }
 
 		/// <summary>
 		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num - Type (MPA-1108)
@@ -176,14 +185,5 @@ namespace Mail.dat
 		/// Must be the # sign.
 		/// </summary>
 		string ClosingCharacter { get; }
-
-		/// <summary>
-		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num (MPA-1107)
-		/// Number used by local USPS for client identification. This field can be used to let the Postal
-		/// Service know what permit numbers are included in the mailing that the Mail.dat® file represents.
-		/// This field is used for identifying what permits are being used for the entire job in an MLOCR
-		/// environment. Should not be zero padded.
-		/// </summary>
-		string MailOwnerSLclPermitRefNumIntLBillNum { get; set; }
 	}
 }

@@ -24,7 +24,6 @@
 //
 using System.IO.MemoryMappedFiles;
 using System.Text;
-using System.Text.RegularExpressions;
 using EFCore.BulkExtensions;
 using Mail.dat.Io.Models;
 
@@ -68,7 +67,7 @@ namespace Mail.dat.Io
 			//
 			// Get the MaildatFileAttribute attribute.
 			//
-			MaildatFileAttribute classAttribute = typeof(T).GetMaildatFiledAttribute(version);
+			MaildatFileAttribute classAttribute = typeof(T).GetMaildatFieldAttribute(version);
 
 			if (classAttribute != null && !options.ExcludeExtensions.Contains(classAttribute.Extension, StringComparer.OrdinalIgnoreCase))
 			{
@@ -122,77 +121,103 @@ namespace Mail.dat.Io
 						int processedCount = 0;
 
 						//
+						// Set up parallel options for the import operation.
+						//
+						ParallelOptions parallelOptions = new()
+						{
+							CancellationToken = options.CancellationToken,
+#if DEBUG
+							MaxDegreeOfParallelism = Environment.ProcessorCount
+#else
+							MaxDegreeOfParallelism = Environment.ProcessorCount
+#endif
+						};
+
+						//
 						// Use Parallel.For to read the file in parallel.
 						//
-						Parallel.For(0, lineCount, async (lineNumber) =>
+						Parallel.For(0, lineCount, parallelOptions, async (lineNumber, o) =>
 						{
-							//
-							// Calculate the offset for the line in the file.
-							//
-							long offset = lineNumber * lineLength;
-
-							//
-							// Create a view accessor for the line in the file.
-							//
-							using (MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor(offset, lineLength, MemoryMappedFileAccess.Read))
+							if (!o.ShouldExitCurrentIteration)
 							{
 								//
-								// Create a buffer to read the file line into.
+								// Calculate the offset for the line in the file.
 								//
-								byte[] buffer = new byte[lineLength];
+								long offset = lineNumber * lineLength;
 
 								//
-								// Read the line from the file.
+								// Create a view accessor for the line in the file.
 								//
-								accessor.ReadArray(0, buffer, 0, lineLength);
-
-								//
-								// Check if the buffer ends with the expected line ending characters.
-								// This is done to ensure that the line is read correctly and ends with the expected characters.
-								//
-								char[] c = [.. (first).Union(lineEndingCharacters.ToCharArray())];
-								if (!buffer.Verify(c))
-								{
-									string s = Encoding.UTF8.GetString(buffer).ToPrintable();
-									string actualEndCharacters = Encoding.UTF8.GetString(buffer, buffer.Length - c.Length, c.Length);
-									throw new Exception($"File format error or file misread error encountered.The line {lineNumber + 1} in file {Path.GetFileName(filePath)} does not end with the expected line ending characters. Expected: '{lineEndingCharacters.ToPrintable()}', Actual: '{actualEndCharacters.ToPrintable()}'");
-								}
-
-								//
-								// Increment the line counter for each line read.
-								//
-								Interlocked.Increment(ref processedCount);
-
-								if (cancellationToken.IsCancellationRequested)
+								using (MemoryMappedViewAccessor accessor = mmf.CreateViewAccessor(offset, lineLength, MemoryMappedFileAccess.Read))
 								{
 									//
-									// The import was cancelled. Break out of the loop.
+									// Create a buffer to read the file line into.
 									//
-									await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Import", ItemAction = ProgressMessageType.Completed, Message = "Import cancelled.", Context = classAttribute });
-								}
-								else
-								{
-									//
-									// Create the new model.
-									//
-									T model = new();
+									byte[] buffer = new byte[lineLength];
 
 									//
-									// Load the data into the model.
+									// Read the line from the file.
 									//
-									ILoadError[] loadErrors = await model.ImportDataAsync(version, lineNumber + 1, buffer.AsSpan());
+									accessor.ReadArray(0, buffer, 0, lineLength);
 
-									if (options.FavorMemoryOverPerformance)
+									//
+									// Check if the buffer ends with the expected line ending characters.
+									// This is done to ensure that the line is read correctly and ends with the expected characters.
+									//
+									char[] c = [.. (first).Union(lineEndingCharacters.ToCharArray())];
+
+									if (!buffer.Verify(c))
 									{
-										lock (modelBuffer)
+										string actualEndCharacters = Encoding.UTF8.GetString(buffer, buffer.Length - c.Length, c.Length);
+										throw new Exception($"File format error or file misread error encountered.The line {lineNumber + 1} in file {Path.GetFileName(filePath)} does not end with the expected line ending characters. Expected: '{lineEndingCharacters.ToPrintable()}', Actual: '{actualEndCharacters.ToPrintable()}'");
+									}
+
+									//
+									// Increment the line counter for each line read.
+									//
+									Interlocked.Increment(ref processedCount);
+
+									if (cancellationToken.IsCancellationRequested)
+									{
+										//
+										// The import was cancelled. Break out of the loop.
+										//
+										await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Import", ItemAction = ProgressMessageType.Completed, Message = "Import cancelled.", Context = classAttribute });
+									}
+									else
+									{
+										//
+										// Create the new model.
+										//
+										T model = new();
+
+										//
+										// Load the data into the model.
+										//
+										ILoadError[] loadErrors = await model.ImportDataAsync(version, lineNumber + 1, buffer.AsSpan());
+
+										if (options.FavorMemoryOverPerformance)
 										{
-											if (modelBuffer.Count > options.MaxRecordsInMemory)
+											lock (modelBuffer)
 											{
-												modelBuffer.Add(model);
-												context.BulkInsert(modelBuffer, bulkConfig: bc);
-												modelBuffer.Clear();
+												if (modelBuffer.Count > options.MaxRecordsInMemory)
+												{
+													modelBuffer.Add(model);
+													context.BulkInsert(modelBuffer, bulkConfig: bc);
+													modelBuffer.Clear();
+												}
+												else
+												{
+													//
+													// Add the model to the context.
+													//
+													modelBuffer.Add(model);
+												}
 											}
-											else
+										}
+										else
+										{
+											lock (modelBuffer)
 											{
 												//
 												// Add the model to the context.
@@ -200,47 +225,37 @@ namespace Mail.dat.Io
 												modelBuffer.Add(model);
 											}
 										}
-									}
-									else
-									{
-										lock (modelBuffer)
+
+										//
+										// Check for errors.
+										//
+										if (loadErrors.Length != 0)
 										{
 											//
-											// Add the model to the context.
+											// Load the errors into the context.
 											//
-											modelBuffer.Add(model);
+											errorBuffer.AddRange((from tbl in loadErrors
+																  select new Error
+																  {
+																	  Process = "Import",
+																	  File = extension,
+																	  FieldName = tbl.Attribute.FieldName,
+																	  FieldCode = tbl.Attribute.FieldCode,
+																	  DataType = tbl.Attribute.DataType,
+																	  Type = tbl.Attribute.Type,
+																	  StartPosition = tbl.Attribute.Start,
+																	  Length = tbl.Attribute.Length,
+																	  Value = tbl.Value,
+																	  ErrorMessage = tbl.ErrorMessage,
+																	  LineNumber = lineNumber
+																  }).Select(m => m));
 										}
-									}
 
-									//
-									// Check for errors.
-									//
-									if (loadErrors.Length != 0)
-									{
 										//
-										// Load the errors into the context.
+										// Send a progress update.
 										//
-										errorBuffer.AddRange((from tbl in loadErrors
-															  select new Error
-															  {
-																  Process = "Import",
-																  File = extension,
-																  FieldName = tbl.Attribute.FieldName,
-																  FieldCode = tbl.Attribute.FieldCode,
-																  DataType = tbl.Attribute.DataType,
-																  Type = tbl.Attribute.Type,
-																  StartPosition = tbl.Attribute.Start,
-																  Length = tbl.Attribute.Length,
-																  Value = tbl.Value,
-																  ErrorMessage = tbl.ErrorMessage,
-																  LineNumber = lineNumber
-															  }).Select(m => m));
+										await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = classAttribute.File, ItemAction = ProgressMessageType.Progress, WillShowProgress = true, ItemSource = filePath, ItemIndex = processedCount, ItemCount = lineCount, Context = classAttribute });
 									}
-
-									//
-									// Send a progress update.
-									//
-									await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = classAttribute.File, ItemAction = ProgressMessageType.Progress, WillShowProgress = true, ItemSource = filePath, ItemIndex = processedCount, ItemCount = lineCount, Context = classAttribute });
 								}
 							}
 						});

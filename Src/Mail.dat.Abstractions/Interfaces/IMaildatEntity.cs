@@ -22,6 +22,7 @@
 //
 // Author: Daniel M porrey
 //
+using System.Text;
 using Diamond.Core.Repository;
 
 namespace Mail.dat
@@ -37,7 +38,7 @@ namespace Mail.dat
 		/// <summary>
 		/// Gets or sets the line number in the file associated with the current operation or context.
 		/// </summary>
-		int FileLineNumber { get; set; }
+		long FileLineNumber { get; set; }
 
 		/// <summary>
 		/// Asynchronously imports data from a specified line of input and returns any errors encountered during the process.
@@ -53,13 +54,14 @@ namespace Mail.dat
 		Task<ILoadError[]> ImportDataAsync(string version, int lineNumber, ReadOnlySpan<byte> line);
 
 		/// <summary>
-		/// Exports data in the specified format version asynchronously.
+		/// Exports data to the specified buffer using the given parameters.
 		/// </summary>
-		/// <remarks>Use this method to export data in a specific format version. Ensure that the provided version is
-		/// supported by the system. The returned string contains the exported data, which can be saved or processed
-		/// further.</remarks>
-		/// <param name="version">The version of the data format to use for the export. This value must be a valid version string.</param>
-		/// <returns>A task that represents the asynchronous operation. The task result contains the exported data as a string.</returns>
-		Task<string> ExportDataAsync(string version);
+		/// <remarks>Ensure that the buffer is appropriately sized to avoid data truncation. The method does not
+		/// resize the buffer.</remarks>
+		/// <param name="version">The version identifier used to format the exported data. Must not be null or empty.</param>
+		/// <param name="buffer">The buffer to which the data will be written. The buffer must be large enough to hold the exported data.</param>
+		/// <param name="width">The width parameter that influences the structure or layout of the exported data. Must be a positive integer.</param>
+		/// <param name="encoding">The character encoding used to process the data during export. Must not be null.</param>
+		void ExportData(string version, Span<byte> buffer, int width, Encoding encoding);
 	}
 }

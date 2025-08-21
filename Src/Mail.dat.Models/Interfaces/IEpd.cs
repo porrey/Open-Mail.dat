@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// CRID for Move update charges. Records identify third party move update entities that should be
 	/// invoiced.
 	/// </summary>
-	public interface IEpd : IMaildatEntity 
+	public interface IEpd : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (EPD-1001)

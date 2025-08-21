@@ -36,7 +36,7 @@ namespace Mail.dat.BuildCommand
 		// This extension method deletes all files in the specified directory that match the given pattern.
 		// It ensures the directory exists before attempting to delete files.
 		//
-		public static void DeleteAllFiles(this DirectoryInfo directory, string pattern)
+		public static void DeleteFiles(this DirectoryInfo directory, string pattern)
 		{
 			//
 			// Ensure the directory exists. If it does not, it will be created.

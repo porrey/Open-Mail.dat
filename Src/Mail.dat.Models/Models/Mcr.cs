@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,16 +34,16 @@ namespace Mail.dat
 	/// <summary>
 	/// Table showing relationship of MPUs to Components.
 	/// </summary>
-	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "mcr", File = "MPU / C - RELATIONSHIP RECORD", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "mcr", File = "MPU / C - RELATIONSHIP RECORD", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "mcr", File = "MPU / C - RELATIONSHIP RECORD", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
+	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
 	[MaildatImport(Order = 4, Version = "23-1")]
 	[MaildatImport(Order = 4, Version = "24-1")]
 	[MaildatImport(Order = 4, Version = "25-1")]
 	[Table("Mcr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Mcr : MaildatEntity, IMcr 
+	public partial class Mcr : MaildatEntity, IMcr
 	{
 		/// <summary>
 		/// Job ID (MCR-1001)
@@ -243,7 +243,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Mcr, string>(version, p => p.JobId, returnValue);
 			this.SegmentId = line.ParseForImport<Mcr, string>(version, p => p.SegmentId, returnValue);
 			this.MailPieceUnitId = line.ParseForImport<Mcr, string>(version, p => p.MailPieceUnitId, returnValue);
@@ -257,31 +257,29 @@ namespace Mail.dat
 			this.ReserveMcr1101 = line.ParseForImport<Mcr, string>(version, p => p.ReserveMcr1101, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Mcr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Mcr, string>(version, p => p.JobId, buffer, encoding);
+			this.SegmentId.FormatForExport<Mcr, string>(version, p => p.SegmentId, buffer, encoding);
+			this.MailPieceUnitId.FormatForExport<Mcr, string>(version, p => p.MailPieceUnitId, buffer, encoding);
+			this.ComponentId.FormatForExport<Mcr, string>(version, p => p.ComponentId, buffer, encoding);
+			this.PrimaryMpaId.FormatForExport<Mcr, string>(version, p => p.PrimaryMpaId, buffer, encoding);
+			this.AdditionalPostageMpaId.FormatForExport<Mcr, string>(version, p => p.AdditionalPostageMpaId, buffer, encoding);
+			this.HostStatementComponentId.FormatForExport<Mcr, string>(version, p => p.HostStatementComponentId, buffer, encoding);
+			this.HostIndicatorOfAdComputation.FormatForExport<Mcr, string>(version, p => p.HostIndicatorOfAdComputation, buffer, encoding);
+			this.PostageAdjustmentMpaId.FormatForExport<Mcr, string>(version, p => p.PostageAdjustmentMpaId, buffer, encoding);
+			this.McrRecordStatus.FormatForExport<Mcr, string>(version, p => p.McrRecordStatus, buffer, encoding);
+			this.ReserveMcr1101.FormatForExport<Mcr, string>(version, p => p.ReserveMcr1101, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Mcr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Mcr, string>(version, p => p.JobId));
-			sb.Append(this.SegmentId.FormatForExport<Mcr, string>(version, p => p.SegmentId));
-			sb.Append(this.MailPieceUnitId.FormatForExport<Mcr, string>(version, p => p.MailPieceUnitId));
-			sb.Append(this.ComponentId.FormatForExport<Mcr, string>(version, p => p.ComponentId));
-			sb.Append(this.PrimaryMpaId.FormatForExport<Mcr, string>(version, p => p.PrimaryMpaId));
-			sb.Append(this.AdditionalPostageMpaId.FormatForExport<Mcr, string>(version, p => p.AdditionalPostageMpaId));
-			sb.Append(this.HostStatementComponentId.FormatForExport<Mcr, string>(version, p => p.HostStatementComponentId));
-			sb.Append(this.HostIndicatorOfAdComputation.FormatForExport<Mcr, string>(version, p => p.HostIndicatorOfAdComputation));
-			sb.Append(this.PostageAdjustmentMpaId.FormatForExport<Mcr, string>(version, p => p.PostageAdjustmentMpaId));
-			sb.Append(this.McrRecordStatus.FormatForExport<Mcr, string>(version, p => p.McrRecordStatus));
-			sb.Append(this.ReserveMcr1101.FormatForExport<Mcr, string>(version, p => p.ReserveMcr1101));
-			sb.Append(this.ClosingCharacter.FormatForExport<Mcr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

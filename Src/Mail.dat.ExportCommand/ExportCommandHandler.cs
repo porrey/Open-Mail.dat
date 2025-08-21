@@ -178,16 +178,17 @@ namespace Mail.dat.ExportCommand
 					{
 						TargetFile = file,
 						SourceFile = options.SourceFilePath.FullName,
-						Encoding = new UTF8Encoding(false),
-						CancellationToken = cancellationTokenSource.Token
+						Encoding = CodePage1252.Get(),
+						CancellationToken = cancellationTokenSource.Token,
+						RemoveSourceFiles = true
 					};
 
 					//
-					// Import the Mail.dat.files. This will unzip the files, create the database, and import the data.
+					// Export the Mail.dat.files.
 					//
 					Stopwatch stopwatch = new();
 					stopwatch.Start();
-					bool result = await export.ExportAsync(exportOptions);
+					bool result = await export.ExportAsync(file, exportOptions);
 					stopwatch.Stop();
 
 					AnsiConsole.MarkupLine($"Export completed in [yellow]{stopwatch.Elapsed.Humanize()}[/].");

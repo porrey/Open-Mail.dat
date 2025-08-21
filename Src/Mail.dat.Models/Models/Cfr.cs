@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,14 +35,14 @@ namespace Mail.dat
 	/// Is used to capture the service fee information. Provides the fee information that is present on the
 	/// Certificate of Mail Forms.
 	/// </summary>
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "cfr", File = "Certification of Mailing Services fee record", Summary = "Is used to capture the service fee information.", Description = "Is used to capture the service fee information. Provides the fee information that is present on the Certificate of Mail Forms.", LineLength = 115, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "cfr", File = "Certification of Mailing Services fee record", Summary = "Is used to capture the service fee information.", Description = "Is used to capture the service fee information. Provides the fee information that is present on the Certificate of Mail Forms.", LineLength = 115, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "cfr", File = "Certification of Mailing Services Fee Record", Summary = "Is used to capture the service fee information.", Description = "Is used to capture the service fee information. Provides the fee information that is present on the Certificate of Mail Forms.", LineLength = 115, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "cfr", File = "Certification of Mailing Services Fee Record", Summary = "Is used to capture the service fee information.", Description = "Is used to capture the service fee information. Provides the fee information that is present on the Certificate of Mail Forms.", LineLength = 115, ClosingCharacter = "#")]
 	[MaildatImport(Order = 28, Version = "24-1")]
 	[MaildatImport(Order = 28, Version = "25-1")]
 	[Table("Cfr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("24-1", "25-1")]
-	public partial class Cfr : MaildatEntity, ICfr 
+	public partial class Cfr : MaildatEntity, ICfr
 	{
 		/// <summary>
 		/// Job ID (CFR-1001)
@@ -268,7 +268,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Cfr, string>(version, p => p.JobId, returnValue);
 			this.CertificateOfMailingHeaderId = line.ParseForImport<Cfr, string>(version, p => p.CertificateOfMailingHeaderId, returnValue);
 			this.ComPieceId = line.ParseForImport<Cfr, string>(version, p => p.ComPieceId, returnValue);
@@ -285,34 +285,32 @@ namespace Mail.dat
 			this.CfrRecordStatus = line.ParseForImport<Cfr, string>(version, p => p.CfrRecordStatus, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Cfr, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Cfr, string>(version, p => p.JobId, buffer, encoding);
+			this.CertificateOfMailingHeaderId.FormatForExport<Cfr, string>(version, p => p.CertificateOfMailingHeaderId, buffer, encoding);
+			this.ComPieceId.FormatForExport<Cfr, string>(version, p => p.ComPieceId, buffer, encoding);
+			this.ServiceType.FormatForExport<Cfr, string>(version, p => p.ServiceType, buffer, encoding);
+			this.ServiceAdditionalType.FormatForExport<Cfr, string>(version, p => p.ServiceAdditionalType, buffer, encoding);
+			this.ServiceStatedValue.FormatForExport<Cfr, decimal?>(version, p => p.ServiceStatedValue, buffer, encoding);
+			this.ServiceFee.FormatForExport<Cfr, decimal?>(version, p => p.ServiceFee, buffer, encoding);
+			this.SpecialFeesChargesServicesId.FormatForExport<Cfr, string>(version, p => p.SpecialFeesChargesServicesId, buffer, encoding);
+			this.AmountDue.FormatForExport<Cfr, decimal?>(version, p => p.AmountDue, buffer, encoding);
+			this.FlexOptionA.FormatForExport<Cfr, string>(version, p => p.FlexOptionA, buffer, encoding);
+			this.FlexOptionB.FormatForExport<Cfr, string>(version, p => p.FlexOptionB, buffer, encoding);
+			this.FlexOptionC.FormatForExport<Cfr, string>(version, p => p.FlexOptionC, buffer, encoding);
+			this.ReserveCfr1109.FormatForExport<Cfr, string>(version, p => p.ReserveCfr1109, buffer, encoding);
+			this.CfrRecordStatus.FormatForExport<Cfr, string>(version, p => p.CfrRecordStatus, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Cfr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Cfr, string>(version, p => p.JobId));
-			sb.Append(this.CertificateOfMailingHeaderId.FormatForExport<Cfr, string>(version, p => p.CertificateOfMailingHeaderId));
-			sb.Append(this.ComPieceId.FormatForExport<Cfr, string>(version, p => p.ComPieceId));
-			sb.Append(this.ServiceType.FormatForExport<Cfr, string>(version, p => p.ServiceType));
-			sb.Append(this.ServiceAdditionalType.FormatForExport<Cfr, string>(version, p => p.ServiceAdditionalType));
-			sb.Append(this.ServiceStatedValue.FormatForExport<Cfr, decimal?>(version, p => p.ServiceStatedValue));
-			sb.Append(this.ServiceFee.FormatForExport<Cfr, decimal?>(version, p => p.ServiceFee));
-			sb.Append(this.SpecialFeesChargesServicesId.FormatForExport<Cfr, string>(version, p => p.SpecialFeesChargesServicesId));
-			sb.Append(this.AmountDue.FormatForExport<Cfr, decimal?>(version, p => p.AmountDue));
-			sb.Append(this.FlexOptionA.FormatForExport<Cfr, string>(version, p => p.FlexOptionA));
-			sb.Append(this.FlexOptionB.FormatForExport<Cfr, string>(version, p => p.FlexOptionB));
-			sb.Append(this.FlexOptionC.FormatForExport<Cfr, string>(version, p => p.FlexOptionC));
-			sb.Append(this.ReserveCfr1109.FormatForExport<Cfr, string>(version, p => p.ReserveCfr1109));
-			sb.Append(this.CfrRecordStatus.FormatForExport<Cfr, string>(version, p => p.CfrRecordStatus));
-			sb.Append(this.ClosingCharacter.FormatForExport<Cfr, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

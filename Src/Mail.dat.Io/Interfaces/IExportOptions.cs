@@ -30,7 +30,7 @@ namespace Mail.dat.Io
 	/// <summary>
 	/// Defines the options for exporting data to a target file.
 	/// </summary>
-	/// <remarks>This interface provides properties to configure the export process, including the target file, 
+	/// <remarks>This interface provides properties to configure the export process, including the target file,
 	/// source file, encoding, and other related settings. Implementations of this interface are used  to supply the
 	/// necessary configuration for export operations.</remarks>
 	public interface IExportOptions
@@ -53,7 +53,7 @@ namespace Mail.dat.Io
 		/// <summary>
 		/// Gets or sets the character encoding used for text operations.
 		/// </summary>
-		/// <remarks>The encoding must be set to a valid <see cref="System.Text.Encoding"/> instance.  Common
+		/// <remarks>The encoding must be set to a valid <see cref="System.Text.Encoding"/> instance. Common
 		/// encodings include <see cref="System.Text.Encoding.UTF8"/> and <see
 		/// cref="System.Text.Encoding.Unicode"/>.</remarks>
 		Encoding Encoding { get; set; }
@@ -75,5 +75,10 @@ namespace Mail.dat.Io
 		/// Gets or sets the <see cref="System.Threading.CancellationToken"/> used to signal cancellation of an operation.
 		/// </summary>
 		CancellationToken CancellationToken { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether source files should be removed after being zipped.
+		/// </summary>
+		bool RemoveSourceFiles { get; set; }
 	}
 }

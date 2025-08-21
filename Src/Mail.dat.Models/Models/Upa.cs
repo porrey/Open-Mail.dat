@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,16 +35,16 @@ namespace Mail.dat
 	/// Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for
 	/// the un-coded parcels. (Links with .pdr ONLY).
 	/// </summary>
-	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "upa", File = "un-coded parcels address", Summary = "Un-coded parcels address record (linked to PDR).", Description = "Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for the un-coded parcels. (Links with .pdr ONLY).", LineLength = 135, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "upa", File = "un-coded parcels address", Summary = "Un-coded parcels address record (linked to PDR).", Description = "Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for the un-coded parcels. (Links with .pdr ONLY).", LineLength = 135, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "upa", File = "un-coded parcels address", Summary = "Un-coded parcels address record (linked to PDR).", Description = "Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for the un-coded parcels. (Links with .pdr ONLY).", LineLength = 135, ClosingCharacter = "#")]
+	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "upa", File = "Un-Coded Parcels Address", Summary = "Un-coded parcels address record (linked to PDR).", Description = "Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for the un-coded parcels. (Links with .pdr ONLY).", LineLength = 135, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "upa", File = "Un-Coded Parcels Address", Summary = "Un-coded parcels address record (linked to PDR).", Description = "Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for the un-coded parcels. (Links with .pdr ONLY).", LineLength = 135, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "upa", File = "Un-Coded Parcels Address", Summary = "Un-coded parcels address record (linked to PDR).", Description = "Un-coded parcels address record (linked to PDR). Un-Coded Parcel Address file: records addresses for the un-coded parcels. (Links with .pdr ONLY).", LineLength = 135, ClosingCharacter = "#")]
 	[MaildatImport(Order = 20, Version = "23-1")]
 	[MaildatImport(Order = 20, Version = "24-1")]
 	[MaildatImport(Order = 20, Version = "25-1")]
 	[Table("Upa", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Upa : MaildatEntity, IUpa 
+	public partial class Upa : MaildatEntity, IUpa
 	{
 		/// <summary>
 		/// Job ID (UPA-1001)
@@ -172,7 +172,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Upa, string>(version, p => p.JobId, returnValue);
 			this.PieceId = line.ParseForImport<Upa, string>(version, p => p.PieceId, returnValue);
 			this.CqtDatabaseId = line.ParseForImport<Upa, int>(version, p => p.CqtDatabaseId, returnValue);
@@ -182,27 +182,25 @@ namespace Mail.dat
 			this.ReserveUpa1120 = line.ParseForImport<Upa, string>(version, p => p.ReserveUpa1120, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Upa, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Upa, string>(version, p => p.JobId, buffer, encoding);
+			this.PieceId.FormatForExport<Upa, string>(version, p => p.PieceId, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Upa, int>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.Address.FormatForExport<Upa, string>(version, p => p.Address, buffer, encoding);
+			this.AdditionalAddress.FormatForExport<Upa, string>(version, p => p.AdditionalAddress, buffer, encoding);
+			this.UParecordStatus.FormatForExport<Upa, string>(version, p => p.UParecordStatus, buffer, encoding);
+			this.ReserveUpa1120.FormatForExport<Upa, string>(version, p => p.ReserveUpa1120, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Upa, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Upa, string>(version, p => p.JobId));
-			sb.Append(this.PieceId.FormatForExport<Upa, string>(version, p => p.PieceId));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Upa, int>(version, p => p.CqtDatabaseId));
-			sb.Append(this.Address.FormatForExport<Upa, string>(version, p => p.Address));
-			sb.Append(this.AdditionalAddress.FormatForExport<Upa, string>(version, p => p.AdditionalAddress));
-			sb.Append(this.UParecordStatus.FormatForExport<Upa, string>(version, p => p.UParecordStatus));
-			sb.Append(this.ReserveUpa1120.FormatForExport<Upa, string>(version, p => p.ReserveUpa1120));
-			sb.Append(this.ClosingCharacter.FormatForExport<Upa, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

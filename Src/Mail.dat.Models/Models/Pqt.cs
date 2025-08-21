@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -157,6 +157,20 @@ namespace Mail.dat
 		public int NumberOfCopies { get; set; }
 
 		/// <summary>
+		/// Package Preparation Type (PQT-1115)
+		/// Populate in the scenario when CSM Tray Preparation Type is set to M = Mixed).
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-1115", FieldName = "Package Preparation Type", Start = 35, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Populate in the scenario when CSM Tray Preparation Type is set to M = Mixed).", Type = "enum", Format = "leftjustify")]
+		[Column("PackagePreparationType", Order = 9, TypeName = "TEXT")]
+		[MaxLength(1)]
+		[AllowedValues(" ", "L", "P")]
+		[Comment("PQT-1115")]
+		[TypeConverter(typeof(MaildatEnumConverter))]
+		[MaildatValues(typeof(PackagePreparationTypes))]
+		[MaildatVersions("24-1")]
+		public string PackagePreparationType { get; set; }
+
+		/// <summary>
 		/// Number of Pieces (PQT-1104)
 		/// Number of pieces within this specific package. Note: First record within Firm Package or Multi-Piece
 		/// Parcel has Piece Count = 1 subsequent records within same Package the piece count = 0 (see Scenarios
@@ -166,7 +180,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pqt", FieldCode = "PQT-1104", FieldName = "Number of Pieces", Start = 40, Length = 5, Required = true, Key = false, DataType = "N", Description = "Number of pieces within this specific package. Note: First record Within Firm Package or Multi-Piece Parcel has Piece Count = 1 Subsequent records within same Package the piece count = 0 (see Scenarios for Firm Packages and Standard Mail combined in Fourth Class bundles) (Pieces may be less than copies in some Periodical or 4C mailings).", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-1104", FieldName = "Number of Pieces", Start = 41, Length = 5, Required = true, Key = false, DataType = "N", Description = "Number of pieces within this specific package. Note: First record Within Firm Package or Multi-Piece Parcel has Piece Count = 1 Subsequent records within same Package the piece count = 0 (see Scenarios for Firm Packages and Standard Mail combined in Fourth Class bundles) (Pieces may be less than copies in some Periodical or 4C mailings).", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "pqt", FieldCode = "PQT-1104", FieldName = "Number of Pieces", Start = 40, Length = 5, Required = true, Key = false, DataType = "N", Description = "Number of pieces within this specific package. Note: First record within Firm Package or Multi-Piece Parcel has Piece Count = 1 subsequent records within same Package the piece count = 0 (see Scenarios for Firm Packages and Standard Mail combined in Fourth Class bundles) (Pieces may be less than copies in some Periodical or 4C mailings).", Type = "integer", Format = "zfill")]
-		[Column("NumberOfPieces", Order = 9, TypeName = "INTEGER")]
+		[Column("NumberOfPieces", Order = 10, TypeName = "INTEGER")]
 		[Required]
 		[Comment("PQT-1104")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
@@ -181,7 +195,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pqt", FieldCode = "PQT-1113", FieldName = "Bundle Charge Allocation", Start = 45, Length = 7, Required = false, Key = false, DataType = "N", Description = "9v999999 - proportion, rounded, (decimal point implied) This field is to be used for denoting the proportion of cost of its bundle that it's carrying.", Type = "decimal", Format = "zfill", Precision = 6)]
 		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-1113", FieldName = "Bundle Charge Allocation", Start = 46, Length = 7, Required = false, Key = false, DataType = "N", Description = "9v999999 - proportion, rounded, (decimal point implied) This field is to be used for denoting the proportion of cost of its bundle that it's carrying.", Type = "decimal", Format = "zfill", Precision = 6)]
 		[MaildatField(Version = "25-1", Extension = "pqt", FieldCode = "PQT-1113", FieldName = "Bundle Charge Allocation", Start = 45, Length = 7, Required = false, Key = false, DataType = "N", Description = "9v999999 - proportion, rounded, (decimal point implied) This field is to be used for denoting the proportion of cost of its bundle that it's carrying.", Type = "decimal", Format = "zfill", Precision = 6)]
-		[Column("BundleChargeAllocation", Order = 10, TypeName = "NUMERIC")]
+		[Column("BundleChargeAllocation", Order = 11, TypeName = "NUMERIC")]
 		[Precision(6)]
 		[Comment("PQT-1113")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
@@ -195,7 +209,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pqt", FieldCode = "PQT-1114", FieldName = "Combo-Pack ID", Start = 52, Length = 6, Required = false, Key = false, DataType = "A/N", Description = "The unique code for this combo-pack within this package.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-1114", FieldName = "Combo-Pack ID", Start = 53, Length = 6, Required = false, Key = false, DataType = "A/N", Description = "The unique code for this combo-pack within this package.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "25-1", Extension = "pqt", FieldCode = "PQT-1114", FieldName = "Combo-Pack ID", Start = 52, Length = 6, Required = false, Key = false, DataType = "A/N", Description = "The unique code for this combo-pack within this package.", Type = "string", Format = "zfillnumeric")]
-		[Column("ComboPackId", Order = 11, TypeName = "TEXT")]
+		[Column("ComboPackId", Order = 12, TypeName = "TEXT")]
 		[MaxLength(6)]
 		[Comment("PQT-1114")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -209,7 +223,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pqt", FieldCode = "PQT-2000", FieldName = "PQT Record Status", Start = 58, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-2000", FieldName = "PQT Record Status", Start = 59, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pqt", FieldCode = "PQT-2000", FieldName = "PQT Record Status", Start = 58, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
-		[Column("PqtRecordStatus", Order = 12, TypeName = "TEXT")]
+		[Column("PqtRecordStatus", Order = 13, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("D", "I", "O", "U")]
@@ -226,7 +240,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pqt", FieldCode = "PQT-1105", FieldName = "Reserve", Start = 59, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-1105", FieldName = "Reserve", Start = 60, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pqt", FieldCode = "PQT-1105", FieldName = "Reserve", Start = 59, Length = 11, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
-		[Column("ReservePqt1105", Order = 13, TypeName = "TEXT")]
+		[Column("ReservePqt1105", Order = 14, TypeName = "TEXT")]
 		[MaxLength(11)]
 		[Comment("PQT-1105")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -240,7 +254,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pqt", FieldCode = "PQT-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pqt", FieldCode = "PQT-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
-		[Column("ClosingCharacter", Order = 14, TypeName = "TEXT")]
+		[Column("ClosingCharacter", Order = 15, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
@@ -248,20 +262,6 @@ namespace Mail.dat
 		[TypeConverter(typeof(MaildatClosingConverter))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
 		public string ClosingCharacter { get; set; } = "#";
-
-		/// <summary>
-		/// Package Preparation Type (PQT-1115)
-		/// Populate in the scenario when CSM Tray Preparation Type is set to M = Mixed).
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "pqt", FieldCode = "PQT-1115", FieldName = "Package Preparation Type", Start = 35, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Populate in the scenario when CSM Tray Preparation Type is set to M = Mixed).", Type = "enum", Format = "leftjustify")]
-		[Column("PackagePreparationType", Order = 15, TypeName = "TEXT")]
-		[MaxLength(1)]
-		[AllowedValues(" ", "L", "P")]
-		[Comment("PQT-1115")]
-		[TypeConverter(typeof(MaildatEnumConverter))]
-		[MaildatValues(typeof(PackagePreparationTypes))]
-		[MaildatVersions("24-1")]
-		public string PackagePreparationType { get; set; }
 
 		/// <summary>
 		/// Sets property values from one line of an import file.
@@ -277,41 +277,39 @@ namespace Mail.dat
 			this.PackageCarrierRoute = line.ParseForImport<Pqt, string>(version, p => p.PackageCarrierRoute, returnValue);
 			this.PackageLevel = line.ParseForImport<Pqt, string>(version, p => p.PackageLevel, returnValue);
 			this.NumberOfCopies = line.ParseForImport<Pqt, int>(version, p => p.NumberOfCopies, returnValue);
+			this.PackagePreparationType = line.ParseForImport<Pqt, string>(version, p => p.PackagePreparationType, returnValue);
 			this.NumberOfPieces = line.ParseForImport<Pqt, int>(version, p => p.NumberOfPieces, returnValue);
 			this.BundleChargeAllocation = line.ParseForImport<Pqt, decimal?>(version, p => p.BundleChargeAllocation, returnValue);
 			this.ComboPackId = line.ParseForImport<Pqt, string>(version, p => p.ComboPackId, returnValue);
 			this.PqtRecordStatus = line.ParseForImport<Pqt, string>(version, p => p.PqtRecordStatus, returnValue);
 			this.ReservePqt1105 = line.ParseForImport<Pqt, string>(version, p => p.ReservePqt1105, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Pqt, string>(version, p => p.ClosingCharacter, returnValue);
-			this.PackagePreparationType = line.ParseForImport<Pqt, string>(version, p => p.PackagePreparationType, returnValue);
 			this.FileLineNumber = fileLineNumber;
 
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Pqt, string>(version, p => p.JobId, buffer, encoding);
+			this.CqtDatabaseId.FormatForExport<Pqt, int>(version, p => p.CqtDatabaseId, buffer, encoding);
+			this.PackageId.FormatForExport<Pqt, string>(version, p => p.PackageId, buffer, encoding);
+			this.PackageZipCode.FormatForExport<Pqt, string>(version, p => p.PackageZipCode, buffer, encoding);
+			this.PackageCarrierRoute.FormatForExport<Pqt, string>(version, p => p.PackageCarrierRoute, buffer, encoding);
+			this.PackageLevel.FormatForExport<Pqt, string>(version, p => p.PackageLevel, buffer, encoding);
+			this.NumberOfCopies.FormatForExport<Pqt, int>(version, p => p.NumberOfCopies, buffer, encoding);
+			this.PackagePreparationType.FormatForExport<Pqt, string>(version, p => p.PackagePreparationType, buffer, encoding);
+			this.NumberOfPieces.FormatForExport<Pqt, int>(version, p => p.NumberOfPieces, buffer, encoding);
+			this.BundleChargeAllocation.FormatForExport<Pqt, decimal?>(version, p => p.BundleChargeAllocation, buffer, encoding);
+			this.ComboPackId.FormatForExport<Pqt, string>(version, p => p.ComboPackId, buffer, encoding);
+			this.PqtRecordStatus.FormatForExport<Pqt, string>(version, p => p.PqtRecordStatus, buffer, encoding);
+			this.ReservePqt1105.FormatForExport<Pqt, string>(version, p => p.ReservePqt1105, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Pqt, string>(version, p => p.ClosingCharacter, buffer, encoding);
 
-			sb.Append(this.JobId.FormatForExport<Pqt, string>(version, p => p.JobId));
-			sb.Append(this.CqtDatabaseId.FormatForExport<Pqt, int>(version, p => p.CqtDatabaseId));
-			sb.Append(this.PackageId.FormatForExport<Pqt, string>(version, p => p.PackageId));
-			sb.Append(this.PackageZipCode.FormatForExport<Pqt, string>(version, p => p.PackageZipCode));
-			sb.Append(this.PackageCarrierRoute.FormatForExport<Pqt, string>(version, p => p.PackageCarrierRoute));
-			sb.Append(this.PackageLevel.FormatForExport<Pqt, string>(version, p => p.PackageLevel));
-			sb.Append(this.NumberOfCopies.FormatForExport<Pqt, int>(version, p => p.NumberOfCopies));
-			sb.Append(this.NumberOfPieces.FormatForExport<Pqt, int>(version, p => p.NumberOfPieces));
-			sb.Append(this.BundleChargeAllocation.FormatForExport<Pqt, decimal?>(version, p => p.BundleChargeAllocation));
-			sb.Append(this.ComboPackId.FormatForExport<Pqt, string>(version, p => p.ComboPackId));
-			sb.Append(this.PqtRecordStatus.FormatForExport<Pqt, string>(version, p => p.PqtRecordStatus));
-			sb.Append(this.ReservePqt1105.FormatForExport<Pqt, string>(version, p => p.ReservePqt1105));
-			sb.Append(this.ClosingCharacter.FormatForExport<Pqt, string>(version, p => p.ClosingCharacter));
-			sb.Append(this.PackagePreparationType.FormatForExport<Pqt, string>(version, p => p.PackagePreparationType));
-
-			return Task.FromResult(sb.ToString());
+			
 		}
 	}
 }

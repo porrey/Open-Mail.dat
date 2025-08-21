@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Technique and amount for adjustment per container. Notes technique and reports postage adjustment
 	/// per container.
 	/// </summary>
-	public interface IPar : IMaildatEntity 
+	public interface IPar : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (PAR-1001)

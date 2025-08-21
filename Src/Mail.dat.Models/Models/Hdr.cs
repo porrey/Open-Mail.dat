@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Hdr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Hdr : MaildatEntity, IHdr 
+	public partial class Hdr : MaildatEntity, IHdr
 	{
 		/// <summary>
 		/// Job ID (HDR-1001)
@@ -1007,11 +1007,23 @@ namespace Mail.dat
 		public int TransportationSummaryRecordCount { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Header Record Count (HDR-1201)
+		/// The number of Certificate of Mailing Header records in this Mail.dat.
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1201", FieldName = "Certificate of Mailing Header Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of Certificate of Mailing Header records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1201", FieldName = "Certificate of Mailing Header Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of Certificate of Mailing Header records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[Column("CertificateOfMailingHeaderRecordCount", Order = 64, TypeName = "INTEGER")]
+		[Comment("HDR-1201")]
+		[TypeConverter(typeof(MaildatIntegerConverter))]
+		[MaildatVersions("24-1", "25-1")]
+		public int CertificateOfMailingHeaderRecordCount { get; set; }
+
+		/// <summary>
 		/// Transportation Summary Record Status (HDR-1198)
 		/// O, D, R, N, C, U.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1198", FieldName = "Transportation Summary Record Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
-		[Column("TransportationSummaryRecordStatus", Order = 64, TypeName = "TEXT")]
+		[Column("TransportationSummaryRecordStatus", Order = 65, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-1198")]
@@ -1021,21 +1033,47 @@ namespace Mail.dat
 		public string TransportationSummaryRecordStatus { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Header Status (HDR-1202)
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1202", FieldName = "Certificate of Mailing Header Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1202", FieldName = "Certificate of Mailing Header Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[Column("CertificateOfMailingHeaderStatus", Order = 66, TypeName = "TEXT")]
+		[MaxLength(1)]
+		[AllowedValues("C", "D", "N", "O", "R", "U")]
+		[Comment("HDR-1202")]
+		[TypeConverter(typeof(MaildatEnumConverter))]
+		[MaildatValues(typeof(CertificateOfMailingHeaderStatuses))]
+		[MaildatVersions("24-1", "25-1")]
+		public string CertificateOfMailingHeaderStatus { get; set; }
+
+		/// <summary>
 		/// Transportation Geo-Data Record Count (HDR-1199)
 		/// The number of certificate of mailing detail records in this Mail.dat.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1199", FieldName = "Transportation Geo-Data Record Count", Start = 443, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("TransportationGeoDataRecordCount", Order = 65, TypeName = "INTEGER")]
+		[Column("TransportationGeoDataRecordCount", Order = 67, TypeName = "INTEGER")]
 		[Comment("HDR-1199")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
 		public int TransportationGeoDataRecordCount { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Detail Record Count (HDR-1203)
+		/// The number of certificate of mailing detail records in this Mail.dat.
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1203", FieldName = "Certificate of Mailing Detail Record Count", Start = 443, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1203", FieldName = "Certificate of Mailing Detail Record Count", Start = 443, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[Column("CertificateOfMailingDetailRecordCount", Order = 68, TypeName = "INTEGER")]
+		[Comment("HDR-1203")]
+		[TypeConverter(typeof(MaildatIntegerConverter))]
+		[MaildatVersions("24-1", "25-1")]
+		public int CertificateOfMailingDetailRecordCount { get; set; }
+
+		/// <summary>
 		/// Transportation Geo-Data Record Status (HDR-2001)
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2001", FieldName = "Transportation Geo-Data Record Status", Start = 449, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("TransportationGeoDataRecordStatus", Order = 66, TypeName = "TEXT")]
+		[Column("TransportationGeoDataRecordStatus", Order = 69, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2001")]
@@ -1049,18 +1087,44 @@ namespace Mail.dat
 		/// The number of transportation detail records in this Mail.dat.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2002", FieldName = "Transportation Detail Record Count", Start = 450, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("TransportationDetailRecordCount", Order = 67, TypeName = "INTEGER")]
+		[Column("TransportationDetailRecordCount", Order = 70, TypeName = "INTEGER")]
 		[Comment("HDR-2002")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
 		public int TransportationDetailRecordCount { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Detail Status (HDR-1204)
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1204", FieldName = "Certificate of Mailing Detail Status", Start = 453, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1204", FieldName = "Certificate of Mailing Detail Status", Start = 453, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[Column("CertificateOfMailingDetailStatus", Order = 71, TypeName = "TEXT")]
+		[MaxLength(1)]
+		[AllowedValues("C", "D", "N", "O", "R", "U")]
+		[Comment("HDR-1204")]
+		[TypeConverter(typeof(MaildatEnumConverter))]
+		[MaildatValues(typeof(CertificateOfMailingDetailStatuses))]
+		[MaildatVersions("24-1", "25-1")]
+		public string CertificateOfMailingDetailStatus { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Bulk Record Count (HDR-1205)
+		/// The number of certificate of mailing bulk records in this Mail.dat.
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1205", FieldName = "Certificate of Mailing Bulk Record Count", Start = 454, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing bulk records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1205", FieldName = "Certificate of Mailing Bulk Record Count", Start = 454, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing bulk records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[Column("CertificateOfMailingBulkRecordCount", Order = 72, TypeName = "INTEGER")]
+		[Comment("HDR-1205")]
+		[TypeConverter(typeof(MaildatIntegerConverter))]
+		[MaildatVersions("24-1", "25-1")]
+		public int CertificateOfMailingBulkRecordCount { get; set; }
+
+		/// <summary>
 		/// Transportation Detail Record Status (HDR-2003)
 		/// O, D, R, N, C, U.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2003", FieldName = "Transportation Detail Record Status", Start = 456, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
-		[Column("TransportationDetailRecordStatus", Order = 68, TypeName = "TEXT")]
+		[Column("TransportationDetailRecordStatus", Order = 73, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2003")]
@@ -1074,7 +1138,7 @@ namespace Mail.dat
 		/// The number of transportation container records in this Mail.dat.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2004", FieldName = "Transportation Container Record Count", Start = 457, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation container records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("TransportationContainerRecordCount", Order = 69, TypeName = "INTEGER")]
+		[Column("TransportationContainerRecordCount", Order = 74, TypeName = "INTEGER")]
 		[Comment("HDR-2004")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
@@ -1085,7 +1149,7 @@ namespace Mail.dat
 		/// O, D, R, N, C, U.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2005", FieldName = "Transportation Container Record Status", Start = 463, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
-		[Column("TransportationContainerRecordStatus", Order = 70, TypeName = "TEXT")]
+		[Column("TransportationContainerRecordStatus", Order = 75, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2005")]
@@ -1099,18 +1163,44 @@ namespace Mail.dat
 		/// The number of transportation container records in this Mail.dat.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2006", FieldName = "Transportation Container Status Record Count", Start = 464, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of transportation container records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("TransportationContainerStatusRecordCount", Order = 71, TypeName = "INTEGER")]
+		[Column("TransportationContainerStatusRecordCount", Order = 76, TypeName = "INTEGER")]
 		[Comment("HDR-2006")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
 		[MaildatVersions("23-1")]
 		public int TransportationContainerStatusRecordCount { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Bulk Status (HDR-1206)
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1206", FieldName = "Certificate of Mailing Bulk Status", Start = 464, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1206", FieldName = "Certificate of Mailing Bulk Status", Start = 464, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[Column("CertificateOfMailingBulkStatus", Order = 77, TypeName = "TEXT")]
+		[MaxLength(1)]
+		[AllowedValues("C", "D", "N", "O", "R", "U")]
+		[Comment("HDR-1206")]
+		[TypeConverter(typeof(MaildatEnumConverter))]
+		[MaildatValues(typeof(CertificateOfMailingBulkStatuses))]
+		[MaildatVersions("24-1", "25-1")]
+		public string CertificateOfMailingBulkStatus { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Services Record Count (HDR-1207)
+		/// The number of certificate of mailing services records in this Mail.dat.
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1207", FieldName = "Certificate of Mailing Services Record Count", Start = 465, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing services records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1207", FieldName = "Certificate of Mailing Services Record Count", Start = 465, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing services records in this Mail.dat.", Type = "integer", Format = "zfill")]
+		[Column("CertificateOfMailingServicesRecordCount", Order = 78, TypeName = "INTEGER")]
+		[Comment("HDR-1207")]
+		[TypeConverter(typeof(MaildatIntegerConverter))]
+		[MaildatVersions("24-1", "25-1")]
+		public int CertificateOfMailingServicesRecordCount { get; set; }
+
+		/// <summary>
 		/// Transportation Container Status Record Status (HDR-2007)
 		/// O, D, R, N, C, U.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-2007", FieldName = "Transportation Container Status Record Status", Start = 470, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, R, N, C, U.", Type = "enum", Format = "leftjustify")]
-		[Column("TransportationContainerStatusRecordStatus", Order = 72, TypeName = "TEXT")]
+		[Column("TransportationContainerStatusRecordStatus", Order = 79, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues("C", "D", "N", "O", "R", "U")]
 		[Comment("HDR-2007")]
@@ -1120,12 +1210,26 @@ namespace Mail.dat
 		public string TransportationContainerStatusRecordStatus { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Services Status (HDR-1208)
+		/// </summary>
+		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1208", FieldName = "Certificate of Mailing Services Status", Start = 475, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1208", FieldName = "Certificate of Mailing Services Status", Start = 475, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[Column("CertificateOfMailingServicesStatus", Order = 80, TypeName = "TEXT")]
+		[MaxLength(1)]
+		[AllowedValues("C", "D", "N", "O", "R", "U")]
+		[Comment("HDR-1208")]
+		[TypeConverter(typeof(MaildatEnumConverter))]
+		[MaildatValues(typeof(CertificateOfMailingServicesStatuses))]
+		[MaildatVersions("24-1", "25-1")]
+		public string CertificateOfMailingServicesStatus { get; set; }
+
+		/// <summary>
 		/// Mail.dat Presentation Category (HDR-1154)
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1154", FieldName = "Mail.dat Presentation Category", Start = 471, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1154", FieldName = "Mail.dat Presentation Category", Start = 476, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1154", FieldName = "Mail.dat Presentation Category", Start = 476, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("MailDatPresentationCategory", Order = 73, TypeName = "TEXT")]
+		[Column("MailDatPresentationCategory", Order = 81, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("C", "E", "I", "M", "N", "P", "R")]
@@ -1142,7 +1246,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1174", FieldName = "Original Software Vendor Name", Start = 472, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Originator company name of this Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1174", FieldName = "Original Software Vendor Name", Start = 477, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Originator company name of this Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1174", FieldName = "Original Software Vendor Name", Start = 477, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Originator company name of this Mail.dat.", Type = "string", Format = "leftjustify")]
-		[Column("OriginalSoftwareVendorName", Order = 74, TypeName = "TEXT")]
+		[Column("OriginalSoftwareVendorName", Order = 82, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(30)]
 		[Comment("HDR-1174")]
@@ -1157,7 +1261,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1175", FieldName = "Original Software Products Name", Start = 502, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Originator product name of this Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1175", FieldName = "Original Software Products Name", Start = 507, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Originator product name of this Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1175", FieldName = "Original Software Products Name", Start = 507, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Originator product name of this Mail.dat.", Type = "string", Format = "leftjustify")]
-		[Column("OriginalSoftwareProductsName", Order = 75, TypeName = "TEXT")]
+		[Column("OriginalSoftwareProductsName", Order = 83, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(30)]
 		[Comment("HDR-1175")]
@@ -1172,7 +1276,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1176", FieldName = "Original Software Version", Start = 532, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Originator software version of this Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1176", FieldName = "Original Software Version", Start = 537, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Originator software version of this Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1176", FieldName = "Original Software Version", Start = 537, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Originator software version of this Mail.dat.", Type = "string", Format = "leftjustify")]
-		[Column("OriginalSoftwareVersion", Order = 76, TypeName = "TEXT")]
+		[Column("OriginalSoftwareVersion", Order = 84, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(10)]
 		[Comment("HDR-1176")]
@@ -1187,7 +1291,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1177", FieldName = "Original Software Vendor's Email", Start = 542, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Originator software company email address.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1177", FieldName = "Original Software Vendor's Email", Start = 547, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Originator software company email address.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1177", FieldName = "Original Software Vendor's Email", Start = 547, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Originator software company email address.", Type = "string", Format = "leftjustify")]
-		[Column("OriginalSoftwareVendorSEmail", Order = 77, TypeName = "TEXT")]
+		[Column("OriginalSoftwareVendorSEmail", Order = 85, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(60)]
 		[Comment("HDR-1177")]
@@ -1204,7 +1308,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1150", FieldName = "Mail.dat Software Vendor Name", Start = 602, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "May be name of in-house proprietary software. Name of Author of software creating the Mail.dat® as appended to this Respective .hdr record. This may be the name of the transmitting Agent, if they wrote their own proprietary home-grown software.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1150", FieldName = "Mail.dat Software Vendor Name", Start = 607, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "May be name of in-house proprietary software. Name of Author of software creating the Mail.dat® as appended to this Respective .hdr record. This may be the name of the transmitting Agent, if they wrote their own proprietary home-grown software.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1150", FieldName = "Mail.dat Software Vendor Name", Start = 607, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "May be name of in-house proprietary software. Name of author of software creating the Mail.dat® as appended to this respective .hdr record. This may be the name of the transmitting agent, if they wrote their own proprietary home-grown software.", Type = "string", Format = "leftjustify")]
-		[Column("MailDatSoftwareVendorName", Order = 78, TypeName = "TEXT")]
+		[Column("MailDatSoftwareVendorName", Order = 86, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(30)]
 		[Comment("HDR-1150")]
@@ -1219,7 +1323,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1155", FieldName = "Mail.dat Software Product's Name", Start = 632, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Name of product creating this Header and applicable data in associated records.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1155", FieldName = "Mail.dat Software Product's Name", Start = 637, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Name of product creating this Header and applicable data in associated records.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1155", FieldName = "Mail.dat Software Product's Name", Start = 637, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Name of product creating this Header and applicable data in associated records.", Type = "string", Format = "leftjustify")]
-		[Column("MailDatSoftwareProductSName", Order = 79, TypeName = "TEXT")]
+		[Column("MailDatSoftwareProductSName", Order = 87, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(30)]
 		[Comment("HDR-1155")]
@@ -1234,7 +1338,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1151", FieldName = "Mail.dat Software Version", Start = 662, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Version of the software creating the transmitted Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1151", FieldName = "Mail.dat Software Version", Start = 667, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Version of the software creating the transmitted Mail.dat.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1151", FieldName = "Mail.dat Software Version", Start = 667, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Version of the software creating the transmitted Mail.dat.", Type = "string", Format = "leftjustify")]
-		[Column("MailDatSoftwareVersion", Order = 80, TypeName = "TEXT")]
+		[Column("MailDatSoftwareVersion", Order = 88, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(10)]
 		[Comment("HDR-1151")]
@@ -1249,7 +1353,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1156", FieldName = "Mail.dat Software Vendor's Email", Start = 672, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Email address of party creating product named above.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1156", FieldName = "Mail.dat Software Vendor's Email", Start = 677, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Email address of party creating product named above.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1156", FieldName = "Mail.dat Software Vendor's Email", Start = 677, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Email address of party creating product named above.", Type = "string", Format = "leftjustify")]
-		[Column("MailDatSoftwareVendorSEmail", Order = 81, TypeName = "TEXT")]
+		[Column("MailDatSoftwareVendorSEmail", Order = 89, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(60)]
 		[Comment("HDR-1156")]
@@ -1262,7 +1366,7 @@ namespace Mail.dat
 		/// Reserved for future use.
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1162", FieldName = "Reserve", Start = 732, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
-		[Column("ReserveHdr1162", Order = 82, TypeName = "TEXT")]
+		[Column("ReserveHdr1162", Order = 90, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[Comment("HDR-1162")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -1276,7 +1380,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1160", FieldName = "Zone Matrix Date", Start = 733, Length = 8, Required = false, Key = false, DataType = "N", Description = "(cannot be all zeros).", Type = "date", Format = "YYYYMMDD")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1160", FieldName = "Zone Matrix Date", Start = 737, Length = 8, Required = false, Key = false, DataType = "N", Description = "(cannot be all zeros).", Type = "date", Format = "YYYYMMDD")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1160", FieldName = "Zone Matrix Date", Start = 737, Length = 8, Required = false, Key = false, DataType = "N", Description = "(cannot be all zeros).", Type = "date", Format = "YYYYMMDD")]
-		[Column("ZoneMatrixDate", Order = 83, TypeName = "TEXT")]
+		[Column("ZoneMatrixDate", Order = 91, TypeName = "TEXT")]
 		[Comment("HDR-1160")]
 		[TypeConverter(typeof(MaildatDateConverter))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
@@ -1292,7 +1396,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1183", FieldName = "EDoc Sender CRID", Start = 741, Length = 12, Required = false, Key = false, DataType = "A/N", Description = "This USPS-assigned id, CRID, will be used by the USPS to Uniquely identify the submitter of electronic documentation to the PostalOne! system. This field will be used to identify a new Business role, called the eDoc submitter, which may be different From the mail preparer, mail owner, mail transporter, and Scheduler roles.  Only digits 0 - 9 acceptable.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1183", FieldName = "EDoc Sender CRID", Start = 745, Length = 12, Required = false, Key = false, DataType = "A/N", Description = "This USPS-assigned id, CRID, will be used by the USPS to Uniquely identify the submitter of electronic documentation to the PostalOne! system. This field will be used to identify a new Business role, called the eDoc submitter, which may be different From the mail preparer, mail owner, mail transporter, and Scheduler roles.  Only digits 0 - 9 acceptable.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1183", FieldName = "EDoc Sender CRID", Start = 745, Length = 12, Required = false, Key = false, DataType = "A/N", Description = "This USPS-assigned id, CRID, will be used by the USPS to uniquely identify the submitter of electronic documentation to the PostalOne! system. This field will be used to identify a new business role, called the eDoc submitter, which may be different from the mail preparer, mail owner, mail transporter, and scheduler roles. Only digits 0-9 acceptable.", Type = "string", Format = "leftjustify")]
-		[Column("EDocSenderCrid", Order = 84, TypeName = "TEXT")]
+		[Column("EDocSenderCrid", Order = 92, TypeName = "TEXT")]
 		[MaxLength(12)]
 		[Comment("HDR-1183")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -1306,7 +1410,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1182", FieldName = "Information Exchange", Start = 753, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "This field is for the exchange of private information between sender and catcher.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1182", FieldName = "Information Exchange", Start = 757, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "This field is for the exchange of private information between sender and catcher.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1182", FieldName = "Information Exchange", Start = 757, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "This field is for the exchange of private information between sender and catcher.", Type = "string", Format = "leftjustify")]
-		[Column("InformationExchange", Order = 85, TypeName = "TEXT")]
+		[Column("InformationExchange", Order = 93, TypeName = "TEXT")]
 		[MaxLength(20)]
 		[Comment("HDR-1182")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -1320,7 +1424,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1152", FieldName = "User Option Field", Start = 773, Length = 1227, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1152", FieldName = "User Option Field", Start = 777, Length = 1223, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1152", FieldName = "User Option Field", Start = 777, Length = 1223, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
-		[Column("UserOptionField", Order = 86, TypeName = "TEXT")]
+		[Column("UserOptionField", Order = 94, TypeName = "TEXT")]
 		[MaxLength(1227)]
 		[Comment("HDR-1152")]
 		[TypeConverter(typeof(MaildatStringConverter))]
@@ -1334,7 +1438,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-9999", FieldName = "Closing Character", Start = 2000, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-9999", FieldName = "Closing Character", Start = 2000, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-9999", FieldName = "Closing Character", Start = 2000, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
-		[Column("ClosingCharacter", Order = 87, TypeName = "TEXT")]
+		[Column("ClosingCharacter", Order = 95, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
@@ -1344,116 +1448,12 @@ namespace Mail.dat
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>
-		/// Certificate of Mailing Header Record Count (HDR-1201)
-		/// The number of Certificate of Mailing Header records in this Mail.dat.
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1201", FieldName = "Certificate of Mailing Header Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of Certificate of Mailing Header records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1201", FieldName = "Certificate of Mailing Header Record Count", Start = 436, Length = 6, Required = true, Key = false, DataType = "N", Description = "The number of Certificate of Mailing Header records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("CertificateOfMailingHeaderRecordCount", Order = 88, TypeName = "INTEGER")]
-		[Comment("HDR-1201")]
-		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("24-1", "25-1")]
-		public int CertificateOfMailingHeaderRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Header Status (HDR-1202)
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1202", FieldName = "Certificate of Mailing Header Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1202", FieldName = "Certificate of Mailing Header Status", Start = 442, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("CertificateOfMailingHeaderStatus", Order = 89, TypeName = "TEXT")]
-		[MaxLength(1)]
-		[AllowedValues("C", "D", "N", "O", "R", "U")]
-		[Comment("HDR-1202")]
-		[TypeConverter(typeof(MaildatEnumConverter))]
-		[MaildatValues(typeof(CertificateOfMailingHeaderStatuses))]
-		[MaildatVersions("24-1", "25-1")]
-		public string CertificateOfMailingHeaderStatus { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Detail Record Count (HDR-1203)
-		/// The number of certificate of mailing detail records in this Mail.dat.
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1203", FieldName = "Certificate of Mailing Detail Record Count", Start = 443, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1203", FieldName = "Certificate of Mailing Detail Record Count", Start = 443, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing detail records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("CertificateOfMailingDetailRecordCount", Order = 90, TypeName = "INTEGER")]
-		[Comment("HDR-1203")]
-		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("24-1", "25-1")]
-		public int CertificateOfMailingDetailRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Detail Status (HDR-1204)
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1204", FieldName = "Certificate of Mailing Detail Status", Start = 453, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1204", FieldName = "Certificate of Mailing Detail Status", Start = 453, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("CertificateOfMailingDetailStatus", Order = 91, TypeName = "TEXT")]
-		[MaxLength(1)]
-		[AllowedValues("C", "D", "N", "O", "R", "U")]
-		[Comment("HDR-1204")]
-		[TypeConverter(typeof(MaildatEnumConverter))]
-		[MaildatValues(typeof(CertificateOfMailingDetailStatuses))]
-		[MaildatVersions("24-1", "25-1")]
-		public string CertificateOfMailingDetailStatus { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Bulk Record Count (HDR-1205)
-		/// The number of certificate of mailing bulk records in this Mail.dat.
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1205", FieldName = "Certificate of Mailing Bulk Record Count", Start = 454, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing bulk records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1205", FieldName = "Certificate of Mailing Bulk Record Count", Start = 454, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing bulk records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("CertificateOfMailingBulkRecordCount", Order = 92, TypeName = "INTEGER")]
-		[Comment("HDR-1205")]
-		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("24-1", "25-1")]
-		public int CertificateOfMailingBulkRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Bulk Status (HDR-1206)
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1206", FieldName = "Certificate of Mailing Bulk Status", Start = 464, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1206", FieldName = "Certificate of Mailing Bulk Status", Start = 464, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("CertificateOfMailingBulkStatus", Order = 93, TypeName = "TEXT")]
-		[MaxLength(1)]
-		[AllowedValues("C", "D", "N", "O", "R", "U")]
-		[Comment("HDR-1206")]
-		[TypeConverter(typeof(MaildatEnumConverter))]
-		[MaildatValues(typeof(CertificateOfMailingBulkStatuses))]
-		[MaildatVersions("24-1", "25-1")]
-		public string CertificateOfMailingBulkStatus { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Services Record Count (HDR-1207)
-		/// The number of certificate of mailing services records in this Mail.dat.
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1207", FieldName = "Certificate of Mailing Services Record Count", Start = 465, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing services records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1207", FieldName = "Certificate of Mailing Services Record Count", Start = 465, Length = 10, Required = true, Key = false, DataType = "N", Description = "The number of certificate of mailing services records in this Mail.dat.", Type = "integer", Format = "zfill")]
-		[Column("CertificateOfMailingServicesRecordCount", Order = 94, TypeName = "INTEGER")]
-		[Comment("HDR-1207")]
-		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("24-1", "25-1")]
-		public int CertificateOfMailingServicesRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Services Status (HDR-1208)
-		/// </summary>
-		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1208", FieldName = "Certificate of Mailing Services Status", Start = 475, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1208", FieldName = "Certificate of Mailing Services Status", Start = 475, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("CertificateOfMailingServicesStatus", Order = 95, TypeName = "TEXT")]
-		[MaxLength(1)]
-		[AllowedValues("C", "D", "N", "O", "R", "U")]
-		[Comment("HDR-1208")]
-		[TypeConverter(typeof(MaildatEnumConverter))]
-		[MaildatValues(typeof(CertificateOfMailingServicesStatuses))]
-		[MaildatVersions("24-1", "25-1")]
-		public string CertificateOfMailingServicesStatus { get; set; }
-
-		/// <summary>
 		/// Sets property values from one line of an import file.
 		/// </summary>
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Hdr, string>(version, p => p.JobId, returnValue);
 			this.MailDatVersion = line.ParseForImport<Hdr, string>(version, p => p.MailDatVersion, returnValue);
 			this.HeaderHistorySequenceNumber = line.ParseForImport<Hdr, int>(version, p => p.HeaderHistorySequenceNumber, returnValue);
@@ -1516,15 +1516,23 @@ namespace Mail.dat
 			this.ReferenceableMailBarcodeRecordCount = line.ParseForImport<Hdr, int>(version, p => p.ReferenceableMailBarcodeRecordCount, returnValue);
 			this.ReferenceableMailBarcodeStatus = line.ParseForImport<Hdr, string>(version, p => p.ReferenceableMailBarcodeStatus, returnValue);
 			this.TransportationSummaryRecordCount = line.ParseForImport<Hdr, int>(version, p => p.TransportationSummaryRecordCount, returnValue);
+			this.CertificateOfMailingHeaderRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingHeaderRecordCount, returnValue);
 			this.TransportationSummaryRecordStatus = line.ParseForImport<Hdr, string>(version, p => p.TransportationSummaryRecordStatus, returnValue);
+			this.CertificateOfMailingHeaderStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingHeaderStatus, returnValue);
 			this.TransportationGeoDataRecordCount = line.ParseForImport<Hdr, int>(version, p => p.TransportationGeoDataRecordCount, returnValue);
+			this.CertificateOfMailingDetailRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingDetailRecordCount, returnValue);
 			this.TransportationGeoDataRecordStatus = line.ParseForImport<Hdr, string>(version, p => p.TransportationGeoDataRecordStatus, returnValue);
 			this.TransportationDetailRecordCount = line.ParseForImport<Hdr, int>(version, p => p.TransportationDetailRecordCount, returnValue);
+			this.CertificateOfMailingDetailStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingDetailStatus, returnValue);
+			this.CertificateOfMailingBulkRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingBulkRecordCount, returnValue);
 			this.TransportationDetailRecordStatus = line.ParseForImport<Hdr, string>(version, p => p.TransportationDetailRecordStatus, returnValue);
 			this.TransportationContainerRecordCount = line.ParseForImport<Hdr, int>(version, p => p.TransportationContainerRecordCount, returnValue);
 			this.TransportationContainerRecordStatus = line.ParseForImport<Hdr, string>(version, p => p.TransportationContainerRecordStatus, returnValue);
 			this.TransportationContainerStatusRecordCount = line.ParseForImport<Hdr, int>(version, p => p.TransportationContainerStatusRecordCount, returnValue);
+			this.CertificateOfMailingBulkStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingBulkStatus, returnValue);
+			this.CertificateOfMailingServicesRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingServicesRecordCount, returnValue);
 			this.TransportationContainerStatusRecordStatus = line.ParseForImport<Hdr, string>(version, p => p.TransportationContainerStatusRecordStatus, returnValue);
+			this.CertificateOfMailingServicesStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingServicesStatus, returnValue);
 			this.MailDatPresentationCategory = line.ParseForImport<Hdr, string>(version, p => p.MailDatPresentationCategory, returnValue);
 			this.OriginalSoftwareVendorName = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareVendorName, returnValue);
 			this.OriginalSoftwareProductsName = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareProductsName, returnValue);
@@ -1540,122 +1548,112 @@ namespace Mail.dat
 			this.InformationExchange = line.ParseForImport<Hdr, string>(version, p => p.InformationExchange, returnValue);
 			this.UserOptionField = line.ParseForImport<Hdr, string>(version, p => p.UserOptionField, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Hdr, string>(version, p => p.ClosingCharacter, returnValue);
-			this.CertificateOfMailingHeaderRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingHeaderRecordCount, returnValue);
-			this.CertificateOfMailingHeaderStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingHeaderStatus, returnValue);
-			this.CertificateOfMailingDetailRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingDetailRecordCount, returnValue);
-			this.CertificateOfMailingDetailStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingDetailStatus, returnValue);
-			this.CertificateOfMailingBulkRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingBulkRecordCount, returnValue);
-			this.CertificateOfMailingBulkStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingBulkStatus, returnValue);
-			this.CertificateOfMailingServicesRecordCount = line.ParseForImport<Hdr, int>(version, p => p.CertificateOfMailingServicesRecordCount, returnValue);
-			this.CertificateOfMailingServicesStatus = line.ParseForImport<Hdr, string>(version, p => p.CertificateOfMailingServicesStatus, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Hdr, string>(version, p => p.JobId, buffer, encoding);
+			this.MailDatVersion.FormatForExport<Hdr, string>(version, p => p.MailDatVersion, buffer, encoding);
+			this.HeaderHistorySequenceNumber.FormatForExport<Hdr, int>(version, p => p.HeaderHistorySequenceNumber, buffer, encoding);
+			this.HeaderHistoryStatus.FormatForExport<Hdr, string>(version, p => p.HeaderHistoryStatus, buffer, encoding);
+			this.HistoricalJobId.FormatForExport<Hdr, string>(version, p => p.HistoricalJobId, buffer, encoding);
+			this.LicensedUserSJobNumber.FormatForExport<Hdr, string>(version, p => p.LicensedUserSJobNumber, buffer, encoding);
+			this.JobNameTitleIssue.FormatForExport<Hdr, string>(version, p => p.JobNameTitleIssue, buffer, encoding);
+			this.FileSource.FormatForExport<Hdr, string>(version, p => p.FileSource, buffer, encoding);
+			this.UserLicenseCode.FormatForExport<Hdr, string>(version, p => p.UserLicenseCode, buffer, encoding);
+			this.ContactName.FormatForExport<Hdr, string>(version, p => p.ContactName, buffer, encoding);
+			this.ContactTelephoneNumber.FormatForExport<Hdr, string>(version, p => p.ContactTelephoneNumber, buffer, encoding);
+			this.ContactEmail.FormatForExport<Hdr, string>(version, p => p.ContactEmail, buffer, encoding);
+			this.DatePrepared.FormatForExport<Hdr, DateOnly>(version, p => p.DatePrepared, buffer, encoding);
+			this.TimePrepared.FormatForExport<Hdr, TimeOnly>(version, p => p.TimePrepared, buffer, encoding);
+			this.MailDatRevision.FormatForExport<Hdr, string>(version, p => p.MailDatRevision, buffer, encoding);
+			this.SegmentRecordCount.FormatForExport<Hdr, int>(version, p => p.SegmentRecordCount, buffer, encoding);
+			this.SegmentFileStatus.FormatForExport<Hdr, string>(version, p => p.SegmentFileStatus, buffer, encoding);
+			this.MailPieceUnitRecordCount.FormatForExport<Hdr, int>(version, p => p.MailPieceUnitRecordCount, buffer, encoding);
+			this.MailPieceUnitFileStatus.FormatForExport<Hdr, string>(version, p => p.MailPieceUnitFileStatus, buffer, encoding);
+			this.MpuCRelationshipRecordCount.FormatForExport<Hdr, int>(version, p => p.MpuCRelationshipRecordCount, buffer, encoding);
+			this.MpuCRelationshipFileStatus.FormatForExport<Hdr, string>(version, p => p.MpuCRelationshipFileStatus, buffer, encoding);
+			this.MailerPostageAccountRecordCount.FormatForExport<Hdr, int>(version, p => p.MailerPostageAccountRecordCount, buffer, encoding);
+			this.MailerPostageAccountFileStatus.FormatForExport<Hdr, string>(version, p => p.MailerPostageAccountFileStatus, buffer, encoding);
+			this.ComponentRecordCount.FormatForExport<Hdr, int>(version, p => p.ComponentRecordCount, buffer, encoding);
+			this.ComponentFileStatus.FormatForExport<Hdr, string>(version, p => p.ComponentFileStatus, buffer, encoding);
+			this.ComponentCharacteristicRecordCount.FormatForExport<Hdr, int>(version, p => p.ComponentCharacteristicRecordCount, buffer, encoding);
+			this.ComponentCharacteristicFileStatus.FormatForExport<Hdr, string>(version, p => p.ComponentCharacteristicFileStatus, buffer, encoding);
+			this.ContainerSummaryRecordCount.FormatForExport<Hdr, int>(version, p => p.ContainerSummaryRecordCount, buffer, encoding);
+			this.ContainerSummaryFileStatus.FormatForExport<Hdr, string>(version, p => p.ContainerSummaryFileStatus, buffer, encoding);
+			this.ContainerQuantityRecordCount.FormatForExport<Hdr, int>(version, p => p.ContainerQuantityRecordCount, buffer, encoding);
+			this.ContainerQuantityFileStatus.FormatForExport<Hdr, string>(version, p => p.ContainerQuantityFileStatus, buffer, encoding);
+			this.PackageQuantityRecordCount.FormatForExport<Hdr, int>(version, p => p.PackageQuantityRecordCount, buffer, encoding);
+			this.PackageQuantityFileStatus.FormatForExport<Hdr, string>(version, p => p.PackageQuantityFileStatus, buffer, encoding);
+			this.WalkSequenceRecordCount.FormatForExport<Hdr, int>(version, p => p.WalkSequenceRecordCount, buffer, encoding);
+			this.WalkSequenceFileStatus.FormatForExport<Hdr, string>(version, p => p.WalkSequenceFileStatus, buffer, encoding);
+			this.SeedNameRecordCount.FormatForExport<Hdr, int>(version, p => p.SeedNameRecordCount, buffer, encoding);
+			this.SeedNameFileStatus.FormatForExport<Hdr, string>(version, p => p.SeedNameFileStatus, buffer, encoding);
+			this.IJCRelationshipRecordCount.FormatForExport<Hdr, int>(version, p => p.IJCRelationshipRecordCount, buffer, encoding);
+			this.IJCRelationshipFileStatus.FormatForExport<Hdr, string>(version, p => p.IJCRelationshipFileStatus, buffer, encoding);
+			this.PieceDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.PieceDetailRecordCount, buffer, encoding);
+			this.PieceDetailFileStatus.FormatForExport<Hdr, string>(version, p => p.PieceDetailFileStatus, buffer, encoding);
+			this.PieceBarcodeRecordCount.FormatForExport<Hdr, int>(version, p => p.PieceBarcodeRecordCount, buffer, encoding);
+			this.PieceBarcodeFileStatus.FormatForExport<Hdr, string>(version, p => p.PieceBarcodeFileStatus, buffer, encoding);
+			this.SpecialFeeChargeRecordCount.FormatForExport<Hdr, int>(version, p => p.SpecialFeeChargeRecordCount, buffer, encoding);
+			this.SpecialFeeChargeFileStatus.FormatForExport<Hdr, string>(version, p => p.SpecialFeeChargeFileStatus, buffer, encoding);
+			this.PostageAdjustmentRecordCount.FormatForExport<Hdr, int>(version, p => p.PostageAdjustmentRecordCount, buffer, encoding);
+			this.PostageAdjustmentFileStatus.FormatForExport<Hdr, string>(version, p => p.PostageAdjustmentFileStatus, buffer, encoding);
+			this.OriginalContainerIdentificationRecordCount.FormatForExport<Hdr, int>(version, p => p.OriginalContainerIdentificationRecordCount, buffer, encoding);
+			this.OriginalContainerIdentificationFileStatus.FormatForExport<Hdr, string>(version, p => p.OriginalContainerIdentificationFileStatus, buffer, encoding);
+			this.UnCodedParcelAddressRecordCount.FormatForExport<Hdr, int>(version, p => p.UnCodedParcelAddressRecordCount, buffer, encoding);
+			this.UnCodedParcelAddressFileStatus.FormatForExport<Hdr, string>(version, p => p.UnCodedParcelAddressFileStatus, buffer, encoding);
+			this.SpecialFeeChargeBarcodeRecordCount.FormatForExport<Hdr, int>(version, p => p.SpecialFeeChargeBarcodeRecordCount, buffer, encoding);
+			this.SpecialFeeChargeBarcodeStatus.FormatForExport<Hdr, string>(version, p => p.SpecialFeeChargeBarcodeStatus, buffer, encoding);
+			this.ExtraPieceDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.ExtraPieceDetailRecordCount, buffer, encoding);
+			this.ExtraPieceDetailStatus.FormatForExport<Hdr, string>(version, p => p.ExtraPieceDetailStatus, buffer, encoding);
+			this.ReferenceableMailRecordCount.FormatForExport<Hdr, int>(version, p => p.ReferenceableMailRecordCount, buffer, encoding);
+			this.ReferenceableMailStatus.FormatForExport<Hdr, string>(version, p => p.ReferenceableMailStatus, buffer, encoding);
+			this.ReferenceableMailSummaryRecordCount.FormatForExport<Hdr, int>(version, p => p.ReferenceableMailSummaryRecordCount, buffer, encoding);
+			this.ReferenceableMailSummaryStatus.FormatForExport<Hdr, string>(version, p => p.ReferenceableMailSummaryStatus, buffer, encoding);
+			this.ReferenceableMailBarcodeRecordCount.FormatForExport<Hdr, int>(version, p => p.ReferenceableMailBarcodeRecordCount, buffer, encoding);
+			this.ReferenceableMailBarcodeStatus.FormatForExport<Hdr, string>(version, p => p.ReferenceableMailBarcodeStatus, buffer, encoding);
+			this.TransportationSummaryRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationSummaryRecordCount, buffer, encoding);
+			this.CertificateOfMailingHeaderRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingHeaderRecordCount, buffer, encoding);
+			this.TransportationSummaryRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationSummaryRecordStatus, buffer, encoding);
+			this.CertificateOfMailingHeaderStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingHeaderStatus, buffer, encoding);
+			this.TransportationGeoDataRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationGeoDataRecordCount, buffer, encoding);
+			this.CertificateOfMailingDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingDetailRecordCount, buffer, encoding);
+			this.TransportationGeoDataRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationGeoDataRecordStatus, buffer, encoding);
+			this.TransportationDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationDetailRecordCount, buffer, encoding);
+			this.CertificateOfMailingDetailStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingDetailStatus, buffer, encoding);
+			this.CertificateOfMailingBulkRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingBulkRecordCount, buffer, encoding);
+			this.TransportationDetailRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationDetailRecordStatus, buffer, encoding);
+			this.TransportationContainerRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationContainerRecordCount, buffer, encoding);
+			this.TransportationContainerRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationContainerRecordStatus, buffer, encoding);
+			this.TransportationContainerStatusRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationContainerStatusRecordCount, buffer, encoding);
+			this.CertificateOfMailingBulkStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingBulkStatus, buffer, encoding);
+			this.CertificateOfMailingServicesRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingServicesRecordCount, buffer, encoding);
+			this.TransportationContainerStatusRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationContainerStatusRecordStatus, buffer, encoding);
+			this.CertificateOfMailingServicesStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingServicesStatus, buffer, encoding);
+			this.MailDatPresentationCategory.FormatForExport<Hdr, string>(version, p => p.MailDatPresentationCategory, buffer, encoding);
+			this.OriginalSoftwareVendorName.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorName, buffer, encoding);
+			this.OriginalSoftwareProductsName.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareProductsName, buffer, encoding);
+			this.OriginalSoftwareVersion.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVersion, buffer, encoding);
+			this.OriginalSoftwareVendorSEmail.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorSEmail, buffer, encoding);
+			this.MailDatSoftwareVendorName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorName, buffer, encoding);
+			this.MailDatSoftwareProductSName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareProductSName, buffer, encoding);
+			this.MailDatSoftwareVersion.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVersion, buffer, encoding);
+			this.MailDatSoftwareVendorSEmail.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorSEmail, buffer, encoding);
+			this.ReserveHdr1162.FormatForExport<Hdr, string>(version, p => p.ReserveHdr1162, buffer, encoding);
+			this.ZoneMatrixDate.FormatForExport<Hdr, DateOnly?>(version, p => p.ZoneMatrixDate, buffer, encoding);
+			this.EDocSenderCrid.FormatForExport<Hdr, string>(version, p => p.EDocSenderCrid, buffer, encoding);
+			this.InformationExchange.FormatForExport<Hdr, string>(version, p => p.InformationExchange, buffer, encoding);
+			this.UserOptionField.FormatForExport<Hdr, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Hdr, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Hdr, string>(version, p => p.JobId));
-			sb.Append(this.MailDatVersion.FormatForExport<Hdr, string>(version, p => p.MailDatVersion));
-			sb.Append(this.HeaderHistorySequenceNumber.FormatForExport<Hdr, int>(version, p => p.HeaderHistorySequenceNumber));
-			sb.Append(this.HeaderHistoryStatus.FormatForExport<Hdr, string>(version, p => p.HeaderHistoryStatus));
-			sb.Append(this.HistoricalJobId.FormatForExport<Hdr, string>(version, p => p.HistoricalJobId));
-			sb.Append(this.LicensedUserSJobNumber.FormatForExport<Hdr, string>(version, p => p.LicensedUserSJobNumber));
-			sb.Append(this.JobNameTitleIssue.FormatForExport<Hdr, string>(version, p => p.JobNameTitleIssue));
-			sb.Append(this.FileSource.FormatForExport<Hdr, string>(version, p => p.FileSource));
-			sb.Append(this.UserLicenseCode.FormatForExport<Hdr, string>(version, p => p.UserLicenseCode));
-			sb.Append(this.ContactName.FormatForExport<Hdr, string>(version, p => p.ContactName));
-			sb.Append(this.ContactTelephoneNumber.FormatForExport<Hdr, string>(version, p => p.ContactTelephoneNumber));
-			sb.Append(this.ContactEmail.FormatForExport<Hdr, string>(version, p => p.ContactEmail));
-			sb.Append(this.DatePrepared.FormatForExport<Hdr, DateOnly>(version, p => p.DatePrepared));
-			sb.Append(this.TimePrepared.FormatForExport<Hdr, TimeOnly>(version, p => p.TimePrepared));
-			sb.Append(this.MailDatRevision.FormatForExport<Hdr, string>(version, p => p.MailDatRevision));
-			sb.Append(this.SegmentRecordCount.FormatForExport<Hdr, int>(version, p => p.SegmentRecordCount));
-			sb.Append(this.SegmentFileStatus.FormatForExport<Hdr, string>(version, p => p.SegmentFileStatus));
-			sb.Append(this.MailPieceUnitRecordCount.FormatForExport<Hdr, int>(version, p => p.MailPieceUnitRecordCount));
-			sb.Append(this.MailPieceUnitFileStatus.FormatForExport<Hdr, string>(version, p => p.MailPieceUnitFileStatus));
-			sb.Append(this.MpuCRelationshipRecordCount.FormatForExport<Hdr, int>(version, p => p.MpuCRelationshipRecordCount));
-			sb.Append(this.MpuCRelationshipFileStatus.FormatForExport<Hdr, string>(version, p => p.MpuCRelationshipFileStatus));
-			sb.Append(this.MailerPostageAccountRecordCount.FormatForExport<Hdr, int>(version, p => p.MailerPostageAccountRecordCount));
-			sb.Append(this.MailerPostageAccountFileStatus.FormatForExport<Hdr, string>(version, p => p.MailerPostageAccountFileStatus));
-			sb.Append(this.ComponentRecordCount.FormatForExport<Hdr, int>(version, p => p.ComponentRecordCount));
-			sb.Append(this.ComponentFileStatus.FormatForExport<Hdr, string>(version, p => p.ComponentFileStatus));
-			sb.Append(this.ComponentCharacteristicRecordCount.FormatForExport<Hdr, int>(version, p => p.ComponentCharacteristicRecordCount));
-			sb.Append(this.ComponentCharacteristicFileStatus.FormatForExport<Hdr, string>(version, p => p.ComponentCharacteristicFileStatus));
-			sb.Append(this.ContainerSummaryRecordCount.FormatForExport<Hdr, int>(version, p => p.ContainerSummaryRecordCount));
-			sb.Append(this.ContainerSummaryFileStatus.FormatForExport<Hdr, string>(version, p => p.ContainerSummaryFileStatus));
-			sb.Append(this.ContainerQuantityRecordCount.FormatForExport<Hdr, int>(version, p => p.ContainerQuantityRecordCount));
-			sb.Append(this.ContainerQuantityFileStatus.FormatForExport<Hdr, string>(version, p => p.ContainerQuantityFileStatus));
-			sb.Append(this.PackageQuantityRecordCount.FormatForExport<Hdr, int>(version, p => p.PackageQuantityRecordCount));
-			sb.Append(this.PackageQuantityFileStatus.FormatForExport<Hdr, string>(version, p => p.PackageQuantityFileStatus));
-			sb.Append(this.WalkSequenceRecordCount.FormatForExport<Hdr, int>(version, p => p.WalkSequenceRecordCount));
-			sb.Append(this.WalkSequenceFileStatus.FormatForExport<Hdr, string>(version, p => p.WalkSequenceFileStatus));
-			sb.Append(this.SeedNameRecordCount.FormatForExport<Hdr, int>(version, p => p.SeedNameRecordCount));
-			sb.Append(this.SeedNameFileStatus.FormatForExport<Hdr, string>(version, p => p.SeedNameFileStatus));
-			sb.Append(this.IJCRelationshipRecordCount.FormatForExport<Hdr, int>(version, p => p.IJCRelationshipRecordCount));
-			sb.Append(this.IJCRelationshipFileStatus.FormatForExport<Hdr, string>(version, p => p.IJCRelationshipFileStatus));
-			sb.Append(this.PieceDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.PieceDetailRecordCount));
-			sb.Append(this.PieceDetailFileStatus.FormatForExport<Hdr, string>(version, p => p.PieceDetailFileStatus));
-			sb.Append(this.PieceBarcodeRecordCount.FormatForExport<Hdr, int>(version, p => p.PieceBarcodeRecordCount));
-			sb.Append(this.PieceBarcodeFileStatus.FormatForExport<Hdr, string>(version, p => p.PieceBarcodeFileStatus));
-			sb.Append(this.SpecialFeeChargeRecordCount.FormatForExport<Hdr, int>(version, p => p.SpecialFeeChargeRecordCount));
-			sb.Append(this.SpecialFeeChargeFileStatus.FormatForExport<Hdr, string>(version, p => p.SpecialFeeChargeFileStatus));
-			sb.Append(this.PostageAdjustmentRecordCount.FormatForExport<Hdr, int>(version, p => p.PostageAdjustmentRecordCount));
-			sb.Append(this.PostageAdjustmentFileStatus.FormatForExport<Hdr, string>(version, p => p.PostageAdjustmentFileStatus));
-			sb.Append(this.OriginalContainerIdentificationRecordCount.FormatForExport<Hdr, int>(version, p => p.OriginalContainerIdentificationRecordCount));
-			sb.Append(this.OriginalContainerIdentificationFileStatus.FormatForExport<Hdr, string>(version, p => p.OriginalContainerIdentificationFileStatus));
-			sb.Append(this.UnCodedParcelAddressRecordCount.FormatForExport<Hdr, int>(version, p => p.UnCodedParcelAddressRecordCount));
-			sb.Append(this.UnCodedParcelAddressFileStatus.FormatForExport<Hdr, string>(version, p => p.UnCodedParcelAddressFileStatus));
-			sb.Append(this.SpecialFeeChargeBarcodeRecordCount.FormatForExport<Hdr, int>(version, p => p.SpecialFeeChargeBarcodeRecordCount));
-			sb.Append(this.SpecialFeeChargeBarcodeStatus.FormatForExport<Hdr, string>(version, p => p.SpecialFeeChargeBarcodeStatus));
-			sb.Append(this.ExtraPieceDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.ExtraPieceDetailRecordCount));
-			sb.Append(this.ExtraPieceDetailStatus.FormatForExport<Hdr, string>(version, p => p.ExtraPieceDetailStatus));
-			sb.Append(this.ReferenceableMailRecordCount.FormatForExport<Hdr, int>(version, p => p.ReferenceableMailRecordCount));
-			sb.Append(this.ReferenceableMailStatus.FormatForExport<Hdr, string>(version, p => p.ReferenceableMailStatus));
-			sb.Append(this.ReferenceableMailSummaryRecordCount.FormatForExport<Hdr, int>(version, p => p.ReferenceableMailSummaryRecordCount));
-			sb.Append(this.ReferenceableMailSummaryStatus.FormatForExport<Hdr, string>(version, p => p.ReferenceableMailSummaryStatus));
-			sb.Append(this.ReferenceableMailBarcodeRecordCount.FormatForExport<Hdr, int>(version, p => p.ReferenceableMailBarcodeRecordCount));
-			sb.Append(this.ReferenceableMailBarcodeStatus.FormatForExport<Hdr, string>(version, p => p.ReferenceableMailBarcodeStatus));
-			sb.Append(this.TransportationSummaryRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationSummaryRecordCount));
-			sb.Append(this.TransportationSummaryRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationSummaryRecordStatus));
-			sb.Append(this.TransportationGeoDataRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationGeoDataRecordCount));
-			sb.Append(this.TransportationGeoDataRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationGeoDataRecordStatus));
-			sb.Append(this.TransportationDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationDetailRecordCount));
-			sb.Append(this.TransportationDetailRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationDetailRecordStatus));
-			sb.Append(this.TransportationContainerRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationContainerRecordCount));
-			sb.Append(this.TransportationContainerRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationContainerRecordStatus));
-			sb.Append(this.TransportationContainerStatusRecordCount.FormatForExport<Hdr, int>(version, p => p.TransportationContainerStatusRecordCount));
-			sb.Append(this.TransportationContainerStatusRecordStatus.FormatForExport<Hdr, string>(version, p => p.TransportationContainerStatusRecordStatus));
-			sb.Append(this.MailDatPresentationCategory.FormatForExport<Hdr, string>(version, p => p.MailDatPresentationCategory));
-			sb.Append(this.OriginalSoftwareVendorName.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorName));
-			sb.Append(this.OriginalSoftwareProductsName.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareProductsName));
-			sb.Append(this.OriginalSoftwareVersion.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVersion));
-			sb.Append(this.OriginalSoftwareVendorSEmail.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorSEmail));
-			sb.Append(this.MailDatSoftwareVendorName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorName));
-			sb.Append(this.MailDatSoftwareProductSName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareProductSName));
-			sb.Append(this.MailDatSoftwareVersion.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVersion));
-			sb.Append(this.MailDatSoftwareVendorSEmail.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorSEmail));
-			sb.Append(this.ReserveHdr1162.FormatForExport<Hdr, string>(version, p => p.ReserveHdr1162));
-			sb.Append(this.ZoneMatrixDate.FormatForExport<Hdr, DateOnly?>(version, p => p.ZoneMatrixDate));
-			sb.Append(this.EDocSenderCrid.FormatForExport<Hdr, string>(version, p => p.EDocSenderCrid));
-			sb.Append(this.InformationExchange.FormatForExport<Hdr, string>(version, p => p.InformationExchange));
-			sb.Append(this.UserOptionField.FormatForExport<Hdr, string>(version, p => p.UserOptionField));
-			sb.Append(this.ClosingCharacter.FormatForExport<Hdr, string>(version, p => p.ClosingCharacter));
-			sb.Append(this.CertificateOfMailingHeaderRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingHeaderRecordCount));
-			sb.Append(this.CertificateOfMailingHeaderStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingHeaderStatus));
-			sb.Append(this.CertificateOfMailingDetailRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingDetailRecordCount));
-			sb.Append(this.CertificateOfMailingDetailStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingDetailStatus));
-			sb.Append(this.CertificateOfMailingBulkRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingBulkRecordCount));
-			sb.Append(this.CertificateOfMailingBulkStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingBulkStatus));
-			sb.Append(this.CertificateOfMailingServicesRecordCount.FormatForExport<Hdr, int>(version, p => p.CertificateOfMailingServicesRecordCount));
-			sb.Append(this.CertificateOfMailingServicesStatus.FormatForExport<Hdr, string>(version, p => p.CertificateOfMailingServicesStatus));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

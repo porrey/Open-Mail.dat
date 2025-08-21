@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// required files and structure. Records identify digital campaigns and enhance capabilities of the
 	/// USPS Informed Delivery  program separate from the required file structure.
 	/// </summary>
-	public interface IRmb : IMaildatEntity 
+	public interface IRmb : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (RMB-1001)

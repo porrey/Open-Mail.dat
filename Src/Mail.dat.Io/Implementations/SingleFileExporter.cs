@@ -22,7 +22,9 @@
 //
 // Author: Daniel M porrey
 //
+using System.Text;
 using Mail.dat.Io.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Mail.dat.Io
 {
@@ -73,7 +75,7 @@ namespace Mail.dat.Io
 				// Get the path for the export file.
 				//
 				string filePath = $"{Path.GetDirectoryName(options.TargetFile.FilePath)}/{Path.GetFileNameWithoutExtension(options.TargetFile.FilePath)}.{classAttribute.Extension}";
-				DirectoryInfo targetDirectoy = new(options.TargetFile.FilePath);
+				DirectoryInfo targetDirectoy = new(Path.GetDirectoryName(options.TargetFile.FilePath));
 
 				//
 				// Create the target directory if it does not exist.
@@ -94,30 +96,69 @@ namespace Mail.dat.Io
 				}
 
 				//
-				// Open the file for reading.
+				// Get the record length for the file.
 				//
-				using (FileStream io = new(filePath, FileMode.CreateNew, FileAccess.Write))
+				int recordLength = entityType.GetMaildatFieldAttribute(version).LineLength + options.LineTerminator.Length;
+
+				//
+				// Create a counter to keep track of the number of lines processed.
+				//
+				int processedCount = 0;
+
+				//
+				// Set up parallel options for the export operation.
+				//
+				ParallelOptions parallelOptions = new()
+				{
+					CancellationToken = options.CancellationToken,
+#if DEBUG
+					MaxDegreeOfParallelism = Environment.ProcessorCount
+#else
+					MaxDegreeOfParallelism = Environment.ProcessorCount
+#endif
+				};
+
+				//
+				// Create a memory-mapped file for the export.
+				//
+				using (MemoryMappedRecordFile mmf = new(filePath, recordLength, lineCount))
 				{
 					//
-					// Write the file in binary mode.
+					// Pre-encode the line terminator.
 					//
-					using (StreamWriter writer = new(io, options.Encoding))
-					{
-						int lineNumber = 1;
+					byte[] terminator = options.Encoding.GetBytes(options.LineTerminator);
 
-						foreach (IMaildatEntity item in items.OrderBy(t => t.FileLineNumber))
+					Parallel.ForEach(items, parallelOptions, async (item, c) =>
+					{
+						if (!c.ShouldExitCurrentIteration)
 						{
-							string line = await item.ExportDataAsync(version) + options.LineTerminator;
-							writer.Write(line);
+							//
+							// Allocate space on the stack for the record data.
+							//
+							Span<byte> buffer = stackalloc byte[recordLength];
+
+							//
+							// Export the data to the buffer.
+							//
+							item.ExportData(version, buffer, recordLength, options.Encoding);
+
+							//
+							// Append the line terminator.
+							//
+							terminator.CopyTo(buffer.Slice(buffer.Length - options.LineTerminator.Length, options.LineTerminator.Length));
+
+							//
+							// Write the record to the memory-mapped file.
+							//
+							mmf.WriteRecord(item.FileLineNumber - 1, buffer);
 
 							//
 							// Send a progress update.
 							//
-							await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = classAttribute.File, ItemAction = ProgressMessageType.Progress, WillShowProgress = true, ItemSource = filePath, ItemIndex = lineNumber++, ItemCount = lineCount });
+							Interlocked.Increment(ref processedCount);
+							await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = classAttribute.File, ItemAction = ProgressMessageType.Progress, WillShowProgress = true, ItemSource = filePath, ItemIndex = processedCount, ItemCount = lineCount });
 						}
-
-						await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = classAttribute.File, ItemAction = ProgressMessageType.Completed, WillShowProgress = true, ItemSource = filePath, ItemIndex = lineCount, ItemCount = lineCount });
-					}
+					});
 				}
 			}
 

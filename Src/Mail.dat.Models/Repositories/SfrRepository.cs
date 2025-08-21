@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using Diamond.Core.Repository;
@@ -33,7 +33,7 @@ namespace Mail.dat
 	/// Repository for the <see cref="Sfr"/> entity.
 	/// </summary>
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class SfrRepository : EntityFrameworkRepository<ISfr, Sfr, MaildatContext> 
+	public partial class SfrRepository : EntityFrameworkRepository<ISfr, Sfr, MaildatContext>
 	{
 		/// <summary>
 		/// Creates and instance of the <see cref="SfrRepository"/> class with the specified context and entity

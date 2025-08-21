@@ -97,7 +97,7 @@ namespace Mail.dat
 			//
 			// The closing tag for Mail.dat files is always "#".
 			//
-			return "#"; 
+			return "#";
 		}
 	}
 }

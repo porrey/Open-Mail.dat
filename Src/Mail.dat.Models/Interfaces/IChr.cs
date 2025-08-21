@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -29,7 +29,7 @@ namespace Mail.dat
 	/// Is used to capture the header information that is present on the Certificate of Mailing Form.
 	/// Provides the header information that is present on the Certificate of Mailing Forms.
 	/// </summary>
-	public interface IChr : IMaildatEntity 
+	public interface IChr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (CHR-1001)
@@ -143,6 +143,19 @@ namespace Mail.dat
 		string MpaId { get; set; }
 
 		/// <summary>
+		/// Verification Facility Name (CHR-1121)
+		/// Name of Mailing Facility where verification occurs.
+		/// </summary>
+		string VerificationFacilityName { get; set; }
+
+		/// <summary>
+		/// Verification Facility ZIP Code (CHR-1122)
+		/// ZIP Code of Post Office where postage statement will be finalized (the associated BMEU, not the
+		/// DMU).
+		/// </summary>
+		string VerificationFacilityZipCode { get; set; }
+
+		/// <summary>
 		/// Flex Option A (CHR-1117)
 		/// Reserve Option.
 		/// </summary>
@@ -177,18 +190,5 @@ namespace Mail.dat
 		/// Must be the # sign.
 		/// </summary>
 		string ClosingCharacter { get; }
-
-		/// <summary>
-		/// Verification Facility Name (CHR-1121)
-		/// Name of Mailing Facility where verification occurs.
-		/// </summary>
-		string VerificationFacilityName { get; set; }
-
-		/// <summary>
-		/// Verification Facility ZIP Code (CHR-1122)
-		/// ZIP Code of Post Office where postage statement will be finalized (the associated BMEU, not the
-		/// DMU).
-		/// </summary>
-		string VerificationFacilityZipCode { get; set; }
 	}
 }

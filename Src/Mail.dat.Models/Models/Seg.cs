@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -43,7 +43,7 @@ namespace Mail.dat
 	[Table("Seg", Schema = "Maildat")]
 	[PrimaryKey("Id")]
 	[MaildatVersions("23-1", "24-1", "25-1")]
-	public partial class Seg : MaildatEntity, ISeg 
+	public partial class Seg : MaildatEntity, ISeg
 	{
 		/// <summary>
 		/// Job ID (SEG-1001)
@@ -688,7 +688,7 @@ namespace Mail.dat
 		protected override Task<ILoadError[]> OnImportDataAsync(string version, int fileLineNumber, ReadOnlySpan<byte> line)
 		{
 			List<ILoadError> returnValue = [];
-			
+
 			this.JobId = line.ParseForImport<Seg, string>(version, p => p.JobId, returnValue);
 			this.SegmentId = line.ParseForImport<Seg, string>(version, p => p.SegmentId, returnValue);
 			this.SegmentDescription = line.ParseForImport<Seg, string>(version, p => p.SegmentDescription, returnValue);
@@ -728,57 +728,55 @@ namespace Mail.dat
 			this.ReserveSeg1127 = line.ParseForImport<Seg, string>(version, p => p.ReserveSeg1127, returnValue);
 			this.ClosingCharacter = line.ParseForImport<Seg, string>(version, p => p.ClosingCharacter, returnValue);
 			this.FileLineNumber = fileLineNumber;
-			
+
 			return Task.FromResult(returnValue.ToArray());
 		}
 
 		/// <summary>
-		/// Formats all property values into a single line suitable for export.
+		/// Formats all property values into a Span<byte> suitable for export.
 		/// </summary>
-		protected override Task<string> OnExportDataAsync(string version)
+		protected override void OnExportData(string version, Span<byte> buffer, int width, Encoding encoding)
 		{
-			StringBuilder sb = new();
+			this.JobId.FormatForExport<Seg, string>(version, p => p.JobId, buffer, encoding);
+			this.SegmentId.FormatForExport<Seg, string>(version, p => p.SegmentId, buffer, encoding);
+			this.SegmentDescription.FormatForExport<Seg, string>(version, p => p.SegmentDescription, buffer, encoding);
+			this.ClassDefiningPreparation.FormatForExport<Seg, string>(version, p => p.ClassDefiningPreparation, buffer, encoding);
+			this.PrincipalProcessingCategory.FormatForExport<Seg, string>(version, p => p.PrincipalProcessingCategory, buffer, encoding);
+			this.SubstitutedContainerPrep.FormatForExport<Seg, string>(version, p => p.SubstitutedContainerPrep, buffer, encoding);
+			this.PeriodicalsNewspaperTreatment.FormatForExport<Seg, string>(version, p => p.PeriodicalsNewspaperTreatment, buffer, encoding);
+			this.LogicalPhysicalCONTAINERIndicator.FormatForExport<Seg, string>(version, p => p.LogicalPhysicalCONTAINERIndicator, buffer, encoding);
+			this.LogPhyPACKAGEIndicator.FormatForExport<Seg, string>(version, p => p.LogPhyPACKAGEIndicator, buffer, encoding);
+			this.LOTDatabaseDate.FormatForExport<Seg, DateOnly>(version, p => p.LOTDatabaseDate, buffer, encoding);
+			this.VerificationFacilityName.FormatForExport<Seg, string>(version, p => p.VerificationFacilityName, buffer, encoding);
+			this.VerificationFacilityZipCode.FormatForExport<Seg, string>(version, p => p.VerificationFacilityZipCode, buffer, encoding);
+			this.LOTDirectionIndicator.FormatForExport<Seg, string>(version, p => p.LOTDirectionIndicator, buffer, encoding);
+			this.BarcodeVerifierIndicator.FormatForExport<Seg, string>(version, p => p.BarcodeVerifierIndicator, buffer, encoding);
+			this.PackageServicesPackagingCriteria.FormatForExport<Seg, string>(version, p => p.PackageServicesPackagingCriteria, buffer, encoding);
+			this.AutomationCodingDate.FormatForExport<Seg, DateOnly>(version, p => p.AutomationCodingDate, buffer, encoding);
+			this.CarrierRouteCodingDate.FormatForExport<Seg, DateOnly>(version, p => p.CarrierRouteCodingDate, buffer, encoding);
+			this.CarrierRouteSequencingDate.FormatForExport<Seg, DateOnly>(version, p => p.CarrierRouteSequencingDate, buffer, encoding);
+			this.MoveUpdateDate.FormatForExport<Seg, DateOnly?>(version, p => p.MoveUpdateDate, buffer, encoding);
+			this.DetachedMailingLabelIndicator.FormatForExport<Seg, string>(version, p => p.DetachedMailingLabelIndicator, buffer, encoding);
+			this.EDocSenderCrid.FormatForExport<Seg, string>(version, p => p.EDocSenderCrid, buffer, encoding);
+			this.ContainerAndBundleChargeMethod.FormatForExport<Seg, string>(version, p => p.ContainerAndBundleChargeMethod, buffer, encoding);
+			this.MpaIdForContainerAndBundleChargeMethod.FormatForExport<Seg, string>(version, p => p.MpaIdForContainerAndBundleChargeMethod, buffer, encoding);
+			this.LessThanAPresortSegmentPresentation.FormatForExport<Seg, string>(version, p => p.LessThanAPresortSegmentPresentation, buffer, encoding);
+			this.FullServiceParticipationIndicator.FormatForExport<Seg, string>(version, p => p.FullServiceParticipationIndicator, buffer, encoding);
+			this.MoveUpdateMethod.FormatForExport<Seg, string>(version, p => p.MoveUpdateMethod, buffer, encoding);
+			this.DeliveryStatisticsFileDate.FormatForExport<Seg, DateOnly>(version, p => p.DeliveryStatisticsFileDate, buffer, encoding);
+			this.InformedAddressIndicator.FormatForExport<Seg, string>(version, p => p.InformedAddressIndicator, buffer, encoding);
+			this.InformedAddressExpirationDate.FormatForExport<Seg, DateOnly?>(version, p => p.InformedAddressExpirationDate, buffer, encoding);
+			this.InformationExchange.FormatForExport<Seg, string>(version, p => p.InformationExchange, buffer, encoding);
+			this.UserOptionField.FormatForExport<Seg, string>(version, p => p.UserOptionField, buffer, encoding);
+			this.MailingAgreementType.FormatForExport<Seg, string>(version, p => p.MailingAgreementType, buffer, encoding);
+			this.FcmLetterResidualPreparationIndicator.FormatForExport<Seg, string>(version, p => p.FcmLetterResidualPreparationIndicator, buffer, encoding);
+			this.HandlingUnitUniquenessManagerCrid.FormatForExport<Seg, string>(version, p => p.HandlingUnitUniquenessManagerCrid, buffer, encoding);
+			this.ContainerUniquenessManagerCrid.FormatForExport<Seg, string>(version, p => p.ContainerUniquenessManagerCrid, buffer, encoding);
+			this.SegRecordStatus.FormatForExport<Seg, string>(version, p => p.SegRecordStatus, buffer, encoding);
+			this.ReserveSeg1127.FormatForExport<Seg, string>(version, p => p.ReserveSeg1127, buffer, encoding);
+			this.ClosingCharacter.FormatForExport<Seg, string>(version, p => p.ClosingCharacter, buffer, encoding);
+
 			
-			sb.Append(this.JobId.FormatForExport<Seg, string>(version, p => p.JobId));
-			sb.Append(this.SegmentId.FormatForExport<Seg, string>(version, p => p.SegmentId));
-			sb.Append(this.SegmentDescription.FormatForExport<Seg, string>(version, p => p.SegmentDescription));
-			sb.Append(this.ClassDefiningPreparation.FormatForExport<Seg, string>(version, p => p.ClassDefiningPreparation));
-			sb.Append(this.PrincipalProcessingCategory.FormatForExport<Seg, string>(version, p => p.PrincipalProcessingCategory));
-			sb.Append(this.SubstitutedContainerPrep.FormatForExport<Seg, string>(version, p => p.SubstitutedContainerPrep));
-			sb.Append(this.PeriodicalsNewspaperTreatment.FormatForExport<Seg, string>(version, p => p.PeriodicalsNewspaperTreatment));
-			sb.Append(this.LogicalPhysicalCONTAINERIndicator.FormatForExport<Seg, string>(version, p => p.LogicalPhysicalCONTAINERIndicator));
-			sb.Append(this.LogPhyPACKAGEIndicator.FormatForExport<Seg, string>(version, p => p.LogPhyPACKAGEIndicator));
-			sb.Append(this.LOTDatabaseDate.FormatForExport<Seg, DateOnly>(version, p => p.LOTDatabaseDate));
-			sb.Append(this.VerificationFacilityName.FormatForExport<Seg, string>(version, p => p.VerificationFacilityName));
-			sb.Append(this.VerificationFacilityZipCode.FormatForExport<Seg, string>(version, p => p.VerificationFacilityZipCode));
-			sb.Append(this.LOTDirectionIndicator.FormatForExport<Seg, string>(version, p => p.LOTDirectionIndicator));
-			sb.Append(this.BarcodeVerifierIndicator.FormatForExport<Seg, string>(version, p => p.BarcodeVerifierIndicator));
-			sb.Append(this.PackageServicesPackagingCriteria.FormatForExport<Seg, string>(version, p => p.PackageServicesPackagingCriteria));
-			sb.Append(this.AutomationCodingDate.FormatForExport<Seg, DateOnly>(version, p => p.AutomationCodingDate));
-			sb.Append(this.CarrierRouteCodingDate.FormatForExport<Seg, DateOnly>(version, p => p.CarrierRouteCodingDate));
-			sb.Append(this.CarrierRouteSequencingDate.FormatForExport<Seg, DateOnly>(version, p => p.CarrierRouteSequencingDate));
-			sb.Append(this.MoveUpdateDate.FormatForExport<Seg, DateOnly?>(version, p => p.MoveUpdateDate));
-			sb.Append(this.DetachedMailingLabelIndicator.FormatForExport<Seg, string>(version, p => p.DetachedMailingLabelIndicator));
-			sb.Append(this.EDocSenderCrid.FormatForExport<Seg, string>(version, p => p.EDocSenderCrid));
-			sb.Append(this.ContainerAndBundleChargeMethod.FormatForExport<Seg, string>(version, p => p.ContainerAndBundleChargeMethod));
-			sb.Append(this.MpaIdForContainerAndBundleChargeMethod.FormatForExport<Seg, string>(version, p => p.MpaIdForContainerAndBundleChargeMethod));
-			sb.Append(this.LessThanAPresortSegmentPresentation.FormatForExport<Seg, string>(version, p => p.LessThanAPresortSegmentPresentation));
-			sb.Append(this.FullServiceParticipationIndicator.FormatForExport<Seg, string>(version, p => p.FullServiceParticipationIndicator));
-			sb.Append(this.MoveUpdateMethod.FormatForExport<Seg, string>(version, p => p.MoveUpdateMethod));
-			sb.Append(this.DeliveryStatisticsFileDate.FormatForExport<Seg, DateOnly>(version, p => p.DeliveryStatisticsFileDate));
-			sb.Append(this.InformedAddressIndicator.FormatForExport<Seg, string>(version, p => p.InformedAddressIndicator));
-			sb.Append(this.InformedAddressExpirationDate.FormatForExport<Seg, DateOnly?>(version, p => p.InformedAddressExpirationDate));
-			sb.Append(this.InformationExchange.FormatForExport<Seg, string>(version, p => p.InformationExchange));
-			sb.Append(this.UserOptionField.FormatForExport<Seg, string>(version, p => p.UserOptionField));
-			sb.Append(this.MailingAgreementType.FormatForExport<Seg, string>(version, p => p.MailingAgreementType));
-			sb.Append(this.FcmLetterResidualPreparationIndicator.FormatForExport<Seg, string>(version, p => p.FcmLetterResidualPreparationIndicator));
-			sb.Append(this.HandlingUnitUniquenessManagerCrid.FormatForExport<Seg, string>(version, p => p.HandlingUnitUniquenessManagerCrid));
-			sb.Append(this.ContainerUniquenessManagerCrid.FormatForExport<Seg, string>(version, p => p.ContainerUniquenessManagerCrid));
-			sb.Append(this.SegRecordStatus.FormatForExport<Seg, string>(version, p => p.SegRecordStatus));
-			sb.Append(this.ReserveSeg1127.FormatForExport<Seg, string>(version, p => p.ReserveSeg1127));
-			sb.Append(this.ClosingCharacter.FormatForExport<Seg, string>(version, p => p.ClosingCharacter));
-			
-			return Task.FromResult(sb.ToString());
 		}
 	}
 }

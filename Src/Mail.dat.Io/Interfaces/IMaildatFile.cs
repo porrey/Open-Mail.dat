@@ -70,7 +70,7 @@ namespace Mail.dat.Io
 		/// <param name="targetDirectory">The path to the directory where the contents will be extracted. Must not be null or empty.</param>
 		/// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the extraction
 		/// succeeds; otherwise, <see langword="false"/>.</returns>
-		Task<bool> Unzip(string targetDirectory);
+		Task<bool> UnzipAsync(string targetDirectory);
 
 		/// <summary>
 		/// Compresses the current data into a zip archive and saves it to the specified file path.
@@ -80,6 +80,6 @@ namespace Mail.dat.Io
 		/// <param name="targetFilePath">The full path, including the file name, where the zip archive will be saved. Must not be null or empty.</param>
 		/// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the compression
 		/// succeeds; otherwise, <see langword="false"/>.</returns>
-		Task<bool> Zip(string targetFilePath);
+		Task<bool> ZipAsync(string targetFilePath, bool deleteSource);
 	}
 }

@@ -61,7 +61,7 @@ namespace Mail.dat.BuildCommand
 				//
 				// Write the name.
 				//
-				File.AppendAllLines(filePath, [$" : {list} "]);
+				File.AppendAllLines(filePath, [$" : {list}"]);
 			}
 			else
 			{

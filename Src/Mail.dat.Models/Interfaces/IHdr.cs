@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 12th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -28,7 +28,7 @@ namespace Mail.dat
 	/// <summary>
 	/// Who, what and when of this job.
 	/// </summary>
-	public interface IHdr : IMaildatEntity 
+	public interface IHdr : IMaildatEntity
 	{
 		/// <summary>
 		/// Job ID (HDR-1001)
@@ -412,16 +412,33 @@ namespace Mail.dat
 		int TransportationSummaryRecordCount { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Header Record Count (HDR-1201)
+		/// The number of Certificate of Mailing Header records in this Mail.dat.
+		/// </summary>
+		int CertificateOfMailingHeaderRecordCount { get; set; }
+
+		/// <summary>
 		/// Transportation Summary Record Status (HDR-1198)
 		/// O, D, R, N, C, U.
 		/// </summary>
 		string TransportationSummaryRecordStatus { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Header Status (HDR-1202)
+		/// </summary>
+		string CertificateOfMailingHeaderStatus { get; set; }
+
+		/// <summary>
 		/// Transportation Geo-Data Record Count (HDR-1199)
 		/// The number of certificate of mailing detail records in this Mail.dat.
 		/// </summary>
 		int TransportationGeoDataRecordCount { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Detail Record Count (HDR-1203)
+		/// The number of certificate of mailing detail records in this Mail.dat.
+		/// </summary>
+		int CertificateOfMailingDetailRecordCount { get; set; }
 
 		/// <summary>
 		/// Transportation Geo-Data Record Status (HDR-2001)
@@ -433,6 +450,17 @@ namespace Mail.dat
 		/// The number of transportation detail records in this Mail.dat.
 		/// </summary>
 		int TransportationDetailRecordCount { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Detail Status (HDR-1204)
+		/// </summary>
+		string CertificateOfMailingDetailStatus { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Bulk Record Count (HDR-1205)
+		/// The number of certificate of mailing bulk records in this Mail.dat.
+		/// </summary>
+		int CertificateOfMailingBulkRecordCount { get; set; }
 
 		/// <summary>
 		/// Transportation Detail Record Status (HDR-2003)
@@ -459,10 +487,26 @@ namespace Mail.dat
 		int TransportationContainerStatusRecordCount { get; set; }
 
 		/// <summary>
+		/// Certificate of Mailing Bulk Status (HDR-1206)
+		/// </summary>
+		string CertificateOfMailingBulkStatus { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Services Record Count (HDR-1207)
+		/// The number of certificate of mailing services records in this Mail.dat.
+		/// </summary>
+		int CertificateOfMailingServicesRecordCount { get; set; }
+
+		/// <summary>
 		/// Transportation Container Status Record Status (HDR-2007)
 		/// O, D, R, N, C, U.
 		/// </summary>
 		string TransportationContainerStatusRecordStatus { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Services Status (HDR-1208)
+		/// </summary>
+		string CertificateOfMailingServicesStatus { get; set; }
 
 		/// <summary>
 		/// Mail.dat Presentation Category (HDR-1154)
@@ -557,49 +601,5 @@ namespace Mail.dat
 		/// Must be the # sign.
 		/// </summary>
 		string ClosingCharacter { get; }
-
-		/// <summary>
-		/// Certificate of Mailing Header Record Count (HDR-1201)
-		/// The number of Certificate of Mailing Header records in this Mail.dat.
-		/// </summary>
-		int CertificateOfMailingHeaderRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Header Status (HDR-1202)
-		/// </summary>
-		string CertificateOfMailingHeaderStatus { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Detail Record Count (HDR-1203)
-		/// The number of certificate of mailing detail records in this Mail.dat.
-		/// </summary>
-		int CertificateOfMailingDetailRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Detail Status (HDR-1204)
-		/// </summary>
-		string CertificateOfMailingDetailStatus { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Bulk Record Count (HDR-1205)
-		/// The number of certificate of mailing bulk records in this Mail.dat.
-		/// </summary>
-		int CertificateOfMailingBulkRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Bulk Status (HDR-1206)
-		/// </summary>
-		string CertificateOfMailingBulkStatus { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Services Record Count (HDR-1207)
-		/// The number of certificate of mailing services records in this Mail.dat.
-		/// </summary>
-		int CertificateOfMailingServicesRecordCount { get; set; }
-
-		/// <summary>
-		/// Certificate of Mailing Services Status (HDR-1208)
-		/// </summary>
-		string CertificateOfMailingServicesStatus { get; set; }
 	}
 }

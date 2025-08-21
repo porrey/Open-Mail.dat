@@ -16,7 +16,6 @@
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<IncludeSymbols>True</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageProjectUrl>https://github.com/Open-Mail-dat/</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/Open-Mail-dat/Code-Builder</RepositoryUrl>
@@ -24,6 +23,7 @@
 		<NeutralLanguage>en</NeutralLanguage>
 		<PackageTags>efcore,mail.dat</PackageTags>
 		<Copyright>Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>

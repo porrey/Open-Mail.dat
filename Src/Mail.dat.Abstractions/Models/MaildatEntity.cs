@@ -53,40 +53,70 @@ namespace Mail.dat
 		[Column("FileLineNumber", Order = 1)]
 		public long FileLineNumber { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref1", Order = 9992)]
 		[MaxLength(60)]
 		public string Ref1 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref2", Order = 9993)]
 		[MaxLength(40)]
 		public string Ref2 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref3", Order = 9994)]
 		[MaxLength(20)]
 		public string Ref3 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref4", Order = 9995)]
 		[MaxLength(20)]
 		public string Ref4 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref5", Order = 9996)]
 		[MaxLength(10)]
 		public string Ref5 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref6", Order = 9997)]
 		[MaxLength(10)]
 		public string Ref6 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference value associated with this entity.
+		/// </summary>
 		[Column("Ref7", Order = 9998)]
 		[MaxLength(10)]
 		public string Ref7 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the value of the Ref8 column.
+		/// </summary>
 		[Column("Ref8", Order = 9999)]
 		public int Ref8 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the value of Ref9.
+		/// </summary>
 		[Column("Ref9", Order = 9999)]
 		public decimal Ref9 { get; set; }
 
+		/// <summary>
+		/// Gets or sets the reference date associated with this entity.
+		/// </summary>
 		[Column("Ref10", Order = 9999)]
 		public DateTime Ref10 { get; set; }
 

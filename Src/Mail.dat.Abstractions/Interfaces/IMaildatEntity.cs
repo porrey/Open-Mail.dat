@@ -41,6 +41,56 @@ namespace Mail.dat
 		long FileLineNumber { get; set; }
 
 		/// <summary>
+		/// Gets or sets a reference string that can be used to store additional information.
+		/// </summary>
+		string Ref1 { get; set; }
+
+		/// <summary>
+		/// Gets or sets a reference string that can be used for additional identification or metadata.
+		/// </summary>
+		string Ref2 { get; set; }
+
+		/// <summary>
+		/// Gets or sets a reference string that can be used for additional identification or metadata.
+		/// </summary>
+		string Ref3 { get; set; }
+
+		/// <summary>
+		/// Gets or sets a reference string that can be used for additional identification or metadata.
+		/// </summary>
+		string Ref4 { get; set; }
+
+		/// <summary>
+		/// Gets or sets a reference string that can be used for additional identification or metadata.
+		/// </summary>
+		string Ref5 { get; set; }
+
+		/// <summary>
+		/// Gets or sets a reference string that can be used for additional identification or metadata.
+		/// </summary>
+		string Ref6 { get; set; }
+
+		/// <summary>
+		/// Gets or sets a reference string that can be used for additional identification or metadata.
+		/// </summary>
+		string Ref7 { get; set; }
+
+		/// <summary>
+		/// Gets or sets an integer value representing the reference identifier.
+		/// </summary>
+		int Ref8 { get; set; }
+
+		/// <summary>
+		/// Gets or sets the reference value used for calculations or comparisons.
+		/// </summary>
+		decimal Ref9 { get; set; }
+
+		/// <summary>
+		/// Gets or sets the reference date and time associated with the operation.
+		/// </summary>
+		DateTime Ref10 { get; set; }
+
+		/// <summary>
 		/// Asynchronously imports data from a specified line of input and returns any errors encountered during the process.
 		/// </summary>
 		/// <remarks>This method processes a single line of input data in the specified format version. Ensure that

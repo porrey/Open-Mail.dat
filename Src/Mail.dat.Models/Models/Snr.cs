@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -327,8 +327,6 @@ namespace Mail.dat
 			this.SnrRecordStatus.FormatForExport<Snr, string>(version, p => p.SnrRecordStatus, buffer, encoding);
 			this.ReserveSnr1103.FormatForExport<Snr, string>(version, p => p.ReserveSnr1103, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Snr, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

@@ -191,7 +191,7 @@ namespace Mail.dat.Io
 					{
 						CancellationToken = options.CancellationToken,
 #if DEBUG
-						MaxDegreeOfParallelism = Environment.ProcessorCount
+						MaxDegreeOfParallelism = 1
 #else
 						MaxDegreeOfParallelism = Environment.ProcessorCount
 #endif

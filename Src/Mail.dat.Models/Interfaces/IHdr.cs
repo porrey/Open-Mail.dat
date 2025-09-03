@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -76,7 +76,7 @@ namespace Mail.dat
 		/// Licensed User's Job Number (HDR-1102)
 		/// The Licensed User's (who created this iteration of Mail.dat) internal Job Number.
 		/// </summary>
-		string LicensedUserSJobNumber { get; set; }
+		string LicensedUsersJobNumber { get; set; }
 
 		/// <summary>
 		/// Job Name/Title & Issue (HDR-1103)
@@ -535,7 +535,7 @@ namespace Mail.dat
 		/// Original Software Vendor's Email (HDR-1177)
 		/// Originator software company email address.
 		/// </summary>
-		string OriginalSoftwareVendorSEmail { get; set; }
+		string OriginalSoftwareVendorsEmail { get; set; }
 
 		/// <summary>
 		/// Mail.dat Software Vendor Name (HDR-1150)
@@ -549,7 +549,7 @@ namespace Mail.dat
 		/// Mail.dat Software Product's Name (HDR-1155)
 		/// Name of product creating this Header and applicable data in associated records.
 		/// </summary>
-		string MailDatSoftwareProductSName { get; set; }
+		string MailDatSoftwareProductsName { get; set; }
 
 		/// <summary>
 		/// Mail.dat Software Version (HDR-1151)
@@ -561,7 +561,7 @@ namespace Mail.dat
 		/// Mail.dat Software Vendor's Email (HDR-1156)
 		/// Email address of party creating product named above.
 		/// </summary>
-		string MailDatSoftwareVendorSEmail { get; set; }
+		string MailDatSoftwareVendorsEmail { get; set; }
 
 		/// <summary>
 		/// Reserve (HDR-1162)

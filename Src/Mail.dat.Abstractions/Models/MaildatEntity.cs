@@ -106,19 +106,19 @@ namespace Mail.dat
 		/// Gets or sets the value of the Ref8 column.
 		/// </summary>
 		[Column("Ref8", Order = 9999)]
-		public int Ref8 { get; set; }
+		public int? Ref8 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the value of Ref9.
 		/// </summary>
 		[Column("Ref9", Order = 9999)]
-		public decimal Ref9 { get; set; }
+		public decimal? Ref9 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference date associated with this entity.
 		/// </summary>
 		[Column("Ref10", Order = 9999)]
-		public DateTime Ref10 { get; set; }
+		public DateTime? Ref10 { get; set; }
 
 		/// <summary>
 		/// Imports data asynchronously by processing a single line of input.

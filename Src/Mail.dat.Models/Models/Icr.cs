@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -218,8 +218,6 @@ namespace Mail.dat
 			this.IcrRecordStatus.FormatForExport<Icr, string>(version, p => p.IcrRecordStatus, buffer, encoding);
 			this.ReserveIcr1105.FormatForExport<Icr, string>(version, p => p.ReserveIcr1105, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Icr, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

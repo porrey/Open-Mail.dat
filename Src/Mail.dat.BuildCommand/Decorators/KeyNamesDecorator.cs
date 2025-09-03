@@ -26,12 +26,12 @@ using Humanizer;
 using Mail.dat.Json.Specification;
 
 namespace Mail.dat.BuildCommand
-{	
+{
 	/// <summary>
 	/// Provides extension methods for converting strings and <see cref="RecordDefinition"/> objects  into various naming
 	/// conventions, such as PascalCase class names, interface names, and property names.
 	/// </summary>
-	/// <remarks>This static class is designed to assist with generating consistent and valid names for classes, 
+	/// <remarks>This static class is designed to assist with generating consistent and valid names for classes,
 	/// interfaces, and properties based on input strings or record definitions. It includes methods  for applying Pascal
 	/// casing, prefixing interface names, and appending file extensions.</remarks>
 	public static class KeyNamesDecorator
@@ -70,7 +70,7 @@ namespace Mail.dat.BuildCommand
 		}
 
 		/// <summary>
-		/// Converts a <see cref="RecordDefinition"/> to a property name.	
+		/// Converts a <see cref="RecordDefinition"/> to a property name.
 		/// </summary>
 		/// <param name="recordDefintion">The <see cref="RecordDefinition"/> to convert. Cannot be null.</param>
 		/// <returns>A string representing the property name derived from the record definition.</returns>
@@ -81,7 +81,7 @@ namespace Mail.dat.BuildCommand
 
 			if (recordDefintion is not null)
 			{
-				returnValue = recordDefintion.FieldName.ToString().Dehumanize().TruePascalize().KeywordSanitize();
+				returnValue = recordDefintion.FieldName.Replace("'", "").Dehumanize().TruePascalize().KeywordSanitize();
 
 				if (returnValue == "Reserve")
 				{

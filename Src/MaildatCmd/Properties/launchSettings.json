@@ -16,7 +16,7 @@
     },
     "Export": {
       "commandName": "Project",
-      "commandLineArgs": "export --source-file-path \"Z:/Desktop/00000077/Output/01655001.original.db\" --target-file-path \"Z:/Desktop/00000077/Output/01655001-master.zip\"",
+      "commandLineArgs": "export --source-file-path \"Z:/Desktop/00000005/Output/900009001.db\" --target-file-path \"Z:/Desktop/00000005/Output/900009001.zip\"",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }
@@ -24,6 +24,13 @@
     "Build": {
       "commandName": "Project",
       "commandLineArgs": "build --specification-files \"./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"../../../../Mail.dat.Models\" --hosting-directory \"../../../../Mail.dat.Hosting\"",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "Build2": {
+      "commandName": "Project",
+      "commandLineArgs": "build --specification-files \"./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"Output/Models\" --hosting-directory \"Output/Hosting\"",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }

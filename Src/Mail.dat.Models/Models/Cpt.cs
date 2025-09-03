@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -660,8 +660,6 @@ namespace Mail.dat
 			this.EMailpieceSampleGroupId.FormatForExport<Cpt, string>(version, p => p.EMailpieceSampleGroupId, buffer, encoding);
 			this.ReserveCpt1130.FormatForExport<Cpt, string>(version, p => p.ReserveCpt1130, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Cpt, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

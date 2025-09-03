@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -144,12 +144,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1102", FieldName = "Licensed User's Job Number", Start = 26, Length = 25, Required = false, Key = false, DataType = "A/N", Description = "The Licensed User's (who created this iteration of Mail.dat) internal Job Number.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1102", FieldName = "Licensed User's Job Number", Start = 26, Length = 25, Required = false, Key = false, DataType = "A/N", Description = "The Licensed User's (who created this iteration of Mail.dat) internal Job Number.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1102", FieldName = "Licensed User's Job Number", Start = 26, Length = 25, Required = false, Key = false, DataType = "A/N", Description = "The Licensed User's (who created this iteration of Mail.dat) internal Job Number.", Type = "string", Format = "leftjustify")]
-		[Column("LicensedUserSJobNumber", Order = 7, TypeName = "TEXT")]
+		[Column("LicensedUsersJobNumber", Order = 7, TypeName = "TEXT")]
 		[MaxLength(25)]
 		[Comment("HDR-1102")]
 		[TypeConverter(typeof(MaildatStringConverter))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
-		public string LicensedUserSJobNumber { get; set; }
+		public string LicensedUsersJobNumber { get; set; }
 
 		/// <summary>
 		/// Job Name/Title & Issue (HDR-1103)
@@ -1291,13 +1291,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1177", FieldName = "Original Software Vendor's Email", Start = 542, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Originator software company email address.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1177", FieldName = "Original Software Vendor's Email", Start = 547, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Originator software company email address.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1177", FieldName = "Original Software Vendor's Email", Start = 547, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Originator software company email address.", Type = "string", Format = "leftjustify")]
-		[Column("OriginalSoftwareVendorSEmail", Order = 85, TypeName = "TEXT")]
+		[Column("OriginalSoftwareVendorsEmail", Order = 85, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(60)]
 		[Comment("HDR-1177")]
 		[TypeConverter(typeof(MaildatStringConverter))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
-		public string OriginalSoftwareVendorSEmail { get; set; }
+		public string OriginalSoftwareVendorsEmail { get; set; }
 
 		/// <summary>
 		/// Mail.dat Software Vendor Name (HDR-1150)
@@ -1323,13 +1323,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1155", FieldName = "Mail.dat Software Product's Name", Start = 632, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Name of product creating this Header and applicable data in associated records.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1155", FieldName = "Mail.dat Software Product's Name", Start = 637, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Name of product creating this Header and applicable data in associated records.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1155", FieldName = "Mail.dat Software Product's Name", Start = 637, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "Name of product creating this Header and applicable data in associated records.", Type = "string", Format = "leftjustify")]
-		[Column("MailDatSoftwareProductSName", Order = 87, TypeName = "TEXT")]
+		[Column("MailDatSoftwareProductsName", Order = 87, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(30)]
 		[Comment("HDR-1155")]
 		[TypeConverter(typeof(MaildatStringConverter))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
-		public string MailDatSoftwareProductSName { get; set; }
+		public string MailDatSoftwareProductsName { get; set; }
 
 		/// <summary>
 		/// Mail.dat Software Version (HDR-1151)
@@ -1353,13 +1353,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "hdr", FieldCode = "HDR-1156", FieldName = "Mail.dat Software Vendor's Email", Start = 672, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Email address of party creating product named above.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "hdr", FieldCode = "HDR-1156", FieldName = "Mail.dat Software Vendor's Email", Start = 677, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Email address of party creating product named above.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "hdr", FieldCode = "HDR-1156", FieldName = "Mail.dat Software Vendor's Email", Start = 677, Length = 60, Required = true, Key = false, DataType = "A/N", Description = "Email address of party creating product named above.", Type = "string", Format = "leftjustify")]
-		[Column("MailDatSoftwareVendorSEmail", Order = 89, TypeName = "TEXT")]
+		[Column("MailDatSoftwareVendorsEmail", Order = 89, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(60)]
 		[Comment("HDR-1156")]
 		[TypeConverter(typeof(MaildatStringConverter))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
-		public string MailDatSoftwareVendorSEmail { get; set; }
+		public string MailDatSoftwareVendorsEmail { get; set; }
 
 		/// <summary>
 		/// Reserve (HDR-1162)
@@ -1459,7 +1459,7 @@ namespace Mail.dat
 			this.HeaderHistorySequenceNumber = line.ParseForImport<Hdr, int>(version, p => p.HeaderHistorySequenceNumber, returnValue);
 			this.HeaderHistoryStatus = line.ParseForImport<Hdr, string>(version, p => p.HeaderHistoryStatus, returnValue);
 			this.HistoricalJobId = line.ParseForImport<Hdr, string>(version, p => p.HistoricalJobId, returnValue);
-			this.LicensedUserSJobNumber = line.ParseForImport<Hdr, string>(version, p => p.LicensedUserSJobNumber, returnValue);
+			this.LicensedUsersJobNumber = line.ParseForImport<Hdr, string>(version, p => p.LicensedUsersJobNumber, returnValue);
 			this.JobNameTitleIssue = line.ParseForImport<Hdr, string>(version, p => p.JobNameTitleIssue, returnValue);
 			this.FileSource = line.ParseForImport<Hdr, string>(version, p => p.FileSource, returnValue);
 			this.UserLicenseCode = line.ParseForImport<Hdr, string>(version, p => p.UserLicenseCode, returnValue);
@@ -1537,11 +1537,11 @@ namespace Mail.dat
 			this.OriginalSoftwareVendorName = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareVendorName, returnValue);
 			this.OriginalSoftwareProductsName = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareProductsName, returnValue);
 			this.OriginalSoftwareVersion = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareVersion, returnValue);
-			this.OriginalSoftwareVendorSEmail = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareVendorSEmail, returnValue);
+			this.OriginalSoftwareVendorsEmail = line.ParseForImport<Hdr, string>(version, p => p.OriginalSoftwareVendorsEmail, returnValue);
 			this.MailDatSoftwareVendorName = line.ParseForImport<Hdr, string>(version, p => p.MailDatSoftwareVendorName, returnValue);
-			this.MailDatSoftwareProductSName = line.ParseForImport<Hdr, string>(version, p => p.MailDatSoftwareProductSName, returnValue);
+			this.MailDatSoftwareProductsName = line.ParseForImport<Hdr, string>(version, p => p.MailDatSoftwareProductsName, returnValue);
 			this.MailDatSoftwareVersion = line.ParseForImport<Hdr, string>(version, p => p.MailDatSoftwareVersion, returnValue);
-			this.MailDatSoftwareVendorSEmail = line.ParseForImport<Hdr, string>(version, p => p.MailDatSoftwareVendorSEmail, returnValue);
+			this.MailDatSoftwareVendorsEmail = line.ParseForImport<Hdr, string>(version, p => p.MailDatSoftwareVendorsEmail, returnValue);
 			this.ReserveHdr1162 = line.ParseForImport<Hdr, string>(version, p => p.ReserveHdr1162, returnValue);
 			this.ZoneMatrixDate = line.ParseForImport<Hdr, DateOnly?>(version, p => p.ZoneMatrixDate, returnValue);
 			this.EDocSenderCrid = line.ParseForImport<Hdr, string>(version, p => p.EDocSenderCrid, returnValue);
@@ -1563,7 +1563,7 @@ namespace Mail.dat
 			this.HeaderHistorySequenceNumber.FormatForExport<Hdr, int>(version, p => p.HeaderHistorySequenceNumber, buffer, encoding);
 			this.HeaderHistoryStatus.FormatForExport<Hdr, string>(version, p => p.HeaderHistoryStatus, buffer, encoding);
 			this.HistoricalJobId.FormatForExport<Hdr, string>(version, p => p.HistoricalJobId, buffer, encoding);
-			this.LicensedUserSJobNumber.FormatForExport<Hdr, string>(version, p => p.LicensedUserSJobNumber, buffer, encoding);
+			this.LicensedUsersJobNumber.FormatForExport<Hdr, string>(version, p => p.LicensedUsersJobNumber, buffer, encoding);
 			this.JobNameTitleIssue.FormatForExport<Hdr, string>(version, p => p.JobNameTitleIssue, buffer, encoding);
 			this.FileSource.FormatForExport<Hdr, string>(version, p => p.FileSource, buffer, encoding);
 			this.UserLicenseCode.FormatForExport<Hdr, string>(version, p => p.UserLicenseCode, buffer, encoding);
@@ -1641,19 +1641,17 @@ namespace Mail.dat
 			this.OriginalSoftwareVendorName.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorName, buffer, encoding);
 			this.OriginalSoftwareProductsName.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareProductsName, buffer, encoding);
 			this.OriginalSoftwareVersion.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVersion, buffer, encoding);
-			this.OriginalSoftwareVendorSEmail.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorSEmail, buffer, encoding);
+			this.OriginalSoftwareVendorsEmail.FormatForExport<Hdr, string>(version, p => p.OriginalSoftwareVendorsEmail, buffer, encoding);
 			this.MailDatSoftwareVendorName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorName, buffer, encoding);
-			this.MailDatSoftwareProductSName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareProductSName, buffer, encoding);
+			this.MailDatSoftwareProductsName.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareProductsName, buffer, encoding);
 			this.MailDatSoftwareVersion.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVersion, buffer, encoding);
-			this.MailDatSoftwareVendorSEmail.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorSEmail, buffer, encoding);
+			this.MailDatSoftwareVendorsEmail.FormatForExport<Hdr, string>(version, p => p.MailDatSoftwareVendorsEmail, buffer, encoding);
 			this.ReserveHdr1162.FormatForExport<Hdr, string>(version, p => p.ReserveHdr1162, buffer, encoding);
 			this.ZoneMatrixDate.FormatForExport<Hdr, DateOnly?>(version, p => p.ZoneMatrixDate, buffer, encoding);
 			this.EDocSenderCrid.FormatForExport<Hdr, string>(version, p => p.EDocSenderCrid, buffer, encoding);
 			this.InformationExchange.FormatForExport<Hdr, string>(version, p => p.InformationExchange, buffer, encoding);
 			this.UserOptionField.FormatForExport<Hdr, string>(version, p => p.UserOptionField, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Hdr, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

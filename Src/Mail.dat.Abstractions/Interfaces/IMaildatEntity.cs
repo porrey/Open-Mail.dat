@@ -78,17 +78,17 @@ namespace Mail.dat
 		/// <summary>
 		/// Gets or sets an integer value representing the reference identifier.
 		/// </summary>
-		int Ref8 { get; set; }
+		int? Ref8 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value used for calculations or comparisons.
 		/// </summary>
-		decimal Ref9 { get; set; }
+		decimal? Ref9 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference date and time associated with the operation.
 		/// </summary>
-		DateTime Ref10 { get; set; }
+		DateTime? Ref10 { get; set; }
 
 		/// <summary>
 		/// Asynchronously imports data from a specified line of input and returns any errors encountered during the process.

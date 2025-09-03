@@ -179,7 +179,7 @@ namespace Mail.dat.Io
 		/// <param name="targetFilePath">The full path, including the file name, where the compressed archive will be created. Must not be null or empty.</param>
 		/// <returns>A task that represents the asynchronous operation. The task result is <see langword="true"/> if the operation
 		/// succeeds; otherwise, <see langword="false"/>.</returns>
-		public Task<bool> ZipAsync(string targetFilePath, bool deleteSource)
+		public Task<bool> ZipAsync(string sourcePath, bool deleteSource)
 		{
 			bool returnValue = false;
 
@@ -191,7 +191,7 @@ namespace Mail.dat.Io
 			//
 			// Get the Mail.dat files.
 			//
-			string[] sourceFiles = [.. Directory.EnumerateFiles(Path.GetDirectoryName(this.FilePath), $"{baseFileName}.*").Where(t => !t.Contains(".zip"))];
+			string[] sourceFiles = [.. Directory.EnumerateFiles(sourcePath, $"{baseFileName}.*").Where(t => !t.Contains(".zip"))];
 
 			using (ZipOutputStream zipFile = new(File.Create(this.FilePath)))
 			{

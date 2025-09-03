@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 namespace Mail.dat
@@ -77,7 +77,7 @@ namespace Mail.dat
 		/// This field is used for identifying what Permits are being used for the entire job in an MLOCR
 		/// environment. Should Not be zero padded.
 		/// </summary>
-		string MailOwnerSLclPermitRefNum { get; set; }
+		string MailOwnersLclPermitRefNum { get; set; }
 
 		/// <summary>
 		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num (MPA-1107)
@@ -86,12 +86,12 @@ namespace Mail.dat
 		/// This field is used for identifying what permits are being used for the entire job in an MLOCR
 		/// environment. Should not be zero padded.
 		/// </summary>
-		string MailOwnerSLclPermitRefNumIntLBillNum { get; set; }
+		string MailOwnersLclPermitRefNumIntlBillNum { get; set; }
 
 		/// <summary>
 		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num - Type (MPA-1108)
 		/// </summary>
-		string MailOwnerSLclPermitRefNumIntLBillNumType { get; set; }
+		string MailOwnersLclPermitRefNumIntlBillNumType { get; set; }
 
 		/// <summary>
 		/// Postage Payment Option (MPA-1109)

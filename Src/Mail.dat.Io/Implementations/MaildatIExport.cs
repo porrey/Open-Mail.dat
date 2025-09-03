@@ -101,6 +101,26 @@ namespace Mail.dat.Io
 				try
 				{
 					//
+					// Determine if the output will be zipped.
+					//
+					bool outputIsZipped = Path.GetExtension(options.TargetFile.FilePath).Equals(".zip", StringComparison.CurrentCultureIgnoreCase);
+
+					//
+					// Cache the original target.
+					//
+					IMaildatFile originalTarget = options.TargetFile;
+
+					//
+					// Change the target directory if the output is zipped.
+					//
+					if (outputIsZipped)
+					{
+						string tempPath = $"{Path.GetTempPath()}/Mail.dat/Export/{Guid.NewGuid()}/{Path.GetFileName(originalTarget.FilePath)}";
+						Directory.CreateDirectory(Path.GetDirectoryName(tempPath));
+						options.TargetFile = MaildatFile.Create(tempPath);
+					}
+
+					//
 					// Generate a connection string using the database
 					// path that was provided.
 					//
@@ -161,7 +181,7 @@ namespace Mail.dat.Io
 					{
 						CancellationToken = options.CancellationToken,
 #if DEBUG
-						MaxDegreeOfParallelism = Environment.ProcessorCount
+						MaxDegreeOfParallelism = 1
 #else
 						MaxDegreeOfParallelism = Environment.ProcessorCount
 #endif
@@ -196,7 +216,6 @@ namespace Mail.dat.Io
 							//
 							// Create a new context for each file so that we can run in parallel.
 							//
-							//
 							using MaildatContext exportContext = new(new NullLogger<MaildatContext>(), contextOption);
 							object dbSetObject = genericSetMethod.Invoke(exportContext, null);
 
@@ -220,16 +239,31 @@ namespace Mail.dat.Io
 					//
 					// Check if the output should be zipped.
 					//
-					if (Path.GetExtension(options.TargetFile.FilePath).Equals(".zip", StringComparison.CurrentCultureIgnoreCase))
+					if (outputIsZipped)
 					{
+						//
+						// Report that we are starting the zip operation.
+						//
 						await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Zip", ItemAction = ProgressMessageType.Start, Message = "Zipping File" });
+
+						//
+						// Get the souce files path.
+						//
+						string sourceFilesPath = Path.GetDirectoryName(options.TargetFile.FilePath);
 
 						//
 						// Zip the Mail.dat.
 						//
-						string zipFilePath = Path.ChangeExtension(options.TargetFile.FilePath, ".zip");
-						await file.ZipAsync(zipFilePath, options.RemoveSourceFiles);
+						await file.ZipAsync(sourceFilesPath, options.RemoveSourceFiles);
 
+						//
+						// Remove the temportary directory and all its files.
+						//
+						Directory.Delete(sourceFilesPath, true);
+
+						//
+						// Report that we have completed the zip operation.
+						//
 						await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Zip", ItemAction = ProgressMessageType.Completed, Message = "Zipping File" });
 					}
 				}

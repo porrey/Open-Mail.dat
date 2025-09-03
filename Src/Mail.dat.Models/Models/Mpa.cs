@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -146,12 +146,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "23-1", Extension = "mpa", FieldCode = "MPA-1107", FieldName = "Mail Owner's Lcl Permit Ref Num", Start = 75, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "Number used by local USPS for client identification. This field can be used to Let the Postal Service know what permit numbers are included in the mailing That the Mail.dat® file represents. This field is used for identifying what Permits are being used for the entire job in an MLOCR environment. Should Not be zero padded.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "mpa", FieldCode = "MPA-1107", FieldName = "Mail Owner's Lcl Permit Ref Num", Start = 75, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "Number used by local USPS for client identification. This field can be used to Let the Postal Service know what permit numbers are included in the mailing That the Mail.dat® file represents. This field is used for identifying what Permits are being used for the entire job in an MLOCR environment. Should Not be zero padded.", Type = "string", Format = "leftjustify")]
-		[Column("MailOwnerSLclPermitRefNum", Order = 8, TypeName = "TEXT")]
+		[Column("MailOwnersLclPermitRefNum", Order = 8, TypeName = "TEXT")]
 		[MaxLength(8)]
 		[Comment("MPA-1107")]
 		[TypeConverter(typeof(MaildatStringConverter))]
 		[MaildatVersions("23-1", "24-1")]
-		public string MailOwnerSLclPermitRefNum { get; set; }
+		public string MailOwnersLclPermitRefNum { get; set; }
 
 		/// <summary>
 		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num (MPA-1107)
@@ -161,12 +161,12 @@ namespace Mail.dat
 		/// environment. Should not be zero padded.
 		/// </summary>
 		[MaildatField(Version = "25-1", Extension = "mpa", FieldCode = "MPA-1107", FieldName = "Mail Owner's Lcl Permit Ref Num/Int'l Bill Num", Start = 75, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "Number used by local USPS for client identification. This field can be used to let the Postal Service know what permit numbers are included in the mailing that the Mail.dat® file represents. This field is used for identifying what permits are being used for the entire job in an MLOCR environment. Should not be zero padded.", Type = "string", Format = "leftjustify")]
-		[Column("MailOwnerSLclPermitRefNumIntLBillNum", Order = 9, TypeName = "TEXT")]
+		[Column("MailOwnersLclPermitRefNumIntlBillNum", Order = 9, TypeName = "TEXT")]
 		[MaxLength(8)]
 		[Comment("MPA-1107")]
 		[TypeConverter(typeof(MaildatStringConverter))]
 		[MaildatVersions("25-1")]
-		public string MailOwnerSLclPermitRefNumIntLBillNum { get; set; }
+		public string MailOwnersLclPermitRefNumIntlBillNum { get; set; }
 
 		/// <summary>
 		/// Mail Owner's Lcl Permit Ref Num/Int'l Bill Num - Type (MPA-1108)
@@ -174,14 +174,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mpa", FieldCode = "MPA-1108", FieldName = "Mail Owner's Lcl Permit Ref Num/Int'l Bill Num - Type", Start = 83, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "mpa", FieldCode = "MPA-1108", FieldName = "Mail Owner's Lcl Permit Ref Num/Int'l Bill Num - Type", Start = 83, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "mpa", FieldCode = "MPA-1108", FieldName = "Mail Owner's Lcl Permit Ref Num/Int'l Bill Num - Type", Start = 83, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
-		[Column("MailOwnerSLclPermitRefNumIntLBillNumType", Order = 10, TypeName = "TEXT")]
+		[Column("MailOwnersLclPermitRefNumIntlBillNumType", Order = 10, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues("G", "H", "M", "P", "S", "V")]
 		[Comment("MPA-1108")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
-		[MaildatValues(typeof(MailOwnerSLclPermitRefNumIntLBillNumTypes))]
+		[MaildatValues(typeof(MailOwnersLclPermitRefNumIntlBillNumTypes))]
 		[MaildatVersions("23-1", "24-1", "25-1")]
-		public string MailOwnerSLclPermitRefNumIntLBillNumType { get; set; }
+		public string MailOwnersLclPermitRefNumIntlBillNumType { get; set; }
 
 		/// <summary>
 		/// Postage Payment Option (MPA-1109)
@@ -419,9 +419,9 @@ namespace Mail.dat
 			this.USPSPublicationNumber = line.ParseForImport<Mpa, string>(version, p => p.USPSPublicationNumber, returnValue);
 			this.PermitNumber = line.ParseForImport<Mpa, string>(version, p => p.PermitNumber, returnValue);
 			this.PermitZip4 = line.ParseForImport<Mpa, string>(version, p => p.PermitZip4, returnValue);
-			this.MailOwnerSLclPermitRefNum = line.ParseForImport<Mpa, string>(version, p => p.MailOwnerSLclPermitRefNum, returnValue);
-			this.MailOwnerSLclPermitRefNumIntLBillNum = line.ParseForImport<Mpa, string>(version, p => p.MailOwnerSLclPermitRefNumIntLBillNum, returnValue);
-			this.MailOwnerSLclPermitRefNumIntLBillNumType = line.ParseForImport<Mpa, string>(version, p => p.MailOwnerSLclPermitRefNumIntLBillNumType, returnValue);
+			this.MailOwnersLclPermitRefNum = line.ParseForImport<Mpa, string>(version, p => p.MailOwnersLclPermitRefNum, returnValue);
+			this.MailOwnersLclPermitRefNumIntlBillNum = line.ParseForImport<Mpa, string>(version, p => p.MailOwnersLclPermitRefNumIntlBillNum, returnValue);
+			this.MailOwnersLclPermitRefNumIntlBillNumType = line.ParseForImport<Mpa, string>(version, p => p.MailOwnersLclPermitRefNumIntlBillNumType, returnValue);
 			this.PostagePaymentOption = line.ParseForImport<Mpa, string>(version, p => p.PostagePaymentOption, returnValue);
 			this.CustomerReferenceId = line.ParseForImport<Mpa, string>(version, p => p.CustomerReferenceId, returnValue);
 			this.PostagePaymentMethod = line.ParseForImport<Mpa, string>(version, p => p.PostagePaymentMethod, returnValue);
@@ -453,9 +453,9 @@ namespace Mail.dat
 			this.USPSPublicationNumber.FormatForExport<Mpa, string>(version, p => p.USPSPublicationNumber, buffer, encoding);
 			this.PermitNumber.FormatForExport<Mpa, string>(version, p => p.PermitNumber, buffer, encoding);
 			this.PermitZip4.FormatForExport<Mpa, string>(version, p => p.PermitZip4, buffer, encoding);
-			this.MailOwnerSLclPermitRefNum.FormatForExport<Mpa, string>(version, p => p.MailOwnerSLclPermitRefNum, buffer, encoding);
-			this.MailOwnerSLclPermitRefNumIntLBillNum.FormatForExport<Mpa, string>(version, p => p.MailOwnerSLclPermitRefNumIntLBillNum, buffer, encoding);
-			this.MailOwnerSLclPermitRefNumIntLBillNumType.FormatForExport<Mpa, string>(version, p => p.MailOwnerSLclPermitRefNumIntLBillNumType, buffer, encoding);
+			this.MailOwnersLclPermitRefNum.FormatForExport<Mpa, string>(version, p => p.MailOwnersLclPermitRefNum, buffer, encoding);
+			this.MailOwnersLclPermitRefNumIntlBillNum.FormatForExport<Mpa, string>(version, p => p.MailOwnersLclPermitRefNumIntlBillNum, buffer, encoding);
+			this.MailOwnersLclPermitRefNumIntlBillNumType.FormatForExport<Mpa, string>(version, p => p.MailOwnersLclPermitRefNumIntlBillNumType, buffer, encoding);
 			this.PostagePaymentOption.FormatForExport<Mpa, string>(version, p => p.PostagePaymentOption, buffer, encoding);
 			this.CustomerReferenceId.FormatForExport<Mpa, string>(version, p => p.CustomerReferenceId, buffer, encoding);
 			this.PostagePaymentMethod.FormatForExport<Mpa, string>(version, p => p.PostagePaymentMethod, buffer, encoding);
@@ -471,8 +471,6 @@ namespace Mail.dat
 			this.MpaRecordStatus.FormatForExport<Mpa, string>(version, p => p.MpaRecordStatus, buffer, encoding);
 			this.ReserveMpa1116.FormatForExport<Mpa, string>(version, p => p.ReserveMpa1116, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Mpa, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -621,8 +621,6 @@ namespace Mail.dat
 			this.ImpbBarcodeConstructCode.FormatForExport<Mpu, string>(version, p => p.ImpbBarcodeConstructCode, buffer, encoding);
 			this.ReserveMpu1121.FormatForExport<Mpu, string>(version, p => p.ReserveMpu1121, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Mpu, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

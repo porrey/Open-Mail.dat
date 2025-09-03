@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on August 20th, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -445,8 +445,6 @@ namespace Mail.dat
 			this.ReserveCdr1119.FormatForExport<Cdr, string>(version, p => p.ReserveCdr1119, buffer, encoding);
 			this.CdrRecordStatus.FormatForExport<Cdr, string>(version, p => p.CdrRecordStatus, buffer, encoding);
 			this.ClosingCharacter.FormatForExport<Cdr, string>(version, p => p.ClosingCharacter, buffer, encoding);
-
-			
 		}
 	}
 }

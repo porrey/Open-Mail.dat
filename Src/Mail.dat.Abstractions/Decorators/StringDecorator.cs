@@ -40,7 +40,7 @@ namespace Mail.dat
 		/// <param name="text">The string to be truncated.</param>
 		/// <param name="maxLength">The maximum length in characters of the string.</param>
 		/// <returns>A new string that is no longer than maxLength in characters.</returns>
-		public static string Limit(this string text, int maxLength)
+		public static string LimitLength(this string text, int maxLength)
 		{
 			string returnValue = string.Empty;
 

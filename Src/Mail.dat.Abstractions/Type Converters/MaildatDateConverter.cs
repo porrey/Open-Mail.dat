@@ -137,7 +137,7 @@ namespace Mail.dat
 			//
 			// Limit the return value to the specified length.
 			//
-			return returnValue.Limit(attribute.Length);
+			return returnValue.LimitLength(attribute.Length);
 		}
 	}
 }

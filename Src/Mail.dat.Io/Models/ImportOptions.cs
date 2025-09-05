@@ -42,9 +42,9 @@ namespace Mail.dat.Io
 		/// <summary>
 		/// Gets or sets the path to the target file.
 		/// </summary>
-		/// <remarks>Ensure the file path is valid and accessible before setting this property.  Relative paths will
+		/// <remarks>Ensure the file path is valid and accessible before setting this property. Relative paths will
 		/// be resolved based on the application's working directory.</remarks>
-		public string TargetFile { get; set; }
+		public IMaildatFile TargetFile { get; set; }
 
 		/// <summary>
 		/// Gets or sets the path to the temporary directory used for storing intermediate or temporary files.
@@ -62,7 +62,7 @@ namespace Mail.dat.Io
 		/// <summary>
 		/// Gets or sets the logger used to log messages related to import options.
 		/// </summary>
-		public ILogger<IImportOptions> Logger { get; set; } = new NullLogger<IImportOptions>();
+		public ILogger<IOptions> Logger { get; set; } = new NullLogger<IImportOptions>();
 
 		/// <summary>
 		/// Gets or sets a value indicating which files (by extension) should be excluded in the import.
@@ -84,5 +84,10 @@ namespace Mail.dat.Io
 		/// Setting a higher value may increase memory usage, while a lower value may limit the number of records that can be
 		/// processed or cached in memory.</remarks>
 		public int MaxRecordsInMemory { get; set; } = 10_000;
+
+		/// <summary>
+		/// Gets or sets a value indicating whether connection pooling is enabled.
+		/// </summary>
+		public bool ConnectionPooling { get; set; }
 	}
 }

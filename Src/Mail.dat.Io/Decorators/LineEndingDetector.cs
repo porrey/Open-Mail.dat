@@ -46,7 +46,7 @@ namespace Mail.dat.Io
 		/// within the first two lines of the file.</returns>
 		public static string DetectLineEnding(this string filePath)
 		{
-			string returnValue = null;
+			string returnValue = "";
 
 			using (StreamReader reader = new(filePath))
 			{

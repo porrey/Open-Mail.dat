@@ -290,5 +290,19 @@ namespace Mail.dat
 			modelBuilder.Entity<Wsr>().HasIndex(t => t.PackageCRNumber);
 			modelBuilder.Entity<Wsr>().HasIndex(t => t.CoPalletizationCode);
 		}
+
+		public override void Dispose()
+		{
+			this.Database.CloseConnection();
+			this.Logger?.LogDebug("Disposed database context {context}.", nameof(MaildatContext));
+			base.Dispose();
+		}
+
+		public override ValueTask DisposeAsync()
+		{
+			this.Database.CloseConnection();
+			this.Logger?.LogDebug("Disposed database context {context}.", nameof(MaildatContext));
+			return base.DisposeAsync();
+		}
 	}
 }

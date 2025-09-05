@@ -177,7 +177,7 @@ namespace Mail.dat.ExportCommand
 					IExportOptions exportOptions = new ExportOptions()
 					{
 						TargetFile = file,
-						SourceFile = options.SourceFilePath.FullName,
+						SourceFile = MaildatFile.Create(options.SourceFilePath.FullName),
 						Encoding = CodePage1252.Get(),
 						CancellationToken = cancellationTokenSource.Token,
 						RemoveSourceFiles = true

@@ -128,7 +128,7 @@ namespace Mail.dat.Io
 				// Generate a connection string using the database
 				// path that was provided.
 				//
-				string connectionString = $"Data Source={options.TargetFile}";
+				string connectionString = $"Data Source={options.TargetFile.FilePath};Pooling={(options.ConnectionPooling ? "True" : "False")}";
 
 				//
 				// Create the DB Context.

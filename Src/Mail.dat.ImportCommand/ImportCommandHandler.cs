@@ -198,7 +198,7 @@ namespace Mail.dat.ImportCommand
 						{
 							SourceFile = file,
 							TemporaryDirectory = temporaryFolder.FullPath,
-							TargetFile = options.TargetFilePath.FullName,
+							TargetFile = MaildatFile.Create(options.TargetFilePath.FullName),
 							CancellationToken = cancellationTokenSource.Token,
 							ExcludeExtensions = options.SkipPbc ? ["pbc"] : [],
 							FavorMemoryOverPerformance = options.FavorMemoryOverPerformance,

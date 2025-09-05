@@ -22,7 +22,6 @@
 //
 // Author: Daniel M porrey
 //
-using System.Text;
 using Microsoft.Extensions.Logging;
 
 namespace Mail.dat.Io
@@ -33,32 +32,31 @@ namespace Mail.dat.Io
 	/// <remarks>This interface provides properties to configure the export process, including the target file,
 	/// source file, encoding, and other related settings. Implementations of this interface are used  to supply the
 	/// necessary configuration for export operations.</remarks>
-	public interface IExportOptions : IOptions
+	public interface IOptions
 	{
 		/// <summary>
-		/// Gets or sets the target version of the application or component.
+		/// Gets or sets the target Mail.dat file associated with the operation.
 		/// </summary>
-		string TaregtVersion { get; set; }
+		IMaildatFile TargetFile { get; set; }
 
 		/// <summary>
-		/// Gets or sets the character encoding used for text operations.
+		/// Gets or sets the path to the source file associated with the operation.
 		/// </summary>
-		/// <remarks>The encoding must be set to a valid <see cref="System.Text.Encoding"/> instance. Common
-		/// encodings include <see cref="System.Text.Encoding.UTF8"/> and <see
-		/// cref="System.Text.Encoding.Unicode"/>.</remarks>
-		Encoding Encoding { get; set; }
+		IMaildatFile SourceFile { get; set; }
 
 		/// <summary>
-		/// Gets or sets the string used to terminate lines in the output.
+		/// Gets or sets the logger used to record messages and events related to import options.
 		/// </summary>
-		/// <remarks>The value of this property determines how lines are separated in the output.  Common values
-		/// include "\n" for Unix-style line endings or "\r\n" for Windows-style line endings.  If set to <see
-		/// langword="null"/> or an empty string, no line terminator will be appended.</remarks>
-		string LineTerminator { get; set; }
+		ILogger<IOptions> Logger { get; set; }
 
 		/// <summary>
-		/// Gets or sets a value indicating whether source files should be removed after being zipped.
+		/// Gets or sets the <see cref="System.Threading.CancellationToken"/> used to signal cancellation of an operation.
 		/// </summary>
-		bool RemoveSourceFiles { get; set; }
+		CancellationToken CancellationToken { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether connection pooling is enabled.
+		/// </summary>
+		bool ConnectionPooling { get; set; }
 	}
 }

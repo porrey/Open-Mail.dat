@@ -94,7 +94,7 @@ namespace Mail.dat.Io
 		{
 			bool returnValue = true;
 
-			if (File.Exists(options.SourceFile))
+			if (options.SourceFile.Exists)
 			{
 				await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Export", ItemAction = ProgressMessageType.Start, Message = "Export" });
 
@@ -124,7 +124,7 @@ namespace Mail.dat.Io
 					// Generate a connection string using the database
 					// path that was provided.
 					//
-					string connectionString = $"Data Source={options.SourceFile}";
+					string connectionString = $"Data Source={options.SourceFile.FilePath};Pooling={(options.ConnectionPooling ? "True" : "False")}";
 
 					//
 					// Create the DB Context options.
@@ -190,7 +190,7 @@ namespace Mail.dat.Io
 					//
 					// Iterate through each property in the context.
 					//
-					Parallel.ForEach(properties, parallelOptions , (property) =>
+					Parallel.ForEach(properties, parallelOptions, (property) =>
 					{
 						//
 						// Get the property type.
@@ -274,7 +274,7 @@ namespace Mail.dat.Io
 			}
 			else
 			{
-				throw new FileNotFoundException(options.SourceFile);
+				throw new FileNotFoundException(options.SourceFile.FilePath);
 			}
 
 			return returnValue;

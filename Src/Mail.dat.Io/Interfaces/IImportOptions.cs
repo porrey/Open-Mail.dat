@@ -32,39 +32,17 @@ namespace Mail.dat.Io
 	/// <remarks>This interface provides properties to specify the source file, target file, temporary directory,
 	/// logging behavior, and other settings that influence the import process. Implementations of this interface are
 	/// expected to encapsulate all necessary configuration for the import operation.</remarks>
-	public interface IImportOptions
+	public interface IImportOptions : IOptions
 	{
-		/// <summary>
-		/// Gets or sets the source file associated with the maildat operation.
-		/// </summary>
-		/// <remarks>The source file is used as the input for maildat-related operations. Ensure that the file is
-		/// properly initialized and accessible before setting this property.</remarks>
-		IMaildatFile SourceFile { get; set; }
-
 		/// <summary>
 		/// Gets or sets the path to the temporary directory used for storing intermediate or temporary files.
 		/// </summary>
 		string TemporaryDirectory { get; set; }
 
 		/// <summary>
-		/// Gets or sets the path to the target file.
-		/// </summary>
-		string TargetFile { get; set; }
-
-		/// <summary>
 		/// Gets or sets a value indicating which files (by extension) should be excluded in the import.
 		/// </summary>
 		string[] ExcludeExtensions { get; set; }
-
-		/// <summary>
-		/// Gets or sets the logger used to record messages and events related to import options.
-		/// </summary>
-		ILogger<IImportOptions> Logger { get; set; }
-
-		/// <summary>
-		/// Gets or sets the <see cref="System.Threading.CancellationToken"/> used to signal cancellation of an operation.
-		/// </summary>
-		CancellationToken CancellationToken { get; set; }
 
 		/// <summary>
 		/// Gets or sets a value indicating whether the system should prioritize memory usage over performance.

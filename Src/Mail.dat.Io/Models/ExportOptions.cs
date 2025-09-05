@@ -37,7 +37,7 @@ namespace Mail.dat.Io
 		/// <summary>
 		/// Gets or sets the path to the source file associated with the operation.
 		/// </summary>
-		public string SourceFile { get; set; }
+		public IMaildatFile SourceFile { get; set; }
 
 		/// <summary>
 		/// Gets or sets the target version of the application or component.
@@ -67,7 +67,7 @@ namespace Mail.dat.Io
 		/// <summary>
 		/// Gets or sets the logger used to log messages related to import options.
 		/// </summary>
-		public ILogger<IImportOptions> Logger { get; set; }
+		public ILogger<IOptions> Logger { get; set; }
 
 		/// <summary>
 		/// Gets or sets the <see cref="CancellationToken"/> used to propagate notification that operations should be
@@ -81,5 +81,10 @@ namespace Mail.dat.Io
 		/// Gets or sets a value indicating whether source files should be removed after being zipped.
 		/// </summary>
 		public bool RemoveSourceFiles { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether connection pooling is enabled.
+		/// </summary>
+		public bool ConnectionPooling { get; set; }
 	}
 }

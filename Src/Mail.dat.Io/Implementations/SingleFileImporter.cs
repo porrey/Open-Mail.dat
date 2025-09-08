@@ -42,7 +42,8 @@ namespace Mail.dat.Io
 		/// Gets or sets the delegate to handle asynchronous progress updates.
 		/// </summary>
 		public ProgressAsyncDelegate ProgressUpdateAsync { get; set; }
-		internal static readonly char[] first = new char[] { '#' };
+
+		internal static readonly char[] first = ['#'];
 
 		/// <summary>
 		/// Imports data from a specified source file into the provided database context asynchronously.
@@ -144,9 +145,9 @@ namespace Mail.dat.Io
 							//
 							// Use Parallel.For to read the file in parallel.
 							//
-							Parallel.For(0, lineCount, parallelOptions, async (lineNumber, o) =>
+							Parallel.For(0, lineCount, parallelOptions, async (lineNumber, token) =>
 							{
-								if (!o.ShouldExitCurrentIteration)
+								if (!token.ShouldExitCurrentIteration)
 								{
 									//
 									// Calculate the offset for the line in the file.

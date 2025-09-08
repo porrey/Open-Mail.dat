@@ -128,9 +128,9 @@ namespace Mail.dat.Io
 					//
 					byte[] terminator = options.Encoding.GetBytes(options.LineTerminator);
 
-					Parallel.ForEach(items, parallelOptions, async (item, c) =>
+					Parallel.ForEach(items, parallelOptions, async (item, token) =>
 					{
-						if (!c.ShouldExitCurrentIteration)
+						if (!token.ShouldExitCurrentIteration)
 						{
 							//
 							// Allocate space on the stack for the record data.

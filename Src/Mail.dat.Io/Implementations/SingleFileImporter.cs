@@ -107,7 +107,7 @@ namespace Mail.dat.Io
 						List<Error> errorBuffer = [];
 
 						//
-						// Bulk inert cofiguration.
+						// Bulk inert configuration.
 						//
 						BulkConfig bc = new()
 						{

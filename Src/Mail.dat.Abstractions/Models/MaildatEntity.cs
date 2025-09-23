@@ -57,49 +57,42 @@ namespace Mail.dat
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref1", Order = 9992)]
-		[MaxLength(100)]
 		public string Ref1 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref2", Order = 9993)]
-		[MaxLength(50)]
 		public string Ref2 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref3", Order = 9994)]
-		[MaxLength(50)]
 		public string Ref3 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref4", Order = 9995)]
-		[MaxLength(50)]
 		public string Ref4 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref5", Order = 9996)]
-		[MaxLength(50)]
 		public string Ref5 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref6", Order = 9997)]
-		[MaxLength(50)]
 		public string Ref6 { get; set; }
 
 		/// <summary>
 		/// Gets or sets the reference value associated with this entity.
 		/// </summary>
 		[Column("Ref7", Order = 9998)]
-		[MaxLength(50)]
 		public string Ref7 { get; set; }
 
 		/// <summary>

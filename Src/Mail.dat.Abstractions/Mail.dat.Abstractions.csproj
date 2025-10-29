@@ -4,9 +4,9 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>0.0.6</Version>
-		<AssemblyVersion>0.0.6</AssemblyVersion>
-		<FileVersion>0.0.6</FileVersion>
+		<Version>0.0.7</Version>
+		<AssemblyVersion>0.0.7</AssemblyVersion>
+		<FileVersion>0.0.7</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -34,9 +34,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Diamond.Core.Repository.EntityFrameworkCore" Version="9.1.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Diamond.Core.Repository.EntityFrameworkCore" Version="9.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 	</ItemGroup>
 
 </Project>

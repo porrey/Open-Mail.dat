@@ -111,11 +111,7 @@ namespace Mail.dat.Io
 				ParallelOptions parallelOptions = new()
 				{
 					CancellationToken = options.CancellationToken,
-#if DEBUG
-					MaxDegreeOfParallelism = Environment.ProcessorCount
-#else
-					MaxDegreeOfParallelism = Environment.ProcessorCount
-#endif
+					MaxDegreeOfParallelism = options.MaxDegreeOfParallelism
 				};
 
 				//

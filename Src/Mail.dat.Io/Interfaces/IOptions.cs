@@ -58,5 +58,12 @@ namespace Mail.dat.Io
 		/// Gets or sets a value indicating whether connection pooling is enabled.
 		/// </summary>
 		bool ConnectionPooling { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the maximum number of concurrent tasks that can be executed in parallel.
+		/// </summary>
+		/// <remarks>Setting this property to a value less than <see langword="1"/> will result in an <see
+		/// cref="ArgumentOutOfRangeException"/>.</remarks>
+		int MaxDegreeOfParallelism { get; set; }
 	}
 }

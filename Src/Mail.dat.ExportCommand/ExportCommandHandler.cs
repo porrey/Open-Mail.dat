@@ -83,7 +83,7 @@ namespace Mail.dat.ExportCommand
 				.StartAsync(async ctx =>
 				{
 					//
-					// Create a progress task. This is used to track the progress of the import.
+					// Create a progress task. This is used to track the progress of the export.
 					//
 					IDictionary<string, ProgressTask> tasks = new Dictionary<string, ProgressTask>();
 
@@ -94,7 +94,7 @@ namespace Mail.dat.ExportCommand
 					IMaildatFile file = MaildatFile.Create(options.TargetFilePath.FullName);
 
 					//
-					// Create a new import instance . This is used to import the Mail.dat files.
+					// Create a new export instance . This is used to export the Mail.dat files.
 					//
 					IMaildatExport export = MaildatExport.Create(
 					(item) =>
@@ -109,7 +109,7 @@ namespace Mail.dat.ExportCommand
 										// Determine the text to show on screen for the task.
 										//
 										string description = item.WillShowProgress ?
-															$"[white]Importing[/] [yellow]{item.ItemName.Replace(" Record", "")}[/]" :
+															$"[white]Exporting[/] [yellow]{item.ItemName.Replace(" Record", "")}[/]" :
 															$"[white]{item.Message}[/]";
 
 										//
@@ -166,12 +166,12 @@ namespace Mail.dat.ExportCommand
 					});
 
 					//
-					// Create a cancellation token source. This is used to cancel the import if needed.
+					// Create a cancellation token source. This is used to cancel the export if needed.
 					//
 					CancellationTokenSource cancellationTokenSource = new();
 
 					//
-					// Create the import options. This is used to specify the file to import,
+					// Create the export options. This is used to specify the file to export,
 					// the target directory, and the database path.
 					//
 					IExportOptions exportOptions = new ExportOptions()

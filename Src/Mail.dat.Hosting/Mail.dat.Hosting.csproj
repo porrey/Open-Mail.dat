@@ -12,7 +12,7 @@
 	<PropertyGroup>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Open Mail.dat Hosting</Title>
-		<Description>Adds support for hosting environemnt.</Description>
+		<Description>Adds support for hosting environment.</Description>
 		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<IncludeSymbols>True</IncludeSymbols>

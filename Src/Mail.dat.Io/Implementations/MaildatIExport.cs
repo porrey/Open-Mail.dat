@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.Reflection;
 using Mail.dat.Io.Models;
@@ -166,7 +166,7 @@ namespace Mail.dat.Io
 					MethodInfo exportMethod = typeof(SingleFileExporter).GetMethod("ExportAsync");
 
 					//
-					// Get all of the properties of the context that suport the Mail.dat version being exported.
+					// Get all of the properties of the context that support the Mail.dat version being exported.
 					//
 					PropertyInfo[] properties = [.. localContext.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
 												.Where(t => t.GetCustomAttribute<MaildatExportAttribute>() != null)
@@ -247,7 +247,7 @@ namespace Mail.dat.Io
 						await this.FireProgressUpdateAsync(new ProgressMessage() { ItemName = "Zip", ItemAction = ProgressMessageType.Start, Message = "Zipping File" });
 
 						//
-						// Get the souce files path.
+						// Get the source files path.
 						//
 						string sourceFilesPath = Path.GetDirectoryName(options.TargetFile.FilePath);
 
@@ -256,11 +256,14 @@ namespace Mail.dat.Io
 						//
 						await file.ZipAsync(sourceFilesPath, options.RemoveSourceFiles);
 
-						//
-						// Remove the temportary directory and all its files.
-						//
-						Directory.Delete(sourceFilesPath, true);
-
+						if (options.RemoveSourceFiles)
+						{
+							//
+							// Remove the temporary directory and all its files.
+							//
+							Directory.Delete(sourceFilesPath, true);
+						}
+						
 						//
 						// Report that we have completed the zip operation.
 						//

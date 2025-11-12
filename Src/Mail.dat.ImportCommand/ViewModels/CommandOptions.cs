@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations;
 
@@ -54,7 +54,7 @@ namespace Mail.dat.ImportCommand
 		/// <summary>
 		/// Gets or sets a value indicating whether to prioritize memory usage over performance.
 		/// </summary>
-		[Display(Order = 4, Name = "favor-memory-over-performance", ShortName = "f", Description = "Uses less memory at the cost of performance. When true, the import will take about 40% lobger but use much less memory. The default is false.")]
+		[Display(Order = 4, Name = "favor-memory-over-performance", ShortName = "f", Description = "Uses less memory at the cost of performance. When true, the import will take about 40% logger but use much less memory. The default is false.")]
 		public bool FavorMemoryOverPerformance { get; set; } = false;
 
 		/// <summary>
@@ -62,7 +62,7 @@ namespace Mail.dat.ImportCommand
 		/// </summary>
 		/// <remarks>This property is relevant only when the "favor-memory-over-performance" setting is enabled.
 		/// Adjust this value based on  the application's memory constraints and performance requirements.</remarks>
-		[Display(Order = 5, Name = "max-records-in-memory", ShortName = "m", Description = "When favor-memory-over-performance = true, sets the maxmimum number of records held in memory before writing to the databae and clearing memory. Smaller numbers uses less memory but result in slower performance. Higher numbers will use more memory but increase performance. The default is 10,000.")]
+		[Display(Order = 5, Name = "max-records-in-memory", ShortName = "m", Description = "When favor-memory-over-performance = true, sets the maximum number of records held in memory before writing to the database and clearing memory. Smaller numbers uses less memory but result in slower performance. Higher numbers will use more memory but increase performance. The default is 10,000.")]
 		public int MaxRecordsInMemory { get; set; } = 10_000;
 	}
 }

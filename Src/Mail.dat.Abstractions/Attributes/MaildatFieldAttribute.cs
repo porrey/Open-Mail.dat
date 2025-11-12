@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 namespace Mail.dat
 {
@@ -40,7 +40,7 @@ namespace Mail.dat
 	}
 
 	/// <summary>
-	/// Attribute to specify the characteristics of a Maildat field.
+	/// Attribute to specify the characteristics of a Mail.dat field.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
 	public class MaildatFieldAttribute : Attribute
@@ -86,7 +86,7 @@ namespace Mail.dat
 		public bool Required { get; set; } = false;
 
 		/// <summary>
-		/// True if the field must be unique amongst all records.
+		/// True if the field must be unique among all records.
 		/// </summary>
 		public bool Key { get; set; } = false;
 
@@ -124,7 +124,7 @@ namespace Mail.dat
 		public int Precision { get; set; } = 0;
 
 		/// <summary>
-		/// A list of fieldcodes that are related to this field.
+		/// A list of field codes that are related to this field.
 		/// </summary>
 		public string References { get; set; }
 	}

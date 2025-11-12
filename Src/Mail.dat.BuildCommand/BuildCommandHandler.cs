@@ -26,7 +26,7 @@ namespace Mail.dat.BuildCommand
 		private const string NameSpace = "Mail.dat";
 
 		/// <summary>
-		/// Represents the name of the database context used for Maildat operations.
+		/// Represents the name of the database context used for Mail.dat operations.
 		/// </summary>
 		private const string ContextName = "MaildatContext";
 
@@ -194,7 +194,7 @@ namespace Mail.dat.BuildCommand
 							//
 							.SetSummary($"{tbl.FieldName.Sanitize()} ({tbl.FieldCode})", tbl.Description())
 							//
-							// Set the default value of the clsoing character to #.
+							// Set the default value of the closing character to #.
 							//
 							.SetDefaultValue(tbl.Data.Type == "closing" ? "\"#\"" : null)
 							//
@@ -227,8 +227,8 @@ namespace Mail.dat.BuildCommand
 										tbl.Key,
 										"MaildatKey"),
 									//
-									// Add a MaxLength attribute if this field is a string. Use the maxmium
-									// length of the filed in all specificatios.
+									// Add a MaxLength attribute if this field is a string. Use the maximum
+									// length of the filed in all specifications.
 									//
 									AttributeBuilder.CreateConditional(
 										fileGroup.ReturnType(tbl) == "string",

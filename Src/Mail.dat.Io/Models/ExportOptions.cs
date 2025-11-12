@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.Text;
 using Microsoft.Extensions.Logging;
@@ -45,7 +45,7 @@ namespace Mail.dat.Io
 		public string TaregtVersion { get; set; }
 
 		/// <summary>
-		/// Gets or sets the target maildat file associated with the operation.
+		/// Gets or sets the target Mail.dat file associated with the operation.
 		/// </summary>
 		/// <remarks>Ensure that the assigned value is not null and adheres to the expected implementation of <see
 		/// cref="IMaildatFile"/>.</remarks>

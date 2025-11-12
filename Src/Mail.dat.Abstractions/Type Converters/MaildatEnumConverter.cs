@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.ComponentModel;
 using System.Globalization;
@@ -28,7 +28,7 @@ using System.Globalization;
 namespace Mail.dat
 {
 	/// <summary>
-	/// Provides a custom type converter for handling conversions between strings and other types based on Maildat-specific
+	/// Provides a custom type converter for handling conversions between strings and other types based on Mail.dat specific
 	/// formatting rules.
 	/// </summary>
 	/// <remarks>This converter is designed to handle conversions for types that require specific formatting or

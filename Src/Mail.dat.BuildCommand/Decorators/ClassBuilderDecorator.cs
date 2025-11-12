@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using Humanizer;
 
@@ -103,7 +103,7 @@ namespace Mail.dat.BuildCommand
 				"Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without ",
 				"even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the ",
 				"GNU LESSER GENERAL PUBLIC LICENSE for more details.",
-				"You should have received three files as part of the license agreemen for Open Mail.dat. ",
+				"You should have received three files as part of the license agreement for Open Mail.dat. ",
 				"",
 				"LICENSE.md (GNU Lesser General Public License)",
 				"LICENSE-GPL3.md (GNU General Public License)",
@@ -113,7 +113,7 @@ namespace Mail.dat.BuildCommand
 				"************************************************************************************************************************",
 				"",
 				$"This code was auto-generated on {DateTime.Now.ToOrdinalWords()} by the Open Mail.dat Code Generator.",
-				"Code Generator Author: Daniel M porrey",
+				"Code Generator Author: Daniel M Porrey",
 				""
 			);
 

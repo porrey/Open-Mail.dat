@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 namespace Mail.dat
 {
@@ -31,9 +31,9 @@ namespace Mail.dat
 	public class MaildatVersionsAttribute : Attribute
 	{
 		/// <summary>
-		/// Specifies the Maildat versions supported by the associated component or functionality.
+		/// Specifies the Mail.dat versions supported by the associated component or functionality.
 		/// </summary>
-		/// <param name="supportedVersions">An array of strings representing the supported Maildat versions. Each version should be specified as a non-null,
+		/// <param name="supportedVersions">An array of strings representing the supported Mail.dat versions. Each version should be specified as a non-null,
 		/// non-empty string.</param>
 		public MaildatVersionsAttribute(params string[] supportedVersions)
 		{

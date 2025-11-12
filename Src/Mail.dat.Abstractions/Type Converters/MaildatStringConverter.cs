@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.ComponentModel;
 using System.Globalization;
@@ -28,10 +28,10 @@ using System.Globalization;
 namespace Mail.dat
 {
 	/// <summary>
-	/// Provides custom conversion logic for handling string values in the context of Maildat fields.
+	/// Provides custom conversion logic for handling string values in the context of Mail.dat fields.
 	/// </summary>
 	/// <remarks>This class extends <see cref="TypeConverter"/> to enable conversion between string values and 
-	/// their formatted representations based on Maildat field attributes. It supports trimming input  strings and applying
+	/// their formatted representations based on Mail.dat field attributes. It supports trimming input  strings and applying
 	/// specific formatting rules, such as zero-padding or alignment, as defined  by the <see
 	/// cref="MaildatFieldAttribute"/> associated with the context.</remarks>
 	public class MaildatStringConverter : TypeConverter

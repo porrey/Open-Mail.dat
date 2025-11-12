@@ -53,7 +53,7 @@
 			else
 			{
 				//
-				// Append as an alias refernce.
+				// Append as an alias reference.
 				//
 				File.AppendAllText(filePath, $"{Tabs.Create(indentLevel)}<{this.ObjectName}>");
 			}

@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -28,14 +28,14 @@ using Microsoft.Extensions.Logging.Abstractions;
 namespace Mail.dat.Io
 {
 	/// <summary>
-	/// Represents the options used to configure the import process for a maildat file.
+	/// Represents the options used to configure the import process for a Mail.dat file.
 	/// </summary>
 	/// <remarks>This class provides various settings to control the behavior of the import process,  including file
 	/// paths, logging, cancellation, and performance-related preferences.</remarks>
 	public class ImportOptions : IImportOptions
 	{
 		/// <summary>
-		/// Gets or sets the source file associated with the maildat operation.
+		/// Gets or sets the source file associated with the Mail.dat operation.
 		/// </summary>
 		public IMaildatFile SourceFile { get; set; }
 

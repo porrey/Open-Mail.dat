@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.ComponentModel;
 
@@ -37,7 +37,7 @@ namespace Mail.dat
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ConverterContext"/> class with the specified object instance and
-		/// Maildat field attribute.
+		/// Mail.dat field attribute.
 		/// </summary>
 		/// <param name="instance">The object instance associated with this context. Cannot be <see langword="null"/>.</param>
 		/// <param name="attribute">The <see cref="MaildatFieldAttribute"/> that provides metadata for the associated field. Cannot be <see
@@ -68,7 +68,7 @@ namespace Mail.dat
 		public IContainer Container => null;
 
 		/// <summary>
-		/// Gets the Maildat field attribute associated with this instance.
+		/// Gets the Mail.dat field attribute associated with this instance.
 		/// </summary>
 		public MaildatFieldAttribute MaildatFieldAttribute { get; protected set; }
 

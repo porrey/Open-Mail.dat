@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 using System.IO.Compression;
 using ICSharpCode.SharpZipLib.Zip;
@@ -243,9 +243,9 @@ namespace Mail.dat.Io
 		}
 
 		/// <summary>
-		/// Creates a new instance of a maildat file with the specified file path.
+		/// Creates a new instance of a Mail.dat file with the specified file path.
 		/// </summary>
-		/// <param name="filePath">The file path to associate with the maildat file. Must be a valid, non-null, and non-empty string.</param>
+		/// <param name="filePath">The file path to associate with the Mail.dat file. Must be a valid, non-null, and non-empty string.</param>
 		/// <returns>An instance of <see cref="IMaildatFile"/> initialized with the specified file path.</returns>
 		public static IMaildatFile Create(string filePath)
 		{

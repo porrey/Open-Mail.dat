@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace System.Text
+﻿namespace System.Text
 {
 	public static class CodePage1252
 	{

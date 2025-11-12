@@ -11,7 +11,7 @@
 // Open Mail.dat is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
 // even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU LESSER GENERAL PUBLIC LICENSE for more details.
-// You should have received three files as part of the license agreemen for Open Mail.dat.
+// You should have received three files as part of the license agreement for Open Mail.dat.
 //
 // LICENSE.md (GNU Lesser General Public License)
 // LICENSE-GPL3.md (GNU General Public License)
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// Author: Daniel M porrey
+// Author: Daniel M Porrey
 //
 namespace Mail.dat.BuildCommand
 {
@@ -54,7 +54,7 @@ namespace Mail.dat.BuildCommand
 				IEnumerable<string> items = (new string[] { classItem }).Union(interfaces).Where(t => t != null);
 
 				//
-				// Combine all of the itmes as a comma separated list.
+				// Combine all of the items as a comma separated list.
 				//
 				string list = string.Join(", ", items);
 

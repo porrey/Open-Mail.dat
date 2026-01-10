@@ -26,7 +26,6 @@ using System.Diagnostics;
 using Diamond.Core.CommandLine.Model;
 using Diamond.Core.System.TemporaryFolder;
 using Humanizer;
-using Humanizer.Localisation;
 using Mail.dat.Io;
 using Mail.dat.Models;
 using Microsoft.Extensions.Logging;

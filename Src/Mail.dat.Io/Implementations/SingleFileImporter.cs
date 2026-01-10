@@ -100,7 +100,7 @@ namespace Mail.dat.Io
 						int lineCount = (int)maildatFile.Length / lineLength;
 
 						//
-						// Create list for the modesl, they will
+						// Create list for the model, they will
 						// all be bulk inserted at the end.
 						//
 						List<T> modelBuffer = new(lineCount);

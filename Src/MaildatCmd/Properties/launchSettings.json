@@ -2,21 +2,14 @@
   "profiles": {
     "Import": {
       "commandName": "Project",
-      "commandLineArgs": "import --source-file-path \"%HOMEPATH%/Documents/Open Mail.dat/Imports/5850001A.zip\" --target-file-path \"%HOMEPATH%/Documents/Open Mail.dat/Database/MD0000000002.db\" --skip-pbc false --favor-memory-over-performance false --max-records-in-memory 10000",
-      "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
-      }
-    },
-    "Import-MailSync": {
-      "commandName": "Project",
-      "commandLineArgs": "import --source-file-path \"Z:/Desktop/00000005/2116345_P01_ENRU.zip\" --target-file-path \"Z:/Desktop/00000005/Output/2116345_P01_ENRU.db\" --skip-pbc false --favor-memory-over-performance false --max-records-in-memory 10000",
+      "commandLineArgs": "import --source-file-path \"%HOMEDRIVE%%HOMEPATH%/Documents/Open Mail.dat/Import/12345ABC.zip\" --target-file-path \"%HOMEDRIVE%%HOMEPATH%/Documents/Open Mail.dat/Import/MD0000000001.db\" --skip-pbc false --favor-memory-over-performance false --max-records-in-memory 10000",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }
     },
     "Export": {
       "commandName": "Project",
-      "commandLineArgs": "export --source-file-path \"Z:/Desktop/00000005/Output/90009001.db\" --target-file-path \"Z:/Desktop/00000005/Output/90009001.zip\"",
+      "commandLineArgs": "export --source-file-path \"%HOMEDRIVE%%HOMEPATH%/Documents/Open Mail.dat/Export/MD0000000001.db\" --target-file-path \"%HOMEDRIVE%%HOMEPATH%/Documents/Open Mail.dat/Export/12345ABC.zip\"",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }

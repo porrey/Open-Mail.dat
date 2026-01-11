@@ -1,7 +1,7 @@
 {
 	"version": {
 		"major": "25-1",
-		"revision": "0.4"
+		"revision": "0.6"
 	},
 	"files": [
 		{
@@ -256,7 +256,7 @@
 						"type": "enum",
 						"format": "leftjustify",
 						"values": {
-							"0.4": ""
+							"0.6": ""
 						}
 					}
 				},
@@ -1302,14 +1302,14 @@
 				},
 				{
 					"fieldCode": "HDR-1207",
-					"fieldName": "Certificate of Mailing Services Record Count",
+					"fieldName": "Certificate of Mailing Special Fee Record Count",
 					"start": 465,
 					"length": 10,
 					"required": true,
 					"key": false,
 					"dataType": "N",
 					"description": [
-						"The number of certificate of mailing services records in this Mail.dat"
+						"The number of certificate of mailing special fee records in this Mail.dat"
 					],
 					"data": {
 						"type": "integer",
@@ -1318,7 +1318,7 @@
 				},
 				{
 					"fieldCode": "HDR-1208",
-					"fieldName": "Certificate of Mailing Services Status",
+					"fieldName": "Certificate of Mailing Special Fee File Status",
 					"start": 475,
 					"length": 1,
 					"required": true,
@@ -2757,10 +2757,10 @@
 						"values": {
 							" ": "Not a Standard Parcel",
 							"F": "Not a Marketing parcel",
-							"H": "Heavy Printed Matter with IMb",
+							"H": "Heavy Printed Matter",
 							"L": "Reserved",
 							"M": "Marketing;",
-							"P": "Heavy Printed Matter with IMpb/IMmb",
+							"P": "Reserve",
 							"S": "Reserved"
 						}
 					}
@@ -3907,11 +3907,13 @@
 						"type": "enum",
 						"format": "leftjustify",
 						"values": {
-							"2": "Parcel > 108\" <= 130\"",
-							"D": "Dim Weight-Rectangular",
-							"N": "Not Oversized",
-							"R": "Non-Mach Surcharge",
-							"T": "Dim Weight-Non-Rectangular"
+							"CD": "Card",
+							"CM": "Custom Mail",
+							"FL": "Flat",
+							"IR": "Nonstandard Parcels",
+							"LT": "Letter",
+							"MP": "Machinable Parcel",
+							"PF": "Parcel, First Class"
 						}
 					}
 				},
@@ -4154,10 +4156,10 @@
 						"values": {
 							" ": "Not a Standard Parcel",
 							"F": "Not a Marketing parcel",
-							"H": "Heavy Printed Matter with IMb",
+							"H": "Heavy Printed Matter",
 							"L": "Reserve",
 							"M": "Marketing",
-							"P": "Heavy Printed Matter with IMpb/IMmb",
+							"P": "Reserve",
 							"S": "Reserve"
 						}
 					}
@@ -4368,7 +4370,7 @@
 						"format": "leftjustify",
 						"values": {
 							"0X": "User Option",
-							"1X": "User Option",
+							"1X": "Enhanced Emerging Technology",
 							"2X": "User Option",
 							"3X": "User Option",
 							"4X": "User Option",
@@ -4379,6 +4381,8 @@
 							"9X": "User Option",
 							"CB": "Certificate of Bulk Mailing",
 							"CC": "Continuous Contact",
+							"CP": "Personalized Color Transpromo",
+							"CR": "Personalized Color Transpromo with Reply",
 							"CT": "Catalog",
 							"DC": "DVD/CD or other disk",
 							"EB": "Election Mail Official Ballots",
@@ -4387,6 +4391,7 @@
 							"FG": "First-Class Growth Incentive Credit Redemption",
 							"IT": "Integrated Technology",
 							"IV": "Invoice",
+							"ME": "Emerging Mobile Technology",
 							"MG": "USPS Marketing Mail Growth Incentive Credit Redemption",
 							"MM": "Marriage Mail",
 							"NF": "Contents NOT required to be mailed FCM",
@@ -4399,6 +4404,7 @@
 							"PI": "Informed Delivery Campaign",
 							"PM": "Political Mail",
 							"PP": "Picture Permit Indicia",
+							"RG": "Retargeted Mail",
 							"RR": "Reply Envelope or Reply Card",
 							"RT": "Round Trip ONLY: One DVD/CD or other disk (can be LT or FL)",
 							"SS": "Tactile Sensory and Interactive",
@@ -6374,11 +6380,11 @@
 							"K": "3 Digit",
 							"L": "Basic Barcode",
 							"L1": "AADC BC",
-							"L2": "MxAADC BC",
+							"L2": "MxAADC/Mixed BC",
 							"L3": "ADC BC",
 							"L4": "MxADC BC",
 							"L5": "ADC",
-							"L6": "MxADC",
+							"L6": "MxADC/Mixed",
 							"L7": "AADC",
 							"L8": "MxAADC",
 							"N": "Presort (1C, 4C); In County Basic (2C); Custom Market Mail (3C)",
@@ -6751,12 +6757,13 @@
 							"I": "AADC",
 							"K": "Origin MxADC",
 							"L": "MxADC",
-							"M": "MxAADC",
+							"M": "MxAADC/Mixed Working",
 							"R": "Parcel",
 							"S": "Multi-pc Parcel",
 							"T": "3-D Scheme",
 							"U": "5-D Scheme + L007",
-							"V": "NDC"
+							"V": "NDC",
+							"X": "SCF"
 						}
 					}
 				},

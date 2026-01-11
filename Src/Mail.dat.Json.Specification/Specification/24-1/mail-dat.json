@@ -283,7 +283,7 @@
 						"type": "enum",
 						"format": "leftjustify",
 						"values": {
-							"1.5": ""
+							"1.6": ""
 						}
 					}
 				},
@@ -1333,14 +1333,14 @@
 				},
 				{
 					"fieldCode": "HDR-1207",
-					"fieldName": "Certificate of Mailing Services Record Count",
+					"fieldName": "Certificate of Mailing Special Fee Record Count",
 					"start": 465,
 					"length": 10,
 					"required": true,
 					"key": false,
 					"dataType": "N",
 					"description": [
-						"The number of certificate of mailing services records in this Mail.dat"
+						"The number of certificate of mailing special fee records in this Mail.dat"
 					],
 					"data": {
 						"type": "integer",
@@ -1349,7 +1349,7 @@
 				},
 				{
 					"fieldCode": "HDR-1208",
-					"fieldName": "Certificate of Mailing Services Status",
+					"fieldName": "Certificate of Mailing Special Fee Status",
 					"start": 475,
 					"length": 1,
 					"required": true,
@@ -4878,7 +4878,7 @@
 							"AD": "ASF (S, T, P)",
 							"AE": "NDC (S, T, P)",
 							"AF": "Protected NDC (P)",
-							"AG": "Mixed NDC (S, T, P)",
+							"AG": "Mixed NDC/Mixed Working (S, T, P)",
 							"AH": "Origin MxADC (S, T, P)",
 							"AI": "Protected ADC (P)",
 							"AJ": "Single Piece (S, T, P)",

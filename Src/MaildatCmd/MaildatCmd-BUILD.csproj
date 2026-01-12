@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<AssemblyName>MaildatCmd</AssemblyName>
+		<RootNamespace>Mail.dat.Cmd</RootNamespace>
+		<Version>10.1.0</Version>
+		<AssemblyVersion>10.1.0</AssemblyVersion>
+		<FileVersion>10.1.0</FileVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="appsettings.Production.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<DependentUpon>appsettings.json</DependentUpon>
+		</Content>
+		<Content Include="appsettings.Development.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<DependentUpon>appsettings.json</DependentUpon>
+		</Content>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Diamond.Core.CommandLine" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.CommandLine.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.CommandLine.Model" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Extensions.DependencyInjection" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Extensions.Hosting" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Extensions.Hosting.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="10.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+		<PackageReference Include="Humanizer.Core" Version="3.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Mail.dat.BuildCommand\Mail.dat.BuildCommand.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.commandline.abstractions\10.0.1\contentFiles\any\net10.0\Services\Diamond.Core.CommandLine.Abstractions.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>

@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property CharacteristicType (CCR-1005).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "ccr", FieldCode = "CCR-1005")]
 	public class CharacteristicTypes : MaildatValues
 	{
@@ -58,15 +58,19 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "ccr", Description = "Add-On Incentive", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "ccr", Description = "Add-On Incentive", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "ccr", Description = "Add-On Incentive", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "ccr", Description = "Add-On Incentive", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "ccr", Description = "Content", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "ccr", Description = "Content", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "ccr", Description = "Content", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "ccr", Description = "Content", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "F", FileExtension = "ccr", Description = "Fee", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "F", FileExtension = "ccr", Description = "Fee", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "F", FileExtension = "ccr", Description = "Fee", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "F", FileExtension = "ccr", Description = "Fee", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "I", FileExtension = "ccr", Description = "Incentive Base/Primary", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "ccr", Description = "Incentive Base/Primary", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "ccr", Description = "Incentive Base/Primary", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "ccr", Description = "Incentive Base/Primary", FieldCode = "CCR-1005", FieldName = "CharacteristicType" });
 		}
 	}
 }

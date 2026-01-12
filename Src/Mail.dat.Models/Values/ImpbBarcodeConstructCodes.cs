@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property ImpbBarcodeConstructCode (SFB-1005).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "sfb", FieldCode = "SFB-1005")]
 	public class ImpbBarcodeConstructCodes : MaildatValues
 	{
@@ -58,66 +58,87 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = " ", FileExtension = "sfb", Description = "Not Applicable", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = " ", FileExtension = "sfb", Description = "Not Applicable", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = " ", FileExtension = "sfb", Description = "Not Applicable", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = " ", FileExtension = "sfb", Description = "Not Applicable", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "sfb", Description = "C01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "sfb", Description = "C01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "sfb", Description = "C01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "sfb", Description = "C01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "sfb", Description = "C02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "sfb", Description = "C02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "sfb", Description = "C02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "sfb", Description = "C02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "sfb", Description = "C03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "sfb", Description = "C03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "sfb", Description = "C03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "sfb", Description = "C03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "sfb", Description = "C04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "sfb", Description = "C04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "sfb", Description = "C04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "sfb", Description = "C04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "E", FileExtension = "sfb", Description = "C05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "E", FileExtension = "sfb", Description = "C05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "E", FileExtension = "sfb", Description = "C05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "E", FileExtension = "sfb", Description = "C05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "F", FileExtension = "sfb", Description = "C06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "F", FileExtension = "sfb", Description = "C06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "F", FileExtension = "sfb", Description = "C06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "F", FileExtension = "sfb", Description = "C06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "G", FileExtension = "sfb", Description = "C07", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "G", FileExtension = "sfb", Description = "C07", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "G", FileExtension = "sfb", Description = "C07", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "G", FileExtension = "sfb", Description = "C07", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "H", FileExtension = "sfb", Description = "C08", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "H", FileExtension = "sfb", Description = "C08", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "H", FileExtension = "sfb", Description = "C08", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "H", FileExtension = "sfb", Description = "C08", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "I", FileExtension = "sfb", Description = "C09", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "sfb", Description = "C09", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "sfb", Description = "C09", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "sfb", Description = "C09", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "J", FileExtension = "sfb", Description = "C10", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "J", FileExtension = "sfb", Description = "C10", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "J", FileExtension = "sfb", Description = "C10", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "J", FileExtension = "sfb", Description = "C10", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "K", FileExtension = "sfb", Description = "N01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "K", FileExtension = "sfb", Description = "N01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "K", FileExtension = "sfb", Description = "N01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "K", FileExtension = "sfb", Description = "N01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "L", FileExtension = "sfb", Description = "N02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "L", FileExtension = "sfb", Description = "N02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "L", FileExtension = "sfb", Description = "N02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "L", FileExtension = "sfb", Description = "N02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "M", FileExtension = "sfb", Description = "N03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "M", FileExtension = "sfb", Description = "N03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "M", FileExtension = "sfb", Description = "N03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "M", FileExtension = "sfb", Description = "N03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "N", FileExtension = "sfb", Description = "N04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "N", FileExtension = "sfb", Description = "N04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "N", FileExtension = "sfb", Description = "N04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "N", FileExtension = "sfb", Description = "N04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "O", FileExtension = "sfb", Description = "N05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "sfb", Description = "N05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "sfb", Description = "N05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "sfb", Description = "N05", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "P", FileExtension = "sfb", Description = "N06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "P", FileExtension = "sfb", Description = "N06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "P", FileExtension = "sfb", Description = "N06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "P", FileExtension = "sfb", Description = "N06", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "Q", FileExtension = "sfb", Description = "L01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "Q", FileExtension = "sfb", Description = "L01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "Q", FileExtension = "sfb", Description = "L01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "Q", FileExtension = "sfb", Description = "L01", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "R", FileExtension = "sfb", Description = "L02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "R", FileExtension = "sfb", Description = "L02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "R", FileExtension = "sfb", Description = "L02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "R", FileExtension = "sfb", Description = "L02", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "S", FileExtension = "sfb", Description = "L03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "S", FileExtension = "sfb", Description = "L03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "S", FileExtension = "sfb", Description = "L03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "S", FileExtension = "sfb", Description = "L03", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "T", FileExtension = "sfb", Description = "L04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "T", FileExtension = "sfb", Description = "L04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "T", FileExtension = "sfb", Description = "L04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "T", FileExtension = "sfb", Description = "L04", FieldCode = "SFB-1005", FieldName = "ImpbBarcodeConstructCode" });
 		}
 	}
 }

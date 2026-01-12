@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property PostagePaymentOption (MPA-1109).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "mpa", FieldCode = "MPA-1109")]
 	public class PostagePaymentOptions : MaildatValues
 	{
@@ -58,21 +58,27 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "mpa", Description = "Billing", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "mpa", Description = "Billing", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "mpa", Description = "Billing", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "mpa", Description = "Billing", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "mpa", Description = "CPP", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "mpa", Description = "CPP", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "mpa", Description = "CPP", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "mpa", Description = "CPP", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "mpa", Description = "Debit", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "mpa", Description = "Debit", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "mpa", Description = "Debit", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "mpa", Description = "Debit", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "O", FileExtension = "mpa", Description = "Other", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "mpa", Description = "Other", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "mpa", Description = "Other", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "mpa", Description = "Other", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "T", FileExtension = "mpa", Description = "CAPS/EPS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "T", FileExtension = "mpa", Description = "CAPS/EPS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "T", FileExtension = "mpa", Description = "CAPS/EPS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "T", FileExtension = "mpa", Description = "CAPS/EPS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "V", FileExtension = "mpa", Description = "PVDS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "V", FileExtension = "mpa", Description = "PVDS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "V", FileExtension = "mpa", Description = "PVDS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "V", FileExtension = "mpa", Description = "PVDS", FieldCode = "MPA-1109", FieldName = "PostagePaymentOption" });
 		}
 	}
 }

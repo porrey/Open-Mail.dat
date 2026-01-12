@@ -16,14 +16,14 @@
     },
     "Build": {
       "commandName": "Project",
-      "commandLineArgs": "build --specification-files \"./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"../../../../Mail.dat.Models\" --hosting-directory \"../../../../Mail.dat.Hosting\"",
+      "commandLineArgs": "build --specification-files \"./Specification/26-1/mail-dat.json,./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"../../../../Mail.dat.Models\" --hosting-directory \"../../../../Mail.dat.Hosting\"",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }
     },
     "Build2": {
       "commandName": "Project",
-      "commandLineArgs": "build --specification-files \"./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"Output/Models\" --hosting-directory \"Output/Hosting\"",
+      "commandLineArgs": "build --specification-files \"./Specification/26-1/mail-dat.json,./Specification/25-1/mail-dat.json,./Specification/24-1/mail-dat.json,./Specification/23-1/mail-dat.json\" --models-directory \"Output/Models\" --hosting-directory \"Output/Hosting\"",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }

@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property ServiceAdditionalType (CFR-1101).
 	/// </summary>
-	[MaildatVersions("24-1", "25-1")]
+	[MaildatVersions("24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "cfr", FieldCode = "CFR-1101")]
 	public class ServiceAdditionalTypes : MaildatValues
 	{
@@ -57,18 +57,25 @@ namespace Mail.dat
 		{
 			this.Add(new MaildatValue() { Version = "24-1", Key = " ", FileExtension = "cfr", Description = "Not Specified", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = " ", FileExtension = "cfr", Description = "Not Specified", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = " ", FileExtension = "cfr", Description = "Not Specified", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "cfr", Description = "6 Months", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "cfr", Description = "6 Months", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "cfr", Description = "6 Months", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "cfr", Description = "1 Year", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "cfr", Description = "1 Year", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "cfr", Description = "1 Year", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "cfr", Description = "3 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "cfr", Description = "3 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "cfr", Description = "3 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "F", FileExtension = "cfr", Description = "5 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "F", FileExtension = "cfr", Description = "5 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "F", FileExtension = "cfr", Description = "5 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "G", FileExtension = "cfr", Description = "7 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "G", FileExtension = "cfr", Description = "7 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "G", FileExtension = "cfr", Description = "7 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "H", FileExtension = "cfr", Description = "10 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "H", FileExtension = "cfr", Description = "10 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "H", FileExtension = "cfr", Description = "10 Years", FieldCode = "CFR-1101", FieldName = "ServiceAdditionalType" });
 		}
 	}
 }

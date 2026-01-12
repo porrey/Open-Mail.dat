@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Daniel Porrey, Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -85,7 +85,7 @@ namespace Mail.dat.BuildCommand
 
 				if (returnValue == "Reserve")
 				{
-					returnValue = $"{returnValue}{recordDefintion.FieldCode.ToString().Dehumanize().TruePascalize().KeywordSanitize()}";
+					returnValue = $"{returnValue}{recordDefintion.FieldCode.Dehumanize().TruePascalize().KeywordSanitize()}";
 				}
 			}
 			else

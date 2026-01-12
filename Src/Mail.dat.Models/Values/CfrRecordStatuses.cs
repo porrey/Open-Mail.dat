@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property CfrRecordStatus (CFR-2000).
 	/// </summary>
-	[MaildatVersions("24-1", "25-1")]
+	[MaildatVersions("24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "cfr", FieldCode = "CFR-2000")]
 	public class CfrRecordStatuses : MaildatValues
 	{
@@ -57,12 +57,16 @@ namespace Mail.dat
 		{
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "cfr", Description = "Delete", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "cfr", Description = "Delete", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "cfr", Description = "Delete", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "cfr", Description = "Insert", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "cfr", Description = "Insert", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "cfr", Description = "Insert", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "cfr", Description = "Original", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "cfr", Description = "Original", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "cfr", Description = "Original", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "U", FileExtension = "cfr", Description = "Update", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "U", FileExtension = "cfr", Description = "Update", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "U", FileExtension = "cfr", Description = "Update", FieldCode = "CFR-2000", FieldName = "CfrRecordStatus" });
 		}
 	}
 }

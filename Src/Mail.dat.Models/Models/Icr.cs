@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,14 +35,16 @@ namespace Mail.dat
 	/// Relates containers to associated ink jet output tapes/files.
 	/// </summary>
 	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.6", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.6", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
+	[MaildatFile(Version = "26-1", Revision = "0.1", Extension = "icr", File = "Ij/C Relationship Record", Summary = "Relates containers to associated ink jet output tapes/files.", Description = "Relates containers to associated ink jet output tapes/files.", LineLength = 82, ClosingCharacter = "#")]
 	[MaildatImport(Order = 13, Version = "23-1")]
 	[MaildatImport(Order = 13, Version = "24-1")]
 	[MaildatImport(Order = 13, Version = "25-1")]
+	[MaildatImport(Order = 13, Version = "26-1")]
 	[Table("Icr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	public partial class Icr : MaildatEntity, IIcr
 	{
 		/// <summary>
@@ -52,13 +54,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[Column("JobId", Order = 2, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("ICR-1001")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string JobId { get; set; }
 
 		/// <summary>
@@ -69,12 +72,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1101", FieldName = "File Name", Start = 9, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "The agreed file name describing the content of the single Transmitted file within which this container exists.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1101", FieldName = "File Name", Start = 9, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "The agreed file name describing the content of the single Transmitted file within which this container exists.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1101", FieldName = "File Name", Start = 9, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "The agreed file name describing the content of the single transmitted file within which this container exists.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1101", FieldName = "File Name", Start = 9, Length = 30, Required = true, Key = false, DataType = "A/N", Description = "The agreed file name describing the content of the single transmitted file within which this container exists.", Type = "string", Format = "leftjustify")]
 		[Column("FileName", Order = 3, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(30)]
 		[Comment("ICR-1101")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string FileName { get; set; }
 
 		/// <summary>
@@ -85,12 +89,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1102", FieldName = "Tape ID", Start = 39, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The identifying A/N string for the tape within which this Container exists. Use arbitrary sequence number if non- Inkjet transmission.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1102", FieldName = "Tape ID", Start = 39, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The identifying A/N string for the tape within which this Container exists. Use arbitrary sequence number if non- Inkjet transmission.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1102", FieldName = "Tape ID", Start = 39, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The identifying A/N string for the tape within which this container exists. Use arbitrary sequence number if non-inkjet transmission.", Type = "string", Format = "zfillnumeric")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1102", FieldName = "Tape ID", Start = 39, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The identifying A/N string for the tape within which this container exists. Use arbitrary sequence number if non-inkjet transmission.", Type = "string", Format = "zfillnumeric")]
 		[Column("TapeId", Order = 4, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(6)]
 		[Comment("ICR-1102")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string TapeId { get; set; }
 
 		/// <summary>
@@ -100,12 +105,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1006", FieldName = "Container ID", Start = 45, Length = 6, Required = true, Key = true, DataType = "N", Description = "See Container Summary File's Container ID definition.", Type = "integer", Format = "zfill", References = "CSM-1006")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1006", FieldName = "Container ID", Start = 45, Length = 6, Required = true, Key = true, DataType = "N", Description = "See Container Summary File's Container ID definition.", Type = "integer", Format = "zfill", References = "CSM-1006")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1006", FieldName = "Container ID", Start = 45, Length = 6, Required = true, Key = true, DataType = "N", Description = "See Container Summary File's Container ID definition.", Type = "integer", Format = "zfill", References = "CSM-1006")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1006", FieldName = "Container ID", Start = 45, Length = 6, Required = true, Key = true, DataType = "N", Description = "See Container Summary File's Container ID definition.", Type = "integer", Format = "zfill", References = "CSM-1006")]
 		[Column("ContainerId", Order = 5, TypeName = "INTEGER")]
 		[Required]
 		[MaildatKey]
 		[Comment("ICR-1006")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int ContainerId { get; set; }
 
 		/// <summary>
@@ -116,10 +122,11 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1103", FieldName = "Beginning Record", Start = 51, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the first address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1103", FieldName = "Beginning Record", Start = 51, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the first address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1103", FieldName = "Beginning Record", Start = 51, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the first address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1103", FieldName = "Beginning Record", Start = 51, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the first address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
 		[Column("BeginningRecord", Order = 6, TypeName = "INTEGER")]
 		[Comment("ICR-1103")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int? BeginningRecord { get; set; }
 
 		/// <summary>
@@ -130,10 +137,11 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1104", FieldName = "Ending Record", Start = 59, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the last address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1104", FieldName = "Ending Record", Start = 59, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the last address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1104", FieldName = "Ending Record", Start = 59, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the last address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1104", FieldName = "Ending Record", Start = 59, Length = 8, Required = false, Key = false, DataType = "N", Description = "The record number of the last address on the file/tape that is for the container defined within this record.", Type = "integer", Format = "zfill")]
 		[Column("EndingRecord", Order = 7, TypeName = "INTEGER")]
 		[Comment("ICR-1104")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int? EndingRecord { get; set; }
 
 		/// <summary>
@@ -143,6 +151,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-2000", FieldName = "ICR Record Status", Start = 67, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-2000", FieldName = "ICR Record Status", Start = 67, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-2000", FieldName = "ICR Record Status", Start = 67, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-2000", FieldName = "ICR Record Status", Start = 67, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[Column("IcrRecordStatus", Order = 8, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -150,7 +159,7 @@ namespace Mail.dat
 		[Comment("ICR-2000")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(IcrRecordStatuses))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string IcrRecordStatus { get; set; }
 
 		/// <summary>
@@ -160,11 +169,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-1105", FieldName = "Reserve", Start = 68, Length = 14, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-1105", FieldName = "Reserve", Start = 68, Length = 14, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-1105", FieldName = "Reserve", Start = 68, Length = 14, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-1105", FieldName = "Reserve", Start = 68, Length = 14, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[Column("ReserveIcr1105", Order = 9, TypeName = "TEXT")]
 		[MaxLength(14)]
 		[Comment("ICR-1105")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ReserveIcr1105 { get; set; }
 
 		/// <summary>
@@ -174,13 +184,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "icr", FieldCode = "ICR-9999", FieldName = "Closing Character", Start = 82, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "icr", FieldCode = "ICR-9999", FieldName = "Closing Character", Start = 82, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "icr", FieldCode = "ICR-9999", FieldName = "Closing Character", Start = 82, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "icr", FieldCode = "ICR-9999", FieldName = "Closing Character", Start = 82, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[Column("ClosingCharacter", Order = 10, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
 		[Comment("ICR-9999")]
 		[TypeConverter(typeof(MaildatClosingConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>

@@ -5,9 +5,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<Version>10.0.1</Version>
-		<AssemblyVersion>10.0.1</AssemblyVersion>
-		<FileVersion>10.0.1</FileVersion>
+		<Version>10.1.0</Version>
+		<AssemblyVersion>10.1.0</AssemblyVersion>
+		<FileVersion>10.1.0</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -24,7 +24,7 @@
 		<RepositoryType>git</RepositoryType>
 		<NeutralLanguage>en</NeutralLanguage>
 		<PackageTags>efcore,mail.dat</PackageTags>
-		<Copyright>Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
+		<Copyright>Copyright (c) 2025-2026 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -39,7 +39,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="EFCore.BulkExtensions.Sqlite" Version="10.0.0-rc.2" />
+		<PackageReference Include="EFCore.BulkExtensions.Sqlite" Version="10.0.0" />
 		<PackageReference Include="SharpZipLib" Version="1.4.2" />
 	</ItemGroup>
 

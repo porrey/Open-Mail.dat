@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -31,7 +31,7 @@ namespace Mail.dat
 	/// These are the allowed values for the property PeriodicalsCoPalletizationDiscountIndicator
 	/// (CQT-1107).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "cqt", FieldCode = "CQT-1107")]
 	public class PeriodicalsCoPalletizationDiscountIndicators : MaildatValues
 	{
@@ -59,9 +59,11 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "N", FileExtension = "cqt", Description = "No", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "N", FileExtension = "cqt", Description = "No", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "N", FileExtension = "cqt", Description = "No", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "N", FileExtension = "cqt", Description = "No", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "Y", FileExtension = "cqt", Description = "Yes", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "Y", FileExtension = "cqt", Description = "Yes", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "Y", FileExtension = "cqt", Description = "Yes", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "Y", FileExtension = "cqt", Description = "Yes", FieldCode = "CQT-1107", FieldName = "PeriodicalsCoPalletizationDiscountIndicator" });
 		}
 	}
 }

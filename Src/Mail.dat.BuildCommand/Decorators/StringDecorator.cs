@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Daniel Porrey, Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -56,7 +56,7 @@ namespace Mail.dat.BuildCommand
 
 			if (!string.IsNullOrWhiteSpace(value))
 			{
-				returnValue = value.Sanitize().Replace("/", "").Replace("-", "").Replace("'", "").Trim();
+				returnValue = value.Sanitize().Replace("/", "").Replace("-", "").Replace("'", "").Replace(" ", "").Trim();
 
 				//
 				// Check if the first character is a number.

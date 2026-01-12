@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -36,14 +36,16 @@ namespace Mail.dat
 	/// per container.
 	/// </summary>
 	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "par", File = "Postage Adjustment Record", Summary = "Technique and amount for adjustment per container.", Description = "Technique and amount for adjustment per container. Notes technique and reports postage adjustment per container.", LineLength = 128, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "par", File = "Postage Adjustment Record", Summary = "Technique and amount for adjustment per container.", Description = "Technique and amount for adjustment per container. Notes technique and reports postage adjustment per container.", LineLength = 128, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "par", File = "Postage Adjustment Record", Summary = "Technique and amount for adjustment per container.", Description = "Technique and amount for adjustment per container. Notes technique and reports postage adjustment per container.", LineLength = 128, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.6", Extension = "par", File = "Postage Adjustment Record", Summary = "Technique and amount for adjustment per container.", Description = "Technique and amount for adjustment per container. Notes technique and reports postage adjustment per container.", LineLength = 128, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.6", Extension = "par", File = "Postage Adjustment Record", Summary = "Technique and amount for adjustment per container.", Description = "Technique and amount for adjustment per container. Notes technique and reports postage adjustment per container.", LineLength = 128, ClosingCharacter = "#")]
+	[MaildatFile(Version = "26-1", Revision = "0.1", Extension = "par", File = "Postage Adjustment Record", Summary = "Technique and amount for adjustment per container.", Description = "Technique and amount for adjustment per container. Notes technique and reports postage adjustment per container.", LineLength = 128, ClosingCharacter = "#")]
 	[MaildatImport(Order = 18, Version = "23-1")]
 	[MaildatImport(Order = 18, Version = "24-1")]
 	[MaildatImport(Order = 18, Version = "25-1")]
+	[MaildatImport(Order = 18, Version = "26-1")]
 	[Table("Par", Schema = "Maildat")]
 	[PrimaryKey("Id")]
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	public partial class Par : MaildatEntity, IPar
 	{
 		/// <summary>
@@ -53,13 +55,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[Column("JobId", Order = 2, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("PAR-1001")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string JobId { get; set; }
 
 		/// <summary>
@@ -68,13 +71,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
 		[Column("SegmentId", Order = 3, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(4)]
 		[Comment("PAR-1002")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string SegmentId { get; set; }
 
 		/// <summary>
@@ -83,13 +87,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
 		[Column("MailPieceUnitId", Order = 4, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(5)]
 		[Comment("PAR-1003")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string MailPieceUnitId { get; set; }
 
 		/// <summary>
@@ -98,13 +103,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MCR-1004")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MCR-1004")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MCR-1004")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "", Type = "string", Format = "zfillnumeric", References = "MCR-1004")]
 		[Column("ComponentId", Order = 5, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("PAR-1004")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ComponentId { get; set; }
 
 		/// <summary>
@@ -114,12 +120,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1024", FieldName = "Sequence Number", Start = 26, Length = 3, Required = true, Key = true, DataType = "N", Description = "A unique number differentiating this PAR record from any other for this JOB, SEG, MPU and CPT.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1024", FieldName = "Sequence Number", Start = 26, Length = 3, Required = true, Key = true, DataType = "N", Description = "A unique number differentiating this PAR record from any other for this JOB, SEG, MPU and CPT.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1024", FieldName = "Sequence Number", Start = 26, Length = 3, Required = true, Key = true, DataType = "N", Description = "A unique number differentiating this PAR record from any other for this JOB, SEG, MPU and CPT.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1024", FieldName = "Sequence Number", Start = 26, Length = 3, Required = true, Key = true, DataType = "N", Description = "A unique number differentiating this PAR record from any other for this JOB, SEG, MPU and CPT.", Type = "integer", Format = "zfill")]
 		[Column("SequenceNumber", Order = 6, TypeName = "INTEGER")]
 		[Required]
 		[MaildatKey]
 		[Comment("PAR-1024")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int SequenceNumber { get; set; }
 
 		/// <summary>
@@ -129,11 +136,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1101", FieldName = "Date", Start = 29, Length = 8, Required = true, Key = false, DataType = "N", Description = "Adjustment Date.", Type = "date", Format = "YYYYMMDD")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1101", FieldName = "Date", Start = 29, Length = 8, Required = true, Key = false, DataType = "N", Description = "Adjustment Date.", Type = "date", Format = "YYYYMMDD")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1101", FieldName = "Date", Start = 29, Length = 8, Required = true, Key = false, DataType = "N", Description = "Adjustment Date (cannot be all zeros).", Type = "date", Format = "YYYYMMDD")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1101", FieldName = "Date", Start = 29, Length = 8, Required = true, Key = false, DataType = "N", Description = "Adjustment Date (cannot be all zeros).", Type = "date", Format = "YYYYMMDD")]
 		[Column("Date", Order = 7, TypeName = "TEXT")]
 		[Required]
 		[Comment("PAR-1101")]
 		[TypeConverter(typeof(MaildatDateConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DateOnly Date { get; set; }
 
 		/// <summary>
@@ -142,6 +150,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1102", FieldName = "Adjustment Type", Start = 37, Length = 2, Required = true, Key = false, DataType = "N", Description = "", Type = "enum", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1102", FieldName = "Adjustment Type", Start = 37, Length = 2, Required = true, Key = false, DataType = "N", Description = "", Type = "enum", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1102", FieldName = "Adjustment Type", Start = 37, Length = 2, Required = true, Key = false, DataType = "N", Description = "", Type = "enum", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1102", FieldName = "Adjustment Type", Start = 37, Length = 2, Required = true, Key = false, DataType = "N", Description = "", Type = "enum", Format = "zfill")]
 		[Column("AdjustmentType", Order = 8, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(2)]
@@ -149,7 +158,7 @@ namespace Mail.dat
 		[Comment("PAR-1102")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(AdjustmentTypes))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string AdjustmentType { get; set; }
 
 		/// <summary>
@@ -159,12 +168,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1103", FieldName = "Adjustment Amount", Start = 39, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1103", FieldName = "Adjustment Amount", Start = 39, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1103", FieldName = "Adjustment Amount", Start = 39, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1103", FieldName = "Adjustment Amount", Start = 39, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[Column("AdjustmentAmount", Order = 9, TypeName = "NUMERIC")]
 		[Required]
 		[Precision(3)]
 		[Comment("PAR-1103")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public decimal AdjustmentAmount { get; set; }
 
 		/// <summary>
@@ -173,6 +183,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1104", FieldName = "Credit/Debit Indicator", Start = 48, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1104", FieldName = "Credit/Debit Indicator", Start = 48, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1104", FieldName = "Credit/Debit Indicator", Start = 48, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1104", FieldName = "Credit/Debit Indicator", Start = 48, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("CreditDebitIndicator", Order = 10, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -180,7 +191,7 @@ namespace Mail.dat
 		[Comment("PAR-1104")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(CreditDebitIndicators))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string CreditDebitIndicator { get; set; }
 
 		/// <summary>
@@ -190,10 +201,11 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1106", FieldName = "Total Pieces Affected", Start = 49, Length = 8, Required = false, Key = false, DataType = "N", Description = "(0 [zero] is a permitted value).", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1106", FieldName = "Total Pieces Affected", Start = 49, Length = 8, Required = false, Key = false, DataType = "N", Description = "(0 [zero] is a permitted value).", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1106", FieldName = "Total Pieces Affected", Start = 49, Length = 8, Required = false, Key = false, DataType = "N", Description = "(0 [zero] is a permitted value).", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1106", FieldName = "Total Pieces Affected", Start = 49, Length = 8, Required = false, Key = false, DataType = "N", Description = "(0 [zero] is a permitted value).", Type = "integer", Format = "zfill")]
 		[Column("TotalPiecesAffected", Order = 11, TypeName = "INTEGER")]
 		[Comment("PAR-1106")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int? TotalPiecesAffected { get; set; }
 
 		/// <summary>
@@ -203,11 +215,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1105", FieldName = "User Comments", Start = 57, Length = 19, Required = false, Key = false, DataType = "A/N", Description = "Free form field for user notes.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1105", FieldName = "User Comments", Start = 57, Length = 19, Required = false, Key = false, DataType = "A/N", Description = "Free form field for user notes.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1105", FieldName = "User Comments", Start = 57, Length = 19, Required = false, Key = false, DataType = "A/N", Description = "Free form field for user notes.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1105", FieldName = "User Comments", Start = 57, Length = 19, Required = false, Key = false, DataType = "A/N", Description = "Free form field for user notes.", Type = "string", Format = "leftjustify")]
 		[Column("UserComments", Order = 12, TypeName = "TEXT")]
 		[MaxLength(19)]
 		[Comment("PAR-1105")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string UserComments { get; set; }
 
 		/// <summary>
@@ -216,13 +229,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1108", FieldName = "Adjustment Status", Start = 76, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1108", FieldName = "Adjustment Status", Start = 76, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1108", FieldName = "Adjustment Status", Start = 76, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1108", FieldName = "Adjustment Status", Start = 76, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("AdjustmentStatus", Order = 13, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues(" ", "C", "P", "R", "T", "X")]
 		[Comment("PAR-1108")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(AdjustmentStatuses))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string AdjustmentStatus { get; set; }
 
 		/// <summary>
@@ -233,12 +247,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1109", FieldName = "MPA - Unique Sequence/Grouping ID", Start = 77, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1109", FieldName = "MPA - Unique Sequence/Grouping ID", Start = 77, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1109", FieldName = "MPA - Unique Sequence/Grouping ID", Start = 77, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1109", FieldName = "MPA - Unique Sequence/Grouping ID", Start = 77, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric")]
 		[Column("MpaUniqueSequenceGroupingId", Order = 14, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(10)]
 		[Comment("PAR-1109")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string MpaUniqueSequenceGroupingId { get; set; }
 
 		/// <summary>
@@ -248,11 +263,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1129", FieldName = "User Option Field", Start = 87, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1129", FieldName = "User Option Field", Start = 87, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1129", FieldName = "User Option Field", Start = 87, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1129", FieldName = "User Option Field", Start = 87, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Available for customer data for unique user application.", Type = "string", Format = "leftjustify")]
 		[Column("UserOptionField", Order = 15, TypeName = "TEXT")]
 		[MaxLength(20)]
 		[Comment("PAR-1129")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string UserOptionField { get; set; }
 
 		/// <summary>
@@ -262,6 +278,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-2000", FieldName = "PAR Record Status", Start = 107, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-2000", FieldName = "PAR Record Status", Start = 107, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-2000", FieldName = "PAR Record Status", Start = 107, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-2000", FieldName = "PAR Record Status", Start = 107, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[Column("ParRecordStatus", Order = 16, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -269,7 +286,7 @@ namespace Mail.dat
 		[Comment("PAR-2000")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(ParRecordStatuses))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ParRecordStatus { get; set; }
 
 		/// <summary>
@@ -279,11 +296,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-1107", FieldName = "Reserve", Start = 108, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-1107", FieldName = "Reserve", Start = 108, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-1107", FieldName = "Reserve", Start = 108, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-1107", FieldName = "Reserve", Start = 108, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[Column("ReservePar1107", Order = 17, TypeName = "TEXT")]
 		[MaxLength(20)]
 		[Comment("PAR-1107")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ReservePar1107 { get; set; }
 
 		/// <summary>
@@ -293,13 +311,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "par", FieldCode = "PAR-9999", FieldName = "Closing Character", Start = 128, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "par", FieldCode = "PAR-9999", FieldName = "Closing Character", Start = 128, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "par", FieldCode = "PAR-9999", FieldName = "Closing Character", Start = 128, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "par", FieldCode = "PAR-9999", FieldName = "Closing Character", Start = 128, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[Column("ClosingCharacter", Order = 18, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
 		[Comment("PAR-9999")]
 		[TypeConverter(typeof(MaildatClosingConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>

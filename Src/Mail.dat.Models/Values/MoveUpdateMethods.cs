@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property MoveUpdateMethod (PDR-1127).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "pdr", FieldCode = "PDR-1127")]
 	public class MoveUpdateMethods : MaildatValues
 	{
@@ -58,27 +58,35 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "0", FileExtension = "pdr", Description = "None", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "0", FileExtension = "pdr", Description = "None", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "0", FileExtension = "pdr", Description = "None", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "0", FileExtension = "pdr", Description = "None", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "1", FileExtension = "pdr", Description = "ACS", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "1", FileExtension = "pdr", Description = "ACS", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "1", FileExtension = "pdr", Description = "ACS", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "1", FileExtension = "pdr", Description = "ACS", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "2", FileExtension = "pdr", Description = "NCOALink", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "2", FileExtension = "pdr", Description = "NCOALink", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "2", FileExtension = "pdr", Description = "NCOALink", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "2", FileExtension = "pdr", Description = "NCOALink", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "4", FileExtension = "pdr", Description = "Mailer Move Update Process Certification/Alternative method( 99% rule, legal restraint, 100% newly acquired from addressee)", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "4", FileExtension = "pdr", Description = "Mailer Move Update Process Certification/Alternative method( 99% rule, legal restraint, 100% newly acquired from addressee)", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "4", FileExtension = "pdr", Description = "Mailer Move Update Process Certification/Alternative method( 99% rule, legal restraint, 100% newly acquired from addressee)", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "4", FileExtension = "pdr", Description = "Mailer Move Update Process Certification/Alternative method( 99% rule, legal restraint, 100% newly acquired from addressee)", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "5", FileExtension = "pdr", Description = "Ancillary Service Endorsements", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "5", FileExtension = "pdr", Description = "Ancillary Service Endorsements", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "5", FileExtension = "pdr", Description = "Ancillary Service Endorsements", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "5", FileExtension = "pdr", Description = "Ancillary Service Endorsements", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "6", FileExtension = "pdr", Description = "Multiple", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "6", FileExtension = "pdr", Description = "Multiple", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "6", FileExtension = "pdr", Description = "Multiple", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "6", FileExtension = "pdr", Description = "Multiple", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "7", FileExtension = "pdr", Description = "Simplified/Occupant/Exceptional/Alternative Address Format - No move update method needed for this code", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "7", FileExtension = "pdr", Description = "Simplified/Occupant/Exceptional/Alternative Address Format - No move update method needed for this code", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "7", FileExtension = "pdr", Description = "Simplified/Occupant/Exceptional/Alternative Address Format - No move update method needed for this code", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "7", FileExtension = "pdr", Description = "Simplified/Occupant/Exceptional/Alternative Address Format - No move update method needed for this code", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "8", FileExtension = "pdr", Description = "OneCode ACS™", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "8", FileExtension = "pdr", Description = "OneCode ACS™", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "8", FileExtension = "pdr", Description = "OneCode ACS™", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "8", FileExtension = "pdr", Description = "OneCode ACS™", FieldCode = "PDR-1127", FieldName = "MoveUpdateMethod" });
 		}
 	}
 }

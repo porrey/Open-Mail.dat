@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property DestinationEntry (CQT-1105).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "cqt", FieldCode = "CQT-1105")]
 	public class DestinationEntries : MaildatValues
 	{
@@ -58,18 +58,23 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "cqt", Description = "DADC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "cqt", Description = "DADC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "cqt", Description = "DADC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "cqt", Description = "DADC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "cqt", Description = "DNDC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "cqt", Description = "DNDC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "cqt", Description = "DNDC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "cqt", Description = "DNDC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "H", FileExtension = "cqt", Description = "DHUB", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "H", FileExtension = "cqt", Description = "DHUB", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "H", FileExtension = "cqt", Description = "DHUB", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "H", FileExtension = "cqt", Description = "DHUB", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "N", FileExtension = "cqt", Description = "None", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "N", FileExtension = "cqt", Description = "None", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "N", FileExtension = "cqt", Description = "None", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "N", FileExtension = "cqt", Description = "None", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "O", FileExtension = "cqt", Description = "OptNDC", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "P", FileExtension = "cqt", Description = "Reserved", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "P", FileExtension = "cqt", Description = "Reserved", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
@@ -77,6 +82,7 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "S", FileExtension = "cqt", Description = "DSCF", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "S", FileExtension = "cqt", Description = "DSCF", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "S", FileExtension = "cqt", Description = "DSCF", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "S", FileExtension = "cqt", Description = "DSCF", FieldCode = "CQT-1105", FieldName = "DestinationEntry" });
 		}
 	}
 }

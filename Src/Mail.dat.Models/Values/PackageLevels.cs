@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property PackageLevel (PQT-1102).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "pqt", FieldCode = "PQT-1102")]
 	public class PackageLevels : MaildatValues
 	{
@@ -58,51 +58,69 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "9", FileExtension = "pqt", Description = "Other", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "9", FileExtension = "pqt", Description = "Other", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "9", FileExtension = "pqt", Description = "Other", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "9", FileExtension = "pqt", Description = "Other", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "pqt", Description = "Firm", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "pqt", Description = "Firm", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "pqt", Description = "Firm", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "pqt", Description = "Firm", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "pqt", Description = "Carrier Route", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "pqt", Description = "Carrier Route", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "pqt", Description = "Carrier Route", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "pqt", Description = "Carrier Route", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "pqt", Description = "5 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "pqt", Description = "5 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "pqt", Description = "5 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "pqt", Description = "5 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "pqt", Description = "Unique 3-Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "pqt", Description = "Unique 3-Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "pqt", Description = "Unique 3-Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "pqt", Description = "Unique 3-Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "F", FileExtension = "pqt", Description = "3 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "F", FileExtension = "pqt", Description = "3 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "F", FileExtension = "pqt", Description = "3 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "F", FileExtension = "pqt", Description = "3 Digit", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "H", FileExtension = "pqt", Description = "ADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "H", FileExtension = "pqt", Description = "ADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "H", FileExtension = "pqt", Description = "ADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "H", FileExtension = "pqt", Description = "ADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "I", FileExtension = "pqt", Description = "AADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "pqt", Description = "AADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "pqt", Description = "AADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "pqt", Description = "AADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "K", FileExtension = "pqt", Description = "Origin MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "K", FileExtension = "pqt", Description = "Origin MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "K", FileExtension = "pqt", Description = "Origin MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "K", FileExtension = "pqt", Description = "Origin MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "L", FileExtension = "pqt", Description = "MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "L", FileExtension = "pqt", Description = "MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "L", FileExtension = "pqt", Description = "MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "L", FileExtension = "pqt", Description = "MxADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "M", FileExtension = "pqt", Description = "MxAADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "M", FileExtension = "pqt", Description = "MxAADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
-			this.Add(new MaildatValue() { Version = "25-1", Key = "M", FileExtension = "pqt", Description = "MxAADC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "25-1", Key = "M", FileExtension = "pqt", Description = "MxAADC/Mixed Working", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "M", FileExtension = "pqt", Description = "MxAADC/Mixed Working", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "R", FileExtension = "pqt", Description = "Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "R", FileExtension = "pqt", Description = "Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "R", FileExtension = "pqt", Description = "Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "R", FileExtension = "pqt", Description = "Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "S", FileExtension = "pqt", Description = "Multi-pc Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "S", FileExtension = "pqt", Description = "Multi-pc Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "S", FileExtension = "pqt", Description = "Multi-pc Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "S", FileExtension = "pqt", Description = "Multi-pc Parcel", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "T", FileExtension = "pqt", Description = "3-D Scheme", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "T", FileExtension = "pqt", Description = "3-D Scheme", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "T", FileExtension = "pqt", Description = "3-D Scheme", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "T", FileExtension = "pqt", Description = "3-D Scheme", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "U", FileExtension = "pqt", Description = "5-D Scheme + L007", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "U", FileExtension = "pqt", Description = "5-D Scheme + L007", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "U", FileExtension = "pqt", Description = "5-D Scheme + L007", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "U", FileExtension = "pqt", Description = "5-D Scheme + L007", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "V", FileExtension = "pqt", Description = "NDC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "V", FileExtension = "pqt", Description = "NDC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "V", FileExtension = "pqt", Description = "NDC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "V", FileExtension = "pqt", Description = "NDC", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "25-1", Key = "X", FileExtension = "pqt", Description = "SCF", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "X", FileExtension = "pqt", Description = "SCF", FieldCode = "PQT-1102", FieldName = "PackageLevel" });
 		}
 	}
 }

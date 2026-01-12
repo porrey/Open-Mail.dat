@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property ContainerLevel (CSM-1104).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "csm", FieldCode = "CSM-1104")]
 	public class ContainerLevels : MaildatValues
 	{
@@ -58,136 +58,180 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "csm", Description = "CR-Direct (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "csm", Description = "CR-Direct (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "csm", Description = "CR-Direct (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "csm", Description = "CR-Direct (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AA", FileExtension = "csm", Description = "AADC (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AA", FileExtension = "csm", Description = "AADC (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AA", FileExtension = "csm", Description = "AADC (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AA", FileExtension = "csm", Description = "AADC (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AB", FileExtension = "csm", Description = "Mixed ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AB", FileExtension = "csm", Description = "Mixed ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AB", FileExtension = "csm", Description = "Mixed ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AB", FileExtension = "csm", Description = "Mixed ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AC", FileExtension = "csm", Description = "Mixed AADC (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AC", FileExtension = "csm", Description = "Mixed AADC (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AC", FileExtension = "csm", Description = "Mixed AADC (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AC", FileExtension = "csm", Description = "Mixed AADC (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AD", FileExtension = "csm", Description = "ASF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AD", FileExtension = "csm", Description = "ASF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AD", FileExtension = "csm", Description = "ASF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AD", FileExtension = "csm", Description = "ASF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AE", FileExtension = "csm", Description = "NDC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AE", FileExtension = "csm", Description = "NDC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AE", FileExtension = "csm", Description = "NDC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AE", FileExtension = "csm", Description = "NDC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AF", FileExtension = "csm", Description = "Protected NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AF", FileExtension = "csm", Description = "Protected NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AF", FileExtension = "csm", Description = "Protected NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AF", FileExtension = "csm", Description = "Protected NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AG", FileExtension = "csm", Description = "Mixed NDC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
-			this.Add(new MaildatValue() { Version = "24-1", Key = "AG", FileExtension = "csm", Description = "Mixed NDC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "24-1", Key = "AG", FileExtension = "csm", Description = "Mixed NDC/Mixed Working (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AG", FileExtension = "csm", Description = "Mixed NDC/Mixed Working (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AG", FileExtension = "csm", Description = "Mixed NDC/Mixed Working (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AH", FileExtension = "csm", Description = "Origin MxADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AH", FileExtension = "csm", Description = "Origin MxADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AH", FileExtension = "csm", Description = "Origin MxADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AH", FileExtension = "csm", Description = "Origin MxADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AI", FileExtension = "csm", Description = "Protected ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AI", FileExtension = "csm", Description = "Protected ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AI", FileExtension = "csm", Description = "Protected ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AI", FileExtension = "csm", Description = "Protected ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AJ", FileExtension = "csm", Description = "Single Piece (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AJ", FileExtension = "csm", Description = "Single Piece (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AJ", FileExtension = "csm", Description = "Single Piece (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AJ", FileExtension = "csm", Description = "Single Piece (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AK", FileExtension = "csm", Description = "MXDS - Mixed Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AK", FileExtension = "csm", Description = "MXDS - Mixed Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AK", FileExtension = "csm", Description = "MXDS - Mixed Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AK", FileExtension = "csm", Description = "MXDS - Mixed Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AL", FileExtension = "csm", Description = "MXDA - Mixed Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AL", FileExtension = "csm", Description = "MXDA - Mixed Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AL", FileExtension = "csm", Description = "MXDA - Mixed Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AL", FileExtension = "csm", Description = "MXDA - Mixed Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AM", FileExtension = "csm", Description = "Working CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AM", FileExtension = "csm", Description = "Working CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AM", FileExtension = "csm", Description = "Working CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AM", FileExtension = "csm", Description = "Working CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AN", FileExtension = "csm", Description = "Single Piece CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AN", FileExtension = "csm", Description = "Single Piece CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AN", FileExtension = "csm", Description = "Single Piece CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AN", FileExtension = "csm", Description = "Single Piece CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AO", FileExtension = "csm", Description = "Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AO", FileExtension = "csm", Description = "Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AO", FileExtension = "csm", Description = "Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AO", FileExtension = "csm", Description = "Surface CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AP", FileExtension = "csm", Description = "Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AP", FileExtension = "csm", Description = "Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AP", FileExtension = "csm", Description = "Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AP", FileExtension = "csm", Description = "Air CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AQ", FileExtension = "csm", Description = "Local CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AQ", FileExtension = "csm", Description = "Local CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AQ", FileExtension = "csm", Description = "Local CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AQ", FileExtension = "csm", Description = "Local CSA FCM Only (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AR", FileExtension = "csm", Description = "Origin SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AR", FileExtension = "csm", Description = "Origin SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AR", FileExtension = "csm", Description = "Origin SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AR", FileExtension = "csm", Description = "Origin SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AS", FileExtension = "csm", Description = "Origin Mixed ADC Surface (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AS", FileExtension = "csm", Description = "Origin Mixed ADC Surface (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AS", FileExtension = "csm", Description = "Origin Mixed ADC Surface (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AS", FileExtension = "csm", Description = "Origin Mixed ADC Surface (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AT", FileExtension = "csm", Description = "Mixed ADC Air (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AT", FileExtension = "csm", Description = "Mixed ADC Air (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AT", FileExtension = "csm", Description = "Mixed ADC Air (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AT", FileExtension = "csm", Description = "Mixed ADC Air (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AU", FileExtension = "csm", Description = "Protected Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AU", FileExtension = "csm", Description = "Protected Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AU", FileExtension = "csm", Description = "Protected Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AU", FileExtension = "csm", Description = "Protected Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AV", FileExtension = "csm", Description = "Protected Mixed NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AV", FileExtension = "csm", Description = "Protected Mixed NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AV", FileExtension = "csm", Description = "Protected Mixed NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AV", FileExtension = "csm", Description = "Protected Mixed NDC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "AW", FileExtension = "csm", Description = "Protected Origin Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "AW", FileExtension = "csm", Description = "Protected Origin Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "AW", FileExtension = "csm", Description = "Protected Origin Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "AW", FileExtension = "csm", Description = "Protected Origin Mixed ADC (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "csm", Description = "Mixed CR in 5 Digit (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "csm", Description = "Mixed CR in 5 Digit (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "csm", Description = "Mixed CR in 5 Digit (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "csm", Description = "Mixed CR in 5 Digit (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "csm", Description = "Mixed CR in 3 Digit (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "csm", Description = "Mixed CR in 3 Digit (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "csm", Description = "Mixed CR in 3 Digit (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "csm", Description = "Mixed CR in 3 Digit (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "csm", Description = "CR - 5D Scheme (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "csm", Description = "CR - 5D Scheme (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "csm", Description = "CR - 5D Scheme (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "csm", Description = "CR - 5D Scheme (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "G", FileExtension = "csm", Description = "5 Digit (Auto/Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "G", FileExtension = "csm", Description = "5 Digit (Auto/Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "G", FileExtension = "csm", Description = "5 Digit (Auto/Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "G", FileExtension = "csm", Description = "5 Digit (Auto/Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "H", FileExtension = "csm", Description = "5 Digit (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "H", FileExtension = "csm", Description = "5 Digit (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "H", FileExtension = "csm", Description = "5 Digit (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "H", FileExtension = "csm", Description = "5 Digit (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "I", FileExtension = "csm", Description = "5 Digit (Presort Only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "csm", Description = "5 Digit (Presort Only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "csm", Description = "5 Digit (Presort Only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "csm", Description = "5 Digit (Presort Only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "J", FileExtension = "csm", Description = "5 Digit (Barcode only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "J", FileExtension = "csm", Description = "5 Digit (Barcode only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "J", FileExtension = "csm", Description = "5 Digit (Barcode only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "J", FileExtension = "csm", Description = "5 Digit (Barcode only) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "K", FileExtension = "csm", Description = "Metro Scheme (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "M", FileExtension = "csm", Description = "5D Scheme (Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "M", FileExtension = "csm", Description = "5D Scheme (Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "M", FileExtension = "csm", Description = "5D Scheme (Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "M", FileExtension = "csm", Description = "5D Scheme (Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "N", FileExtension = "csm", Description = "5D Scheme (Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "N", FileExtension = "csm", Description = "5D Scheme (Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "N", FileExtension = "csm", Description = "5D Scheme (Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "N", FileExtension = "csm", Description = "5D Scheme (Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "O", FileExtension = "csm", Description = "Other (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "csm", Description = "Other (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "csm", Description = "Other (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "csm", Description = "Other (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "P", FileExtension = "csm", Description = "5D Scheme (Barcode) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "P", FileExtension = "csm", Description = "5D Scheme (Barcode) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "P", FileExtension = "csm", Description = "5D Scheme (Barcode) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "P", FileExtension = "csm", Description = "5D Scheme (Barcode) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "Q", FileExtension = "csm", Description = "5D Scheme (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "Q", FileExtension = "csm", Description = "5D Scheme (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "Q", FileExtension = "csm", Description = "5D Scheme (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "Q", FileExtension = "csm", Description = "5D Scheme (Merged) (T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "R", FileExtension = "csm", Description = "3 Digit (Auto, Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "R", FileExtension = "csm", Description = "3 Digit (Auto, Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "R", FileExtension = "csm", Description = "3 Digit (Auto, Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "R", FileExtension = "csm", Description = "3 Digit (Auto, Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "S", FileExtension = "csm", Description = "3 Digit (Barcode) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "S", FileExtension = "csm", Description = "3 Digit (Barcode) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "S", FileExtension = "csm", Description = "3 Digit (Barcode) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "S", FileExtension = "csm", Description = "3 Digit (Barcode) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "T", FileExtension = "csm", Description = "3 Digit (Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "T", FileExtension = "csm", Description = "3 Digit (Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "T", FileExtension = "csm", Description = "3 Digit (Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "T", FileExtension = "csm", Description = "3 Digit (Presort) (S, T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "U", FileExtension = "csm", Description = "3 Digit (CR, Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "U", FileExtension = "csm", Description = "3 Digit (CR, Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "U", FileExtension = "csm", Description = "3 Digit (CR, Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "U", FileExtension = "csm", Description = "3 Digit (CR, Auto, Presort) (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "V", FileExtension = "csm", Description = "3 Digit Scheme (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "V", FileExtension = "csm", Description = "3 Digit Scheme (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "V", FileExtension = "csm", Description = "3 Digit Scheme (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "V", FileExtension = "csm", Description = "3 Digit Scheme (T)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "X", FileExtension = "csm", Description = "SCF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "X", FileExtension = "csm", Description = "SCF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "X", FileExtension = "csm", Description = "SCF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "X", FileExtension = "csm", Description = "SCF (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "Y", FileExtension = "csm", Description = "Protected SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "Y", FileExtension = "csm", Description = "Protected SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "Y", FileExtension = "csm", Description = "Protected SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "Y", FileExtension = "csm", Description = "Protected SCF (P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "Z", FileExtension = "csm", Description = "ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "Z", FileExtension = "csm", Description = "ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "Z", FileExtension = "csm", Description = "ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "Z", FileExtension = "csm", Description = "ADC (S, T, P)", FieldCode = "CSM-1104", FieldName = "ContainerLevel" });
 		}
 	}
 }

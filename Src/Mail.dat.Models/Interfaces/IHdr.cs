@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 namespace Mail.dat
@@ -492,10 +492,10 @@ namespace Mail.dat
 		string CertificateOfMailingBulkStatus { get; set; }
 
 		/// <summary>
-		/// Certificate of Mailing Services Record Count (HDR-1207)
-		/// The number of certificate of mailing services records in this Mail.dat.
+		/// Certificate of Mailing Special Fee Record Count (HDR-1207)
+		/// The number of certificate of mailing special fee records in this Mail.dat.
 		/// </summary>
-		int CertificateOfMailingServicesRecordCount { get; set; }
+		int CertificateOfMailingSpecialFeeRecordCount { get; set; }
 
 		/// <summary>
 		/// Transportation Container Status Record Status (HDR-2007)
@@ -504,9 +504,14 @@ namespace Mail.dat
 		string TransportationContainerStatusRecordStatus { get; set; }
 
 		/// <summary>
-		/// Certificate of Mailing Services Status (HDR-1208)
+		/// Certificate of Mailing Special Fee Status (HDR-1208)
 		/// </summary>
-		string CertificateOfMailingServicesStatus { get; set; }
+		string CertificateOfMailingSpecialFeeStatus { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing Special Fee File Status (HDR-1208)
+		/// </summary>
+		string CertificateOfMailingSpecialFeeFileStatus { get; set; }
 
 		/// <summary>
 		/// Mail.dat Presentation Category (HDR-1154)

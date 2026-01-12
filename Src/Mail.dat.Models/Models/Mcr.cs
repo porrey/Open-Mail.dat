@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,14 +35,16 @@ namespace Mail.dat
 	/// Table showing relationship of MPUs to Components.
 	/// </summary>
 	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.6", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.6", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
+	[MaildatFile(Version = "26-1", Revision = "0.1", Extension = "mcr", File = "Mpu / C - Relationship Record", Summary = "Table showing relationship of MPUs to Components.", Description = "Table showing relationship of MPUs to Components.", LineLength = 100, ClosingCharacter = "#")]
 	[MaildatImport(Order = 4, Version = "23-1")]
 	[MaildatImport(Order = 4, Version = "24-1")]
 	[MaildatImport(Order = 4, Version = "25-1")]
+	[MaildatImport(Order = 4, Version = "26-1")]
 	[Table("Mcr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	public partial class Mcr : MaildatEntity, IMcr
 	{
 		/// <summary>
@@ -52,13 +54,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[Column("JobId", Order = 2, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("MCR-1001")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string JobId { get; set; }
 
 		/// <summary>
@@ -68,13 +71,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "See Segment File's Segment ID definition.", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "See Segment File's Segment ID definition.", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "See Segment File's Segment ID definition.", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1002", FieldName = "Segment ID", Start = 9, Length = 4, Required = true, Key = true, DataType = "A/N", Description = "See Segment File's Segment ID definition.", Type = "string", Format = "zfillnumeric", References = "SEG-1002")]
 		[Column("SegmentId", Order = 3, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(4)]
 		[Comment("MCR-1002")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string SegmentId { get; set; }
 
 		/// <summary>
@@ -84,13 +88,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition.See MPU File's MPU ID definition.", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition.See MPU File's MPU ID definition.", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition.See MPU File's MPU ID definition.", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1003", FieldName = "Mail Piece Unit ID", Start = 13, Length = 5, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition.See MPU File's MPU ID definition.", Type = "string", Format = "zfillnumeric", References = "MPU-1003")]
 		[Column("MailPieceUnitId", Order = 4, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(5)]
 		[Comment("MCR-1003")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string MailPieceUnitId { get; set; }
 
 		/// <summary>
@@ -107,13 +112,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition. This ID represents a specific sub-portion (or the whole, as appropriate) of one Or more Mail Piece Unit Make-ups within the production of the Specific mailing described by the supplied Mail.dat®  file. The originator of the Mail.dat®  file must identify any postage Differentiating Components with their own record. However, if no Postage affecting differentiation exists within the various parts making Up a Mail Piece Unit, then the originator of the specific Mail.dat® May choose to, and probably should, only identify the necessary detail And simply clone that which is in the Mail Piece Unit ID field. Therefore, there will always be at least one Component within any Mail Piece Unit.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition. This ID represents a specific sub-portion (or the whole, as appropriate) of one Or more Mail Piece Unit Make-ups within the production of the Specific mailing described by the supplied Mail.dat®  file. The originator of the Mail.dat®  file must identify any postage Differentiating Components with their own record. However, if no Postage affecting differentiation exists within the various parts making Up a Mail Piece Unit, then the originator of the specific Mail.dat® May choose to, and probably should, only identify the necessary detail And simply clone that which is in the Mail Piece Unit ID field. Therefore, there will always be at least one Component within any Mail Piece Unit.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition. This ID represents a specific sub-portion (or the whole, as appropriate) of one or more Mail Piece Unit Make-ups within the production of the specific mailing described by the supplied Mail.dat®  file. The originator of the Mail.dat®  file must identify any postage differentiating Components with their own record. However, if no postage affecting differentiation exists within the various parts making up a Mail Piece Unit, then the originator of the specific Mail.dat® may choose to, and probably should, only identify the necessary detail and simply clone that which is in the Mail Piece Unit ID field. Therefore, there will always be at least one Component within any Mail Piece Unit.", Type = "string", Format = "zfillnumeric")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1004", FieldName = "Component ID", Start = 18, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Left justify, must have some value, even if single edition. This ID represents a specific sub-portion (or the whole, as appropriate) of one or more Mail Piece Unit Make-ups within the production of the specific mailing described by the supplied Mail.dat®  file. The originator of the Mail.dat®  file must identify any postage differentiating Components with their own record. However, if no postage affecting differentiation exists within the various parts making up a Mail Piece Unit, then the originator of the specific Mail.dat® may choose to, and probably should, only identify the necessary detail and simply clone that which is in the Mail Piece Unit ID field. Therefore, there will always be at least one Component within any Mail Piece Unit.", Type = "string", Format = "zfillnumeric")]
 		[Column("ComponentId", Order = 5, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("MCR-1004")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ComponentId { get; set; }
 
 		/// <summary>
@@ -123,12 +129,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1102", FieldName = "Primary MPA ID", Start = 26, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "leftjustify", References = "MPA-1002")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1102", FieldName = "Primary MPA ID", Start = 26, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "leftjustify", References = "MPA-1002")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1102", FieldName = "Primary MPA ID", Start = 26, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1102", FieldName = "Primary MPA ID", Start = 26, Length = 10, Required = true, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
 		[Column("PrimaryMpaId", Order = 6, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(10)]
 		[Comment("MCR-1102")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string PrimaryMpaId { get; set; }
 
 		/// <summary>
@@ -138,11 +145,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1103", FieldName = "Additional Postage MPA ID", Start = 36, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "leftjustify", References = "MPA-1002")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1103", FieldName = "Additional Postage MPA ID", Start = 36, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "leftjustify", References = "MPA-1002")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1103", FieldName = "Additional Postage MPA ID", Start = 36, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1103", FieldName = "Additional Postage MPA ID", Start = 36, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "From MPA - Unique Sequence/Grouping ID.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
 		[Column("AdditionalPostageMpaId", Order = 7, TypeName = "TEXT")]
 		[MaxLength(10)]
 		[Comment("MCR-1103")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string AdditionalPostageMpaId { get; set; }
 
 		/// <summary>
@@ -152,11 +160,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1104", FieldName = "Host Statement Component ID", Start = 46, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "List Code.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1104", FieldName = "Host Statement Component ID", Start = 46, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "List Code.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1104", FieldName = "Host Statement Component ID", Start = 46, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "List Code.", Type = "string", Format = "zfillnumeric")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1104", FieldName = "Host Statement Component ID", Start = 46, Length = 8, Required = false, Key = false, DataType = "A/N", Description = "List Code.", Type = "string", Format = "zfillnumeric")]
 		[Column("HostStatementComponentId", Order = 8, TypeName = "TEXT")]
 		[MaxLength(8)]
 		[Comment("MCR-1104")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string HostStatementComponentId { get; set; }
 
 		/// <summary>
@@ -165,13 +174,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1105", FieldName = "Host Indicator of Ad Computation", Start = 54, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1105", FieldName = "Host Indicator of Ad Computation", Start = 54, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1105", FieldName = "Host Indicator of Ad Computation", Start = 54, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1105", FieldName = "Host Indicator of Ad Computation", Start = 54, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("HostIndicatorOfAdComputation", Order = 9, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues(" ", "N", "Y")]
 		[Comment("MCR-1105")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(HostIndicatorOfAdComputations))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string HostIndicatorOfAdComputation { get; set; }
 
 		/// <summary>
@@ -183,11 +193,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1106", FieldName = "Postage Adjustment MPA ID", Start = 55, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "This field would be used by anyone (printers and letter shops) Including MLOCR vendors requiring Postage Adjustments to be paid from a separate permit. Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1106", FieldName = "Postage Adjustment MPA ID", Start = 55, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "This field would be used by anyone (printers and letter shops) Including MLOCR vendors requiring Postage Adjustments to be paid from a separate permit. Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1106", FieldName = "Postage Adjustment MPA ID", Start = 55, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "This field would be used by anyone (printers and letter shops) including MLOCR vendors requiring Postage Adjustments to be paid from a separate permit. Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1106", FieldName = "Postage Adjustment MPA ID", Start = 55, Length = 10, Required = false, Key = false, DataType = "A/N", Description = "This field would be used by anyone (printers and letter shops) including MLOCR vendors requiring Postage Adjustments to be paid from a separate permit. Unique identifier for the respective MPA within an MPU. Establishes the set of MPU pieces on one Postage Statement.", Type = "string", Format = "zfillnumeric", References = "MPA-1002")]
 		[Column("PostageAdjustmentMpaId", Order = 10, TypeName = "TEXT")]
 		[MaxLength(10)]
 		[Comment("MCR-1106")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string PostageAdjustmentMpaId { get; set; }
 
 		/// <summary>
@@ -197,6 +208,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-2000", FieldName = "MCR Record Status", Start = 65, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-2000", FieldName = "MCR Record Status", Start = 65, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-2000", FieldName = "MCR Record Status", Start = 65, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-2000", FieldName = "MCR Record Status", Start = 65, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[Column("McrRecordStatus", Order = 11, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -204,7 +216,7 @@ namespace Mail.dat
 		[Comment("MCR-2000")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(McrRecordStatuses))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string McrRecordStatus { get; set; }
 
 		/// <summary>
@@ -214,11 +226,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-1101", FieldName = "Reserve", Start = 66, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-1101", FieldName = "Reserve", Start = 66, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-1101", FieldName = "Reserve", Start = 66, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-1101", FieldName = "Reserve", Start = 66, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[Column("ReserveMcr1101", Order = 12, TypeName = "TEXT")]
 		[MaxLength(34)]
 		[Comment("MCR-1101")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ReserveMcr1101 { get; set; }
 
 		/// <summary>
@@ -228,13 +241,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "mcr", FieldCode = "MCR-9999", FieldName = "Closing Character", Start = 100, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "mcr", FieldCode = "MCR-9999", FieldName = "Closing Character", Start = 100, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "mcr", FieldCode = "MCR-9999", FieldName = "Closing Character", Start = 100, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "mcr", FieldCode = "MCR-9999", FieldName = "Closing Character", Start = 100, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[Column("ClosingCharacter", Order = 13, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
 		[Comment("MCR-9999")]
 		[TypeConverter(typeof(MaildatClosingConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>

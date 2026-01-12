@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.dat.Abstractions", "Mail.dat.Abstractions\Mail.dat.Abstractions.csproj", "{B9CC77EA-95E2-42C9-BA70-5466AD9FA1CA}"
 EndProject
@@ -20,8 +20,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaildatCmd", "MaildatCmd\MaildatCmd.csproj", "{4E566861-DADF-8FEE-16F3-66C56CC70A58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.dat.ExportCommand", "Mail.dat.ExportCommand\Mail.dat.ExportCommand.csproj", "{8E22F172-A4CD-5F89-A983-AE3491877A4D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.dat.BuildCommand", "Mail.dat.BuildCommand\Mail.dat.BuildCommand.csproj", "{3E0D2506-0273-A4A7-7F62-E68A21B74DD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.dat.Hosting", "Mail.dat.Hosting\Mail.dat.Hosting.csproj", "{9168DFEC-1478-45F2-B4EA-286A21AC6EF5}"
 EndProject
@@ -59,10 +57,6 @@ Global
 		{8E22F172-A4CD-5F89-A983-AE3491877A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E22F172-A4CD-5F89-A983-AE3491877A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E22F172-A4CD-5F89-A983-AE3491877A4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E0D2506-0273-A4A7-7F62-E68A21B74DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E0D2506-0273-A4A7-7F62-E68A21B74DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E0D2506-0273-A4A7-7F62-E68A21B74DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E0D2506-0273-A4A7-7F62-E68A21B74DD2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9168DFEC-1478-45F2-B4EA-286A21AC6EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9168DFEC-1478-45F2-B4EA-286A21AC6EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9168DFEC-1478-45F2-B4EA-286A21AC6EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,7 +73,6 @@ Global
 		{15FED9D3-9206-48CB-880E-F624F2A33E09} = {959A7DF0-6FBC-4F94-A344-43243A02648F}
 		{4E566861-DADF-8FEE-16F3-66C56CC70A58} = {959A7DF0-6FBC-4F94-A344-43243A02648F}
 		{8E22F172-A4CD-5F89-A983-AE3491877A4D} = {959A7DF0-6FBC-4F94-A344-43243A02648F}
-		{3E0D2506-0273-A4A7-7F62-E68A21B74DD2} = {959A7DF0-6FBC-4F94-A344-43243A02648F}
 		{9168DFEC-1478-45F2-B4EA-286A21AC6EF5} = {28B33211-591B-4E47-9AFE-0947FAD26F0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

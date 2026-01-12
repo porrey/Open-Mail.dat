@@ -4,9 +4,9 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>10.0.1</Version>
-		<AssemblyVersion>10.0.1</AssemblyVersion>
-		<FileVersion>10.0.1</FileVersion>
+		<Version>10.1.0</Version>
+		<AssemblyVersion>10.1.0</AssemblyVersion>
+		<FileVersion>10.1.0</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -22,7 +22,7 @@
 		<RepositoryType>git</RepositoryType>
 		<NeutralLanguage>en</NeutralLanguage>
 		<PackageTags>efcore,mail.dat</PackageTags>
-		<Copyright>Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
+		<Copyright>Copyright (c) 2025-2026 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
@@ -34,8 +34,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Diamond.Core.Repository.EntityFrameworkCore" Version="10.0.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+		<PackageReference Include="Diamond.Core.Repository.EntityFrameworkCore" Version="10.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 	</ItemGroup>
 

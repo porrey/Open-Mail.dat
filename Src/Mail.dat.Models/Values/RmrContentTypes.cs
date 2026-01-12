@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property RmrContentType (RMR-1004).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "rmr", FieldCode = "RMR-1004")]
 	public class RmrContentTypes : MaildatValues
 	{
@@ -58,12 +58,15 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "rmr", Description = "Content Type A - Ride-Along Image URL (URL for the image source location, This image is displayed along with the mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "rmr", Description = "Content Type A - Ride-Along Image URL (URL for the image source location, This image is displayed along with the mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "rmr", Description = "Content Type A - Ride-Along Image URL (URL for the image source location, This image is displayed along with the mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "rmr", Description = "Content Type A - Ride-Along Image URL (URL for the image source location, This image is displayed along with the mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "rmr", Description = "Content Type B - Ride-Along Image Target URL (URL for marketing material/page for consumers).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "rmr", Description = "Content Type B - Ride-Along Image Target URL (URL for marketing material/page for consumers).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "rmr", Description = "Content Type B - Ride-Along Image Target URL (URL for marketing material/page for consumers).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "rmr", Description = "Content Type B - Ride-Along Image Target URL (URL for marketing material/page for consumers).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "rmr", Description = "Content Type C - Replacement Image URL (URL for the image source location. This image is displayed instead of the scanned mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "rmr", Description = "Content Type C - Replacement Image URL (URL for the image source location. This image is displayed instead of the scanned mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "rmr", Description = "Content Type C - Replacement Image URL (URL for the image source location. This image is displayed instead of the scanned mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "rmr", Description = "Content Type C - Replacement Image URL (URL for the image source location. This image is displayed instead of the scanned mailpiece image).", FieldCode = "RMR-1004", FieldName = "RmrContentType" });
 		}
 	}
 }

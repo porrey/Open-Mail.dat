@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property ClassDefiningPreparation (SEG-1102).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "seg", FieldCode = "SEG-1102")]
 	public class ClassDefiningPreparations : MaildatValues
 	{
@@ -58,21 +58,27 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "1", FileExtension = "seg", Description = "First Class", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "1", FileExtension = "seg", Description = "First Class", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "1", FileExtension = "seg", Description = "First Class", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "1", FileExtension = "seg", Description = "First Class", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "2", FileExtension = "seg", Description = "Periodicals", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "2", FileExtension = "seg", Description = "Periodicals", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "2", FileExtension = "seg", Description = "Periodicals", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "2", FileExtension = "seg", Description = "Periodicals", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "3", FileExtension = "seg", Description = "Standard Mail", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "3", FileExtension = "seg", Description = "Standard Mail", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "3", FileExtension = "seg", Description = "Standard Mail", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "3", FileExtension = "seg", Description = "Standard Mail", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "4", FileExtension = "seg", Description = "Package Services", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "4", FileExtension = "seg", Description = "Package Services", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "4", FileExtension = "seg", Description = "Package Services", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "4", FileExtension = "seg", Description = "Package Services", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "6", FileExtension = "seg", Description = "Std/BPM/Periodicals Co-Mailings", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "6", FileExtension = "seg", Description = "Std/BPM/Periodicals Co-Mailings", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "6", FileExtension = "seg", Description = "Std/BPM/Periodicals Co-Mailings", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "6", FileExtension = "seg", Description = "Std/BPM/Periodicals Co-Mailings", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "9", FileExtension = "seg", Description = "Other", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "9", FileExtension = "seg", Description = "Other", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "9", FileExtension = "seg", Description = "Other", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "9", FileExtension = "seg", Description = "Other", FieldCode = "SEG-1102", FieldName = "ClassDefiningPreparation" });
 		}
 	}
 }

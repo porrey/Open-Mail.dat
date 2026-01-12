@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Diamond.Core.Repository.EntityFrameworkCore;
@@ -39,6 +39,12 @@ namespace Mail.dat
 		{
 		}
 
+		public MaildatContext(ILogger<MaildatContext> logger)
+			 : base(logger)
+		{
+			logger.LogDebug("Created {context}.", nameof(MaildatContext));
+		}
+
 		public MaildatContext(ILogger<MaildatContext> logger, DbContextOptions<MaildatContext> options)
 			 : base(logger, options)
 		{
@@ -46,115 +52,115 @@ namespace Mail.dat
 		}
 
 		[MaildatExport(Order = 1)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Hdr> Hdr { get; set; }
 
 		[MaildatExport(Order = 2)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Seg> Seg { get; set; }
 
 		[MaildatExport(Order = 3)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Mpu> Mpu { get; set; }
 
 		[MaildatExport(Order = 4)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Mcr> Mcr { get; set; }
 
 		[MaildatExport(Order = 5)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Mpa> Mpa { get; set; }
 
 		[MaildatExport(Order = 6)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Cpt> Cpt { get; set; }
 
 		[MaildatExport(Order = 7)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Ccr> Ccr { get; set; }
 
 		[MaildatExport(Order = 8)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Csm> Csm { get; set; }
 
 		[MaildatExport(Order = 9)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Cqt> Cqt { get; set; }
 
 		[MaildatExport(Order = 10)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Pqt> Pqt { get; set; }
 
 		[MaildatExport(Order = 11)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Wsr> Wsr { get; set; }
 
 		[MaildatExport(Order = 12)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Snr> Snr { get; set; }
 
 		[MaildatExport(Order = 13)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Icr> Icr { get; set; }
 
 		[MaildatExport(Order = 14)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Pdr> Pdr { get; set; }
 
 		[MaildatExport(Order = 15)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Pbc> Pbc { get; set; }
 
 		[MaildatExport(Order = 16)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Sfr> Sfr { get; set; }
 
 		[MaildatExport(Order = 17)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Sfb> Sfb { get; set; }
 
 		[MaildatExport(Order = 18)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Par> Par { get; set; }
 
 		[MaildatExport(Order = 19)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Oci> Oci { get; set; }
 
 		[MaildatExport(Order = 20)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Upa> Upa { get; set; }
 
 		[MaildatExport(Order = 21)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Epd> Epd { get; set; }
 
 		[MaildatExport(Order = 22)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Rmr> Rmr { get; set; }
 
 		[MaildatExport(Order = 23)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Rmb> Rmb { get; set; }
 
 		[MaildatExport(Order = 24)]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public DbSet<Rms> Rms { get; set; }
 
 		[MaildatExport(Order = 25)]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public DbSet<Chr> Chr { get; set; }
 
 		[MaildatExport(Order = 26)]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public DbSet<Cbr> Cbr { get; set; }
 
 		[MaildatExport(Order = 27)]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public DbSet<Cdr> Cdr { get; set; }
 
 		[MaildatExport(Order = 28)]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public DbSet<Cfr> Cfr { get; set; }
 
 		[MaildatExport(Order = 29)]

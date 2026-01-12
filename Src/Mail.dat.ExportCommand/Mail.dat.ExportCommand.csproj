@@ -4,9 +4,9 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>10.0.1</Version>
-		<AssemblyVersion>10.0.1</AssemblyVersion>
-		<FileVersion>10.0.1</FileVersion>
+		<Version>10.1.0</Version>
+		<AssemblyVersion>10.1.0</AssemblyVersion>
+		<FileVersion>10.1.0</FileVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,23 +20,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Diamond.Core.CommandLine" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.CommandLine.Abstractions" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.CommandLine.Model" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.Extensions.Hosting.Abstractions" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.System.TemporaryFolder" Version="10.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+		<PackageReference Include="Diamond.Core.CommandLine" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.CommandLine.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.CommandLine.Model" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Extensions.Hosting.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.System.TemporaryFolder" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
 		<PackageReference Include="Humanizer.Core" Version="3.0.1" />
 		<PackageReference Include="Spectre.Console" Version="0.54.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Mail.dat.Io\Mail.dat.Io.csproj" />
+	  <ProjectReference Include="..\Mail.dat.Io\Mail.dat.Io.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.commandline.abstractions\10.0.0\contentFiles\any\net10.0\Services\Diamond.Core.CommandLine.Abstractions.json">
+		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.commandline.abstractions\10.0.1\contentFiles\any\net10.0\Services\Diamond.Core.CommandLine.Abstractions.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>

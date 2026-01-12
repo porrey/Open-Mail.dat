@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property ContainerAndBundleChargeMethod (SEG-1141).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "seg", FieldCode = "SEG-1141")]
 	public class ContainerAndBundleChargeMethods : MaildatValues
 	{
@@ -58,15 +58,19 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "0", FileExtension = "seg", Description = "no publications in the mailing", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "0", FileExtension = "seg", Description = "no publications in the mailing", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "0", FileExtension = "seg", Description = "no publications in the mailing", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "0", FileExtension = "seg", Description = "no publications in the mailing", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "1", FileExtension = "seg", Description = "Charge all to a 3rd party", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "1", FileExtension = "seg", Description = "Charge all to a 3rd party", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "1", FileExtension = "seg", Description = "Charge all to a 3rd party", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "1", FileExtension = "seg", Description = "Charge all to a 3rd party", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "2", FileExtension = "seg", Description = "Charge all to one of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "2", FileExtension = "seg", Description = "Charge all to one of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "2", FileExtension = "seg", Description = "Charge all to one of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "2", FileExtension = "seg", Description = "Charge all to one of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "3", FileExtension = "seg", Description = "proportion by copies to each of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "3", FileExtension = "seg", Description = "proportion by copies to each of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "3", FileExtension = "seg", Description = "proportion by copies to each of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "3", FileExtension = "seg", Description = "proportion by copies to each of the publications", FieldCode = "SEG-1141", FieldName = "ContainerAndBundleChargeMethod" });
 		}
 	}
 }

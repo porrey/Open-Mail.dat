@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -36,14 +36,16 @@ namespace Mail.dat
 	/// contents that are part of the mail piece.
 	/// </summary>
 	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "ccr", File = "Component Characteristics Record", Summary = "Characteristics of a component.", Description = "Characteristics of a component. Allows mailers to identify surcharges, incentive and specific contents that are part of the mail piece.", LineLength = 21, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "ccr", File = "Component Characteristics Record", Summary = "Characteristics of a component.", Description = "Characteristics of a component. Allows mailers to identify surcharges, incentive and specific contents that are part of the mail piece.", LineLength = 21, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "ccr", File = "Component Characteristics Record", Summary = "Characteristics of a component.", Description = "Characteristics of a component. Allows mailers to identify surcharges, incentive and specific contents that are part of the mail piece.", LineLength = 52, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.6", Extension = "ccr", File = "Component Characteristics Record", Summary = "Characteristics of a component.", Description = "Characteristics of a component. Allows mailers to identify surcharges, incentive and specific contents that are part of the mail piece.", LineLength = 21, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.6", Extension = "ccr", File = "Component Characteristics Record", Summary = "Characteristics of a component.", Description = "Characteristics of a component. Allows mailers to identify surcharges, incentive and specific contents that are part of the mail piece.", LineLength = 52, ClosingCharacter = "#")]
+	[MaildatFile(Version = "26-1", Revision = "0.1", Extension = "ccr", File = "Component Characteristics Record", Summary = "Characteristics of a component.", Description = "Characteristics of a component. Allows mailers to identify surcharges, incentive and specific contents that are part of the mail piece.", LineLength = 52, ClosingCharacter = "#")]
 	[MaildatImport(Order = 7, Version = "23-1")]
 	[MaildatImport(Order = 7, Version = "24-1")]
 	[MaildatImport(Order = 7, Version = "25-1")]
+	[MaildatImport(Order = 7, Version = "26-1")]
 	[Table("Ccr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	public partial class Ccr : MaildatEntity, ICcr
 	{
 		/// <summary>
@@ -53,13 +55,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[Column("JobId", Order = 2, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("CCR-1001")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string JobId { get; set; }
 
 		/// <summary>
@@ -69,13 +72,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-1004", FieldName = "Component ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique Record ID - foreign Key to CPT.", Type = "string", Format = "zfillnumeric", References = "CPT-1004")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-1004", FieldName = "Component ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique Record ID - foreign Key to CPT.", Type = "string", Format = "zfillnumeric", References = "CPT-1004")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1004", FieldName = "Component ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique Record ID - foreign Key to CPT.", Type = "string", Format = "zfillnumeric", References = "CPT-1004")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-1004", FieldName = "Component ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique Record ID - foreign Key to CPT.", Type = "string", Format = "zfillnumeric", References = "CPT-1004")]
 		[Column("ComponentId", Order = 3, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("CCR-1004")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ComponentId { get; set; }
 
 		/// <summary>
@@ -84,6 +88,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-1005", FieldName = "Characteristic Type", Start = 17, Length = 1, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-1005", FieldName = "Characteristic Type", Start = 17, Length = 1, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1005", FieldName = "Characteristic Type", Start = 17, Length = 1, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-1005", FieldName = "Characteristic Type", Start = 17, Length = 1, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("CharacteristicType", Order = 4, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
@@ -92,7 +97,7 @@ namespace Mail.dat
 		[Comment("CCR-1005")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(CharacteristicTypes))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string CharacteristicType { get; set; }
 
 		/// <summary>
@@ -101,6 +106,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-1002", FieldName = "Characteristic", Start = 18, Length = 2, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-1002", FieldName = "Characteristic", Start = 18, Length = 2, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1002", FieldName = "Characteristic", Start = 18, Length = 2, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-1002", FieldName = "Characteristic", Start = 18, Length = 2, Required = true, Key = true, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("Characteristic", Order = 5, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
@@ -109,7 +115,7 @@ namespace Mail.dat
 		[Comment("CCR-1002")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(Characteristics))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string Characteristic { get; set; }
 
 		/// <summary>
@@ -123,11 +129,12 @@ namespace Mail.dat
 		/// (00000000001), as a zero filled will not limit the credit amount used.
 		/// </summary>
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1101", FieldName = "Pre-Denominated Maximum Credit Amount", Start = 20, Length = 11, Required = false, Key = false, DataType = "N", Description = "Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the postage amount. The postage amount representing the pieces associated with the component record. Should be used in conjunction with the CCR for Credit Redemption. If the field is blank or zero filled, do not apply any limit to the credit amount used. Note: multiple components may be tied to one/same Permit in MPA record Note: if the need is to entirely remove the Credit Redemption, remove the CCR record claiming the Credit Redemption or populate the field with the minimum value (00000000001), as a zero filled will not limit the credit amount used.", Type = "decimal", Format = "zfill", Precision = 3)]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-1101", FieldName = "Pre-Denominated Maximum Credit Amount", Start = 20, Length = 11, Required = false, Key = false, DataType = "N", Description = "Dollars/cents, rounded (decimal implied) Maximum Credit Redemption Amount to be applied towards the postage amount. The postage amount representing the pieces associated with the component record. Should be used in conjunction with the CCR for Credit Redemption. If the field is blank or zero filled, do not apply any limit to the credit amount used. Note: multiple components may be tied to one/same Permit in MPA record Note: if the need is to entirely remove the Credit Redemption, remove the CCR record claiming the Credit Redemption or populate the field with the minimum value (00000000001), as a zero filled will not limit the credit amount used.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[Column("PreDenominatedMaximumCreditAmount", Order = 6, TypeName = "NUMERIC")]
 		[Precision(3)]
 		[Comment("CCR-1101")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("25-1")]
+		[MaildatVersions("25-1", "26-1")]
 		public decimal? PreDenominatedMaximumCreditAmount { get; set; }
 
 		/// <summary>
@@ -135,11 +142,12 @@ namespace Mail.dat
 		/// Reserved for future use.
 		/// </summary>
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-1102", FieldName = "Reserve", Start = 31, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-1102", FieldName = "Reserve", Start = 31, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[Column("ReserveCcr1102", Order = 7, TypeName = "TEXT")]
 		[MaxLength(20)]
 		[Comment("CCR-1102")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("25-1")]
+		[MaildatVersions("25-1", "26-1")]
 		public string ReserveCcr1102 { get; set; }
 
 		/// <summary>
@@ -149,6 +157,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 20, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 20, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 51, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-2000", FieldName = "CCR Record Status", Start = 51, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[Column("CcrRecordStatus", Order = 8, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -156,7 +165,7 @@ namespace Mail.dat
 		[Comment("CCR-2000")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(CcrRecordStatuses))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string CcrRecordStatus { get; set; }
 
 		/// <summary>
@@ -166,13 +175,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 21, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 21, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 52, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "ccr", FieldCode = "CCR-9999", FieldName = "Closing Character", Start = 52, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[Column("ClosingCharacter", Order = 9, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
 		[Comment("CCR-9999")]
 		[TypeConverter(typeof(MaildatClosingConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>

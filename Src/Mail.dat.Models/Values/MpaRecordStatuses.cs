@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property MpaRecordStatus (MPA-2000).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "mpa", FieldCode = "MPA-2000")]
 	public class MpaRecordStatuses : MaildatValues
 	{
@@ -58,15 +58,19 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "mpa", Description = "Delete", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "mpa", Description = "Delete", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "mpa", Description = "Delete", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "mpa", Description = "Delete", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "I", FileExtension = "mpa", Description = "Insert", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "mpa", Description = "Insert", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "mpa", Description = "Insert", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "mpa", Description = "Insert", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "O", FileExtension = "mpa", Description = "Original", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "mpa", Description = "Original", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "mpa", Description = "Original", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "mpa", Description = "Original", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "U", FileExtension = "mpa", Description = "Update", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "U", FileExtension = "mpa", Description = "Update", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "U", FileExtension = "mpa", Description = "Update", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "U", FileExtension = "mpa", Description = "Update", FieldCode = "MPA-2000", FieldName = "MpaRecordStatus" });
 		}
 	}
 }

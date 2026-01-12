@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property EntryPointForEntryDiscountFacilityType (CSM-1106).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "csm", FieldCode = "CSM-1106")]
 	public class EntryPointForEntryDiscountFacilityTypes : MaildatValues
 	{
@@ -58,51 +58,67 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "csm", Description = "ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "csm", Description = "ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "csm", Description = "ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "csm", Description = "ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "B", FileExtension = "csm", Description = "DNDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "csm", Description = "DNDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "csm", Description = "DNDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "csm", Description = "DNDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "C", FileExtension = "csm", Description = "Origin SCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "csm", Description = "Origin SCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "csm", Description = "Origin SCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "csm", Description = "Origin SCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "csm", Description = "DDU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "csm", Description = "DDU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "csm", Description = "DDU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "csm", Description = "DDU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "E", FileExtension = "csm", Description = "Origin DU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "E", FileExtension = "csm", Description = "Origin DU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "E", FileExtension = "csm", Description = "Origin DU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "E", FileExtension = "csm", Description = "Origin DU", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "H", FileExtension = "csm", Description = "Tran Hub", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "H", FileExtension = "csm", Description = "Tran Hub", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "H", FileExtension = "csm", Description = "Tran Hub", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "H", FileExtension = "csm", Description = "Tran Hub", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "J", FileExtension = "csm", Description = "Origin ADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "J", FileExtension = "csm", Description = "Origin ADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "J", FileExtension = "csm", Description = "Origin ADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "J", FileExtension = "csm", Description = "Origin ADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "K", FileExtension = "csm", Description = "Origin NDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "K", FileExtension = "csm", Description = "Origin NDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "K", FileExtension = "csm", Description = "Origin NDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "K", FileExtension = "csm", Description = "Origin NDC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "L", FileExtension = "csm", Description = "Origin ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "L", FileExtension = "csm", Description = "Origin ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "L", FileExtension = "csm", Description = "Origin ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "L", FileExtension = "csm", Description = "Origin ASF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "N", FileExtension = "csm", Description = "Not-determined", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "N", FileExtension = "csm", Description = "Not-determined", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "N", FileExtension = "csm", Description = "Not-determined", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "N", FileExtension = "csm", Description = "Not-determined", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "O", FileExtension = "csm", Description = "Origin", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "csm", Description = "Origin", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "csm", Description = "Origin", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "csm", Description = "Origin", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "OT", FileExtension = "csm", Description = "Other", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "OT", FileExtension = "csm", Description = "Other", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "OT", FileExtension = "csm", Description = "Other", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "OT", FileExtension = "csm", Description = "Other", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "Q", FileExtension = "csm", Description = "Origin AMF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "Q", FileExtension = "csm", Description = "Origin AMF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "Q", FileExtension = "csm", Description = "Origin AMF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "Q", FileExtension = "csm", Description = "Origin AMF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "R", FileExtension = "csm", Description = "DADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "R", FileExtension = "csm", Description = "DADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "R", FileExtension = "csm", Description = "DADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "R", FileExtension = "csm", Description = "DADC", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "S", FileExtension = "csm", Description = "DSCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "S", FileExtension = "csm", Description = "DSCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "S", FileExtension = "csm", Description = "DSCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "S", FileExtension = "csm", Description = "DSCF", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "T", FileExtension = "csm", Description = "Orig(T-Hub Sq)", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "T", FileExtension = "csm", Description = "Orig(T-Hub Sq)", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "T", FileExtension = "csm", Description = "Orig(T-Hub Sq)", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "T", FileExtension = "csm", Description = "Orig(T-Hub Sq)", FieldCode = "CSM-1106", FieldName = "EntryPointForEntryDiscountFacilityType" });
 		}
 	}
 }

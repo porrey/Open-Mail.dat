@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 namespace Mail.dat
@@ -183,6 +183,21 @@ namespace Mail.dat
 		/// Detached Mailing Label Indicator (SEG-1136)
 		/// </summary>
 		string DetachedMailingLabelIndicator { get; set; }
+
+		/// <summary>
+		/// Plus One Host Job ID (SEG-1188)
+		/// Used for Plus One mailings that are linked to Flats Host pieces. Populate with the Job ID of the
+		/// Flats Host Mailing Jobs.
+		/// </summary>
+		string PlusOneHostJobId { get; set; }
+
+		/// <summary>
+		/// Plus One Host User License Code (SEG-1189)
+		/// Used for Plus One mailings that are linked to Flats Host pieces.  Populate with the User License
+		/// Code of the Flats Host Mailing Jobs. Must begin with an alpha, be four characters, have no spaces,
+		/// have no special characters, not be case sensitive.
+		/// </summary>
+		string PlusOneHostUserLicenseCode { get; set; }
 
 		/// <summary>
 		/// eDoc Sender CRID (SEG-1140)

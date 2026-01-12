@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property FormType (CHR-1101).
 	/// </summary>
-	[MaildatVersions("24-1", "25-1")]
+	[MaildatVersions("24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "chr", FieldCode = "CHR-1101")]
 	public class FormTypes : MaildatValues
 	{
@@ -57,10 +57,13 @@ namespace Mail.dat
 		{
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "chr", Description = "PS Form 3606-D (Bulk Certificate of Mailing)", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "chr", Description = "PS Form 3606-D (Bulk Certificate of Mailing)", FieldCode = "CHR-1101", FieldName = "FormType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "chr", Description = "PS Form 3606-D (Bulk Certificate of Mailing)", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "B", FileExtension = "chr", Description = "PS Form 3665 (Certificate of Mailing)", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "B", FileExtension = "chr", Description = "PS Form 3665 (Certificate of Mailing)", FieldCode = "CHR-1101", FieldName = "FormType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "B", FileExtension = "chr", Description = "PS Form 3665 (Certificate of Mailing)", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "C", FileExtension = "chr", Description = "PS Form 3877 (Firm Book for Accountable Mail)", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "C", FileExtension = "chr", Description = "PS Form 3877 (Firm Book for Accountable Mail)", FieldCode = "CHR-1101", FieldName = "FormType" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "C", FileExtension = "chr", Description = "PS Form 3877 (Firm Book for Accountable Mail)", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "chr", Description = "Reserved", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "chr", Description = "Reserved", FieldCode = "CHR-1101", FieldName = "FormType" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "E", FileExtension = "chr", Description = "Reserved", FieldCode = "CHR-1101", FieldName = "FormType" });

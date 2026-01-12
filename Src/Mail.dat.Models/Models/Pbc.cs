@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -36,14 +36,16 @@ namespace Mail.dat
 	/// instead of the Piece Detail file, acts as an extension of the PQT file.
 	/// </summary>
 	[MaildatFile(Version = "23-1", Revision = "0.5", Extension = "pbc", File = "Piece Barcode Record", Summary = "Piece barcode details.", Description = "Piece barcode details. Provides piece level detail required of full service mailings; when used instead of the Piece Detail file, acts as an extension of the PQT file.", LineLength = 70, ClosingCharacter = "#")]
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "pbc", File = "Piece Barcode Record", Summary = "Piece barcode details.", Description = "Piece barcode details. Provides piece level detail required of full service mailings; when used instead of the Piece Detail file, acts as an extension of the PQT file.", LineLength = 70, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "pbc", File = "Piece Barcode Record", Summary = "Piece barcode details.", Description = "Piece barcode details. Provides piece level detail required of full service mailings; when used instead of the Piece Detail file, acts as an extension of the PQT file.", LineLength = 70, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.6", Extension = "pbc", File = "Piece Barcode Record", Summary = "Piece barcode details.", Description = "Piece barcode details. Provides piece level detail required of full service mailings; when used instead of the Piece Detail file, acts as an extension of the PQT file.", LineLength = 70, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.6", Extension = "pbc", File = "Piece Barcode Record", Summary = "Piece barcode details.", Description = "Piece barcode details. Provides piece level detail required of full service mailings; when used instead of the Piece Detail file, acts as an extension of the PQT file.", LineLength = 70, ClosingCharacter = "#")]
+	[MaildatFile(Version = "26-1", Revision = "0.1", Extension = "pbc", File = "Piece Barcode Record", Summary = "Piece barcode details.", Description = "Piece barcode details. Provides piece level detail required of full service mailings; when used instead of the Piece Detail file, acts as an extension of the PQT file.", LineLength = 70, ClosingCharacter = "#")]
 	[MaildatImport(Order = 15, Version = "23-1")]
 	[MaildatImport(Order = 15, Version = "24-1")]
 	[MaildatImport(Order = 15, Version = "25-1")]
+	[MaildatImport(Order = 15, Version = "26-1")]
 	[Table("Pbc", Schema = "Maildat")]
 	[PrimaryKey("Id")]
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	public partial class Pbc : MaildatEntity, IPbc
 	{
 		/// <summary>
@@ -53,13 +55,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[Column("JobId", Order = 2, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("PBC-1001")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string JobId { get; set; }
 
 		/// <summary>
@@ -69,12 +72,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1002", FieldName = "PBC Unique ID", Start = 9, Length = 9, Required = true, Key = true, DataType = "N", Description = "Uniquely identifies each PBC record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1002", FieldName = "PBC Unique ID", Start = 9, Length = 9, Required = true, Key = true, DataType = "N", Description = "Uniquely identifies each PBC record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1002", FieldName = "PBC Unique ID", Start = 9, Length = 9, Required = true, Key = true, DataType = "N", Description = "Uniquely identifies each PBC record.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1002", FieldName = "PBC Unique ID", Start = 9, Length = 9, Required = true, Key = true, DataType = "N", Description = "Uniquely identifies each PBC record.", Type = "integer", Format = "zfill")]
 		[Column("PbcUniqueId", Order = 3, TypeName = "INTEGER")]
 		[Required]
 		[MaildatKey]
 		[Comment("PBC-1002")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int PbcUniqueId { get; set; }
 
 		/// <summary>
@@ -83,11 +87,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1034", FieldName = "CQT Database ID", Start = 18, Length = 8, Required = true, Key = false, DataType = "N", Description = "", Type = "integer", Format = "zfill", References = "CQT-1034")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1034", FieldName = "CQT Database ID", Start = 18, Length = 8, Required = true, Key = false, DataType = "N", Description = "", Type = "integer", Format = "zfill", References = "CQT-1034")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1034", FieldName = "CQT Database ID", Start = 18, Length = 8, Required = true, Key = false, DataType = "N", Description = "", Type = "integer", Format = "zfill", References = "CQT-1034")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1034", FieldName = "CQT Database ID", Start = 18, Length = 8, Required = true, Key = false, DataType = "N", Description = "", Type = "integer", Format = "zfill", References = "CQT-1034")]
 		[Column("CqtDatabaseId", Order = 4, TypeName = "INTEGER")]
 		[Required]
 		[Comment("PBC-1034")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public int CqtDatabaseId { get; set; }
 
 		/// <summary>
@@ -97,12 +102,13 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1012", FieldName = "Package ID", Start = 26, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The unique code for this package within this container.", Type = "string", Format = "zfillnumeric", References = "PQT-1012")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1012", FieldName = "Package ID", Start = 26, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The unique code for this package within this container.", Type = "string", Format = "zfillnumeric", References = "PQT-1012")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1012", FieldName = "Package ID", Start = 26, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The unique code for this package within this container.", Type = "string", Format = "zfillnumeric", References = "PQT-1012")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1012", FieldName = "Package ID", Start = 26, Length = 6, Required = true, Key = false, DataType = "A/N", Description = "The unique code for this package within this container.", Type = "string", Format = "zfillnumeric", References = "PQT-1012")]
 		[Column("PackageId", Order = 5, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(6)]
 		[Comment("PBC-1012")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string PackageId { get; set; }
 
 		/// <summary>
@@ -112,11 +118,12 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1122", FieldName = "Barcode", Start = 32, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "IMb® or IMpb®.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1122", FieldName = "Barcode", Start = 32, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "IMb® or IMpb®.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1122", FieldName = "Barcode", Start = 32, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "IMb® or IMpb®.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1122", FieldName = "Barcode", Start = 32, Length = 34, Required = false, Key = false, DataType = "A/N", Description = "IMb® or IMpb®.", Type = "string", Format = "leftjustify")]
 		[Column("Barcode", Order = 6, TypeName = "TEXT")]
 		[MaxLength(34)]
 		[Comment("PBC-1122")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string Barcode { get; set; }
 
 		/// <summary>
@@ -125,13 +132,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1117", FieldName = "Wasted or Shortage Piece Indicator", Start = 66, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1117", FieldName = "Wasted or Shortage Piece Indicator", Start = 66, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1117", FieldName = "Wasted or Shortage Piece Indicator", Start = 66, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1117", FieldName = "Wasted or Shortage Piece Indicator", Start = 66, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("WastedOrShortagePieceIndicator", Order = 7, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues(" ", "S", "T", "W", "X")]
 		[Comment("PBC-1117")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(WastedOrShortagePieceIndicators))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string WastedOrShortagePieceIndicator { get; set; }
 
 		/// <summary>
@@ -143,13 +151,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1118", FieldName = "IMpb® Barcode Construct Code", Start = 67, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Populate when IMpb® is used.  This code identifies which combination of ZIP, MID, and serial number is used in the IMpb®. Industry has agreed that for IMpb®, only PDR is the viable option because it provides the 11 digit Zip code in the Piece Barcode field.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1118", FieldName = "IMpb® Barcode Construct Code", Start = 67, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Populate when IMpb® is used.  This code identifies which combination of ZIP, MID, and serial number is used in the IMpb®. Industry has agreed that for IMpb®, only PDR is the viable option because it provides the 11 digit Zip code in the Piece Barcode field.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1118", FieldName = "IMpb® Barcode Construct Code", Start = 67, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Populate when IMpb® is used.  This code identifies which combination of ZIP, MID, and serial number is used in the IMpb®. Industry has agreed that for IMpb®, only PDR is the viable option because it provides the 11 digit Zip code in the Piece Barcode field.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1118", FieldName = "IMpb® Barcode Construct Code", Start = 67, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "Populate when IMpb® is used.  This code identifies which combination of ZIP, MID, and serial number is used in the IMpb®. Industry has agreed that for IMpb®, only PDR is the viable option because it provides the 11 digit Zip code in the Piece Barcode field.", Type = "enum", Format = "leftjustify")]
 		[Column("ImpbBarcodeConstructCode", Order = 8, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues(" ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T")]
 		[Comment("PBC-1118")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(ImpbBarcodeConstructCodes))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ImpbBarcodeConstructCode { get; set; }
 
 		/// <summary>
@@ -158,13 +167,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-1119", FieldName = "MID in IMb® is Move Update Supplier", Start = 68, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-1119", FieldName = "MID in IMb® is Move Update Supplier", Start = 68, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-1119", FieldName = "MID in IMb® is Move Update Supplier", Start = 68, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-1119", FieldName = "MID in IMb® is Move Update Supplier", Start = 68, Length = 1, Required = false, Key = false, DataType = "A/N", Description = "", Type = "enum", Format = "leftjustify")]
 		[Column("MidInImbIsMoveUpdateSupplier", Order = 9, TypeName = "TEXT")]
 		[MaxLength(1)]
 		[AllowedValues(" ", "Y")]
 		[Comment("PBC-1119")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(MidInImbIsMoveUpdateSuppliers))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string MidInImbIsMoveUpdateSupplier { get; set; }
 
 		/// <summary>
@@ -174,6 +184,7 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-2000", FieldName = "PBC Record Status", Start = 69, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-2000", FieldName = "PBC Record Status", Start = 69, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-2000", FieldName = "PBC Record Status", Start = 69, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-2000", FieldName = "PBC Record Status", Start = 69, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[Column("PbcRecordStatus", Order = 10, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -181,7 +192,7 @@ namespace Mail.dat
 		[Comment("PBC-2000")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(PbcRecordStatuses))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string PbcRecordStatus { get; set; }
 
 		/// <summary>
@@ -191,13 +202,14 @@ namespace Mail.dat
 		[MaildatField(Version = "23-1", Extension = "pbc", FieldCode = "PBC-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "24-1", Extension = "pbc", FieldCode = "PBC-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "pbc", FieldCode = "PBC-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "pbc", FieldCode = "PBC-9999", FieldName = "Closing Character", Start = 70, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[Column("ClosingCharacter", Order = 11, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
 		[Comment("PBC-9999")]
 		[TypeConverter(typeof(MaildatClosingConverter))]
-		[MaildatVersions("23-1", "24-1", "25-1")]
+		[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>

@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property CbrRecordStatus (CBR-2000).
 	/// </summary>
-	[MaildatVersions("24-1", "25-1")]
+	[MaildatVersions("24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "cbr", FieldCode = "CBR-2000")]
 	public class CbrRecordStatuses : MaildatValues
 	{
@@ -57,12 +57,16 @@ namespace Mail.dat
 		{
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "cbr", Description = "Delete", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "cbr", Description = "Delete", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "cbr", Description = "Delete", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "I", FileExtension = "cbr", Description = "Insert", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "I", FileExtension = "cbr", Description = "Insert", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "I", FileExtension = "cbr", Description = "Insert", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "O", FileExtension = "cbr", Description = "Original", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "O", FileExtension = "cbr", Description = "Original", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "O", FileExtension = "cbr", Description = "Original", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "U", FileExtension = "cbr", Description = "Update", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "U", FileExtension = "cbr", Description = "Update", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "U", FileExtension = "cbr", Description = "Update", FieldCode = "CBR-2000", FieldName = "CbrRecordStatus" });
 		}
 	}
 }

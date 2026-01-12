@@ -4,9 +4,9 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>10.0.1.0</Version>
-		<AssemblyVersion>10.0.1.0</AssemblyVersion>
-		<FileVersion>10.0.1.0</FileVersion>
+		<Version>10.1.0</Version>
+		<AssemblyVersion>10.1.0</AssemblyVersion>
+		<FileVersion>10.1.0</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -23,7 +23,7 @@
 		<RepositoryType>git</RepositoryType>
 		<NeutralLanguage>en</NeutralLanguage>
 		<PackageTags>efcore,mail.dat</PackageTags>
-		<Copyright>Copyright (c) 2025 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
+		<Copyright>Copyright (c) 2025-2026 Daniel Porrey, Open Mail.dat. All rights reserved.</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -44,9 +44,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.Repository.Abstractions" Version="10.0.0" />
-		<PackageReference Include="Diamond.Core.Repository" Version="10.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Repository.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Diamond.Core.Repository" Version="10.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -54,10 +54,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository.abstractions\10.0.0\contentFiles\any\net10.0\Services\Diamond.Core.Repository.Abstractions.json">
+		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository.abstractions\10.0.1\contentFiles\any\net10.0\Services\Diamond.Core.Repository.Abstractions.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository\10.0.0\contentFiles\any\net10.0\Services\Diamond.Core.Repository.json">
+		<Content Update="$(UserProfile)\.nuget\packages\diamond.core.repository\10.0.1\contentFiles\any\net10.0\Services\Diamond.Core.Repository.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>

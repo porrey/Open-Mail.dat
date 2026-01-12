@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 namespace Mail.dat
@@ -154,6 +154,18 @@ namespace Mail.dat
 		/// DMU).
 		/// </summary>
 		string VerificationFacilityZipCode { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing - Class (CHR-1123)
+		/// See definition in MPU-1111.
+		/// </summary>
+		string CertificateOfMailingClass { get; set; }
+
+		/// <summary>
+		/// Certificate of Mailing - Rate Type (CHR-1124)
+		/// See definition in MPU-1112.
+		/// </summary>
+		string CertificateOfMailingRateType { get; set; }
 
 		/// <summary>
 		/// Flex Option A (CHR-1117)

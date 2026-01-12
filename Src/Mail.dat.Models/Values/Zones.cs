@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using Mail.dat.Abstractions;
@@ -30,7 +30,7 @@ namespace Mail.dat
 	/// <summary>
 	/// These are the allowed values for the property Zone (CQT-1101).
 	/// </summary>
-	[MaildatVersions("23-1", "24-1", "25-1")]
+	[MaildatVersions("23-1", "24-1", "25-1", "26-1")]
 	[MaildatFieldLink(File = "cqt", FieldCode = "CQT-1101")]
 	public class Zones : MaildatValues
 	{
@@ -58,48 +58,63 @@ namespace Mail.dat
 			this.Add(new MaildatValue() { Version = "23-1", Key = "1", FileExtension = "cqt", Description = "Zone 1", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "1", FileExtension = "cqt", Description = "Zone 1", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "1", FileExtension = "cqt", Description = "Zone 1", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "1", FileExtension = "cqt", Description = "Zone 1", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "2", FileExtension = "cqt", Description = "Zone 2", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "2", FileExtension = "cqt", Description = "Zone 2", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "2", FileExtension = "cqt", Description = "Zone 2", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "2", FileExtension = "cqt", Description = "Zone 2", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "3", FileExtension = "cqt", Description = "Zone 3", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "3", FileExtension = "cqt", Description = "Zone 3", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "3", FileExtension = "cqt", Description = "Zone 3", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "3", FileExtension = "cqt", Description = "Zone 3", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "4", FileExtension = "cqt", Description = "Zone 4", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "4", FileExtension = "cqt", Description = "Zone 4", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "4", FileExtension = "cqt", Description = "Zone 4", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "4", FileExtension = "cqt", Description = "Zone 4", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "5", FileExtension = "cqt", Description = "Zone 5", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "5", FileExtension = "cqt", Description = "Zone 5", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "5", FileExtension = "cqt", Description = "Zone 5", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "5", FileExtension = "cqt", Description = "Zone 5", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "6", FileExtension = "cqt", Description = "Zone 6", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "6", FileExtension = "cqt", Description = "Zone 6", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "6", FileExtension = "cqt", Description = "Zone 6", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "6", FileExtension = "cqt", Description = "Zone 6", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "7", FileExtension = "cqt", Description = "Zone 7", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "7", FileExtension = "cqt", Description = "Zone 7", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "7", FileExtension = "cqt", Description = "Zone 7", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "7", FileExtension = "cqt", Description = "Zone 7", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "8", FileExtension = "cqt", Description = "Zone 8", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "8", FileExtension = "cqt", Description = "Zone 8", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "8", FileExtension = "cqt", Description = "Zone 8", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "8", FileExtension = "cqt", Description = "Zone 8", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "9", FileExtension = "cqt", Description = "Zone 9", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "9", FileExtension = "cqt", Description = "Zone 9", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "9", FileExtension = "cqt", Description = "Zone 9", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "9", FileExtension = "cqt", Description = "Zone 9", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "A", FileExtension = "cqt", Description = "Zone 10", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "A", FileExtension = "cqt", Description = "Zone 10", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "A", FileExtension = "cqt", Description = "Zone 10", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "A", FileExtension = "cqt", Description = "Zone 10", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "D", FileExtension = "cqt", Description = "DDU", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "L", FileExtension = "cqt", Description = "Local", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "L", FileExtension = "cqt", Description = "Local", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "L", FileExtension = "cqt", Description = "Local", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "L", FileExtension = "cqt", Description = "Local", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "N", FileExtension = "cqt", Description = "Not Zoned", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "N", FileExtension = "cqt", Description = "Not Zoned", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "N", FileExtension = "cqt", Description = "Not Zoned", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "N", FileExtension = "cqt", Description = "Not Zoned", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "S", FileExtension = "cqt", Description = "SCF", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "S", FileExtension = "cqt", Description = "SCF", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "S", FileExtension = "cqt", Description = "SCF", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "S", FileExtension = "cqt", Description = "SCF", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "V", FileExtension = "cqt", Description = "ADC", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "V", FileExtension = "cqt", Description = "ADC", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "V", FileExtension = "cqt", Description = "ADC", FieldCode = "CQT-1101", FieldName = "Zone" });
+			this.Add(new MaildatValue() { Version = "26-1", Key = "V", FileExtension = "cqt", Description = "ADC", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "23-1", Key = "W", FileExtension = "cqt", Description = "Reserved", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "24-1", Key = "W", FileExtension = "cqt", Description = "Reserved", FieldCode = "CQT-1101", FieldName = "Zone" });
 			this.Add(new MaildatValue() { Version = "25-1", Key = "W", FileExtension = "cqt", Description = "Reserved", FieldCode = "CQT-1101", FieldName = "Zone" });

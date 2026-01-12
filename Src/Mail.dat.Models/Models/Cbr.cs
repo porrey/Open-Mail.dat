@@ -1,6 +1,6 @@
 //
 // This file is part of Open Mail.dat.
-// Copyright (c) 2025 Open Mail.dat. All rights reserved.
+// Copyright (c) 2025-2026 Open Mail.dat. All rights reserved.
 //
 // ************************************************************************************************************************
 // License Agreement:
@@ -20,7 +20,7 @@
 // If not, see <https://www.gnu.org/licenses/>.
 // ************************************************************************************************************************
 //
-// This code was auto-generated on September 2nd, 2025 by the Open Mail.dat Code Generator.
+// This code was auto-generated on January 11th, 2026 by the Open Mail.dat Code Generator.
 // Code Generator Author: Daniel M Porrey
 //
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,13 +35,15 @@ namespace Mail.dat
 	/// Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.
 	/// Provides the bulk form information that is present on the Certificate of Mailing Forms.
 	/// </summary>
-	[MaildatFile(Version = "24-1", Revision = "1.5", Extension = "cbr", File = "Certificate of Mailing Bulk Record", Summary = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.", Description = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms. Provides the bulk form information that is present on the Certificate of Mailing Forms.", LineLength = 99, ClosingCharacter = "#")]
-	[MaildatFile(Version = "25-1", Revision = "0.4", Extension = "cbr", File = "Certificate of Mailing Bulk Record", Summary = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.", Description = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms. Provides the bulk form information that is present on the Certificate of Mailing Forms.", LineLength = 99, ClosingCharacter = "#")]
+	[MaildatFile(Version = "24-1", Revision = "1.6", Extension = "cbr", File = "Certificate of Mailing Bulk Record", Summary = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.", Description = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms. Provides the bulk form information that is present on the Certificate of Mailing Forms.", LineLength = 99, ClosingCharacter = "#")]
+	[MaildatFile(Version = "25-1", Revision = "0.6", Extension = "cbr", File = "Certificate of Mailing Bulk Record", Summary = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.", Description = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms. Provides the bulk form information that is present on the Certificate of Mailing Forms.", LineLength = 99, ClosingCharacter = "#")]
+	[MaildatFile(Version = "26-1", Revision = "0.1", Extension = "cbr", File = "Certificate of Mailing Bulk Record", Summary = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms.", Description = "Is used to capture the bulk form information that is present on the Certificate of Mailing Forms. Provides the bulk form information that is present on the Certificate of Mailing Forms.", LineLength = 98, ClosingCharacter = "#")]
 	[MaildatImport(Order = 26, Version = "24-1")]
 	[MaildatImport(Order = 26, Version = "25-1")]
+	[MaildatImport(Order = 26, Version = "26-1")]
 	[Table("Cbr", Schema = "Maildat")]
 	[PrimaryKey("Id")]
-	[MaildatVersions("24-1", "25-1")]
+	[MaildatVersions("24-1", "25-1", "26-1")]
 	public partial class Cbr : MaildatEntity, ICbr
 	{
 		/// <summary>
@@ -50,13 +52,14 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1001", FieldName = "Job ID", Start = 1, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "(Zero fill prior to numeric, if numeric only). See Header File’s Job Id.", Type = "string", Format = "zfillnumeric", References = "HDR-1001")]
 		[Column("JobId", Order = 2, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("CBR-1001")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string JobId { get; set; }
 
 		/// <summary>
@@ -65,13 +68,14 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1002", FieldName = "Certificate Of Mailing Header ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique ID of the Certificate of Mailing Header Record.", Type = "string", Format = "zfillnumeric", References = "CHR-1002")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1002", FieldName = "Certificate Of Mailing Header ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique ID of the Certificate of Mailing Header Record.", Type = "string", Format = "zfillnumeric", References = "CHR-1002")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1002", FieldName = "Certificate Of Mailing Header ID", Start = 9, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique ID of the Certificate of Mailing Header Record.", Type = "string", Format = "zfillnumeric", References = "CHR-1002")]
 		[Column("CertificateOfMailingHeaderId", Order = 3, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("CBR-1002")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string CertificateOfMailingHeaderId { get; set; }
 
 		/// <summary>
@@ -80,13 +84,14 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1003", FieldName = "Bulk Record ID", Start = 17, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique ID of the Certificate of Mailing Bulk.", Type = "string", Format = "zfillnumeric")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1003", FieldName = "Bulk Record ID", Start = 17, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique ID of the Certificate of Mailing Bulk Record.", Type = "string", Format = "zfillnumeric")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1003", FieldName = "Bulk Record ID", Start = 17, Length = 8, Required = true, Key = true, DataType = "A/N", Description = "Unique ID of the Certificate of Mailing Bulk Record.", Type = "string", Format = "zfillnumeric")]
 		[Column("BulkRecordId", Order = 4, TypeName = "TEXT")]
 		[Required]
 		[MaildatKey]
 		[MaxLength(8)]
 		[Comment("CBR-1003")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string BulkRecordId { get; set; }
 
 		/// <summary>
@@ -95,11 +100,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1101", FieldName = "Number of Identical Pieces", Start = 25, Length = 8, Required = true, Key = false, DataType = "N", Description = "Total identical pieces represented by this record.", Type = "integer", Format = "zfill")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1101", FieldName = "Number of Identical Pieces", Start = 25, Length = 8, Required = true, Key = false, DataType = "N", Description = "Total identical pieces represented by this record.", Type = "integer", Format = "zfill")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1101", FieldName = "Number of Identical Pieces", Start = 25, Length = 8, Required = true, Key = false, DataType = "N", Description = "Total identical pieces represented by this record.", Type = "integer", Format = "zfill")]
 		[Column("NumberOfIdenticalPieces", Order = 5, TypeName = "INTEGER")]
 		[Required]
 		[Comment("CBR-1101")]
 		[TypeConverter(typeof(MaildatIntegerConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public int NumberOfIdenticalPieces { get; set; }
 
 		/// <summary>
@@ -109,7 +115,6 @@ namespace Mail.dat
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1102", FieldName = "Class of Mail", Start = 33, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "The Postal Class of pieces included in this record.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1102", FieldName = "Class of Mail", Start = 33, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "The Postal Class of pieces included in this record.", Type = "enum", Format = "leftjustify")]
 		[Column("ClassOfMail", Order = 6, TypeName = "TEXT")]
-		[Required]
 		[MaxLength(1)]
 		[AllowedValues("1", "3", "4", "9")]
 		[Comment("CBR-1102")]
@@ -124,12 +129,13 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1103", FieldName = "Number of Pieces to the Pound", Start = 34, Length = 8, Required = true, Key = false, DataType = "N", Description = "Number of pieces per pound.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1103", FieldName = "Number of Pieces to the Pound", Start = 34, Length = 8, Required = true, Key = false, DataType = "N", Description = "Number of pieces per pound.", Type = "decimal", Format = "zfill", Precision = 3)]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1103", FieldName = "Number of Pieces to the Pound", Start = 33, Length = 8, Required = true, Key = false, DataType = "N", Description = "Number of pieces per pound.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[Column("NumberOfPiecesToThePound", Order = 7, TypeName = "NUMERIC")]
 		[Required]
 		[Precision(3)]
 		[Comment("CBR-1103")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public decimal NumberOfPiecesToThePound { get; set; }
 
 		/// <summary>
@@ -138,12 +144,13 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1104", FieldName = "Total Number of Pounds", Start = 42, Length = 12, Required = true, Key = false, DataType = "N", Description = "Pounds International = Gross Weight.", Type = "decimal", Format = "zfill", Precision = 4)]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1104", FieldName = "Total Number of Pounds", Start = 42, Length = 12, Required = true, Key = false, DataType = "N", Description = "Pounds International = Gross Weight.", Type = "decimal", Format = "zfill", Precision = 4)]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1104", FieldName = "Total Number of Pounds", Start = 41, Length = 12, Required = true, Key = false, DataType = "N", Description = "Pounds International = Gross Weight.", Type = "decimal", Format = "zfill", Precision = 4)]
 		[Column("TotalNumberOfPounds", Order = 8, TypeName = "NUMERIC")]
 		[Required]
 		[Precision(4)]
 		[Comment("CBR-1104")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public decimal TotalNumberOfPounds { get; set; }
 
 		/// <summary>
@@ -152,11 +159,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1105", FieldName = "Fee Paid", Start = 54, Length = 9, Required = false, Key = false, DataType = "N", Description = "Fee for Certificate of Bulk Mailing; dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1105", FieldName = "Fee Paid", Start = 54, Length = 9, Required = false, Key = false, DataType = "N", Description = "Fee for Certificate of Bulk Mailing; dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1105", FieldName = "Fee Paid", Start = 53, Length = 9, Required = false, Key = false, DataType = "N", Description = "Fee for Certificate of Bulk Mailing; dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[Column("FeePaid", Order = 9, TypeName = "NUMERIC")]
 		[Precision(3)]
 		[Comment("CBR-1105")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public decimal? FeePaid { get; set; }
 
 		/// <summary>
@@ -165,12 +173,13 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1106", FieldName = "Total Postage Paid for Mailpieces", Start = 63, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1106", FieldName = "Total Postage Paid for Mailpieces", Start = 63, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1106", FieldName = "Total Postage Paid for Mailpieces", Start = 62, Length = 9, Required = true, Key = false, DataType = "N", Description = "Dollars.", Type = "decimal", Format = "zfill", Precision = 3)]
 		[Column("TotalPostagePaidForMailpieces", Order = 10, TypeName = "NUMERIC")]
 		[Required]
 		[Precision(3)]
 		[Comment("CBR-1106")]
 		[TypeConverter(typeof(MaildatDecimalConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public decimal TotalPostagePaidForMailpieces { get; set; }
 
 		/// <summary>
@@ -179,11 +188,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1107", FieldName = "Flex Option A", Start = 72, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1107", FieldName = "Flex Option A", Start = 72, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1107", FieldName = "Flex Option A", Start = 71, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[Column("FlexOptionA", Order = 11, TypeName = "TEXT")]
 		[MaxLength(2)]
 		[Comment("CBR-1107")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string FlexOptionA { get; set; }
 
 		/// <summary>
@@ -192,11 +202,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1108", FieldName = "Flex Option B", Start = 74, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1108", FieldName = "Flex Option B", Start = 74, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1108", FieldName = "Flex Option B", Start = 73, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[Column("FlexOptionB", Order = 12, TypeName = "TEXT")]
 		[MaxLength(2)]
 		[Comment("CBR-1108")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string FlexOptionB { get; set; }
 
 		/// <summary>
@@ -205,11 +216,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1109", FieldName = "Flex Option C", Start = 76, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1109", FieldName = "Flex Option C", Start = 76, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1109", FieldName = "Flex Option C", Start = 75, Length = 2, Required = false, Key = false, DataType = "A/N", Description = "Reserve Option.", Type = "string", Format = "leftjustify")]
 		[Column("FlexOptionC", Order = 13, TypeName = "TEXT")]
 		[MaxLength(2)]
 		[Comment("CBR-1109")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string FlexOptionC { get; set; }
 
 		/// <summary>
@@ -218,11 +230,12 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-1110", FieldName = "Reserve", Start = 78, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-1110", FieldName = "Reserve", Start = 78, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-1110", FieldName = "Reserve", Start = 77, Length = 20, Required = false, Key = false, DataType = "A/N", Description = "Reserved for future use.", Type = "string", Format = "leftjustify")]
 		[Column("ReserveCbr1110", Order = 14, TypeName = "TEXT")]
 		[MaxLength(20)]
 		[Comment("CBR-1110")]
 		[TypeConverter(typeof(MaildatStringConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string ReserveCbr1110 { get; set; }
 
 		/// <summary>
@@ -231,6 +244,7 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-2000", FieldName = "CBR Record Status", Start = 98, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-2000", FieldName = "CBR Record Status", Start = 98, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-2000", FieldName = "CBR Record Status", Start = 97, Length = 1, Required = true, Key = false, DataType = "A/N", Description = "O, D, I, U.", Type = "enum", Format = "leftjustify")]
 		[Column("CbrRecordStatus", Order = 15, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
@@ -238,7 +252,7 @@ namespace Mail.dat
 		[Comment("CBR-2000")]
 		[TypeConverter(typeof(MaildatEnumConverter))]
 		[MaildatValues(typeof(CbrRecordStatuses))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string CbrRecordStatus { get; set; }
 
 		/// <summary>
@@ -247,13 +261,14 @@ namespace Mail.dat
 		/// </summary>
 		[MaildatField(Version = "24-1", Extension = "cbr", FieldCode = "CBR-9999", FieldName = "Closing Character", Start = 99, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[MaildatField(Version = "25-1", Extension = "cbr", FieldCode = "CBR-9999", FieldName = "Closing Character", Start = 99, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
+		[MaildatField(Version = "26-1", Extension = "cbr", FieldCode = "CBR-9999", FieldName = "Closing Character", Start = 98, Length = 1, Required = true, Key = false, DataType = "", Description = "Must be the # sign.", Type = "closing", Format = "leftjustify")]
 		[Column("ClosingCharacter", Order = 16, TypeName = "TEXT")]
 		[Required]
 		[MaxLength(1)]
 		[AllowedValues("#")]
 		[Comment("CBR-9999")]
 		[TypeConverter(typeof(MaildatClosingConverter))]
-		[MaildatVersions("24-1", "25-1")]
+		[MaildatVersions("24-1", "25-1", "26-1")]
 		public string ClosingCharacter { get; set; } = "#";
 
 		/// <summary>
